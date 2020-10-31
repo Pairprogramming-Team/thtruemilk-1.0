@@ -123,6 +123,7 @@
             // 
             // txbID
             // 
+            this.txbID.Enabled = false;
             this.txbID.Location = new System.Drawing.Point(185, 145);
             this.txbID.Multiline = true;
             this.txbID.Name = "txbID";
