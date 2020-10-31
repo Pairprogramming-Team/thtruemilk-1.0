@@ -49,7 +49,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(126, 49);
+            this.label1.Location = new System.Drawing.Point(139, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 33);
             this.label1.TabIndex = 0;
@@ -186,6 +186,8 @@
             this.Controls.Add(this.productId);
             this.Controls.Add(this.label1);
             this.Name = "UpdateOrder";
+            this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "UpdateOrder";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
