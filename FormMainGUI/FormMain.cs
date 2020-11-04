@@ -121,6 +121,8 @@ namespace FormMainGUI
         private void btnOrder_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
+            OpenChildForm(new Orders());
+
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
