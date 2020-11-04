@@ -306,6 +306,7 @@
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelMenu);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TH TrueMilk";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);

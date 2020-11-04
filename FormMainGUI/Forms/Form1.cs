@@ -22,18 +22,14 @@ namespace FormMainGUI.Forms
 
         }
 
-        private void Orders_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddOrder addOrder = new AddOrder();
             addOrder.ShowDialog();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             UpdateOrder updateOrder = new UpdateOrder();
             updateOrder.ShowDialog();

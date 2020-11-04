@@ -17,19 +17,26 @@ namespace FormMainGUI.Forms
             InitializeComponent();
         }
 
-        private void AddOrder_Load(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-
+            DialogResult = DialogResult.Cancel;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMaximize_Click(object sender, EventArgs e)
         {
-
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
         }
 
-        private void quantity_Click(object sender, EventArgs e)
+        private void btnMinimize_Click(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
