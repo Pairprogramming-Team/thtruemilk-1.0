@@ -64,6 +64,24 @@
     <Compile Include="Forms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\formAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formAdd.Designer.cs">
+      <DependentUpon>formAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formCancel.Designer.cs">
+      <DependentUpon>formCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormUpdate.Designer.cs">
+      <DependentUpon>FormUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +95,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formAdd.resx">
+      <DependentUpon>formAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formCancel.resx">
+      <DependentUpon>formCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormUpdate.resx">
+      <DependentUpon>FormUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
@@ -96,6 +123,12 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FormMain.datasource" />
+    <None Include="Properties\DataSources\FormMainGUI.Forms.Dashboard.datasource" />
+    <None Include="Properties\DataSources\FormMainGUI.Forms.Products.datasource" />
+    <None Include="Properties\DataSources\FormMainGUI.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\FormMainGUI.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -10,16 +10,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using FormMainGUI.Forms;
+using System.Data.SqlClient;
 
 namespace FormMainGUI
 {
     public partial class FormMain : Form
     {
+        SqlConnection sql = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=THTrueMilk;Integrated Security=True");
         //Fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-
+        
         //Constructor
         public FormMain()
         {
