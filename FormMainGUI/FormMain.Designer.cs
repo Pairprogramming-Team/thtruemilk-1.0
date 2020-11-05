@@ -36,13 +36,13 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblLogo = new MaterialSkin.Controls.MaterialLabel();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.lblTitileChildForm = new System.Windows.Forms.Label();
-            this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnMaximize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.lblTitileChildForm = new System.Windows.Forms.Label();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -196,42 +196,6 @@
             this.panelHeader.TabIndex = 1;
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             // 
-            // lblTitileChildForm
-            // 
-            this.lblTitileChildForm.AutoSize = true;
-            this.lblTitileChildForm.ForeColor = System.Drawing.Color.White;
-            this.lblTitileChildForm.Location = new System.Drawing.Point(62, 40);
-            this.lblTitileChildForm.Name = "lblTitileChildForm";
-            this.lblTitileChildForm.Size = new System.Drawing.Size(45, 17);
-            this.lblTitileChildForm.TabIndex = 1;
-            this.lblTitileChildForm.Text = "Home";
-            // 
-            // iconCurrentChildForm
-            // 
-            this.iconCurrentChildForm.FlatAppearance.BorderSize = 0;
-            this.iconCurrentChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconCurrentChildForm.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconCurrentChildForm.ForeColor = System.Drawing.Color.White;
-            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconCurrentChildForm.IconColor = System.Drawing.Color.MediumOrchid;
-            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.IconSize = 36;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(19, 35);
-            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-            this.iconCurrentChildForm.Rotation = 0D;
-            this.iconCurrentChildForm.Size = new System.Drawing.Size(40, 30);
-            this.iconCurrentChildForm.TabIndex = 0;
-            this.iconCurrentChildForm.UseVisualStyleBackColor = true;
-            // 
-            // panelContent
-            // 
-            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(200, 80);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(826, 464);
-            this.panelContent.TabIndex = 2;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnMinimize);
@@ -297,6 +261,42 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblTitileChildForm
+            // 
+            this.lblTitileChildForm.AutoSize = true;
+            this.lblTitileChildForm.ForeColor = System.Drawing.Color.White;
+            this.lblTitileChildForm.Location = new System.Drawing.Point(62, 40);
+            this.lblTitileChildForm.Name = "lblTitileChildForm";
+            this.lblTitileChildForm.Size = new System.Drawing.Size(45, 17);
+            this.lblTitileChildForm.TabIndex = 1;
+            this.lblTitileChildForm.Text = "Home";
+            // 
+            // iconCurrentChildForm
+            // 
+            this.iconCurrentChildForm.FlatAppearance.BorderSize = 0;
+            this.iconCurrentChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconCurrentChildForm.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconCurrentChildForm.ForeColor = System.Drawing.Color.White;
+            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconCurrentChildForm.IconColor = System.Drawing.Color.MediumOrchid;
+            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentChildForm.IconSize = 36;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(19, 35);
+            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
+            this.iconCurrentChildForm.Rotation = 0D;
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(40, 30);
+            this.iconCurrentChildForm.TabIndex = 0;
+            this.iconCurrentChildForm.UseVisualStyleBackColor = true;
+            // 
+            // panelContent
+            // 
+            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(200, 80);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(826, 464);
+            this.panelContent.TabIndex = 2;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -306,6 +306,7 @@
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelMenu);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TH TrueMilk";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
