@@ -16,5 +16,17 @@ namespace FormMainGUI.Forms
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FormAdd add = new FormAdd();
+            add.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            FormUpdate update = new FormUpdate();
+            update.ShowDialog();
+        }
     }
 }
