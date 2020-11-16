@@ -63,6 +63,7 @@ GO
 CREATE TABLE Accounts (
 	UserName VARCHAR(50) NOT NULL,
 	PassWord VARCHAR(50) NOT NULL,
+	Role VARCHAR(50) NOT NULL,
 	EmployeeID VARCHAR(20),
 
 	PRIMARY KEY (UserName)
@@ -97,18 +98,9 @@ GO
 
 ----------------------------------------------------
 --insert data into table
---Tai Khoan
-INSERT INTO dbo.Accounts( UserName, PassWord, EmployeeID )
-VALUES  ( 'KhaiGia123', '123123akpro', 'NV01')
-INSERT INTO dbo.Accounts( UserName, PassWord, EmployeeID )
-VALUES  ( 'Khaithat', '1234', 'NV02')
-INSERT INTO dbo.Accounts( UserName, PassWord, EmployeeID )
-VALUES  ( 'proak', '123456', 'NV03')
-INSERT INTO dbo.Accounts( UserName, PassWord, EmployeeID )
-VALUES  ( 'tholanpro', 'mattich', 'NV04')
-GO
-
 --Nhan Vien
+INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
+VALUES ('NV05', N'Chủ Tịch',  '0126888899', 1, 1994 , N'T.P Hồ Chí Minh')
 INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
 VALUES ('NV01', N'Nguyễn Đình Gia Khải',  '0366255164', 1, 2000 , N'53/36 Lê Lai, Cam Lâm, Khánh Hoà')
 INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
@@ -117,6 +109,19 @@ INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
 VALUES ('NV03', N'Nguyễn Khải',  '0985362254', 1, 2001 , N'36, Lê Văn Việt, Quận 9, tp.Ho Chi Minh')
 INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
 VALUES ('NV04', N'Nguyễn Kim Thiện',  '0977545552', 1, 2000 , N'35/45/9/1 Van Lam, Buon Me Thuoc')
+GO
+
+--Tai Khoan
+INSERT INTO dbo.Accounts( UserName, PassWord, Role ,EmployeeID )
+VALUES  ( 'Admin', '1234', 'admin' ,'NV05')
+INSERT INTO dbo.Accounts( UserName, PassWord, Role ,EmployeeID )
+VALUES  ( 'KhaiGia123', '123123akpro', 'member' ,'NV01')
+INSERT INTO dbo.Accounts( UserName, PassWord, Role , EmployeeID )
+VALUES  ( 'Khaithat', '123445', 'member', 'NV02')
+INSERT INTO dbo.Accounts( UserName, PassWord, Role , EmployeeID )
+VALUES  ( 'proak', '123456', 'member', 'NV03')
+INSERT INTO dbo.Accounts( UserName, PassWord, Role , EmployeeID )
+VALUES  ( 'tholanpro', 'mattich', 'member', 'NV04')
 GO
 
 --Hoa Don
