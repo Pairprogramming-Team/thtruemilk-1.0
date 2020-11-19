@@ -55,7 +55,6 @@ namespace FormMainGUI.Forms.LoginForm
             FormMain formMain = new FormMain();
             this.Hide();
             formMain.ShowDialog();
-            this.Show();
         }
     }
 }
