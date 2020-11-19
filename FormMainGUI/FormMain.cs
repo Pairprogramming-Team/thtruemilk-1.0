@@ -28,7 +28,7 @@ namespace FormMainGUI
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
 
-            this.Size = new Size(1300, 700);
+            this.Size = new Size(1200, 800);
 
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -121,7 +121,7 @@ namespace FormMainGUI
         private void btnOrder_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color3);
-            OpenChildForm(new Orders());
+            OpenChildForm(new fOrders());
 
         }
 
