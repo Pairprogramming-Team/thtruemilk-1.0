@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FormMainGUI.Forms.LoginForm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace FormMainGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            Application.Run(new fLogin());
         }
     }
 }
