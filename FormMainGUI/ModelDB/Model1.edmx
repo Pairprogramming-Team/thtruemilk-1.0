@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="THTrueMilkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PassWord" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="10" />
+          <Property Name="Sex" Type="bit" />
+          <Property Name="YearOfBirth" Type="int" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DateOfOrder" Type="date" />
+          <Property Name="TotalMoney" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EmployeeID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="OrdersDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailID" />
+          </Key>
+          <Property Name="OrderDetailID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="OrderID" Type="varchar" MaxLength="20" />
+          <Property Name="ProductID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="ProductsDetail">
+          <Key>
+            <PropertyRef Name="ProductDetailID" />
+          </Key>
+          <Property Name="ProductDetailID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="100" />
+          <Property Name="MFG" Type="date" />
+          <Property Name="EXP" Type="date" />
+          <Property Name="ProductEntryDate" Type="date" />
+          <Property Name="ProductID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__Accounts__Employ__24927208">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__Employee__25869641">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdersDet__Order__267ABA7A">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="OrdersDetail" Type="Self.OrdersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrdersDetail">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdersDet__Produ__276EDEB3">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="OrdersDetail" Type="Self.OrdersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrdersDetail">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductsD__Produ__286302EC">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="ProductsDetail" Type="Self.ProductsDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductsDetail">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="THTrueMilkModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrdersDetail" EntityType="Self.OrdersDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductsDetail" EntityType="Self.ProductsDetail" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Accounts__Employ__24927208" Association="Self.FK__Accounts__Employ__24927208">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__Employee__25869641" Association="Self.FK__Orders__Employee__25869641">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdersDet__Order__267ABA7A" Association="Self.FK__OrdersDet__Order__267ABA7A">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrdersDetail" EntitySet="OrdersDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdersDet__Produ__276EDEB3" Association="Self.FK__OrdersDet__Produ__276EDEB3">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrdersDetail" EntitySet="OrdersDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductsD__Produ__286302EC" Association="Self.FK__ProductsD__Produ__286302EC">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductsDetail" EntitySet="ProductsDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="THTrueMilkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Accounts__Employ__24927208" FromRole="Accounts" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="Boolean" />
+          <Property Name="YearOfBirth" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK__Accounts__Employ__24927208" FromRole="Employees" ToRole="Accounts" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Employee__25869641" FromRole="Employees" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateOfOrder" Type="DateTime" Precision="0" />
+          <Property Name="TotalMoney" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EmployeeID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Orders__Employee__25869641" FromRole="Orders" ToRole="Employees" />
+          <NavigationProperty Name="OrdersDetails" Relationship="Self.FK__OrdersDet__Order__267ABA7A" FromRole="Orders" ToRole="OrdersDetail" />
+        </EntityType>
+        <EntityType Name="OrdersDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailID" />
+          </Key>
+          <Property Name="OrderDetailID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="OrderID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ProductID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__OrdersDet__Order__267ABA7A" FromRole="OrdersDetail" ToRole="Orders" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__OrdersDet__Produ__276EDEB3" FromRole="OrdersDetail" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="OrdersDetails" Relationship="Self.FK__OrdersDet__Produ__276EDEB3" FromRole="Products" ToRole="OrdersDetail" />
+          <NavigationProperty Name="ProductsDetails" Relationship="Self.FK__ProductsD__Produ__286302EC" FromRole="Products" ToRole="ProductsDetail" />
+        </EntityType>
+        <EntityType Name="ProductsDetail">
+          <Key>
+            <PropertyRef Name="ProductDetailID" />
+          </Key>
+          <Property Name="ProductDetailID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MFG" Type="DateTime" Precision="0" />
+          <Property Name="EXP" Type="DateTime" Precision="0" />
+          <Property Name="ProductEntryDate" Type="DateTime" Precision="0" />
+          <Property Name="ProductID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__ProductsD__Produ__286302EC" FromRole="ProductsDetail" ToRole="Products" />
+        </EntityType>
+        <Association Name="FK__Accounts__Employ__24927208">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Accounts" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__Employee__25869641">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdersDet__Order__267ABA7A">
+          <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="OrdersDetail" Type="Self.OrdersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrdersDetail">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdersDet__Produ__276EDEB3">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="OrdersDetail" Type="Self.OrdersDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrdersDetail">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductsD__Produ__286302EC">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="ProductsDetail" Type="Self.ProductsDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductsDetail">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="THTrueMilkEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="OrdersDetails" EntityType="Self.OrdersDetail" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductsDetails" EntityType="Self.ProductsDetail" />
+          <AssociationSet Name="FK__Accounts__Employ__24927208" Association="Self.FK__Accounts__Employ__24927208">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__Employee__25869641" Association="Self.FK__Orders__Employee__25869641">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdersDet__Order__267ABA7A" Association="Self.FK__OrdersDet__Order__267ABA7A">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrdersDetail" EntitySet="OrdersDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdersDet__Produ__276EDEB3" Association="Self.FK__OrdersDet__Produ__276EDEB3">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrdersDetail" EntitySet="OrdersDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductsD__Produ__286302EC" Association="Self.FK__ProductsD__Produ__286302EC">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductsDetail" EntitySet="ProductsDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="THTrueMilkModelStoreContainer" CdmEntityContainer="THTrueMilkEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="THTrueMilkModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="THTrueMilkModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="YearOfBirth" ColumnName="YearOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="THTrueMilkModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="DateOfOrder" ColumnName="DateOfOrder" />
+                <ScalarProperty Name="TotalMoney" ColumnName="TotalMoney" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdersDetails">
+            <EntityTypeMapping TypeName="THTrueMilkModel.OrdersDetail">
+              <MappingFragment StoreEntitySet="OrdersDetail">
+                <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="THTrueMilkModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductsDetails">
+            <EntityTypeMapping TypeName="THTrueMilkModel.ProductsDetail">
+              <MappingFragment StoreEntitySet="ProductsDetail">
+                <ScalarProperty Name="ProductDetailID" ColumnName="ProductDetailID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MFG" ColumnName="MFG" />
+                <ScalarProperty Name="EXP" ColumnName="EXP" />
+                <ScalarProperty Name="ProductEntryDate" ColumnName="ProductEntryDate" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
