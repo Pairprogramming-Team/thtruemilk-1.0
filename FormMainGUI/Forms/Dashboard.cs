@@ -13,29 +13,64 @@ namespace FormMainGUI.Forms
 {
     public partial class Dashboard : Form
     {
+        private Form currentChildForm;
+
         public Dashboard()
         {
             InitializeComponent();
         }
 
-        private void chartOrder_Click()
-        {
-//             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-6FD628N\SQLEXPRESS;Initial Catalog=THTrueMilk;Integrated Security=True");
-//             DataSet ds = new DataSet();
-//             con.Open();
-//             SqlDataAdapter adapt = new SqlDataAdapter("Select Name,Price from Products", con);
-//             adapt.Fill(ds);
-//             chartOrder.DataSource = ds;
-
-//             chartOrder.Series["TotalMoney"].XValueMember = "Name";
-//             chartOrder.Series["TotalMoney"].YValueMembers = "Price";
-//             //chartOrder.Titles.Add("Salary Chart");
-//             con.Close();
-        }
-
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            chartOrder_Click();
+            double i = 99999999999, j = 9999, z = 99;
+            labelInputEmployee.Text = z.ToString();
+            labelInputOrder.Text = i.ToString();
+            labelInputProduct.Text = j.ToString();
+            chartTotal_Click();
+        }
+
+        private void btnTotal_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+
+            currentChildForm = childForm;
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChart.Controls.Add(childForm);
+            panelChart.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            //lblTitileChildForm.Text = childForm.Text;
+        }
+
+        private void chartTotal_Click()
+        {
+            chartTotal.Series["TotalMoney"].Points.AddXY("ThienHi", "100000");
+            chartTotal.Series["TotalMoney"].Points.AddXY("Thien", "90000");
+            chartTotal.Series["TotalMoney"].Points.AddXY("Tai9", "10000");
+            chartTotal.Series["TotalMoney"].Points.AddXY("TrungMi", "20000");
+            chartTotal.Series["TotalMoney"].Points.AddXY("TaiChip", "50000");
+            chartTotal.Series["TotalMoney"].Points.AddXY("KhaiMe", "70000");
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            //OpenChildForm(new Chart_Employee());
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            //OpenChildForm(new Chart_Product());
         }
     }
 }
