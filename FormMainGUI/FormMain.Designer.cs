@@ -51,7 +51,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.panelMenu.Controls.Add(this.btnEmployee);
             this.panelMenu.Controls.Add(this.btnOrder);
             this.panelMenu.Controls.Add(this.btnProduct);
@@ -184,14 +184,14 @@
             this.lblLogo.Location = new System.Drawing.Point(35, 57);
             this.lblLogo.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(96, 19);
+            this.lblLogo.Size = new System.Drawing.Size(119, 24);
             this.lblLogo.TabIndex = 0;
             this.lblLogo.Text = "TH True Milk";
             this.lblLogo.Click += new System.EventHandler(this.lblLogo_Click);
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.panelHeader.Controls.Add(this.panel1);
             this.panelHeader.Controls.Add(this.lblTitileChildForm);
             this.panelHeader.Controls.Add(this.iconCurrentChildForm);
@@ -278,7 +278,7 @@
             this.lblTitileChildForm.ForeColor = System.Drawing.Color.White;
             this.lblTitileChildForm.Location = new System.Drawing.Point(61, 39);
             this.lblTitileChildForm.Name = "lblTitileChildForm";
-            this.lblTitileChildForm.Size = new System.Drawing.Size(45, 16);
+            this.lblTitileChildForm.Size = new System.Drawing.Size(45, 17);
             this.lblTitileChildForm.TabIndex = 1;
             this.lblTitileChildForm.Text = "Home";
             // 
@@ -289,7 +289,7 @@
             this.iconCurrentChildForm.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconCurrentChildForm.ForeColor = System.Drawing.Color.White;
             this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconCurrentChildForm.IconColor = System.Drawing.Color.MediumOrchid;
+            this.iconCurrentChildForm.IconColor = System.Drawing.Color.White;
             this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconCurrentChildForm.IconSize = 36;
             this.iconCurrentChildForm.Location = new System.Drawing.Point(19, 34);
@@ -302,7 +302,7 @@
             // 
             // panelContent
             // 
-            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelContent.BackColor = System.Drawing.Color.White;
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(200, 80);
             this.panelContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

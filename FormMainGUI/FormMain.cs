@@ -10,10 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using FormMainGUI.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace FormMainGUI
 {
-    public partial class FormMain : Form
+    public partial class FormMain : MaterialForm
     {
         //Fields
         private IconButton currentBtn;
@@ -22,10 +24,22 @@ namespace FormMainGUI
 
         //Constructor
         public FormMain()
-        {
+        {           
             InitializeComponent();
+
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE
+            );
+
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
+            leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
 
             this.Size = new Size(1200, 800);
@@ -53,7 +67,7 @@ namespace FormMainGUI
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(47, 133, 243);
                 currentBtn.ForeColor = color;
                 currentBtn.IconColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
@@ -77,10 +91,10 @@ namespace FormMainGUI
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
-                currentBtn.ForeColor = Color.Gainsboro;
+                currentBtn.BackColor = Color.FromArgb(33, 150, 243);
+                currentBtn.ForeColor = Color.White;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                currentBtn.IconColor = Color.Gainsboro;
+                currentBtn.IconColor = Color.White;
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
@@ -108,26 +122,26 @@ namespace FormMainGUI
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.color1);
+            ActiveButton(sender, Color.White);
             OpenChildForm(new Dashboard());
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.color2);
+            ActiveButton(sender, Color.White);
             OpenChildForm(new Products());
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.color3);
+            ActiveButton(sender, Color.White);
             OpenChildForm(new fOrders());
 
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.color4);
+            ActiveButton(sender, Color.White);
         }
 
         private void Reset()

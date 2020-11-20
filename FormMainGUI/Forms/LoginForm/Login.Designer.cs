@@ -1,6 +1,6 @@
 ﻿namespace FormMainGUI.Forms.LoginForm
 {
-    partial class fLogin
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -61,7 +61,7 @@
             this.txtUsername.SelectionLength = 0;
             this.txtUsername.SelectionStart = 0;
             this.txtUsername.Size = new System.Drawing.Size(300, 28);
-            this.txtUsername.TabIndex = 2;
+            this.txtUsername.TabIndex = 1;
             this.txtUsername.TabStop = false;
             this.txtUsername.UseSystemPasswordChar = false;
             // 
@@ -84,6 +84,8 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.AutoSize = true;
+            this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Depth = 0;
             this.btnLogin.Icon = null;
@@ -91,7 +93,7 @@
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Primary = true;
-            this.btnLogin.Size = new System.Drawing.Size(150, 40);
+            this.btnLogin.Size = new System.Drawing.Size(72, 36);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -99,6 +101,8 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Depth = 0;
             this.btnCancel.Icon = null;
@@ -106,26 +110,29 @@
             this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Primary = true;
-            this.btnCancel.Size = new System.Drawing.Size(150, 40);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Size = new System.Drawing.Size(87, 36);
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancle_Click);
             // 
-            // fLogin
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 376);
+            this.ClientSize = new System.Drawing.Size(530, 376);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblLogin);
-            this.Name = "fLogin";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -136,5 +143,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPassword;
         private MaterialSkin.Controls.MaterialRaisedButton btnLogin;
         private MaterialSkin.Controls.MaterialRaisedButton btnCancel;
+
     }
 }
