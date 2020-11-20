@@ -36,17 +36,23 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblLogo = new MaterialSkin.Controls.MaterialLabel();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelRight = new System.Windows.Forms.Panel();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnMaximize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.lblTitileChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.displayName = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHeader.SuspendLayout();
+            this.panelRight.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -192,7 +198,7 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.panelHeader.Controls.Add(this.panel1);
+            this.panelHeader.Controls.Add(this.panelRight);
             this.panelHeader.Controls.Add(this.lblTitileChildForm);
             this.panelHeader.Controls.Add(this.iconCurrentChildForm);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -203,17 +209,17 @@
             this.panelHeader.TabIndex = 1;
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             // 
-            // panel1
+            // panelRight
             // 
-            this.panel1.Controls.Add(this.btnMinimize);
-            this.panel1.Controls.Add(this.btnMaximize);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(745, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(92, 80);
-            this.panel1.TabIndex = 2;
+            this.panelRight.Controls.Add(this.label1);
+            this.panelRight.Controls.Add(this.panel1);
+            this.panelRight.Controls.Add(this.panel2);
+            this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelRight.Location = new System.Drawing.Point(607, 0);
+            this.panelRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(230, 80);
+            this.panelRight.TabIndex = 2;
             // 
             // btnMinimize
             // 
@@ -225,7 +231,7 @@
             this.btnMinimize.IconColor = System.Drawing.Color.White;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimize.IconSize = 16;
-            this.btnMinimize.Location = new System.Drawing.Point(3, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(5, 4);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Rotation = 0D;
@@ -244,7 +250,7 @@
             this.btnMaximize.IconColor = System.Drawing.Color.White;
             this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximize.IconSize = 16;
-            this.btnMaximize.Location = new System.Drawing.Point(29, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(31, 4);
             this.btnMaximize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Rotation = 0D;
@@ -263,7 +269,7 @@
             this.btnClose.IconColor = System.Drawing.Color.White;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 16;
-            this.btnClose.Location = new System.Drawing.Point(57, 0);
+            this.btnClose.Location = new System.Drawing.Point(59, 4);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Rotation = 0D;
@@ -311,6 +317,47 @@
             this.panelContent.Size = new System.Drawing.Size(837, 464);
             this.panelContent.TabIndex = 2;
             // 
+            // displayName
+            // 
+            this.displayName.AutoSize = true;
+            this.displayName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.displayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayName.Location = new System.Drawing.Point(0, 0);
+            this.displayName.Name = "displayName";
+            this.displayName.Size = new System.Drawing.Size(46, 17);
+            this.displayName.TabIndex = 8;
+            this.displayName.Text = "label1";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.displayName);
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(106, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(81, 25);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnMaximize);
+            this.panel2.Controls.Add(this.btnMinimize);
+            this.panel2.Controls.Add(this.btnClose);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(144, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(86, 80);
+            this.panel2.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Username:";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -329,7 +376,11 @@
             this.panelLogo.PerformLayout();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
+            this.panelRight.ResumeLayout(false);
+            this.panelRight.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -347,10 +398,14 @@
         private System.Windows.Forms.Panel panelContent;
         private FontAwesome.Sharp.IconButton iconCurrentChildForm;
         private System.Windows.Forms.Label lblTitileChildForm;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelRight;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnMaximize;
         private FontAwesome.Sharp.IconButton btnClose;
+        private System.Windows.Forms.Label displayName;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
