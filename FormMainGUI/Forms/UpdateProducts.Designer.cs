@@ -1,6 +1,6 @@
 ﻿namespace FormMainGUI.Forms
 {
-    partial class FormUpdate
+    partial class UpdateProducts
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DateEntryProduct = new System.Windows.Forms.DateTimePicker();
+            this.EXP = new System.Windows.Forms.DateTimePicker();
+            this.MFG = new System.Windows.Forms.DateTimePicker();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.Quantity = new System.Windows.Forms.NumericUpDown();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,12 +51,13 @@
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnMaximize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Quantity)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
+            this.btnCancel.AutoSize = true;
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.btnCancel.Location = new System.Drawing.Point(449, 511);
@@ -79,73 +80,73 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // dateTimePicker3
+            // DateEntryProduct
             // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.dateTimePicker3.Location = new System.Drawing.Point(175, 457);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(275, 30);
-            this.dateTimePicker3.TabIndex = 65;
+            this.DateEntryProduct.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.DateEntryProduct.Location = new System.Drawing.Point(175, 457);
+            this.DateEntryProduct.Name = "DateEntryProduct";
+            this.DateEntryProduct.Size = new System.Drawing.Size(275, 30);
+            this.DateEntryProduct.TabIndex = 65;
             // 
-            // dateTimePicker2
+            // EXP
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.dateTimePicker2.Location = new System.Drawing.Point(176, 397);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(275, 30);
-            this.dateTimePicker2.TabIndex = 64;
+            this.EXP.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.EXP.Location = new System.Drawing.Point(176, 397);
+            this.EXP.Name = "EXP";
+            this.EXP.Size = new System.Drawing.Size(275, 30);
+            this.EXP.TabIndex = 64;
             // 
-            // dateTimePicker1
+            // MFG
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(175, 336);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(275, 30);
-            this.dateTimePicker1.TabIndex = 63;
+            this.MFG.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.MFG.Location = new System.Drawing.Point(175, 336);
+            this.MFG.Name = "MFG";
+            this.MFG.Size = new System.Drawing.Size(275, 30);
+            this.MFG.TabIndex = 63;
             // 
-            // comboBox1
+            // cmbStatus
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbStatus.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox1.Location = new System.Drawing.Point(176, 276);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(274, 32);
-            this.comboBox1.TabIndex = 62;
+            this.cmbStatus.Location = new System.Drawing.Point(176, 276);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(274, 32);
+            this.cmbStatus.TabIndex = 62;
             // 
-            // numericUpDown1
+            // Quantity
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.numericUpDown1.Location = new System.Drawing.Point(176, 163);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(275, 30);
-            this.numericUpDown1.TabIndex = 61;
+            this.Quantity.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.Quantity.Location = new System.Drawing.Point(176, 163);
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Size = new System.Drawing.Size(275, 30);
+            this.Quantity.TabIndex = 61;
             // 
-            // textBox3
+            // txtPrice
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.textBox3.Location = new System.Drawing.Point(176, 219);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(275, 30);
-            this.textBox3.TabIndex = 60;
+            this.txtPrice.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtPrice.Location = new System.Drawing.Point(176, 219);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(275, 30);
+            this.txtPrice.TabIndex = 60;
             // 
-            // textBox2
+            // txtName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.textBox2.Location = new System.Drawing.Point(176, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(275, 30);
-            this.textBox2.TabIndex = 59;
+            this.txtName.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtName.Location = new System.Drawing.Point(176, 110);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(275, 30);
+            this.txtName.TabIndex = 59;
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.textBox1.Location = new System.Drawing.Point(176, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(274, 30);
-            this.textBox1.TabIndex = 58;
+            this.txtID.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.txtID.Location = new System.Drawing.Point(176, 59);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(274, 30);
+            this.txtID.TabIndex = 58;
             // 
             // label9
             // 
@@ -317,7 +318,7 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // FormUpdate
+            // UpdateProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -326,14 +327,14 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DateEntryProduct);
+            this.Controls.Add(this.EXP);
+            this.Controls.Add(this.MFG);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.Quantity);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -344,9 +345,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Name = "FormUpdate";
+            this.Name = "UpdateProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Quantity)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -357,14 +358,14 @@
 
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        protected System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker DateEntryProduct;
+        private System.Windows.Forms.DateTimePicker EXP;
+        private System.Windows.Forms.DateTimePicker MFG;
+        protected System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.NumericUpDown Quantity;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FormMainGUI.Forms
 {
-    public partial class FormAdd : Form
+    public partial class AddProducts : Form
     {
-        public FormAdd()
+        public AddProducts()
         {
             InitializeComponent();
         }
@@ -25,6 +25,7 @@ namespace FormMainGUI.Forms
         private void btnSave_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+           
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

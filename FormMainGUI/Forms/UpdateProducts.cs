@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FormMainGUI.Forms
 {
-    public partial class FormUpdate : Form
+    public partial class UpdateProducts : Form
     {
-        public FormUpdate()
+        public UpdateProducts()
         {
             InitializeComponent();
         }

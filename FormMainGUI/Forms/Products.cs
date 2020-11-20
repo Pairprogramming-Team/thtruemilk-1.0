@@ -19,14 +19,16 @@ namespace FormMainGUI.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FormAdd add = new FormAdd();
+            AddProducts add = new AddProducts();
             add.ShowDialog();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FormUpdate update = new FormUpdate();
+            UpdateProducts update = new UpdateProducts();
             update.ShowDialog();
         }
+
+    
     }
 }
