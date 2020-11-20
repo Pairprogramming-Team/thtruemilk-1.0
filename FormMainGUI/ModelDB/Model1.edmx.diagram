@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5a979ee12c3c49aabdd0007b5bcbb1ec" Name="Diagram1">
+        <EntityTypeShape EntityType="THTrueMilkModel.Account" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="THTrueMilkModel.Employee" Width="1.5" PointX="1.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="THTrueMilkModel.Order" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="THTrueMilkModel.OrdersDetail" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="THTrueMilkModel.Product" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="THTrueMilkModel.ProductsDetail" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="THTrueMilkModel.FK__Accounts__Employ__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="THTrueMilkModel.FK__Orders__Employee__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="THTrueMilkModel.FK__OrdersDet__Order__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="THTrueMilkModel.FK__OrdersDet__Produ__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="THTrueMilkModel.FK__ProductsD__Produ__286302EC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

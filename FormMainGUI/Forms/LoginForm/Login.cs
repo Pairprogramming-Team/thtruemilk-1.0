@@ -1,12 +1,18 @@
-﻿using MaterialSkin;
+﻿using FormMainGUI.ModelDB;
+using FormMainGUI.Utils;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace FormMainGUI.Forms.LoginForm
 {
     public partial class Login : MaterialForm
     {
+        private FormMain formMain;
         public Login()
         {         
             InitializeComponent();
@@ -21,6 +27,7 @@ namespace FormMainGUI.Forms.LoginForm
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE
             );
+
             btnLogin.AutoSize = false;
             btnCancel.AutoSize = false;
 
@@ -29,7 +36,6 @@ namespace FormMainGUI.Forms.LoginForm
 
             btnLogin.Size = new System.Drawing.Size(100, 36);
             btnCancel.Size = new System.Drawing.Size(100, 36);
-
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -51,9 +57,24 @@ namespace FormMainGUI.Forms.LoginForm
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FormMain formMain = new FormMain();
-            this.Hide();
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            var account = DataProvider.Ins.DB.Accounts.Where(p => p.UserName.Equals(username) && p.PassWord.Equals(password));
+            
+            if (account.Count() > 0)
+            {
+                formMain = new FormMain(account.First());
+                this.Hide();
             formMain.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password!", "Login failed");
+            }
+
         }
+
     }
 }
