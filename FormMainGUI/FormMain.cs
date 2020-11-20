@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using FormMainGUI.Forms;
+using FormMainGUI.ModelDB;
+using FormMainGUI.Utils;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -21,9 +23,10 @@ namespace FormMainGUI
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        private Account account;
 
         //Constructor
-        public FormMain()
+        public FormMain(Account account)
         {           
             InitializeComponent();
 
@@ -38,6 +41,8 @@ namespace FormMainGUI
                 TextShade.WHITE
             );
 
+            this.account = account;
+
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
@@ -48,6 +53,8 @@ namespace FormMainGUI
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            displayName.Text = account.UserName;
         }
 
         private struct RGBColors
@@ -192,5 +199,6 @@ namespace FormMainGUI
         {
             WindowState = FormWindowState.Minimized;
         }
+
     }
 }
