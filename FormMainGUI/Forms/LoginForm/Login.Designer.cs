@@ -53,7 +53,7 @@
             this.txtUsername.Depth = 0;
             this.txtUsername.Hint = "";
             this.txtUsername.Location = new System.Drawing.Point(112, 156);
-            this.txtUsername.MaxLength = 32767;
+            //this.txtUsername.MaxLength = 32767;
             this.txtUsername.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
@@ -70,7 +70,7 @@
             this.txtPassword.Depth = 0;
             this.txtPassword.Hint = "";
             this.txtPassword.Location = new System.Drawing.Point(112, 209);
-            this.txtPassword.MaxLength = 32767;
+            //this.txtPassword.MaxLength = 32767;
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
@@ -88,7 +88,7 @@
             this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Depth = 0;
-            this.btnLogin.Icon = null;
+            //this.btnLogin.Icon = null;
             this.btnLogin.Location = new System.Drawing.Point(112, 270);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
@@ -105,7 +105,7 @@
             this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Depth = 0;
-            this.btnCancel.Icon = null;
+            //this.btnCancel.Icon = null;
             this.btnCancel.Location = new System.Drawing.Point(267, 270);
             this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancel.Name = "btnCancel";
