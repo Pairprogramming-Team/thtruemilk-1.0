@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using FormMainGUI.Forms;
+using FormMainGUI.Forms.EmployeeForm;
 using FormMainGUI.ModelDB;
 using FormMainGUI.Utils;
 using MaterialSkin;
@@ -149,6 +150,7 @@ namespace FormMainGUI
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, Color.White);
+            OpenChildForm(new Employees());
         }
 
         private void Reset()

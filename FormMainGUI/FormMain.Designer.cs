@@ -37,16 +37,16 @@
             this.lblLogo = new MaterialSkin.Controls.MaterialLabel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
-            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.displayName = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnMaximize = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.lblTitileChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.displayName = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -221,24 +221,46 @@
             this.panelRight.Size = new System.Drawing.Size(230, 80);
             this.panelRight.TabIndex = 2;
             // 
-            // btnMinimize
+            // label1
             // 
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimize.IconColor = System.Drawing.Color.White;
-            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimize.IconSize = 16;
-            this.btnMinimize.Location = new System.Drawing.Point(5, 4);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Rotation = 0D;
-            this.btnMinimize.Size = new System.Drawing.Size(27, 26);
-            this.btnMinimize.TabIndex = 7;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Username:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.displayName);
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(106, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(81, 25);
+            this.panel1.TabIndex = 8;
+            // 
+            // displayName
+            // 
+            this.displayName.AutoSize = true;
+            this.displayName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.displayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayName.Location = new System.Drawing.Point(0, 0);
+            this.displayName.Name = "displayName";
+            this.displayName.Size = new System.Drawing.Size(46, 17);
+            this.displayName.TabIndex = 8;
+            this.displayName.Text = "label1";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnMaximize);
+            this.panel2.Controls.Add(this.btnMinimize);
+            this.panel2.Controls.Add(this.btnClose);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(144, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(86, 80);
+            this.panel2.TabIndex = 3;
             // 
             // btnMaximize
             // 
@@ -258,6 +280,25 @@
             this.btnMaximize.TabIndex = 6;
             this.btnMaximize.UseVisualStyleBackColor = true;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.White;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 16;
+            this.btnMinimize.Location = new System.Drawing.Point(5, 4);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Rotation = 0D;
+            this.btnMinimize.Size = new System.Drawing.Size(27, 26);
+            this.btnMinimize.TabIndex = 7;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnClose
             // 
@@ -316,47 +357,6 @@
             this.panelContent.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.panelContent.Size = new System.Drawing.Size(837, 464);
             this.panelContent.TabIndex = 2;
-            // 
-            // displayName
-            // 
-            this.displayName.AutoSize = true;
-            this.displayName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.displayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayName.Location = new System.Drawing.Point(0, 0);
-            this.displayName.Name = "displayName";
-            this.displayName.Size = new System.Drawing.Size(46, 17);
-            this.displayName.TabIndex = 8;
-            this.displayName.Text = "label1";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.displayName);
-            this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(106, 41);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(81, 25);
-            this.panel1.TabIndex = 8;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnMaximize);
-            this.panel2.Controls.Add(this.btnMinimize);
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(144, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(86, 80);
-            this.panel2.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Username:";
             // 
             // FormMain
             // 

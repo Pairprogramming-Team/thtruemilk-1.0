@@ -74,6 +74,24 @@
     <Compile Include="Forms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForm\addEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\addEmployee.Designer.cs">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\updateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\updateEmployee.Designer.cs">
+      <DependentUpon>updateEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +186,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm\addEmployee.resx">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm\Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm\updateEmployee.resx">
+      <DependentUpon>updateEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
