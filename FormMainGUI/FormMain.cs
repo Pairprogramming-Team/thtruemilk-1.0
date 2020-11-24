@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using FormMainGUI.Forms;
+using FormMainGUI.Forms.EmployeeForm;
 using FormMainGUI.ModelDB;
 using FormMainGUI.Utils;
 using MaterialSkin;
@@ -47,7 +48,7 @@ namespace FormMainGUI
             leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
 
-            this.Size = new Size(1200, 800);
+            this.Size = new Size(1300, 800);
 
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -149,6 +150,7 @@ namespace FormMainGUI
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, Color.White);
+            OpenChildForm(new Employees());
         }
 
         private void Reset()

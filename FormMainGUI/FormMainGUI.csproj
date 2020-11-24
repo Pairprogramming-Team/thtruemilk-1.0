@@ -74,22 +74,40 @@
     <Compile Include="Forms\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForm\addEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\addEmployee.Designer.cs">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\updateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm\updateEmployee.Designer.cs">
+      <DependentUpon>updateEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LoginForm\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAdd.cs">
+    <Compile Include="Forms\Product\FormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAdd.Designer.cs">
+    <Compile Include="Forms\Product\FormAdd.Designer.cs">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormUpdate.cs">
+    <Compile Include="Forms\Product\FormUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormUpdate.Designer.cs">
+    <Compile Include="Forms\Product\FormUpdate.Designer.cs">
       <DependentUpon>FormUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\OrderForm\Orders.cs">
@@ -98,10 +116,10 @@
     <Compile Include="Forms\OrderForm\Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Products.cs">
+    <Compile Include="Forms\Product\Products.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Products.Designer.cs">
+    <Compile Include="Forms\Product\Products.Designer.cs">
       <DependentUpon>Products.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelDB\Account.cs">
@@ -169,19 +187,28 @@
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm\addEmployee.resx">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm\Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm\updateEmployee.resx">
+      <DependentUpon>updateEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAdd.resx">
+    <EmbeddedResource Include="Forms\Product\FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormUpdate.resx">
+    <EmbeddedResource Include="Forms\Product\FormUpdate.resx">
       <DependentUpon>FormUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Products.resx">
+    <EmbeddedResource Include="Forms\Product\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
