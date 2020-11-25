@@ -16,6 +16,8 @@ namespace FormMainGUI.Forms.AccountForm
     public partial class Account : Form
     {
         private fAddAccount addAccountForm;
+        private List<String> roleList;
+        private List<String> employeeList;
         public Account()
         {
             InitializeComponent();
@@ -30,7 +32,6 @@ namespace FormMainGUI.Forms.AccountForm
             //    Primary.Blue500, Accent.LightBlue200,
             //    TextShade.WHITE
             //);
-            addAccountForm = new fAddAccount();
 
             btnDelete.AutoSize = false;
             btnUpdate.AutoSize = false;
@@ -43,12 +44,14 @@ namespace FormMainGUI.Forms.AccountForm
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            addAccountForm = new fAddAccount(employeeList, roleList);
             addAccountForm.Text = "ADD ACCOUNT";
             addAccountForm.ShowDialog();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            addAccountForm = new fAddAccount(employeeList, roleList);
             addAccountForm.Text = "UPDATE ACCOUNT";
             addAccountForm.ShowDialog();
         }
@@ -57,6 +60,8 @@ namespace FormMainGUI.Forms.AccountForm
         {
             using(var db = DataProvider.Ins.DB)
             {
+                roleList = db.Accounts.GroupBy(a => a.Role).Select(x => x.Key).ToList();
+                employeeList = db.Employees.GroupBy(em => em.Name).Select(x => x.Key).ToList();
                 var data = db.Accounts.Join(
                     db.Employees,
                     account => account.EmployeeID,
@@ -69,7 +74,6 @@ namespace FormMainGUI.Forms.AccountForm
                         Password = account.PassWord,
                         Role = account.Role,
                     }).ToList();
-
                 dgvAccount.DataSource = data;
 
             }

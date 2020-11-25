@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using FormMainGUI.Utils;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,9 @@ namespace FormMainGUI.Forms.AccountForm
 {
     public partial class fAddAccount : MaterialForm
     {
-        public fAddAccount()
+        private List<String> roleList;
+        private List<String> employeeList;
+        public fAddAccount(List<String> employeeList, List<String> roleList)
         {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -25,6 +28,8 @@ namespace FormMainGUI.Forms.AccountForm
 
             btnCancel.Size = new System.Drawing.Size(100, 36);
             btnAdd.Size = new System.Drawing.Size(100, 36);
+            this.employeeList = employeeList;
+            this.roleList = roleList;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -47,9 +52,8 @@ namespace FormMainGUI.Forms.AccountForm
 
         private void fAddAccount_Load(object sender, EventArgs e)
         {
-            string[] values = { "value1", "value2" };
-
-            cbxDisplayName.DataSource = values;
+            cbxDisplayName.DataSource = employeeList;
+            cbxRole.DataSource = roleList;
         }
     }
 }
