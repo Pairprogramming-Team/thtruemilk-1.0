@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using FormMainGUI.Utils;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace FormMainGUI.Forms.AccountForm
 {
     public partial class Account : Form
     {
+        private fAddAccount addAccountForm;
         public Account()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace FormMainGUI.Forms.AccountForm
             //    Primary.Blue500, Accent.LightBlue200,
             //    TextShade.WHITE
             //);
+            addAccountForm = new fAddAccount();
 
             btnDelete.AutoSize = false;
             btnUpdate.AutoSize = false;
@@ -36,6 +39,40 @@ namespace FormMainGUI.Forms.AccountForm
             btnDelete.Size = new System.Drawing.Size(100, 36);
             btnUpdate.Size = new System.Drawing.Size(100, 36);
             btnAdd.Size = new System.Drawing.Size(100, 36);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            addAccountForm.Text = "ADD ACCOUNT";
+            addAccountForm.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            addAccountForm.Text = "UPDATE ACCOUNT";
+            addAccountForm.ShowDialog();
+        }
+
+        private void Account_Load(object sender, EventArgs e)
+        {
+            using(var db = DataProvider.Ins.DB)
+            {
+                var data = db.Accounts.Join(
+                    db.Employees,
+                    account => account.EmployeeID,
+                    employee => employee.EmployeeID,
+                    (account, employee) => new
+                    {
+                        EmployeeId = employee.EmployeeID,
+                        DisplayName = employee.Name,
+                        Username = account.UserName,
+                        Password = account.PassWord,
+                        Role = account.Role,
+                    }).ToList();
+
+                dgvAccount.DataSource = data;
+
+            }
         }
     }
 }
