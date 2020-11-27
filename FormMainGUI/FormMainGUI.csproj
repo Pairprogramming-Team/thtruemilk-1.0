@@ -112,6 +112,12 @@
     <Compile Include="Forms\LoginForm\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OrderForm\AddToCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderForm\AddToCart.Designer.cs">
+      <DependentUpon>AddToCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Product\FormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderForm\AddToCart.resx">
+      <DependentUpon>AddToCart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>
