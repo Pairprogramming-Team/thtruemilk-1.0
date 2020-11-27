@@ -19,7 +19,6 @@ namespace FormMainGUI.ModelDB
         public string Role { get; set; }
         public string EmployeeID { get; set; }
 
-        public string DisplayName { get; set; }
 
         public virtual Employee Employee { get; set; }
 
@@ -28,13 +27,12 @@ namespace FormMainGUI.ModelDB
 
         }
 
-        public Account(string username, string password, string role, string emId, string displayName)
+        public Account(string username, string password, string role, string emId)
         {
             this.UserName = username;
             this.PassWord = password;
             this.Role = role;
             this.EmployeeID = emId;
-            this.DisplayName = displayName;
         }
     }
 }

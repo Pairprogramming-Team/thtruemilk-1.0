@@ -1,4 +1,5 @@
-﻿using FormMainGUI.Utils;
+﻿using FormMainGUI.DAO;
+using FormMainGUI.Utils;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FormMainGUI.ModelDB;
 
 namespace FormMainGUI.Forms.AccountForm
 {
@@ -39,7 +41,14 @@ namespace FormMainGUI.Forms.AccountForm
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            bool isAdd = AccountDAO.Instance.addAccount(new ModelDB.Account("user3","user3","admin","NV05"));
+            if (isAdd)
+            {
+                MessageBox.Show("Add Account Successful!", "");
+            }
+            else{
+                MessageBox.Show("Add Account Fail!", "");
+            }
         }
 
         private void fAddAccount_FormClosing(object sender, FormClosingEventArgs e)

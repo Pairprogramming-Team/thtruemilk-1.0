@@ -73,5 +73,21 @@ namespace FormMainGUI.DAO
             employeeList = db.Employees.GroupBy(em => em.Name).Select(x => x.Key).ToList();
             return employeeList;
         }
+
+        public bool addAccount(Account account)
+        {
+            Console.WriteLine(account.Employee);
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                db.Accounts.Add(account);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
