@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FormMainGUI.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FormMainGUI.Forms
 {
@@ -55,12 +57,35 @@ namespace FormMainGUI.Forms
 
         private void chartTotal_Click()
         {
-            chartTotal.Series["TotalMoney"].Points.AddXY("ThienHi", "100000");
-            chartTotal.Series["TotalMoney"].Points.AddXY("Thien", "90000");
-            chartTotal.Series["TotalMoney"].Points.AddXY("Tai9", "10000");
-            chartTotal.Series["TotalMoney"].Points.AddXY("TrungMi", "20000");
-            chartTotal.Series["TotalMoney"].Points.AddXY("TaiChip", "50000");
-            chartTotal.Series["TotalMoney"].Points.AddXY("KhaiMe", "70000");
+            using (var db = DataProvider.Ins.DB)
+            {
+
+                var data = db.Orders.ToList();
+                //var total = from to in db.Orders
+                //            group to by DateTime.Parse(Convert.ToString(to.DateOfOrder));
+                            
+
+                var area = new ChartArea();
+                //var chart = new Chart();
+                chartTotal.ChartAreas.Add(area);
+                var series = new Series();
+                foreach (var item in data)
+                {
+                    var a = DateTime.Parse(Convert.ToString(item.DateOfOrder));
+                    var b = new DateTime(a.Month);
+                    
+                    series.Points.AddXY((a.Month), item.TotalMoney);
+                    //series.XValueMember = "item.DateOfOrder";
+                    //series.YValueMembers = "item.TotalMoney";
+                    //chartTotal.Series["TotalMoney"].XValueMember = "item.DateOfOrder";
+                    //chartTotal.Series["TotalMoney"].YValueMembers = "item.TotalMoney";
+                }
+                series.ChartType = SeriesChartType.Column;
+                series.Label = "#PERCENT{P0}";
+                series.Font = new Font("Arial", 8.0f, FontStyle.Bold);
+                series["PieLabelStyle"] = "Outside";
+                chartTotal.Series.Add(series);
+            }
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)

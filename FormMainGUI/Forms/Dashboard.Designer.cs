@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnEmployee = new System.Windows.Forms.Button();
@@ -60,8 +59,8 @@
             this.labelInputOrder = new System.Windows.Forms.Label();
             this.labelOrder = new System.Windows.Forms.Label();
             this.pictureBoxOrder = new System.Windows.Forms.PictureBox();
-            this.panelChart = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panelChart = new System.Windows.Forms.Panel();
             this.chartTotal = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelLeft.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -245,7 +244,7 @@
             // 
             // pictureBoxEmployee
             // 
-            this.pictureBoxEmployee.Image = global::FormMainGUI.Properties.Resources.employee;
+            this.pictureBoxEmployee.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEmployee.Image")));
             this.pictureBoxEmployee.Location = new System.Drawing.Point(13, 12);
             this.pictureBoxEmployee.Name = "pictureBoxEmployee";
             this.pictureBoxEmployee.Size = new System.Drawing.Size(90, 90);
@@ -305,7 +304,7 @@
             // 
             // pictureBoxProduct
             // 
-            this.pictureBoxProduct.Image = global::FormMainGUI.Properties.Resources.milk_box_1;
+            this.pictureBoxProduct.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxProduct.Image")));
             this.pictureBoxProduct.Location = new System.Drawing.Point(12, 12);
             this.pictureBoxProduct.Name = "pictureBoxProduct";
             this.pictureBoxProduct.Size = new System.Drawing.Size(93, 90);
@@ -366,24 +365,13 @@
             // 
             // pictureBoxOrder
             // 
-            this.pictureBoxOrder.Image = global::FormMainGUI.Properties.Resources.money_1;
+            this.pictureBoxOrder.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxOrder.Image")));
             this.pictureBoxOrder.Location = new System.Drawing.Point(13, 12);
             this.pictureBoxOrder.Name = "pictureBoxOrder";
             this.pictureBoxOrder.Size = new System.Drawing.Size(88, 90);
             this.pictureBoxOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxOrder.TabIndex = 2;
             this.pictureBoxOrder.TabStop = false;
-            // 
-            // panelChart
-            // 
-            this.panelChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panelChart.Controls.Add(this.panel7);
-            this.panelChart.Controls.Add(this.chartTotal);
-            this.panelChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChart.Location = new System.Drawing.Point(315, 224);
-            this.panelChart.Name = "panelChart";
-            this.panelChart.Size = new System.Drawing.Size(1164, 573);
-            this.panelChart.TabIndex = 3;
             // 
             // panel7
             // 
@@ -393,27 +381,30 @@
             this.panel7.Size = new System.Drawing.Size(1164, 14);
             this.panel7.TabIndex = 1;
             // 
+            // panelChart
+            // 
+            this.panelChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelChart.Controls.Add(this.chartTotal);
+            this.panelChart.Controls.Add(this.panel7);
+            this.panelChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChart.Location = new System.Drawing.Point(315, 224);
+            this.panelChart.Name = "panelChart";
+            this.panelChart.Size = new System.Drawing.Size(1164, 573);
+            this.panelChart.TabIndex = 3;
+            // 
             // chartTotal
             // 
-            this.chartTotal.BackColor = System.Drawing.SystemColors.Control;
-            chartArea2.Name = "ChartArea1";
-            this.chartTotal.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartTotal.ChartAreas.Add(chartArea1);
             this.chartTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartTotal.Legends.Add(legend2);
-            this.chartTotal.Location = new System.Drawing.Point(0, 0);
+            legend1.Name = "Legend1";
+            this.chartTotal.Legends.Add(legend1);
+            this.chartTotal.Location = new System.Drawing.Point(0, 14);
             this.chartTotal.Name = "chartTotal";
-            this.chartTotal.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "TotalMoney";
-            this.chartTotal.Series.Add(series2);
-            this.chartTotal.Size = new System.Drawing.Size(1164, 573);
-            this.chartTotal.TabIndex = 0;
-            this.chartTotal.Text = "TotalMoney";
-            title2.Name = "TotalMoney";
-            title2.Text = "Total Money";
-            this.chartTotal.Titles.Add(title2);
+            this.chartTotal.Size = new System.Drawing.Size(1164, 559);
+            this.chartTotal.TabIndex = 2;
+            title1.Name = "TotalMoney";
+            this.chartTotal.Titles.Add(title1);
             // 
             // Dashboard
             // 
@@ -462,8 +453,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelEmployee;
         private System.Windows.Forms.Panel panelProduct;
-        private System.Windows.Forms.Panel panelChart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartTotal;
         private System.Windows.Forms.Label labelEmployee;
         private System.Windows.Forms.PictureBox pictureBoxEmployee;
         private System.Windows.Forms.Label labelProduct;
@@ -472,7 +461,6 @@
         private System.Windows.Forms.Label labelInputEmployee;
         private System.Windows.Forms.Label labelText;
         private System.Windows.Forms.Label labelInputProduct;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;
@@ -481,5 +469,8 @@
         private System.Windows.Forms.Label labelInputOrder;
         private System.Windows.Forms.Label labelOrder;
         private System.Windows.Forms.PictureBox pictureBoxOrder;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panelChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartTotal;
     }
 }
