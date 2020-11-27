@@ -76,7 +76,6 @@ namespace FormMainGUI.DAO
 
         public bool addAccount(Account account)
         {
-            Console.WriteLine(account.Employee);
             var db = DataProvider.Ins.DB;
             try
             {
@@ -88,6 +87,21 @@ namespace FormMainGUI.DAO
             {
                 return false;
             }
+        }
+
+        public string getEmployeeIdByName(string name)
+        {
+            string empid = "";
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                empid = db.Employees.Where(em => name.Equals(em.Name)).Select(x => x.EmployeeID).FirstOrDefault();
+            }
+            catch
+            {
+                return "";
+            }
+            return empid;
         }
     }
 }

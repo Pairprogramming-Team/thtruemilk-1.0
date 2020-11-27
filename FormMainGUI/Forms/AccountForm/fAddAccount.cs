@@ -1,17 +1,9 @@
 ﻿using FormMainGUI.DAO;
-using FormMainGUI.Utils;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FormMainGUI.ModelDB;
 
 namespace FormMainGUI.Forms.AccountForm
 {
@@ -41,22 +33,29 @@ namespace FormMainGUI.Forms.AccountForm
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            bool isAdd = AccountDAO.Instance.addAccount(new ModelDB.Account("user3","user3","admin","NV05"));
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            string role = cbxRole.SelectedItem.ToString();
+            string empid = AccountDAO.Instance.getEmployeeIdByName(cbxDisplayName.SelectedItem.ToString());
+            ModelDB.Account account = new ModelDB.Account(username, password, role, empid);
+            bool isAdd = AccountDAO.Instance.addAccount(account);
             if (isAdd)
             {
                 MessageBox.Show("Add Account Successful!", "");
+                this.Close();
             }
-            else{
+            else
+            {
                 MessageBox.Show("Add Account Fail!", "");
             }
         }
 
         private void fAddAccount_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Do you want to exit?", "Notification", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
+            //if (MessageBox.Show("Do you want to exit?", "Notification", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            //{
+            //    e.Cancel = true;
+            //}
         }
 
         private void fAddAccount_Load(object sender, EventArgs e)
