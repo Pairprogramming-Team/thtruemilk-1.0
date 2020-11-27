@@ -1,4 +1,5 @@
-﻿using FormMainGUI.ModelDB;
+﻿using FormMainGUI.DAO;
+using FormMainGUI.ModelDB;
 using FormMainGUI.Utils;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -60,20 +61,24 @@ namespace FormMainGUI.Forms.LoginForm
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            var account = DataProvider.Ins.DB.Accounts.Where(p => p.UserName.Equals(username) && p.PassWord.Equals(password));
-            
-            if (account.Count() > 0)
-            {
-                formMain = new FormMain(account.First());
-                this.Hide();
-            formMain.ShowDialog();
+            Account account = isLogin(username, password);
 
+            if (account != null)
+            {
+                formMain = new FormMain(account);
+                this.Hide();
+                formMain.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Invalid username or password!", "Login failed");
             }
 
+        }
+
+        Account isLogin(string username, string password)
+        {
+            return AccountDAO.Instance.isLogin(username, password);
         }
 
     }
