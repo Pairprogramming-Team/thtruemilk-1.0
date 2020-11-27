@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using FormMainGUI.Forms;
+using FormMainGUI.Forms.AccountForm;
+using FormMainGUI.Forms.EmployeeForm;
 using FormMainGUI.ModelDB;
 using FormMainGUI.Utils;
 using MaterialSkin;
@@ -23,10 +25,10 @@ namespace FormMainGUI
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        private Account account;
+        private ModelDB.Account account;
 
         //Constructor
-        public FormMain(Account account)
+        public FormMain(ModelDB.Account account)
         {           
             InitializeComponent();
 
@@ -55,6 +57,12 @@ namespace FormMainGUI
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             displayName.Text = account.UserName;
+
+            if (!account.Role.Equals("admin"))
+            {
+                btnAccount.Visible = false;
+            }
+
         }
 
         private struct RGBColors
@@ -149,6 +157,13 @@ namespace FormMainGUI
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, Color.White);
+            OpenChildForm(new Employees());
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, Color.White);
+            OpenChildForm(new Forms.AccountForm.Account());
         }
 
         private void Reset()
@@ -200,5 +215,6 @@ namespace FormMainGUI
             WindowState = FormWindowState.Minimized;
         }
 
+       
     }
 }
