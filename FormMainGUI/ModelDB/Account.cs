@@ -18,7 +18,23 @@ namespace FormMainGUI.ModelDB
         public string PassWord { get; set; }
         public string Role { get; set; }
         public string EmployeeID { get; set; }
-    
+
+        public string DisplayName { get; set; }
+
         public virtual Employee Employee { get; set; }
+
+        public Account()
+        {
+
+        }
+
+        public Account(string username, string password, string role, string emId, string displayName)
+        {
+            this.UserName = username;
+            this.PassWord = password;
+            this.Role = role;
+            this.EmployeeID = emId;
+            this.DisplayName = displayName;
+        }
     }
 }

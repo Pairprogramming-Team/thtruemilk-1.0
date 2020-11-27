@@ -1,14 +1,6 @@
-﻿using FormMainGUI.Utils;
-using MaterialSkin;
-using MaterialSkin.Controls;
+﻿using FormMainGUI.DAO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FormMainGUI.Forms.AccountForm
@@ -58,25 +50,10 @@ namespace FormMainGUI.Forms.AccountForm
 
         private void Account_Load(object sender, EventArgs e)
         {
-            using(var db = DataProvider.Ins.DB)
-            {
-                roleList = db.Accounts.GroupBy(a => a.Role).Select(x => x.Key).ToList();
-                employeeList = db.Employees.GroupBy(em => em.Name).Select(x => x.Key).ToList();
-                var data = db.Accounts.Join(
-                    db.Employees,
-                    account => account.EmployeeID,
-                    employee => employee.EmployeeID,
-                    (account, employee) => new
-                    {
-                        EmployeeId = employee.EmployeeID,
-                        DisplayName = employee.Name,
-                        Username = account.UserName,
-                        Password = account.PassWord,
-                        Role = account.Role,
-                    }).ToList();
-                dgvAccount.DataSource = data;
+            employeeList = AccountDAO.Instance.getEmployeeList();
+            roleList = AccountDAO.Instance.getRoleList();
+            dgvAccount.DataSource = AccountDAO.Instance.loadListAccount();
 
-            }
         }
     }
 }
