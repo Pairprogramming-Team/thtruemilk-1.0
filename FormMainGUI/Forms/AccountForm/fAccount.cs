@@ -42,6 +42,7 @@ namespace FormMainGUI.Forms.AccountForm
             addAccountForm = new fAddAccount(employeeList, roleList);
             addAccountForm.Text = "ADD ACCOUNT";
             addAccountForm.ShowDialog();
+            dgvAccount.DataSource = AccountDAO.Instance.loadListAccount();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -56,7 +57,7 @@ namespace FormMainGUI.Forms.AccountForm
             employeeList = AccountDAO.Instance.getEmployeeList();
             roleList = AccountDAO.Instance.getRoleList();
             dgvAccount.DataSource = AccountDAO.Instance.loadListAccount();
-
+            Console.WriteLine("form account loading...");
         }
 
         private void dgvAccount_SelectionChanged(object sender, EventArgs e)
