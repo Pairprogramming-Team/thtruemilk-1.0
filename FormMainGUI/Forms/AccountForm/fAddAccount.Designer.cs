@@ -58,6 +58,7 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Depth = 0;
             this.btnCancel.Icon = null;
             this.btnCancel.Location = new System.Drawing.Point(296, 17);
@@ -74,6 +75,7 @@
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
             this.btnAdd.Location = new System.Drawing.Point(144, 17);

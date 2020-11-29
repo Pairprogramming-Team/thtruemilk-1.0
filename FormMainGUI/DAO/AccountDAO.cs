@@ -76,7 +76,6 @@ namespace FormMainGUI.DAO
 
         public bool addAccount(Account account)
         {
-            Console.WriteLine(account.Employee);
             var db = DataProvider.Ins.DB;
             try
             {
@@ -88,6 +87,54 @@ namespace FormMainGUI.DAO
             {
                 return false;
             }
+        }
+
+        public bool updateAccount(Account account)
+        {
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                Account acc = db.Accounts.Where(x => x.UserName == account.UserName).Select(x => x).FirstOrDefault();
+                acc.PassWord = account.PassWord;
+                acc.Role = account.Role;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool removeAccount(string username)
+        {
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                Account account = db.Accounts.Where(x => x.UserName == username).FirstOrDefault();
+                db.Accounts.Remove(account);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public string getEmployeeIdByName(string name)
+        {
+            string empid = "";
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                empid = db.Employees.Where(em => name.Equals(em.Name)).Select(x => x.EmployeeID).FirstOrDefault();
+            }
+            catch
+            {
+                return "";
+            }
+            return empid;
         }
     }
 }
