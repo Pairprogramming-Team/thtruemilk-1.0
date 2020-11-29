@@ -73,15 +73,19 @@
             this.dgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAccount.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccount.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAccount.Location = new System.Drawing.Point(10, 30);
+            this.dgvAccount.MultiSelect = false;
             this.dgvAccount.Name = "dgvAccount";
             this.dgvAccount.RowHeadersWidth = 51;
             this.dgvAccount.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvAccount.RowTemplate.Height = 24;
             this.dgvAccount.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccount.Size = new System.Drawing.Size(780, 528);
             this.dgvAccount.TabIndex = 0;
+            this.dgvAccount.SelectionChanged += new System.EventHandler(this.dgvAccount_SelectionChanged);
             // 
             // panelAction
             // 
@@ -107,6 +111,7 @@
             // 
             this.btnDelete.AutoSize = true;
             this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Depth = 0;
             this.btnDelete.Icon = null;
             this.btnDelete.Location = new System.Drawing.Point(398, 12);
@@ -122,6 +127,7 @@
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
             this.btnAdd.Location = new System.Drawing.Point(24, 12);
@@ -138,6 +144,7 @@
             // 
             this.btnUpdate.AutoSize = true;
             this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Depth = 0;
             this.btnUpdate.Icon = null;
             this.btnUpdate.Location = new System.Drawing.Point(206, 12);
