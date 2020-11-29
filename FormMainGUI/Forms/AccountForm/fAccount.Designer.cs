@@ -118,10 +118,11 @@
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Primary = true;
-            this.btnDelete.Size = new System.Drawing.Size(82, 36);
+            this.btnDelete.Size = new System.Drawing.Size(90, 36);
             this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "DELETE";
+            this.btnDelete.Text = "REMOVE";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -166,7 +167,7 @@
             this.Controls.Add(this.panelAction);
             this.Controls.Add(this.pannelTable);
             this.Name = "Account";
-            this.Text = "fAccount";
+            this.Text = "Account";
             this.Load += new System.EventHandler(this.Account_Load);
             this.pannelTable.ResumeLayout(false);
             this.pannelTable.PerformLayout();

@@ -12,6 +12,7 @@ namespace FormMainGUI.Forms.AccountForm
         private List<String> roleList;
         private List<String> employeeList;
         private AccountInfo accountInfo;
+        private bool isUpdate = false;
 
 
         public fAddAccount(List<String> employeeList, List<String> roleList, AccountInfo accountInfo = null)
@@ -33,6 +34,7 @@ namespace FormMainGUI.Forms.AccountForm
             if (accountInfo != null)
             {
                 btnAdd.Text = "UPDATE";
+                isUpdate = true;
             }
 
         }
@@ -44,21 +46,42 @@ namespace FormMainGUI.Forms.AccountForm
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            bool isSuccess = false;
+
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string role = cbxRole.SelectedItem.ToString();
             string empid = AccountDAO.Instance.getEmployeeIdByName(cbxDisplayName.SelectedItem.ToString());
             ModelDB.Account account = new ModelDB.Account(username, password, role, empid);
-            bool isAdd = AccountDAO.Instance.addAccount(account);
-            if (isAdd)
+
+            if (isUpdate)
             {
-                MessageBox.Show("Add Account Successful!", "");
-                this.Close();
+                isSuccess = AccountDAO.Instance.updateAccount(account);
+                if (isSuccess)
+                {
+                    MessageBox.Show("Update Account Successful!", "");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Update Account Fail!", "");
+                }
             }
             else
             {
-                MessageBox.Show("Add Account Fail!", "");
+                isSuccess = AccountDAO.Instance.addAccount(account);
+                if (isSuccess)
+                {
+                    MessageBox.Show("Add Account Successful!", "");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Add Account Fail!", "");
+                }
             }
+
+
         }
 
         private void fAddAccount_FormClosing(object sender, FormClosingEventArgs e)
@@ -106,6 +129,9 @@ namespace FormMainGUI.Forms.AccountForm
                 txtPassword.Text = accountInfo.Password;
                 cbxDisplayName.SelectedIndex = findIndexByName(accountInfo.DisplayName, 0);
                 cbxRole.SelectedIndex = findIndexByName(accountInfo.Role, 1);
+
+                cbxDisplayName.Enabled = false;
+                txtUsername.Enabled = false;
             }
         }
     }

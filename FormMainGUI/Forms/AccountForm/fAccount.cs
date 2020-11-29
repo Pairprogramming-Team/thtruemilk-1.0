@@ -15,17 +15,6 @@ namespace FormMainGUI.Forms.AccountForm
         {
             InitializeComponent();
 
-            //MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            //materialSkinManager.AddFormToManage(this);
-            //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-
-            //// Configure color schema
-            //materialSkinManager.ColorScheme = new ColorScheme(
-            //    Primary.Blue400, Primary.Blue500,
-            //    Primary.Blue500, Accent.LightBlue200,
-            //    TextShade.WHITE
-            //);
-
             btnDelete.AutoSize = false;
             btnUpdate.AutoSize = false;
             btnAdd.AutoSize = false;
@@ -50,6 +39,7 @@ namespace FormMainGUI.Forms.AccountForm
             addAccountForm = new fAddAccount(employeeList, roleList, accountInfor);
             addAccountForm.Text = "UPDATE ACCOUNT";
             addAccountForm.ShowDialog();
+            dgvAccount.DataSource = AccountDAO.Instance.loadListAccount();
         }
 
         private void Account_Load(object sender, EventArgs e)
@@ -57,7 +47,6 @@ namespace FormMainGUI.Forms.AccountForm
             employeeList = AccountDAO.Instance.getEmployeeList();
             roleList = AccountDAO.Instance.getRoleList();
             dgvAccount.DataSource = AccountDAO.Instance.loadListAccount();
-            Console.WriteLine("form account loading...");
         }
 
         private void dgvAccount_SelectionChanged(object sender, EventArgs e)
@@ -72,6 +61,27 @@ namespace FormMainGUI.Forms.AccountForm
                 accountInfor.Role = selectedRow.Cells["Role"].Value.ToString();
                 accountInfor.EmployeeId = selectedRow.Cells["EmployeeId"].Value.ToString();
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Are you sure remove this account?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                ModelDB.Account account = new ModelDB.Account(accountInfor.Username, accountInfor.Password, accountInfor.Role, accountInfor.EmployeeId);
+                bool isRemoved = AccountDAO.Instance.removeAccount(accountInfor.Username);
+                if (isRemoved == true)
+                {
+                    MessageBox.Show("Remove successful account!", "");
+                    dgvAccount.DataSource = AccountDAO.Instance.loadListAccount();
+                }
+                else
+                {
+                    MessageBox.Show("Can not remove account!", "");
+                }
+            }
+
+
         }
     }
 }
