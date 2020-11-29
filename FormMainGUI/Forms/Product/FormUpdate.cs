@@ -15,30 +15,30 @@ using System.Data.Entity;
 
 namespace FormMainGUI.Forms
 {
-    public partial class Update :MaterialForm
+    public partial class Update : MaterialForm
     {
         private Product product1;
         private ProductsDetail productsDetail1;
-        public Update( Product product,ProductsDetail productsDetail)
-           
+        public Update(Product product, ProductsDetail productsDetail)
+
         {
-            
+
             this.product1 = product;
             this.productsDetail1 = productsDetail;
-                
+
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             btnCancle.AutoSize = false;
             btnSave.AutoSize = false;
-            btnSave.Size= new System.Drawing.Size(100, 36);
-            btnCancle.Size= new System.Drawing.Size(100, 36);
+            btnSave.Size = new System.Drawing.Size(100, 36);
+            btnCancle.Size = new System.Drawing.Size(100, 36);
             txtID.Size = new System.Drawing.Size(205, 28);
             txtName.Size = new System.Drawing.Size(205, 28);
             txtPrice.Size = new System.Drawing.Size(205, 28);
             txtProDetailID.Size = new System.Drawing.Size(205, 28);
         }
-
+       
         private void btnClose_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -93,27 +93,33 @@ namespace FormMainGUI.Forms
             MFG.Value = (DateTime)productsDetail1.MFG;
             EXP.Value = (DateTime)productsDetail1.EXP;
             ProEntryDate.Value = (DateTime)productsDetail1.ProductEntryDate;
+            Console.WriteLine(productsDetail1.Status);
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-           
-            using (var db = DataProvider.Ins.DB)
-            {
+
+            var db = DataProvider.Ins.DB;
                 var r = db.Products.Where(x => x.ProductID == txtID.Text).SingleOrDefault();
                 var d = db.ProductsDetails.Where(y => y.ProductID == txtID.Text).SingleOrDefault();
 
                 r.Name = txtName.Text;
                 r.Quantity = Convert.ToInt32(Quantity.Value);
                 r.Price = Convert.ToInt32(txtPrice.Text);
-                d.Status = Convert.ToString(cmbStatus.SelectedIndex);
+                d.Status = Convert.ToString(cmbStatus.SelectedItem);
                 d.MFG = MFG.Value;
                 d.EXP = EXP.Value;
                 d.ProductEntryDate = ProEntryDate.Value;
 
                 db.SaveChanges();
-            }
+            
+            Products pro = new Products();
+            pro.loadData();
             DialogResult = DialogResult.Cancel;
+            //Products products = new Products();
+            //products.loadData();
+
         }
     }
 }
