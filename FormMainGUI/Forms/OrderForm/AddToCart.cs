@@ -15,11 +15,11 @@ namespace FormMainGUI.Forms.OrderForm
 {
     public partial class fAddToCart : MaterialForm
     {
-        Product pro = new Product();
-        public fAddToCart(Product product)
+        fOrders orders;
+        public fAddToCart(fOrders fOrders)
         {
             InitializeComponent();
-            this.pro = product;
+            this.orders = fOrders;
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
@@ -35,9 +35,9 @@ namespace FormMainGUI.Forms.OrderForm
 
         private void fAddToCart_Load(object sender, EventArgs e)
         {
-            txtIDProduct.Text = pro.ProductID;
-            txtNameProduct.Text = pro.Name;
-            txtPrice.Text = Convert.ToString(pro.Price);
+            txtIDProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[0].Value.ToString();
+            txtNameProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[1].Value.ToString(); ;
+            txtPrice.Text = Convert.ToString(orders.dgvProductInOrder.CurrentRow.Cells[3].Value.ToString());
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -47,7 +47,12 @@ namespace FormMainGUI.Forms.OrderForm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-
+            float totalMoney = 0;
+            float price = float.Parse(txtPrice.Text);
+            int quantity = Convert.ToInt32(numbericQuantity.Value);
+            totalMoney = price * (float)quantity;
+            this.orders.dgvCart.Rows.Add(txtIDProduct.Text, txtNameProduct.Text, numbericQuantity.Value.ToString(), txtPrice.Text, totalMoney);
+            this.Dispose();
         }
     }
 }
