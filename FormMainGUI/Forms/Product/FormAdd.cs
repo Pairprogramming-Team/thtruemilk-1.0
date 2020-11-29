@@ -33,19 +33,6 @@ namespace FormMainGUI.Forms
             txtProDetailID.Size = new System.Drawing.Size(205, 28);
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -78,7 +65,7 @@ namespace FormMainGUI.Forms
            
             try
             {
-                p.ProductID = txtID.Text;
+                 p.ProductID = txtID.Text;
                 p.Name = txtName.Text;
                 p.Quantity = Convert.ToInt32(Quantity.Value);
                 p.Price = Convert.ToInt32(txtPrice.Text);
@@ -87,16 +74,20 @@ namespace FormMainGUI.Forms
                 pDetail.MFG = MFG.Value;
                 pDetail.EXP = EXP.Value;
                 pDetail.ProductEntryDate = ProductEntryDate.Value;
-                Console.WriteLine(p.Name, p.ProductID);
+                pDetail.ProductID = p.ProductID;
+                Console.WriteLine( p.ProductID);
                 using (var db = DataProvider.Ins.DB)
                 {
                     db.Products.Add(p);
+                  
+                    db.SaveChanges();
                     db.ProductsDetails.Add(pDetail);
                     db.SaveChanges();
-                   
                 }
+                //Products pro = new Products();
+                //    pro.loadData()
                 MessageBox.Show("add successfully");
-           
+
             }
             catch (Exception)
             {
