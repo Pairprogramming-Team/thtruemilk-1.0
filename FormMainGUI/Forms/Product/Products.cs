@@ -26,44 +26,13 @@ namespace FormMainGUI.Forms
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             InitializeComponent();
             btnAdd.Size = new System.Drawing.Size(100, 36);
-            btnDelete.Size= new System.Drawing.Size(100, 36);
-            btnUpdate.Size= new System.Drawing.Size(100, 36);
+            btnDelete.Size = new System.Drawing.Size(100, 36);
+            btnUpdate.Size = new System.Drawing.Size(100, 36);
             btnDelete.AutoSize = false;
             btnAdd.AutoSize = false;
             btnUpdate.AutoSize = false;
         }
-
-    
-
-        private void btnAdd1_Click(object sender, EventArgs e)
-        {
-            add add = new add();
-            //add.AutoSize = false;
-            //add.Size = new System.Drawing.Size(600, 603);
-            add.ShowDialog();
-        }
-
-        private void btnDelete1_Click(object sender, EventArgs e)
-        {
-            using (var db = DataProvider.Ins.DB)
-            {
-                var r = db.Products.Where(x => x.ProductID == pro.ProductID).SingleOrDefault();
-                var d = db.ProductsDetails.Where(y => y.ProductDetailID == proDetail.ProductDetailID).SingleOrDefault();
-                db.Products.Remove(r);
-                db.ProductsDetails.Remove(d);
-                db.SaveChanges();
-            }
-            MessageBox.Show("remove");
-        }
-
-        private void btnUpdate1_Click(object sender, EventArgs e)
-        {
-            Update update = new Update(pro,proDetail);
-
-            update.ShowDialog();
-        }
-
-        private void Products_Load(object sender, EventArgs e)
+        public void loadData()
         {
             var db = DataProvider.Ins.DB;
             var result = from c in db.Products
@@ -84,6 +53,49 @@ namespace FormMainGUI.Forms
                          };
             dgvProduct.DataSource = result.ToList();
         }
+        private void btnAdd1_Click(object sender, EventArgs e)
+        {
+            add add = new add();
+            add.ShowDialog();
+        }
+        private void btnDelete1_Click(object sender, EventArgs e)
+        {
+            if (pro.ProductID == "")
+            {
+                MessageBox.Show("You haven't chosen any product. Please choose one product to update.");
+            }
+            else
+            {
+                var db = DataProvider.Ins.DB;
+
+                var r = db.Products.Where(x => x.ProductID == pro.ProductID).SingleOrDefault();
+                var d = db.ProductsDetails.Where(y => y.ProductDetailID == proDetail.ProductDetailID).SingleOrDefault();
+                db.Products.Remove(r);
+                db.ProductsDetails.Remove(d);
+                db.SaveChanges();
+                dgvProduct.Refresh();
+                dgvProduct.Update();
+                loadData();
+                MessageBox.Show(" Remove Succsesfull !");
+            }
+        }
+       
+       
+     
+        private void btnUpdate1_Click(object sender, EventArgs e)
+        {
+            Update update = new Update(pro,proDetail);
+            if (pro.ProductID == "")
+            {
+                MessageBox.Show("You haven't chosen any product. Please choose one product to update.");
+            }
+            else
+            update.ShowDialog();
+        }
+        private void Products_Load(object sender, EventArgs e)
+        {
+            loadData();
+        }
 
         private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -102,5 +114,16 @@ namespace FormMainGUI.Forms
                 proDetail.ProductID= dgvRow.Cells[0].Value.ToString();
             }            
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+           
+                var r = DataProvider.Ins.DB.Products.Where(x => x.Name.Contains(textBox1.Text));
+                dgvProduct.DataSource = r.ToList();
+            
+            
+        }
     }
+    
 }

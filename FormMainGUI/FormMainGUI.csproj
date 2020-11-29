@@ -62,17 +62,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AccountForm\AccountInfo.cs" />
     <Compile Include="Forms\AccountForm\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AccountForm\fAccount.Designer.cs">
       <DependentUpon>fAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AccountForm\fAddAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AccountForm\fAddAccount.Designer.cs">
+      <DependentUpon>fAddAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dashboard.cs">
       <SubType>Form</SubType>
@@ -103,6 +111,12 @@
     </Compile>
     <Compile Include="Forms\LoginForm\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderForm\AddToCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderForm\AddToCart.Designer.cs">
+      <DependentUpon>AddToCart.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Product\FormAdd.cs">
       <SubType>Form</SubType>
@@ -193,6 +207,9 @@
     <EmbeddedResource Include="Forms\AccountForm\fAccount.resx">
       <DependentUpon>fAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AccountForm\fAddAccount.resx">
+      <DependentUpon>fAddAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderForm\AddToCart.resx">
+      <DependentUpon>AddToCart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>

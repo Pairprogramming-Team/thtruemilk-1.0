@@ -186,4 +186,16 @@ INSERT INTO dbo.ProductsDetail ( ProductDetailID , Status , MFG , EXP , ProductE
 VALUES  ( 'CTSP06' ,  1 , '20180909' ,  '20231003' ,  '20181010' ,  'SP05' )
 GO
 
+UPDATE OrdersDetail 
+SET TotalAmount=Quantity* (SELECT PRICE FROM Products 
+WHERE OrdersDetail.ProductID = Products.ProductID)
+
+update Orders
+set TotalMoney=(SELECT SUM(TotalAmount) AS "Tong tien"
+FROM OrdersDetail
+WHERE Orders.OrderID = OrderID)
+
+select sum(TotalMoney) as HD
+from Orders
+group by Month(DateOfOrder)
 ----------------------------------------------------

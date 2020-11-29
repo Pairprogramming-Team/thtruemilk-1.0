@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnAccount = new FontAwesome.Sharp.IconButton();
             this.btnEmployee = new FontAwesome.Sharp.IconButton();
             this.btnOrder = new FontAwesome.Sharp.IconButton();
             this.btnProduct = new FontAwesome.Sharp.IconButton();
@@ -47,7 +48,6 @@
             this.lblTitileChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.btnAccount = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -72,6 +72,30 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 544);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnAccount.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAccount.IconChar = FontAwesome.Sharp.IconChar.UserLock;
+            this.btnAccount.IconColor = System.Drawing.Color.White;
+            this.btnAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAccount.IconSize = 36;
+            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccount.Location = new System.Drawing.Point(0, 380);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Rotation = 0D;
+            this.btnAccount.Size = new System.Drawing.Size(200, 60);
+            this.btnAccount.TabIndex = 5;
+            this.btnAccount.Text = "Accounts";
+            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAccount.UseVisualStyleBackColor = true;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnEmployee
             // 
@@ -192,7 +216,7 @@
             this.lblLogo.Location = new System.Drawing.Point(35, 57);
             this.lblLogo.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(119, 24);
+            this.lblLogo.Size = new System.Drawing.Size(96, 19);
             this.lblLogo.TabIndex = 0;
             this.lblLogo.Text = "TH True Milk";
             this.lblLogo.Click += new System.EventHandler(this.lblLogo_Click);
@@ -229,7 +253,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 9;
             this.label1.Text = "Username:";
             // 
@@ -249,7 +273,7 @@
             this.displayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayName.Location = new System.Drawing.Point(0, 0);
             this.displayName.Name = "displayName";
-            this.displayName.Size = new System.Drawing.Size(46, 17);
+            this.displayName.Size = new System.Drawing.Size(35, 13);
             this.displayName.TabIndex = 8;
             this.displayName.Text = "label1";
             // 
@@ -327,7 +351,7 @@
             this.lblTitileChildForm.ForeColor = System.Drawing.Color.White;
             this.lblTitileChildForm.Location = new System.Drawing.Point(61, 39);
             this.lblTitileChildForm.Name = "lblTitileChildForm";
-            this.lblTitileChildForm.Size = new System.Drawing.Size(45, 17);
+            this.lblTitileChildForm.Size = new System.Drawing.Size(45, 16);
             this.lblTitileChildForm.TabIndex = 1;
             this.lblTitileChildForm.Text = "Home";
             // 
@@ -359,30 +383,6 @@
             this.panelContent.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.panelContent.Size = new System.Drawing.Size(837, 464);
             this.panelContent.TabIndex = 2;
-            // 
-            // btnAccount
-            // 
-            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnAccount.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAccount.IconChar = FontAwesome.Sharp.IconChar.UserLock;
-            this.btnAccount.IconColor = System.Drawing.Color.White;
-            this.btnAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAccount.IconSize = 36;
-            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.Location = new System.Drawing.Point(0, 380);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Rotation = 0D;
-            this.btnAccount.Size = new System.Drawing.Size(200, 60);
-            this.btnAccount.TabIndex = 5;
-            this.btnAccount.Text = "Accounts";
-            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAccount.UseVisualStyleBackColor = true;
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // FormMain
             // 
