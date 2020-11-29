@@ -1,6 +1,6 @@
 ﻿namespace FormMainGUI.Forms.EmployeeForm
 {
-    partial class addEmployee
+    public partial class addEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -28,40 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbId = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lbId = new MaterialSkin.Controls.MaterialLabel();
             this.lbAddress = new MaterialSkin.Controls.MaterialLabel();
             this.lbBirth = new MaterialSkin.Controls.MaterialLabel();
             this.lbPhone = new MaterialSkin.Controls.MaterialLabel();
             this.lbSex = new MaterialSkin.Controls.MaterialLabel();
             this.lbName = new MaterialSkin.Controls.MaterialLabel();
-            this.txbName = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txbPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.rdbMale = new System.Windows.Forms.RadioButton();
-            this.rdbFemale = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnCancel = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.cbmSex = new System.Windows.Forms.ComboBox();
+            this.txbId = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txbName = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txbPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txbBirth = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txbAddress = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
-            // 
-            // txbId
-            // 
-            this.txbId.BackColor = System.Drawing.Color.White;
-            this.txbId.Depth = 0;
-            this.txbId.Hint = "";
-            this.txbId.Location = new System.Drawing.Point(221, 126);
-            this.txbId.MaxLength = 32767;
-            this.txbId.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txbId.Name = "txbId";
-            this.txbId.PasswordChar = '\0';
-            this.txbId.SelectedText = "";
-            this.txbId.SelectionLength = 0;
-            this.txbId.SelectionStart = 0;
-            this.txbId.Size = new System.Drawing.Size(282, 28);
-            this.txbId.TabIndex = 0;
-            this.txbId.TabStop = false;
-            this.txbId.UseSystemPasswordChar = false;
             // 
             // lbId
             // 
@@ -148,101 +129,13 @@
             this.lbName.TabIndex = 6;
             this.lbName.Text = "Name";
             // 
-            // txbName
-            // 
-            this.txbName.BackColor = System.Drawing.Color.White;
-            this.txbName.Depth = 0;
-            this.txbName.Hint = "";
-            this.txbName.Location = new System.Drawing.Point(221, 206);
-            this.txbName.MaxLength = 32767;
-            this.txbName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txbName.Name = "txbName";
-            this.txbName.PasswordChar = '\0';
-            this.txbName.SelectedText = "";
-            this.txbName.SelectionLength = 0;
-            this.txbName.SelectionStart = 0;
-            this.txbName.Size = new System.Drawing.Size(282, 28);
-            this.txbName.TabIndex = 7;
-            this.txbName.TabStop = false;
-            this.txbName.UseSystemPasswordChar = false;
-            // 
-            // txbPhone
-            // 
-            this.txbPhone.BackColor = System.Drawing.Color.White;
-            this.txbPhone.Depth = 0;
-            this.txbPhone.Hint = "";
-            this.txbPhone.Location = new System.Drawing.Point(221, 298);
-            this.txbPhone.MaxLength = 32767;
-            this.txbPhone.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txbPhone.Name = "txbPhone";
-            this.txbPhone.PasswordChar = '\0';
-            this.txbPhone.SelectedText = "";
-            this.txbPhone.SelectionLength = 0;
-            this.txbPhone.SelectionStart = 0;
-            this.txbPhone.Size = new System.Drawing.Size(282, 28);
-            this.txbPhone.TabIndex = 8;
-            this.txbPhone.TabStop = false;
-            this.txbPhone.UseSystemPasswordChar = false;
-            // 
-            // materialSingleLineTextField3
-            // 
-            this.materialSingleLineTextField3.BackColor = System.Drawing.Color.White;
-            this.materialSingleLineTextField3.Depth = 0;
-            this.materialSingleLineTextField3.Hint = "";
-            this.materialSingleLineTextField3.Location = new System.Drawing.Point(221, 549);
-            this.materialSingleLineTextField3.MaxLength = 32767;
-            this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
-            this.materialSingleLineTextField3.PasswordChar = '\0';
-            this.materialSingleLineTextField3.SelectedText = "";
-            this.materialSingleLineTextField3.SelectionLength = 0;
-            this.materialSingleLineTextField3.SelectionStart = 0;
-            this.materialSingleLineTextField3.Size = new System.Drawing.Size(282, 28);
-            this.materialSingleLineTextField3.TabIndex = 9;
-            this.materialSingleLineTextField3.TabStop = false;
-            this.materialSingleLineTextField3.UseSystemPasswordChar = false;
-            // 
-            // rdbMale
-            // 
-            this.rdbMale.AutoSize = true;
-            this.rdbMale.BackColor = System.Drawing.Color.White;
-            this.rdbMale.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMale.Location = new System.Drawing.Point(221, 390);
-            this.rdbMale.Name = "rdbMale";
-            this.rdbMale.Size = new System.Drawing.Size(65, 23);
-            this.rdbMale.TabIndex = 10;
-            this.rdbMale.TabStop = true;
-            this.rdbMale.Text = "Male";
-            this.rdbMale.UseVisualStyleBackColor = false;
-            // 
-            // rdbFemale
-            // 
-            this.rdbFemale.AutoSize = true;
-            this.rdbFemale.BackColor = System.Drawing.Color.White;
-            this.rdbFemale.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFemale.Location = new System.Drawing.Point(367, 390);
-            this.rdbFemale.Name = "rdbFemale";
-            this.rdbFemale.Size = new System.Drawing.Size(80, 23);
-            this.rdbFemale.TabIndex = 11;
-            this.rdbFemale.TabStop = true;
-            this.rdbFemale.Text = "Female";
-            this.rdbFemale.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(221, 468);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(282, 27);
-            this.dateTimePicker1.TabIndex = 12;
-            // 
             // btnCancel
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancel.Depth = 0;
             this.btnCancel.Icon = null;
-            this.btnCancel.Location = new System.Drawing.Point(231, 621);
+            this.btnCancel.Location = new System.Drawing.Point(221, 621);
             this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Primary = true;
@@ -258,7 +151,7 @@
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(412, 621);
+            this.btnAdd.Location = new System.Drawing.Point(410, 621);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
@@ -266,27 +159,126 @@
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // cbmSex
+            // 
+            this.cbmSex.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbmSex.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmSex.FormattingEnabled = true;
+            this.cbmSex.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cbmSex.Location = new System.Drawing.Point(221, 385);
+            this.cbmSex.Name = "cbmSex";
+            this.cbmSex.Size = new System.Drawing.Size(114, 27);
+            this.cbmSex.TabIndex = 15;
+            this.cbmSex.Text = "Male";
+            // 
+            // txbId
+            // 
+            this.txbId.Depth = 0;
+            this.txbId.Hint = "";
+            this.txbId.Location = new System.Drawing.Point(221, 124);
+            this.txbId.MaxLength = 32767;
+            this.txbId.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txbId.Name = "txbId";
+            this.txbId.PasswordChar = '\0';
+            this.txbId.SelectedText = "";
+            this.txbId.SelectionLength = 0;
+            this.txbId.SelectionStart = 0;
+            this.txbId.Size = new System.Drawing.Size(300, 28);
+            this.txbId.TabIndex = 16;
+            this.txbId.TabStop = false;
+            this.txbId.UseSystemPasswordChar = false;
+            // 
+            // txbName
+            // 
+            this.txbName.Depth = 0;
+            this.txbName.Hint = "";
+            this.txbName.Location = new System.Drawing.Point(221, 206);
+            this.txbName.MaxLength = 32767;
+            this.txbName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txbName.Name = "txbName";
+            this.txbName.PasswordChar = '\0';
+            this.txbName.SelectedText = "";
+            this.txbName.SelectionLength = 0;
+            this.txbName.SelectionStart = 0;
+            this.txbName.Size = new System.Drawing.Size(300, 28);
+            this.txbName.TabIndex = 17;
+            this.txbName.TabStop = false;
+            this.txbName.UseSystemPasswordChar = false;
+            // 
+            // txbPhone
+            // 
+            this.txbPhone.Depth = 0;
+            this.txbPhone.Hint = "";
+            this.txbPhone.Location = new System.Drawing.Point(221, 298);
+            this.txbPhone.MaxLength = 32767;
+            this.txbPhone.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txbPhone.Name = "txbPhone";
+            this.txbPhone.PasswordChar = '\0';
+            this.txbPhone.SelectedText = "";
+            this.txbPhone.SelectionLength = 0;
+            this.txbPhone.SelectionStart = 0;
+            this.txbPhone.Size = new System.Drawing.Size(300, 28);
+            this.txbPhone.TabIndex = 18;
+            this.txbPhone.TabStop = false;
+            this.txbPhone.UseSystemPasswordChar = false;
+            // 
+            // txbBirth
+            // 
+            this.txbBirth.Depth = 0;
+            this.txbBirth.Hint = "";
+            this.txbBirth.Location = new System.Drawing.Point(221, 465);
+            this.txbBirth.MaxLength = 32767;
+            this.txbBirth.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txbBirth.Name = "txbBirth";
+            this.txbBirth.PasswordChar = '\0';
+            this.txbBirth.SelectedText = "";
+            this.txbBirth.SelectionLength = 0;
+            this.txbBirth.SelectionStart = 0;
+            this.txbBirth.Size = new System.Drawing.Size(300, 28);
+            this.txbBirth.TabIndex = 19;
+            this.txbBirth.TabStop = false;
+            this.txbBirth.UseSystemPasswordChar = false;
+            // 
+            // txbAddress
+            // 
+            this.txbAddress.Depth = 0;
+            this.txbAddress.Hint = "";
+            this.txbAddress.Location = new System.Drawing.Point(221, 547);
+            this.txbAddress.MaxLength = 32767;
+            this.txbAddress.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txbAddress.Name = "txbAddress";
+            this.txbAddress.PasswordChar = '\0';
+            this.txbAddress.SelectedText = "";
+            this.txbAddress.SelectionLength = 0;
+            this.txbAddress.SelectionStart = 0;
+            this.txbAddress.Size = new System.Drawing.Size(300, 28);
+            this.txbAddress.TabIndex = 20;
+            this.txbAddress.TabStop = false;
+            this.txbAddress.UseSystemPasswordChar = false;
             // 
             // addEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 708);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.rdbFemale);
-            this.Controls.Add(this.rdbMale);
-            this.Controls.Add(this.materialSingleLineTextField3);
+            this.ClientSize = new System.Drawing.Size(595, 708);
+            this.Controls.Add(this.txbAddress);
+            this.Controls.Add(this.txbBirth);
             this.Controls.Add(this.txbPhone);
             this.Controls.Add(this.txbName);
+            this.Controls.Add(this.txbId);
+            this.Controls.Add(this.cbmSex);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbSex);
             this.Controls.Add(this.lbPhone);
             this.Controls.Add(this.lbBirth);
             this.Controls.Add(this.lbAddress);
             this.Controls.Add(this.lbId);
-            this.Controls.Add(this.txbId);
             this.Name = "addEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Employee";
@@ -297,21 +289,19 @@
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialSingleLineTextField txbId;
         private MaterialSkin.Controls.MaterialLabel lbId;
         private MaterialSkin.Controls.MaterialLabel lbAddress;
         private MaterialSkin.Controls.MaterialLabel lbBirth;
         private MaterialSkin.Controls.MaterialLabel lbPhone;
         private MaterialSkin.Controls.MaterialLabel lbSex;
         private MaterialSkin.Controls.MaterialLabel lbName;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txbName;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txbPhone;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
-        private System.Windows.Forms.RadioButton rdbMale;
-        private System.Windows.Forms.RadioButton rdbFemale;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private MaterialSkin.Controls.MaterialRaisedButton btnCancel;
         private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
+        private System.Windows.Forms.ComboBox cbmSex;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txbId;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txbName;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txbPhone;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txbBirth;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txbAddress;
     }
 }

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.pannelTable = new System.Windows.Forms.Panel();
-            this.panelAction = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panelAction = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pannelTable.SuspendLayout();
-            this.panelAction.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelAction.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,15 +51,6 @@
             this.pannelTable.Name = "pannelTable";
             this.pannelTable.Size = new System.Drawing.Size(800, 339);
             this.pannelTable.TabIndex = 0;
-            // 
-            // panelAction
-            // 
-            this.panelAction.Controls.Add(this.panel1);
-            this.panelAction.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAction.Location = new System.Drawing.Point(0, 339);
-            this.panelAction.Name = "panelAction";
-            this.panelAction.Size = new System.Drawing.Size(800, 111);
-            this.panelAction.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -89,6 +80,41 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dataGridView1.Size = new System.Drawing.Size(780, 299);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // panelAction
+            // 
+            this.panelAction.Controls.Add(this.panel1);
+            this.panelAction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAction.Location = new System.Drawing.Point(0, 339);
+            this.panelAction.Name = "panelAction";
+            this.panelAction.Size = new System.Drawing.Size(800, 111);
+            this.panelAction.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(236, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(564, 111);
+            this.panel1.TabIndex = 3;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDelete.Depth = 0;
+            this.btnDelete.Icon = null;
+            this.btnDelete.Location = new System.Drawing.Point(398, 12);
+            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Primary = true;
+            this.btnDelete.Size = new System.Drawing.Size(82, 36);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
@@ -120,32 +146,6 @@
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoSize = true;
-            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDelete.Depth = 0;
-            this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(398, 12);
-            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Primary = true;
-            this.btnDelete.Size = new System.Drawing.Size(82, 36);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(236, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(564, 111);
-            this.panel1.TabIndex = 3;
-            // 
             // Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -156,9 +156,9 @@
             this.Name = "Account";
             this.Text = "fAccount";
             this.pannelTable.ResumeLayout(false);
-            this.panelAction.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelAction.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
