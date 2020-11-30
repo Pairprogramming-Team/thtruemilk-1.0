@@ -1,4 +1,5 @@
-﻿using FormMainGUI.Forms.OrderForm;
+﻿using FormMainGUI.DAO;
+using FormMainGUI.Forms.OrderForm;
 using FormMainGUI.ModelDB;
 using FormMainGUI.Utils;
 using MaterialSkin;
@@ -16,7 +17,7 @@ namespace FormMainGUI.Forms
 {
     public partial class fOrders : MaterialForm
     {
-        //Product product = new Product();
+        public static bool isUpdate = true;
         public fOrders()
         {
             InitializeComponent();
@@ -43,10 +44,7 @@ namespace FormMainGUI.Forms
 
         private void fOrders_Load(object sender, EventArgs e)
         {
-            var db = DataProvider.Ins.DB;
-            var listProducts = from p in db.Products
-                               select p;
-            dgvProductInOrder.DataSource = listProducts.ToList();
+            dgvProductInOrder.DataSource = OrderDAO.Instance.getListProduct();
             dgvProductInOrder.Columns[4].Visible = false;
             dgvProductInOrder.Columns[5].Visible = false;
         }
@@ -60,18 +58,11 @@ namespace FormMainGUI.Forms
 
             int index = e.RowIndex;
             dgvProductInOrder.Rows[index].Selected = true;
-
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow row = this.dgvProductInOrder.Rows[e.RowIndex];
-            //    product.ProductID = row.Cells[0].Value.ToString();
-            //    product.Name = row.Cells[1].Value.ToString();
-            //    product.Price = Convert.ToInt32(row.Cells[3].Value.ToString());
-            //}
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
+            isUpdate = false;
             if (dgvProductInOrder.SelectedRows.Count == 1)
             {
                 fAddToCart fAddToCart = new fAddToCart(this);
@@ -81,13 +72,6 @@ namespace FormMainGUI.Forms
             {
                 MessageBox.Show("Please choose a product!!!", "Notification");
             }
-            
-
-                //DataGridViewRow a = (DataGridViewRow)dgvCart.Rows[0].Clone();
-                //a.Cells[0].Value = row.Cells[0].Value.ToString();
-                //a.Cells[1].Value = "cac";
-                //dgvCart.Rows.Add(a);
-                ////dgvCart.Rows.Add(row.Cells[1].Value.ToString());
         }
 
         private void dgvCartInfo_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -101,16 +85,23 @@ namespace FormMainGUI.Forms
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            var listProductSearch = from l in DataProvider.Ins.DB.Products
-                                    where l.Name.Trim().Contains(txtSearch.Text)
-                                    select l;
-            dgvProductInOrder.DataSource = listProductSearch.ToList();
+            dgvProductInOrder.DataSource = OrderDAO.Instance.searchProductByName(txtSearch.Text);
         }
 
         private void dgvCart_RowAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             btnDone.Enabled = true;
 
+            float totalAmount = 0;
+            for (int i = 0; i < dgvCart.Rows.Count; i++)
+            {
+                totalAmount += float.Parse(dgvCart.Rows[i].Cells[4].Value.ToString());
+            }
+            txtTotalAmount.Text = totalAmount.ToString();
+        }
+
+        private void dgvCart_RowRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
             float totalAmount = 0;
             for (int i = 0; i < dgvCart.Rows.Count; i++)
             {
@@ -150,12 +141,20 @@ namespace FormMainGUI.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            isUpdate = true;
+            if (dgvCart.SelectedRows.Count == 1)
+            {
+                fAddToCart fAddToCart = new fAddToCart(this);
+                fAddToCart.Text = "UPDATE CART";
+                fAddToCart.ShowDialog();
+            }            
         }
 
         private void btnDone_Click(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }
