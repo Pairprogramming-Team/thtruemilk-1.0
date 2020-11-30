@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnEmployee = new System.Windows.Forms.Button();
@@ -232,6 +230,7 @@
             this.labelInputEmployee.Size = new System.Drawing.Size(132, 34);
             this.labelInputEmployee.TabIndex = 4;
             this.labelInputEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //this.labelInputEmployee.Click += new System.EventHandler(this.labelInputEmployee_Click);
             // 
             // labelEmployee
             // 
@@ -292,6 +291,7 @@
             this.labelInputProduct.Size = new System.Drawing.Size(122, 34);
             this.labelInputProduct.TabIndex = 2;
             this.labelInputProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //this.labelInputProduct.Click += new System.EventHandler(this.labelInputProduct_Click);
             // 
             // labelProduct
             // 
@@ -404,16 +404,8 @@
             this.chartTotal.Location = new System.Drawing.Point(0, 0);
             this.chartTotal.Name = "chartTotal";
             this.chartTotal.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "TotalMoney";
-            this.chartTotal.Series.Add(series2);
             this.chartTotal.Size = new System.Drawing.Size(1164, 573);
             this.chartTotal.TabIndex = 0;
-            this.chartTotal.Text = "TotalMoney";
-            title2.Name = "TotalMoney";
-            title2.Text = "Total Money";
-            this.chartTotal.Titles.Add(title2);
             // 
             // Dashboard
             // 
