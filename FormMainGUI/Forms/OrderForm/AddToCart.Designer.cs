@@ -50,7 +50,7 @@
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 286);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(557, 135);
             this.panel1.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.btnDone.Depth = 0;
             this.btnDone.Icon = null;
             this.btnDone.Location = new System.Drawing.Point(292, 16);
-            this.btnDone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(2);
             this.btnDone.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDone.Name = "btnDone";
             this.btnDone.Primary = true;
@@ -81,7 +81,7 @@
             this.btnCancel.Depth = 0;
             this.btnCancel.Icon = null;
             this.btnCancel.Location = new System.Drawing.Point(180, 16);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Primary = true;
@@ -95,7 +95,7 @@
             // 
             this.numbericQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numbericQuantity.Location = new System.Drawing.Point(182, 178);
-            this.numbericQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numbericQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.numbericQuantity.Minimum = new decimal(new int[] {
             1,
             0,
@@ -133,7 +133,7 @@
             this.txtPrice.Enabled = false;
             this.txtPrice.Hint = "";
             this.txtPrice.Location = new System.Drawing.Point(180, 239);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.MaxLength = 32767;
             this.txtPrice.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPrice.Name = "txtPrice";
@@ -169,7 +169,7 @@
             this.txtNameProduct.Enabled = false;
             this.txtNameProduct.Hint = "";
             this.txtNameProduct.Location = new System.Drawing.Point(180, 121);
-            this.txtNameProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNameProduct.Margin = new System.Windows.Forms.Padding(2);
             this.txtNameProduct.MaxLength = 32767;
             this.txtNameProduct.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNameProduct.Name = "txtNameProduct";
@@ -205,7 +205,7 @@
             this.txtIDProduct.Enabled = false;
             this.txtIDProduct.Hint = "";
             this.txtIDProduct.Location = new System.Drawing.Point(182, 69);
-            this.txtIDProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIDProduct.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDProduct.MaxLength = 32767;
             this.txtIDProduct.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtIDProduct.Name = "txtIDProduct";
@@ -249,12 +249,13 @@
             this.Controls.Add(this.txtIDProduct);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "fAddToCart";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add to cart";
+            this.Text = "ADD TO CART";
             this.Load += new System.EventHandler(this.fAddToCart_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
