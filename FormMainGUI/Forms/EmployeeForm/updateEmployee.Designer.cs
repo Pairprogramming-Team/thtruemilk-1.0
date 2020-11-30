@@ -30,10 +30,7 @@
         {
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCancel = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.rdbFemale = new System.Windows.Forms.RadioButton();
-            this.rdbMale = new System.Windows.Forms.RadioButton();
-            this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txbAddress = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txbPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txbName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lbName = new MaterialSkin.Controls.MaterialLabel();
@@ -43,6 +40,8 @@
             this.lbAddress = new MaterialSkin.Controls.MaterialLabel();
             this.lbId = new MaterialSkin.Controls.MaterialLabel();
             this.txbId = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txbBirth = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cbmSex = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -51,7 +50,7 @@
             this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdate.Depth = 0;
             this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(433, 611);
+            this.btnUpdate.Location = new System.Drawing.Point(423, 611);
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Primary = true;
@@ -59,6 +58,7 @@
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCancel
             // 
@@ -66,7 +66,7 @@
             this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancel.Depth = 0;
             this.btnCancel.Icon = null;
-            this.btnCancel.Location = new System.Drawing.Point(261, 611);
+            this.btnCancel.Location = new System.Drawing.Point(238, 611);
             this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Primary = true;
@@ -76,57 +76,23 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // dateTimePicker1
+            // txbAddress
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(238, 458);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(282, 27);
-            this.dateTimePicker1.TabIndex = 27;
-            // 
-            // rdbFemale
-            // 
-            this.rdbFemale.AutoSize = true;
-            this.rdbFemale.BackColor = System.Drawing.Color.White;
-            this.rdbFemale.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFemale.Location = new System.Drawing.Point(384, 380);
-            this.rdbFemale.Name = "rdbFemale";
-            this.rdbFemale.Size = new System.Drawing.Size(80, 23);
-            this.rdbFemale.TabIndex = 26;
-            this.rdbFemale.TabStop = true;
-            this.rdbFemale.Text = "Female";
-            this.rdbFemale.UseVisualStyleBackColor = false;
-            // 
-            // rdbMale
-            // 
-            this.rdbMale.AutoSize = true;
-            this.rdbMale.BackColor = System.Drawing.Color.White;
-            this.rdbMale.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMale.Location = new System.Drawing.Point(238, 380);
-            this.rdbMale.Name = "rdbMale";
-            this.rdbMale.Size = new System.Drawing.Size(65, 23);
-            this.rdbMale.TabIndex = 25;
-            this.rdbMale.TabStop = true;
-            this.rdbMale.Text = "Male";
-            this.rdbMale.UseVisualStyleBackColor = false;
-            // 
-            // materialSingleLineTextField3
-            // 
-            this.materialSingleLineTextField3.BackColor = System.Drawing.Color.White;
-            this.materialSingleLineTextField3.Depth = 0;
-            this.materialSingleLineTextField3.Hint = "";
-            this.materialSingleLineTextField3.Location = new System.Drawing.Point(238, 539);
-            this.materialSingleLineTextField3.MaxLength = 32767;
-            this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
-            this.materialSingleLineTextField3.PasswordChar = '\0';
-            this.materialSingleLineTextField3.SelectedText = "";
-            this.materialSingleLineTextField3.SelectionLength = 0;
-            this.materialSingleLineTextField3.SelectionStart = 0;
-            this.materialSingleLineTextField3.Size = new System.Drawing.Size(282, 28);
-            this.materialSingleLineTextField3.TabIndex = 24;
-            this.materialSingleLineTextField3.TabStop = false;
-            this.materialSingleLineTextField3.UseSystemPasswordChar = false;
+            this.txbAddress.BackColor = System.Drawing.Color.White;
+            this.txbAddress.Depth = 0;
+            this.txbAddress.Hint = "";
+            this.txbAddress.Location = new System.Drawing.Point(238, 539);
+            this.txbAddress.MaxLength = 32767;
+            this.txbAddress.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txbAddress.Name = "txbAddress";
+            this.txbAddress.PasswordChar = '\0';
+            this.txbAddress.SelectedText = "";
+            this.txbAddress.SelectionLength = 0;
+            this.txbAddress.SelectionStart = 0;
+            this.txbAddress.Size = new System.Drawing.Size(282, 28);
+            this.txbAddress.TabIndex = 24;
+            this.txbAddress.TabStop = false;
+            this.txbAddress.UseSystemPasswordChar = false;
             // 
             // txbPhone
             // 
@@ -266,17 +232,47 @@
             this.txbId.TabStop = false;
             this.txbId.UseSystemPasswordChar = false;
             // 
+            // txbBirth
+            // 
+            this.txbBirth.Depth = 0;
+            this.txbBirth.Hint = "";
+            this.txbBirth.Location = new System.Drawing.Point(238, 455);
+            this.txbBirth.MaxLength = 32767;
+            this.txbBirth.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txbBirth.Name = "txbBirth";
+            this.txbBirth.PasswordChar = '\0';
+            this.txbBirth.SelectedText = "";
+            this.txbBirth.SelectionLength = 0;
+            this.txbBirth.SelectionStart = 0;
+            this.txbBirth.Size = new System.Drawing.Size(282, 28);
+            this.txbBirth.TabIndex = 31;
+            this.txbBirth.TabStop = false;
+            this.txbBirth.UseSystemPasswordChar = false;
+            // 
+            // cbmSex
+            // 
+            this.cbmSex.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbmSex.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmSex.FormattingEnabled = true;
+            this.cbmSex.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cbmSex.Location = new System.Drawing.Point(238, 375);
+            this.cbmSex.Name = "cbmSex";
+            this.cbmSex.Size = new System.Drawing.Size(114, 27);
+            this.cbmSex.TabIndex = 30;
+            this.cbmSex.Text = "Male";
+            // 
             // updateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 708);
+            this.ClientSize = new System.Drawing.Size(588, 708);
+            this.Controls.Add(this.txbBirth);
+            this.Controls.Add(this.cbmSex);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.rdbFemale);
-            this.Controls.Add(this.rdbMale);
-            this.Controls.Add(this.materialSingleLineTextField3);
+            this.Controls.Add(this.txbAddress);
             this.Controls.Add(this.txbPhone);
             this.Controls.Add(this.txbName);
             this.Controls.Add(this.lbName);
@@ -299,10 +295,7 @@
 
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private MaterialSkin.Controls.MaterialRaisedButton btnCancel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton rdbFemale;
-        private System.Windows.Forms.RadioButton rdbMale;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txbAddress;
         private MaterialSkin.Controls.MaterialSingleLineTextField txbPhone;
         private MaterialSkin.Controls.MaterialSingleLineTextField txbName;
         private MaterialSkin.Controls.MaterialLabel lbName;
@@ -312,5 +305,7 @@
         private MaterialSkin.Controls.MaterialLabel lbAddress;
         private MaterialSkin.Controls.MaterialLabel lbId;
         private MaterialSkin.Controls.MaterialSingleLineTextField txbId;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txbBirth;
+        private System.Windows.Forms.ComboBox cbmSex;
     }
 }

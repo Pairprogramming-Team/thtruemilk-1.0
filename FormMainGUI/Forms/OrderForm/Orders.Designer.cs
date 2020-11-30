@@ -32,11 +32,6 @@
             this.gbCartInfo = new System.Windows.Forms.GroupBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dgvCart = new System.Windows.Forms.DataGridView();
-            this.txtID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAddToCart = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -48,10 +43,15 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtTotalAmount = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblTotalAmount = new MaterialSkin.Controls.MaterialLabel();
             this.btnDone = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.gbCartInfo.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -116,36 +116,8 @@
             this.dgvCart.RowTemplate.Height = 24;
             this.dgvCart.Size = new System.Drawing.Size(1055, 218);
             this.dgvCart.TabIndex = 0;
-            // 
-            // txtID
-            // 
-            this.txtID.HeaderText = "ID";
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            // 
-            // txtName
-            // 
-            this.txtName.HeaderText = "Name product";
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.HeaderText = "Quantity";
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.ReadOnly = true;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.HeaderText = "Price";
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.ReadOnly = true;
-            // 
-            // txtTotalMoney
-            // 
-            this.txtTotalMoney.HeaderText = "Total money";
-            this.txtTotalMoney.Name = "txtTotalMoney";
-            this.txtTotalMoney.ReadOnly = true;
+            this.dgvCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellClick);
+            this.dgvCart.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvCart_RowAdded);
             // 
             // panel2
             // 
@@ -273,7 +245,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.txtTotalAmount);
-            this.panel3.Controls.Add(this.materialLabel2);
+            this.panel3.Controls.Add(this.lblTotalAmount);
             this.panel3.Controls.Add(this.btnDone);
             this.panel3.Controls.Add(this.btnUpdate);
             this.panel3.Controls.Add(this.btnDelete);
@@ -305,19 +277,19 @@
             this.txtTotalAmount.TabStop = false;
             this.txtTotalAmount.UseSystemPasswordChar = false;
             // 
-            // materialLabel2
+            // lblTotalAmount
             // 
-            this.materialLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(794, 8);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(99, 19);
-            this.materialLabel2.TabIndex = 10;
-            this.materialLabel2.Text = "Total amount";
+            this.lblTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalAmount.AutoSize = true;
+            this.lblTotalAmount.Depth = 0;
+            this.lblTotalAmount.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTotalAmount.Location = new System.Drawing.Point(794, 8);
+            this.lblTotalAmount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(99, 19);
+            this.lblTotalAmount.TabIndex = 10;
+            this.lblTotalAmount.Text = "Total amount";
             // 
             // btnDone
             // 
@@ -335,6 +307,7 @@
             this.btnDone.TabIndex = 5;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // btnUpdate
             // 
@@ -352,6 +325,7 @@
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -369,6 +343,37 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // txtID
+            // 
+            this.txtID.HeaderText = "ID product";
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            // 
+            // txtName
+            // 
+            this.txtName.HeaderText = "Name product";
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.HeaderText = "Quantity";
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.ReadOnly = true;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.HeaderText = "Price";
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
+            // 
+            // txtTotalMoney
+            // 
+            this.txtTotalMoney.HeaderText = "Total money";
+            this.txtTotalMoney.Name = "txtTotalMoney";
+            this.txtTotalMoney.ReadOnly = true;
             // 
             // fOrders
             // 
@@ -414,21 +419,21 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.DataGridView dgvProductInOrder;
         private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
         private MaterialSkin.Controls.MaterialRaisedButton btnDone;
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private MaterialSkin.Controls.MaterialRaisedButton btnAddToCart;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtTotalAmount;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel lblTotalAmount;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.DataGridView dgvCart;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        public System.Windows.Forms.DataGridView dgvCart;
+        public System.Windows.Forms.DataGridView dgvProductInOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtID;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtName;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtTotalMoney;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }
