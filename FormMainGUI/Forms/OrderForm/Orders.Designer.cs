@@ -47,11 +47,11 @@
             this.btnDone = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.gbCartInfo.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -104,11 +104,11 @@
             this.dgvCart.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.txtID,
-            this.txtName,
-            this.txtQuantity,
-            this.txtPrice,
-            this.txtTotalMoney});
+            this.colID,
+            this.colName,
+            this.colQuantity,
+            this.colPrice,
+            this.colTotalMoney});
             this.dgvCart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCart.Location = new System.Drawing.Point(0, 0);
             this.dgvCart.Name = "dgvCart";
@@ -117,8 +117,6 @@
             this.dgvCart.Size = new System.Drawing.Size(1055, 218);
             this.dgvCart.TabIndex = 0;
             this.dgvCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellClick);
-            this.dgvCart.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvCart_RowAdded);
-            this.dgvCart.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvCart_RowRemoved);
             // 
             // panel2
             // 
@@ -284,7 +282,7 @@
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.Depth = 0;
             this.lblTotalAmount.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.Red;
             this.lblTotalAmount.Location = new System.Drawing.Point(794, 8);
             this.lblTotalAmount.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTotalAmount.Name = "lblTotalAmount";
@@ -346,35 +344,35 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // txtID
+            // colID
             // 
-            this.txtID.HeaderText = "ID product";
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
+            this.colID.HeaderText = "ID product";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
             // 
-            // txtName
+            // colName
             // 
-            this.txtName.HeaderText = "Name product";
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
+            this.colName.HeaderText = "Name product";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
             // 
-            // txtQuantity
+            // colQuantity
             // 
-            this.txtQuantity.HeaderText = "Quantity";
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.ReadOnly = true;
+            this.colQuantity.HeaderText = "Quantity";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.ReadOnly = true;
             // 
-            // txtPrice
+            // colPrice
             // 
-            this.txtPrice.HeaderText = "Price";
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.ReadOnly = true;
+            this.colPrice.HeaderText = "Price";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
             // 
-            // txtTotalMoney
+            // colTotalMoney
             // 
-            this.txtTotalMoney.HeaderText = "Total money";
-            this.txtTotalMoney.Name = "txtTotalMoney";
-            this.txtTotalMoney.ReadOnly = true;
+            this.colTotalMoney.HeaderText = "Total money";
+            this.colTotalMoney.Name = "colTotalMoney";
+            this.colTotalMoney.ReadOnly = true;
             // 
             // fOrders
             // 
@@ -424,17 +422,17 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnDone;
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private MaterialSkin.Controls.MaterialRaisedButton btnAddToCart;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtTotalAmount;
         private MaterialSkin.Controls.MaterialLabel lblTotalAmount;
         private System.Windows.Forms.Panel panel8;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         public System.Windows.Forms.DataGridView dgvCart;
         public System.Windows.Forms.DataGridView dgvProductInOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtTotalMoney;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalMoney;
+        public MaterialSkin.Controls.MaterialSingleLineTextField txtTotalAmount;
     }
 }

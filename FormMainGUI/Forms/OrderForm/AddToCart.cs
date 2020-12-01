@@ -70,9 +70,42 @@ namespace FormMainGUI.Forms.OrderForm
             }
             else
             {
-                this.orders.dgvCart.Rows.Add(txtIDProduct.Text, txtNameProduct.Text, numbericQuantity.Value.ToString(), txtPrice.Text, totalMoney);
-            }    
-            this.Close();
+                if (this.orders.dgvCart.Rows.Count == 0)
+                {
+                    this.orders.dgvCart.Rows.Add(txtIDProduct.Text, txtNameProduct.Text, numbericQuantity.Value.ToString(), txtPrice.Text, totalMoney);
+                }
+                else
+                {
+                    int sum = 0;
+                    int count = 0;
+                    for (int i = 0; i < this.orders.dgvCart.Rows.Count; i++)
+                    {
+                        if (txtIDProduct.Text.Contains(this.orders.dgvCart.Rows[i].Cells["colID"].Value.ToString()))
+                        {
+                            sum = Convert.ToInt32(this.orders.dgvCart.Rows[i].Cells[2].Value);
+                            sum += Convert.ToInt32(numbericQuantity.Value.ToString());
+                            this.orders.dgvCart.Rows[i].Cells["colQuantity"].Value = sum;
+                            count++;
+
+                            price = float.Parse(txtPrice.Text);
+                            quantity = sum;
+                            this.orders.dgvCart.Rows[i].Cells["colTotalMoney"].Value = price * (float)quantity;
+                        }
+                    }
+                    if (count != 1)
+                    {
+                        this.orders.dgvCart.Rows.Add(txtIDProduct.Text, txtNameProduct.Text, numbericQuantity.Value.ToString(), txtPrice.Text, totalMoney);
+                    }
+                }
+            }
+            float totalAmount = 0;
+            for (int i = 0; i < this.orders.dgvCart.Rows.Count; i++)
+            {
+                totalAmount += float.Parse(this.orders.dgvCart.Rows[i].Cells[4].Value.ToString());
+            }
+            this.orders.txtTotalAmount.Text = totalAmount.ToString();
+
+            this.Close();            
         }
     }
 }
