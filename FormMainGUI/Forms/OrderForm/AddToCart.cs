@@ -35,14 +35,24 @@ namespace FormMainGUI.Forms.OrderForm
 
         private void fAddToCart_Load(object sender, EventArgs e)
         {
-            txtIDProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[0].Value.ToString();
-            txtNameProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[1].Value.ToString(); ;
-            txtPrice.Text = Convert.ToString(orders.dgvProductInOrder.CurrentRow.Cells[3].Value.ToString());
+            if (fOrders.isUpdate)
+            {
+                txtIDProduct.Text = orders.dgvCart.CurrentRow.Cells[0].Value.ToString();
+                txtNameProduct.Text = orders.dgvCart.CurrentRow.Cells[1].Value.ToString(); ;
+                numbericQuantity.Value = Convert.ToDecimal(orders.dgvCart.CurrentRow.Cells[2].Value.ToString());
+                txtPrice.Text = Convert.ToString(orders.dgvCart.CurrentRow.Cells[3].Value.ToString());
+            }
+            else
+            {
+                txtIDProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[0].Value.ToString();
+                txtNameProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[1].Value.ToString(); ;
+                txtPrice.Text = Convert.ToString(orders.dgvProductInOrder.CurrentRow.Cells[3].Value.ToString());
+            }            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -51,8 +61,18 @@ namespace FormMainGUI.Forms.OrderForm
             float price = float.Parse(txtPrice.Text);
             int quantity = Convert.ToInt32(numbericQuantity.Value);
             totalMoney = price * (float)quantity;
-            this.orders.dgvCart.Rows.Add(txtIDProduct.Text, txtNameProduct.Text, numbericQuantity.Value.ToString(), txtPrice.Text, totalMoney);
-            this.Dispose();
+
+            if (fOrders.isUpdate)
+            {
+                int index = this.orders.dgvCart.CurrentRow.Index;
+                this.orders.dgvCart.Rows.RemoveAt(this.orders.dgvCart.SelectedRows[0].Index);
+                this.orders.dgvCart.Rows.Insert(index, txtIDProduct.Text, txtNameProduct.Text, numbericQuantity.Value.ToString(), txtPrice.Text, totalMoney);
+            }
+            else
+            {
+                this.orders.dgvCart.Rows.Add(txtIDProduct.Text, txtNameProduct.Text, numbericQuantity.Value.ToString(), txtPrice.Text, totalMoney);
+            }    
+            this.Close();
         }
     }
 }
