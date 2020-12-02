@@ -74,40 +74,9 @@ namespace FormMainGUI.Forms
             }
         }
 
-        private void dgvCartInfo_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            //float TotalAmount;
-            //for (int i = 0; i < dgvCartInfo.Rows.Count - 1; i++)
-            //{
-            //    TotalAmount += float.Parse(dgvCartInfo.Rows[i].Cells["Price"].Value.ToString());
-            //}
-        }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             dgvProductInOrder.DataSource = OrderDAO.Instance.searchProductByName(txtSearch.Text);
-        }
-
-        private void dgvCart_RowAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            btnDone.Enabled = true;
-
-            float totalAmount = 0;
-            for (int i = 0; i < dgvCart.Rows.Count; i++)
-            {
-                totalAmount += float.Parse(dgvCart.Rows[i].Cells[4].Value.ToString());
-            }
-            txtTotalAmount.Text = totalAmount.ToString();
-        }
-
-        private void dgvCart_RowRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            float totalAmount = 0;
-            for (int i = 0; i < dgvCart.Rows.Count; i++)
-            {
-                totalAmount += float.Parse(dgvCart.Rows[i].Cells[4].Value.ToString());
-            }
-            txtTotalAmount.Text = totalAmount.ToString();
         }
 
         private void dgvCart_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -154,7 +123,5 @@ namespace FormMainGUI.Forms
         {
 
         }
-
-        
     }
 }
