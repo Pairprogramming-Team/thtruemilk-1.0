@@ -53,7 +53,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(557, 135);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 0;
             // 
             // btnDone
             // 
@@ -86,7 +86,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Primary = true;
             this.btnCancel.Size = new System.Drawing.Size(73, 36);
-            this.btnCancel.TabIndex = 0;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -109,6 +109,7 @@
             0,
             0,
             0});
+            this.numbericQuantity.ValueChanged += new System.EventHandler(this.numbericQuantity_ValueChanged);
             // 
             // materialLabel4
             // 

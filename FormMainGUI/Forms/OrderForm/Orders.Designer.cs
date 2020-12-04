@@ -32,6 +32,11 @@
             this.gbCartInfo = new System.Windows.Forms.GroupBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dgvCart = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAddToCart = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -47,11 +52,6 @@
             this.btnDone = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.gbCartInfo.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -115,8 +115,39 @@
             this.dgvCart.ReadOnly = true;
             this.dgvCart.RowTemplate.Height = 24;
             this.dgvCart.Size = new System.Drawing.Size(1055, 218);
-            this.dgvCart.TabIndex = 0;
+            this.dgvCart.TabIndex = 3;
             this.dgvCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellClick);
+            this.dgvCart.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvCart_RowRemoved);
+            // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID product";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Name product";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.HeaderText = "Quantity";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.ReadOnly = true;
+            // 
+            // colPrice
+            // 
+            this.colPrice.HeaderText = "Price";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            // 
+            // colTotalMoney
+            // 
+            this.colTotalMoney.HeaderText = "Total money";
+            this.colTotalMoney.Name = "colTotalMoney";
+            this.colTotalMoney.ReadOnly = true;
             // 
             // panel2
             // 
@@ -194,7 +225,7 @@
             this.dgvProductInOrder.Name = "dgvProductInOrder";
             this.dgvProductInOrder.ReadOnly = true;
             this.dgvProductInOrder.Size = new System.Drawing.Size(1055, 282);
-            this.dgvProductInOrder.TabIndex = 0;
+            this.dgvProductInOrder.TabIndex = 1;
             this.dgvProductInOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductInOrder_CellClick);
             // 
             // panel6
@@ -222,7 +253,7 @@
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.Size = new System.Drawing.Size(245, 23);
-            this.txtSearch.TabIndex = 53;
+            this.txtSearch.TabIndex = 0;
             this.txtSearch.TabStop = false;
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
@@ -282,7 +313,7 @@
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.Depth = 0;
             this.lblTotalAmount.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblTotalAmount.ForeColor = System.Drawing.Color.Red;
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblTotalAmount.Location = new System.Drawing.Point(794, 8);
             this.lblTotalAmount.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTotalAmount.Name = "lblTotalAmount";
@@ -303,7 +334,7 @@
             this.btnDone.Name = "btnDone";
             this.btnDone.Primary = true;
             this.btnDone.Size = new System.Drawing.Size(57, 36);
-            this.btnDone.TabIndex = 5;
+            this.btnDone.TabIndex = 4;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
@@ -321,7 +352,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Primary = true;
             this.btnUpdate.Size = new System.Drawing.Size(73, 36);
-            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -339,40 +370,10 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Primary = true;
             this.btnDelete.Size = new System.Drawing.Size(69, 36);
-            this.btnDelete.TabIndex = 3;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // colID
-            // 
-            this.colID.HeaderText = "ID product";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "Name product";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.HeaderText = "Quantity";
-            this.colQuantity.Name = "colQuantity";
-            this.colQuantity.ReadOnly = true;
-            // 
-            // colPrice
-            // 
-            this.colPrice.HeaderText = "Price";
-            this.colPrice.Name = "colPrice";
-            this.colPrice.ReadOnly = true;
-            // 
-            // colTotalMoney
-            // 
-            this.colTotalMoney.HeaderText = "Total money";
-            this.colTotalMoney.Name = "colTotalMoney";
-            this.colTotalMoney.ReadOnly = true;
             // 
             // fOrders
             // 

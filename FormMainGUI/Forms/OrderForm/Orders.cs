@@ -74,6 +74,16 @@ namespace FormMainGUI.Forms
             }
         }
 
+        private void dgvCart_RowRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            float totalAmount = 0;
+            for (int i = 0; i < dgvCart.Rows.Count; i++)
+            {
+                totalAmount += float.Parse(dgvCart.Rows[i].Cells[4].Value.ToString());
+            }
+            txtTotalAmount.Text = totalAmount.ToString();
+        }
+
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             dgvProductInOrder.DataSource = OrderDAO.Instance.searchProductByName(txtSearch.Text);

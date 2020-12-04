@@ -45,7 +45,24 @@ namespace FormMainGUI.Forms.OrderForm
             else
             {
                 txtIDProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[0].Value.ToString();
-                txtNameProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[1].Value.ToString(); ;
+                txtNameProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[1].Value.ToString();
+
+                if (this.orders.dgvCart.Rows.Count > 0)
+                {                    
+                    for (int i = 0; i < this.orders.dgvCart.Rows.Count; i++)
+                    {
+                        if (txtIDProduct.Text.Contains(this.orders.dgvCart.Rows[i].Cells["colID"].Value.ToString()))
+                        {
+                            numbericQuantity.Maximum = Convert.ToDecimal(this.orders.dgvProductInOrder.CurrentRow.Cells[2].Value)
+                                                     - Convert.ToDecimal(this.orders.dgvCart.Rows[i].Cells["colQuantity"].Value);
+                        }
+                    }
+                }
+                else
+                {
+                    numbericQuantity.Maximum = Convert.ToDecimal(this.orders.dgvProductInOrder.CurrentRow.Cells[2].Value);                    
+                }
+                
                 txtPrice.Text = Convert.ToString(orders.dgvProductInOrder.CurrentRow.Cells[3].Value.ToString());
             }            
         }
@@ -106,6 +123,15 @@ namespace FormMainGUI.Forms.OrderForm
             this.orders.txtTotalAmount.Text = totalAmount.ToString();
 
             this.Close();            
+        }
+
+        private void numbericQuantity_ValueChanged(object sender, EventArgs e)
+        {
+            if (numbericQuantity.Value.Equals(0))
+            {
+                MessageBox.Show("Sorry, this product has sold out!!!", "Notification");
+                this.Close();
+            }
         }
     }
 }
