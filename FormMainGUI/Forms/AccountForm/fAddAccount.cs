@@ -27,6 +27,9 @@ namespace FormMainGUI.Forms.AccountForm
             btnCancel.Size = new System.Drawing.Size(100, 36);
             btnAdd.Size = new System.Drawing.Size(100, 36);
 
+            txtUsername.Size = new System.Drawing.Size(210, 40);
+            txtPassword.Size = new System.Drawing.Size(210, 40);
+
             this.accountInfo = accountInfo;
             this.employeeList = employeeList;
             this.roleList = roleList;
@@ -52,6 +55,21 @@ namespace FormMainGUI.Forms.AccountForm
             string password = txtPassword.Text;
             string role = cbxRole.SelectedItem.ToString();
             string empid = AccountDAO.Instance.getEmployeeIdByName(cbxDisplayName.SelectedItem.ToString());
+
+            if (username == "")
+            {
+                MessageBox.Show("Please input username!", "Add failed");
+                txtUsername.Focus();
+                return;
+            }
+
+            if (password == "")
+            {
+                MessageBox.Show("Please input password!", "Add/Update failed");
+                txtPassword.Focus();
+                return;
+            }
+
             ModelDB.Account account = new ModelDB.Account(username, password, role, empid);
 
             if (isUpdate)
