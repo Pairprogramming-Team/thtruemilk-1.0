@@ -221,7 +221,10 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblDisplayName);
             this.Controls.Add(this.label7);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "fAddAccount";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Account";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fAddAccount_FormClosing);
