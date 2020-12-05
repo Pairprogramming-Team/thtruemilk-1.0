@@ -27,6 +27,9 @@ namespace FormMainGUI.Forms.AccountForm
             btnCancel.Size = new System.Drawing.Size(100, 36);
             btnAdd.Size = new System.Drawing.Size(100, 36);
 
+            txtUsername.Size = new System.Drawing.Size(210, 40);
+            txtPassword.Size = new System.Drawing.Size(210, 40);
+
             this.accountInfo = accountInfo;
             this.employeeList = employeeList;
             this.roleList = roleList;
