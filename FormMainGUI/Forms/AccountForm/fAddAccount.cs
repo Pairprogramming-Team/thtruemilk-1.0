@@ -55,6 +55,21 @@ namespace FormMainGUI.Forms.AccountForm
             string password = txtPassword.Text;
             string role = cbxRole.SelectedItem.ToString();
             string empid = AccountDAO.Instance.getEmployeeIdByName(cbxDisplayName.SelectedItem.ToString());
+
+            if (username == "")
+            {
+                MessageBox.Show("Please input username!", "Add failed");
+                txtUsername.Focus();
+                return;
+            }
+
+            if (password == "")
+            {
+                MessageBox.Show("Please input password!", "Add/Update failed");
+                txtPassword.Focus();
+                return;
+            }
+
             ModelDB.Account account = new ModelDB.Account(username, password, role, empid);
 
             if (isUpdate)
