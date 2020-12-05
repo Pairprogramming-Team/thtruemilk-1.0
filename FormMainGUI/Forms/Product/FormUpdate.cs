@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -111,15 +112,11 @@ namespace FormMainGUI.Forms
                 d.MFG = MFG.Value;
                 d.EXP = EXP.Value;
                 d.ProductEntryDate = ProEntryDate.Value;
-
                 db.SaveChanges();
-            
-            Products pro = new Products();
-            pro.loadData();
-            DialogResult = DialogResult.Cancel;
-            //Products products = new Products();
-            //products.loadData();
 
+            Products pro = new Products();
+           
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

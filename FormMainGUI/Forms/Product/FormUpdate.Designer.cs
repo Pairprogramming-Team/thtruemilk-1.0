@@ -214,7 +214,9 @@
             // 
             // MFG
             // 
+            this.MFG.CustomFormat = "yyyy/MM/dd";
             this.MFG.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.MFG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.MFG.Location = new System.Drawing.Point(255, 423);
             this.MFG.Name = "MFG";
             this.MFG.Size = new System.Drawing.Size(275, 30);
@@ -222,7 +224,9 @@
             // 
             // EXP
             // 
+            this.EXP.CustomFormat = "yyyy/MM/dd";
             this.EXP.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.EXP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.EXP.Location = new System.Drawing.Point(256, 484);
             this.EXP.Name = "EXP";
             this.EXP.Size = new System.Drawing.Size(275, 30);
@@ -230,7 +234,9 @@
             // 
             // ProEntryDate
             // 
+            this.ProEntryDate.CustomFormat = "yyyy/MM/dd";
             this.ProEntryDate.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.ProEntryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ProEntryDate.Location = new System.Drawing.Point(255, 544);
             this.ProEntryDate.Name = "ProEntryDate";
             this.ProEntryDate.Size = new System.Drawing.Size(275, 30);
