@@ -62,13 +62,13 @@
             this.btnDone.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDone.Depth = 0;
             this.btnDone.Icon = null;
-            this.btnDone.Location = new System.Drawing.Point(292, 16);
+            this.btnDone.Location = new System.Drawing.Point(182, 16);
             this.btnDone.Margin = new System.Windows.Forms.Padding(2);
             this.btnDone.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDone.Name = "btnDone";
             this.btnDone.Primary = true;
             this.btnDone.Size = new System.Drawing.Size(57, 36);
-            this.btnDone.TabIndex = 1;
+            this.btnDone.TabIndex = 0;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
@@ -80,7 +80,7 @@
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Depth = 0;
             this.btnCancel.Icon = null;
-            this.btnCancel.Location = new System.Drawing.Point(180, 16);
+            this.btnCancel.Location = new System.Drawing.Point(328, 16);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancel.Name = "btnCancel";
@@ -96,20 +96,19 @@
             this.numbericQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numbericQuantity.Location = new System.Drawing.Point(182, 178);
             this.numbericQuantity.Margin = new System.Windows.Forms.Padding(2);
-            this.numbericQuantity.Minimum = new decimal(new int[] {
-            1,
+            this.numbericQuantity.Maximum = new decimal(new int[] {
+            999,
             0,
             0,
             0});
             this.numbericQuantity.Name = "numbericQuantity";
             this.numbericQuantity.Size = new System.Drawing.Size(90, 20);
-            this.numbericQuantity.TabIndex = 0;
+            this.numbericQuantity.TabIndex = 2;
             this.numbericQuantity.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numbericQuantity.ValueChanged += new System.EventHandler(this.numbericQuantity_ValueChanged);
             // 
             // materialLabel4
             // 

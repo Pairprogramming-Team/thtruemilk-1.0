@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +82,18 @@
     </Compile>
     <Compile Include="Forms\AccountForm\fAddAccount.Designer.cs">
       <DependentUpon>fAddAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Chart_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Chart_Employee.Designer.cs">
+      <DependentUpon>Chart_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Chart_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Chart_Product.Designer.cs">
+      <DependentUpon>Chart_Product.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DashboardForm\chartEmployee.cs">
       <SubType>Form</SubType>
@@ -136,6 +149,12 @@
     <Compile Include="Forms\OrderForm\AddToCart.Designer.cs">
       <DependentUpon>AddToCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OrderForm\Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderForm\Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Product\FormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,11 +167,11 @@
     <Compile Include="Forms\Product\FormUpdate.Designer.cs">
       <DependentUpon>FormUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OrderForm\Orders.cs">
+    <Compile Include="Forms\OrderForm\OrdersDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OrderForm\Orders.Designer.cs">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <Compile Include="Forms\OrderForm\OrdersDetail.Designer.cs">
+      <DependentUpon>OrdersDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Product\Products.cs">
       <SubType>Form</SubType>
@@ -228,6 +247,12 @@
     <EmbeddedResource Include="Forms\AccountForm\fAddAccount.resx">
       <DependentUpon>fAddAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Chart_Employee.resx">
+      <DependentUpon>Chart_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Chart_Product.resx">
+      <DependentUpon>Chart_Product.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashboardForm\chartEmployee.resx">
       <DependentUpon>chartEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,14 +280,17 @@
     <EmbeddedResource Include="Forms\OrderForm\AddToCart.resx">
       <DependentUpon>AddToCart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderForm\Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\FormUpdate.resx">
       <DependentUpon>FormUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OrderForm\Orders.resx">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OrderForm\OrdersDetail.resx">
+      <DependentUpon>OrdersDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
