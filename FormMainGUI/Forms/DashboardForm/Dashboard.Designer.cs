@@ -36,7 +36,6 @@
             this.btnTotal = new System.Windows.Forms.Button();
             this.lblMenu = new System.Windows.Forms.Label();
             this.pictureDashboard = new System.Windows.Forms.PictureBox();
-            this.panelTop = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panelEmployee = new System.Windows.Forms.Panel();
@@ -92,7 +91,7 @@
             this.panelMenu.Controls.Add(this.btnEmployee);
             this.panelMenu.Controls.Add(this.btnProduct);
             this.panelMenu.Controls.Add(this.btnTotal);
-            this.panelMenu.Location = new System.Drawing.Point(19, 261);
+            this.panelMenu.Location = new System.Drawing.Point(19, 306);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(273, 488);
             this.panelMenu.TabIndex = 3;
@@ -148,7 +147,7 @@
             // lblMenu
             // 
             this.lblMenu.Font = new System.Drawing.Font("Matura MT Script Capitals", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenu.Location = new System.Drawing.Point(19, 173);
+            this.lblMenu.Location = new System.Drawing.Point(19, 217);
             this.lblMenu.Name = "lblMenu";
             this.lblMenu.Size = new System.Drawing.Size(273, 65);
             this.lblMenu.TabIndex = 3;
@@ -159,21 +158,12 @@
             // 
             this.pictureDashboard.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureDashboard.ErrorImage")));
             this.pictureDashboard.Image = ((System.Drawing.Image)(resources.GetObject("pictureDashboard.Image")));
-            this.pictureDashboard.Location = new System.Drawing.Point(82, 28);
+            this.pictureDashboard.Location = new System.Drawing.Point(63, 28);
             this.pictureDashboard.Name = "pictureDashboard";
-            this.pictureDashboard.Size = new System.Drawing.Size(148, 108);
+            this.pictureDashboard.Size = new System.Drawing.Size(183, 168);
             this.pictureDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureDashboard.TabIndex = 2;
             this.pictureDashboard.TabStop = false;
-            // 
-            // panelTop
-            // 
-            this.panelTop.BackColor = System.Drawing.Color.Transparent;
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(315, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1164, 28);
-            this.panelTop.TabIndex = 1;
             // 
             // panel2
             // 
@@ -182,40 +172,42 @@
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(315, 28);
+            this.panel2.Location = new System.Drawing.Point(315, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1164, 196);
+            this.panel2.Size = new System.Drawing.Size(1164, 205);
             this.panel2.TabIndex = 2;
             // 
             // panel10
             // 
             this.panel10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel10.Controls.Add(this.panelEmployee);
-            this.panel10.Location = new System.Drawing.Point(434, 0);
+            this.panel10.Location = new System.Drawing.Point(416, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(320, 196);
+            this.panel10.Size = new System.Drawing.Size(350, 199);
             this.panel10.TabIndex = 8;
             // 
             // panelEmployee
             // 
+            this.panelEmployee.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelEmployee.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelEmployee.Controls.Add(this.labelText1);
             this.panelEmployee.Controls.Add(this.labelInputEmployee);
             this.panelEmployee.Controls.Add(this.labelEmployee);
             this.panelEmployee.Controls.Add(this.pictureBoxEmployee);
-            this.panelEmployee.Location = new System.Drawing.Point(3, 6);
+            this.panelEmployee.Location = new System.Drawing.Point(3, 12);
             this.panelEmployee.Name = "panelEmployee";
-            this.panelEmployee.Size = new System.Drawing.Size(305, 158);
+            this.panelEmployee.Size = new System.Drawing.Size(347, 184);
             this.panelEmployee.TabIndex = 5;
             // 
             // labelText1
             // 
             this.labelText1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelText1.Location = new System.Drawing.Point(130, 109);
+            this.labelText1.Location = new System.Drawing.Point(135, 109);
             this.labelText1.Name = "labelText1";
-            this.labelText1.Size = new System.Drawing.Size(152, 30);
+            this.labelText1.Size = new System.Drawing.Size(137, 30);
             this.labelText1.TabIndex = 4;
             this.labelText1.Text = "In the store";
+            this.labelText1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelInputEmployee
             // 
@@ -251,9 +243,9 @@
             // 
             this.panel9.Controls.Add(this.panelProduct);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(814, 0);
+            this.panel9.Location = new System.Drawing.Point(772, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(350, 196);
+            this.panel9.Size = new System.Drawing.Size(392, 205);
             this.panel9.TabIndex = 7;
             // 
             // panelProduct
@@ -263,9 +255,9 @@
             this.panelProduct.Controls.Add(this.labelInputProduct);
             this.panelProduct.Controls.Add(this.labelProduct);
             this.panelProduct.Controls.Add(this.pictureBoxProduct);
-            this.panelProduct.Location = new System.Drawing.Point(17, 6);
+            this.panelProduct.Location = new System.Drawing.Point(18, 12);
             this.panelProduct.Name = "panelProduct";
-            this.panelProduct.Size = new System.Drawing.Size(305, 158);
+            this.panelProduct.Size = new System.Drawing.Size(347, 184);
             this.panelProduct.TabIndex = 4;
             // 
             // labelText
@@ -273,9 +265,10 @@
             this.labelText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelText.Location = new System.Drawing.Point(141, 109);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(142, 30);
+            this.labelText.Size = new System.Drawing.Size(132, 30);
             this.labelText.TabIndex = 3;
             this.labelText.Text = "In the store";
+            this.labelText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelInputProduct
             // 
@@ -313,19 +306,20 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(372, 196);
+            this.panel8.Size = new System.Drawing.Size(410, 205);
             this.panel8.TabIndex = 6;
             // 
             // panelOrder
             // 
+            this.panelOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelOrder.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelOrder.Controls.Add(this.labelSold);
             this.panelOrder.Controls.Add(this.labelInputOrder);
             this.panelOrder.Controls.Add(this.labelOrder);
             this.panelOrder.Controls.Add(this.pictureBoxOrder);
-            this.panelOrder.Location = new System.Drawing.Point(30, 6);
+            this.panelOrder.Location = new System.Drawing.Point(48, 12);
             this.panelOrder.Name = "panelOrder";
-            this.panelOrder.Size = new System.Drawing.Size(307, 158);
+            this.panelOrder.Size = new System.Drawing.Size(347, 184);
             this.panelOrder.TabIndex = 4;
             // 
             // labelSold
@@ -373,9 +367,9 @@
             this.panelChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panelChart.Controls.Add(this.panel7);
             this.panelChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChart.Location = new System.Drawing.Point(315, 224);
+            this.panelChart.Location = new System.Drawing.Point(315, 205);
             this.panelChart.Name = "panelChart";
-            this.panelChart.Size = new System.Drawing.Size(1164, 573);
+            this.panelChart.Size = new System.Drawing.Size(1164, 592);
             this.panelChart.TabIndex = 3;
             // 
             // panel7
@@ -391,11 +385,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1479, 797);
             this.Controls.Add(this.panelChart);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelLeft);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "Dashboard";
@@ -424,7 +416,6 @@
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Label lblMenu;
         private System.Windows.Forms.PictureBox pictureDashboard;
-        private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnEmployee;
         private System.Windows.Forms.Button btnProduct;
