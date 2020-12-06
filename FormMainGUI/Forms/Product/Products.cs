@@ -73,6 +73,7 @@ namespace FormMainGUI.Forms
         {
             statusList = ProductsDAO.Instance.getStatusList();
             dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

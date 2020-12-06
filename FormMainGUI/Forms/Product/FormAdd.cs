@@ -24,7 +24,7 @@ namespace FormMainGUI.Forms
         private ProductsDetail productsDetail;
         private bool isUpdate = false;
 
-        public add( List<String> statusList , Product product= null, ProductsDetail productsDetail= null)
+        public add( List<String> statusList, Product product= null, ProductsDetail productsDetail= null)
         {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -41,6 +41,7 @@ namespace FormMainGUI.Forms
             txtProDetailID.Size = new System.Drawing.Size(205, 28);
             this.product = product;
             this.productsDetail = productsDetail;
+            this.statusList = statusList;
 
             if (product != null)
             {
@@ -109,18 +110,20 @@ namespace FormMainGUI.Forms
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {   
+        {
+            try
+            {
                 string id = txtID.Text;
                 string name = txtName.Text;
                 int quantity = Convert.ToInt32(Quantity.Value);
                 int price = Convert.ToInt32(txtPrice.Text);
-             
+
                 bool isSuccess = false;
-                ModelDB.Product a = new ModelDB.Product(id,name,quantity,price);
-                ModelDB.ProductsDetail b =  new ModelDB.ProductsDetail(txtProDetailID.Text, Convert.ToString(cmbStatus.SelectedItem), MFG.Value, EXP.Value,ProductEntryDate.Value, txtID.Text);
+                ModelDB.Product a = new ModelDB.Product(id, name, quantity, price);
+                ModelDB.ProductsDetail b = new ModelDB.ProductsDetail(txtProDetailID.Text, Convert.ToString(cmbStatus.SelectedItem), MFG.Value, EXP.Value, ProductEntryDate.Value, txtID.Text);
                 if (isUpdate)
                 {
-                    isSuccess = ProductsDAO.Instance.updateProduct(a , b);
+                    isSuccess = ProductsDAO.Instance.updateProduct(a, b);
                     if (isSuccess)
                     {
                         MessageBox.Show("Update Product Successful!", "");
@@ -133,7 +136,7 @@ namespace FormMainGUI.Forms
                 }
                 else
                 {
-                    isSuccess = ProductsDAO.Instance.productAdd(a,b);
+                    isSuccess = ProductsDAO.Instance.productAdd(a, b);
                     if (isSuccess)
                     {
                         MessageBox.Show("Add Product Successful!", "");
@@ -144,6 +147,49 @@ namespace FormMainGUI.Forms
                         MessageBox.Show("Add Product Fail!", "");
                     }
                 }
+            }
+            catch (Exception)
+            {
+
+                if (txtID.Text == "")
+                {
+                    MessageBox.Show("Invalid ID value");
+                    return;
+                }
+                else if (txtName.Text == "")
+                {
+                    MessageBox.Show("Invalid name value ");
+                    return;
+                }
+
+                else if (Quantity.Value == 0)
+                {
+                    MessageBox.Show("Invalid quantity value");
+                    return;
+                }
+                else if (txtPrice.Text == "" & Convert.ToInt32(txtPrice.Text) <= 0)
+                {
+                    MessageBox.Show("Invalid Price value");
+                    return;
+                }
+                else if (txtProDetailID.Text == "")
+                {
+                    MessageBox.Show("Invalid Product Detail ID value ");
+                    return;
+                }
+                else if (Convert.ToString(MFG.Value) == "" || MFG.Value > DateTime.Now)
+                {
+                    MessageBox.Show("Invalid EXP value");
+                    return;
+                }
+                else if (EXP.Value < DateTime.Now  )
+                {
+                    MessageBox.Show("Invalid EXP value");
+                    return;
+                }
+              
+            }
+               
             
         }
 

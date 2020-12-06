@@ -144,12 +144,6 @@
     <Compile Include="Forms\Product\FormAdd.Designer.cs">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Product\FormUpdate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Product\FormUpdate.Designer.cs">
-      <DependentUpon>FormUpdate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\OrderForm\Orders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,9 +253,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Product\FormUpdate.resx">
-      <DependentUpon>FormUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>

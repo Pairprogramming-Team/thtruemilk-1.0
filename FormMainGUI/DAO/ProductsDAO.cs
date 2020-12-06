@@ -52,10 +52,10 @@ namespace FormMainGUI.DAO
         }
         public List<string> getStatusList()
         {
-            List<string> detailList = new List<string>();
+            List<string> statusList = new List<string>();
             var db = DataProvider.Ins.DB;
-            detailList = db.ProductsDetails.GroupBy(a => a.Status).Select(x => x.Key).ToList();
-            return detailList;
+            statusList = db.ProductsDetails.GroupBy(a => a.Status).Select(x => x.Key).ToList();
+            return statusList;
         }
         public bool productAdd(Product product,ProductsDetail productsDetail)
         {
@@ -66,6 +66,8 @@ namespace FormMainGUI.DAO
                 
                 db.Products.Add(product);
                 db.SaveChanges();
+                var r = db.Products.Where(x => x.ProductID == product.ProductID).FirstOrDefault();
+                productsDetail.Product = r;
                 db.ProductsDetails.Add(productsDetail);
                 db.SaveChanges();
                 return true;
@@ -75,6 +77,7 @@ namespace FormMainGUI.DAO
                 return false;
             }
         }
+ 
         public bool updateProduct(Product product, ProductsDetail productsDetail)
         {
             var db = DataProvider.Ins.DB;
