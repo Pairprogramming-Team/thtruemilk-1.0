@@ -61,6 +61,20 @@ namespace FormMainGUI.Forms.LoginForm
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
+            if(username == "")
+            {
+                MessageBox.Show("Please input username!", "Login failed");
+                txtUsername.Focus();
+                return;
+            }
+
+            if (password == "")
+            {
+                MessageBox.Show("Please input password!", "Login failed");
+                txtPassword.Focus();
+                return;
+            }
+
             Account account = isLogin(username, password);
 
             if (account != null)
@@ -72,6 +86,7 @@ namespace FormMainGUI.Forms.LoginForm
             else
             {
                 MessageBox.Show("Invalid username or password!", "Login failed");
+                txtUsername.Focus();
             }
 
         }

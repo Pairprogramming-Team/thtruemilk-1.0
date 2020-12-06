@@ -81,7 +81,7 @@
             this.dgvAccount.RowHeadersWidth = 51;
             this.dgvAccount.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvAccount.RowTemplate.Height = 24;
-            this.dgvAccount.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvAccount.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccount.Size = new System.Drawing.Size(780, 528);
             this.dgvAccount.TabIndex = 0;
