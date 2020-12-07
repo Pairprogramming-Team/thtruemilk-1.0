@@ -78,9 +78,8 @@ namespace FormMainGUI.Forms.OrderForm
                             this.orders.dgvProductInOrder.Rows[i].Cells[2].Value = Convert.ToInt32(this.orders.dgvProductInOrder.Rows[i].Cells[2].Value)
                                                                                  - quantity + Convert.ToInt32(this.orders.dgvCart.CurrentRow.Cells[2].Value);
 
-                            int index = this.orders.dgvCart.CurrentRow.Index;
-                            this.orders.dgvCart.Rows.Insert(index, txtIDProduct.Text, txtNameProduct.Text, numbericQuantity.Value.ToString(), txtPrice.Text, totalMoney);
-                            this.orders.dgvCart.Rows.RemoveAt(this.orders.dgvCart.SelectedRows[0].Index);
+                            this.orders.dgvCart.CurrentRow.Cells["colQuantity"].Value = numbericQuantity.Value;
+                            this.orders.dgvCart.CurrentRow.Cells["colTotalMoney"].Value = totalMoney;
 
                             this.Close();
                         }
