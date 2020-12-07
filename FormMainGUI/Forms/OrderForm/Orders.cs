@@ -1,4 +1,5 @@
-﻿using FormMainGUI.Forms.OrderForm;
+﻿using FormMainGUI.DAO;
+using FormMainGUI.Forms.OrderForm;
 using FormMainGUI.ModelDB;
 using FormMainGUI.Utils;
 using MaterialSkin;
@@ -16,7 +17,7 @@ namespace FormMainGUI.Forms
 {
     public partial class fOrders : MaterialForm
     {
-        Product product = new Product();
+        public static bool isUpdate = true;
         public fOrders()
         {
             InitializeComponent();
@@ -33,14 +34,17 @@ namespace FormMainGUI.Forms
             btnUpdate.Size = new System.Drawing.Size(100, 36);
             btnDone.Size = new System.Drawing.Size(100, 36);
             btnAddToCart.Size = new System.Drawing.Size(150, 36);
+
+            btnDelete.Enabled = false;
+            btnDone.Enabled = false;
+            btnUpdate.Enabled = false;
+
+            dgvCart.AllowUserToAddRows = false;
         }
 
         private void fOrders_Load(object sender, EventArgs e)
         {
-            var db = DataProvider.Ins.DB;
-            var listProducts = from p in db.Products
-                               select p;
-            dgvProductInOrder.DataSource = listProducts.ToList();
+            dgvProductInOrder.DataSource = OrderDAO.Instance.getListProduct();
             dgvProductInOrder.Columns[4].Visible = false;
             dgvProductInOrder.Columns[5].Visible = false;
         }
@@ -54,51 +58,70 @@ namespace FormMainGUI.Forms
 
             int index = e.RowIndex;
             dgvProductInOrder.Rows[index].Selected = true;
-
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.dgvProductInOrder.Rows[e.RowIndex];
-                product.ProductID = row.Cells[0].Value.ToString();
-                product.Name = row.Cells[1].Value.ToString();
-                product.Price = Convert.ToInt32(row.Cells[3].Value.ToString());
-            }
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
+            isUpdate = false;
             if (dgvProductInOrder.SelectedRows.Count == 1)
             {
-                fAddToCart fAddToCart = new fAddToCart(product);
+                fAddToCart fAddToCart = new fAddToCart(this);
                 fAddToCart.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Please choose a product!!!", "Notification");
             }
-            
-
-                //DataGridViewRow a = (DataGridViewRow)dgvCart.Rows[0].Clone();
-                //a.Cells[0].Value = row.Cells[0].Value.ToString();
-                //a.Cells[1].Value = "cac";
-                //dgvCart.Rows.Add(a);
-                ////dgvCart.Rows.Add(row.Cells[1].Value.ToString());
-        }
-
-        private void dgvCartInfo_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            //float TotalAmount;
-            //for (int i = 0; i < dgvCartInfo.Rows.Count - 1; i++)
-            //{
-            //    TotalAmount += float.Parse(dgvCartInfo.Rows[i].Cells["Price"].Value.ToString());
-            //}
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            var listProductSearch = from l in DataProvider.Ins.DB.Products
-                                    where l.Name.Trim().Contains(txtSearch.Text)
-                                    select l;
-            dgvProductInOrder.DataSource = listProductSearch.ToList();
+            dgvProductInOrder.DataSource = OrderDAO.Instance.searchProductByName(txtSearch.Text);
+        }
+
+        private void dgvCart_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            int index = e.RowIndex;
+            dgvCart.Rows[index].Selected = true;
+
+            if (dgvCart.SelectedRows.Count > 0)
+            {
+                btnDelete.Enabled = true;
+            }
+
+            if (dgvCart.SelectedRows.Count == 1)
+            {
+                btnUpdate.Enabled = true;
+            }             
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {            
+            foreach (DataGridViewRow item in this.dgvCart.SelectedRows)
+            {
+                dgvCart.Rows.RemoveAt(item.Index);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            isUpdate = true;
+            if (dgvCart.SelectedRows.Count == 1)
+            {
+                fAddToCart fAddToCart = new fAddToCart(this);
+                fAddToCart.Text = "UPDATE CART";
+                fAddToCart.ShowDialog();
+            }            
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

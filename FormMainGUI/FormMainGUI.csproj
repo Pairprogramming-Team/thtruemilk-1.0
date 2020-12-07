@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,10 +84,28 @@
     <Compile Include="Forms\AccountForm\fAddAccount.Designer.cs">
       <DependentUpon>fAddAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Dashboard.cs">
+    <Compile Include="Forms\DashboardForm\chartEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dashboard.Designer.cs">
+    <Compile Include="Forms\DashboardForm\chartEmployee.Designer.cs">
+      <DependentUpon>chartEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\chartOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\chartOrder.Designer.cs">
+      <DependentUpon>chartOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\chartProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\chartProduct.Designer.cs">
+      <DependentUpon>chartProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeeForm\addEmployee.cs">
@@ -212,7 +231,16 @@
     <EmbeddedResource Include="Forms\AccountForm\fAddAccount.resx">
       <DependentUpon>fAddAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dashboard.resx">
+    <EmbeddedResource Include="Forms\DashboardForm\chartEmployee.resx">
+      <DependentUpon>chartEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForm\chartOrder.resx">
+      <DependentUpon>chartOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForm\chartProduct.resx">
+      <DependentUpon>chartProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForm\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm\addEmployee.resx">

@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnEmployee = new System.Windows.Forms.Button();
@@ -62,7 +58,6 @@
             this.pictureBoxOrder = new System.Windows.Forms.PictureBox();
             this.panelChart = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.chartTotal = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelLeft.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDashboard)).BeginInit();
@@ -77,7 +72,6 @@
             this.panelOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrder)).BeginInit();
             this.panelChart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartTotal)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLeft
@@ -378,7 +372,6 @@
             // 
             this.panelChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panelChart.Controls.Add(this.panel7);
-            this.panelChart.Controls.Add(this.chartTotal);
             this.panelChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChart.Location = new System.Drawing.Point(315, 224);
             this.panelChart.Name = "panelChart";
@@ -392,28 +385,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1164, 14);
             this.panel7.TabIndex = 1;
-            // 
-            // chartTotal
-            // 
-            this.chartTotal.BackColor = System.Drawing.SystemColors.Control;
-            chartArea2.Name = "ChartArea1";
-            this.chartTotal.ChartAreas.Add(chartArea2);
-            this.chartTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartTotal.Legends.Add(legend2);
-            this.chartTotal.Location = new System.Drawing.Point(0, 0);
-            this.chartTotal.Name = "chartTotal";
-            this.chartTotal.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "TotalMoney";
-            this.chartTotal.Series.Add(series2);
-            this.chartTotal.Size = new System.Drawing.Size(1164, 573);
-            this.chartTotal.TabIndex = 0;
-            this.chartTotal.Text = "TotalMoney";
-            title2.Name = "TotalMoney";
-            title2.Text = "Total Money";
-            this.chartTotal.Titles.Add(title2);
             // 
             // Dashboard
             // 
@@ -444,7 +415,6 @@
             this.panelOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrder)).EndInit();
             this.panelChart.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartTotal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,7 +433,6 @@
         private System.Windows.Forms.Panel panelEmployee;
         private System.Windows.Forms.Panel panelProduct;
         private System.Windows.Forms.Panel panelChart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartTotal;
         private System.Windows.Forms.Label labelEmployee;
         private System.Windows.Forms.PictureBox pictureBoxEmployee;
         private System.Windows.Forms.Label labelProduct;
