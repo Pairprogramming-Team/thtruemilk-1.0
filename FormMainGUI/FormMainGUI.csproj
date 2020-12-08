@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -113,6 +114,7 @@
     <Compile Include="Forms\EmployeeForm\addEmployee.Designer.cs">
       <DependentUpon>addEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForm\EmployeeInfo.cs" />
     <Compile Include="Forms\EmployeeForm\Employees.cs">
       <SubType>Form</SubType>
     </Compile>
