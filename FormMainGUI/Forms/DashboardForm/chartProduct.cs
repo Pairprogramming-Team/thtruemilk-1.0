@@ -23,7 +23,7 @@ namespace FormMainGUI.Forms.DashboardForm
         private void ChartProduct()
         {
             var db = DataProvider.Ins.DB;
-            var data = db.Products.ToList();
+            //var data = db.Products.ToList();
             var d = (db.OrdersDetails.GroupBy(x => x.ProductID).ToList());
             var area = new ChartArea();
             var chartProduct = new Chart();

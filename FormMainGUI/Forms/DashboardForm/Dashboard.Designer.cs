@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.btnReportEmployee = new System.Windows.Forms.Button();
+            this.btnReportProduct = new System.Windows.Forms.Button();
+            this.btnReportOrder = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
@@ -76,14 +79,50 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelLeft.Controls.Add(this.btnReportEmployee);
+            this.panelLeft.Controls.Add(this.btnReportProduct);
+            this.panelLeft.Controls.Add(this.btnReportOrder);
             this.panelLeft.Controls.Add(this.panelMenu);
             this.panelLeft.Controls.Add(this.lblMenu);
             this.panelLeft.Controls.Add(this.pictureDashboard);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(315, 797);
+            this.panelLeft.Size = new System.Drawing.Size(315, 944);
             this.panelLeft.TabIndex = 0;
+            // 
+            // btnReportEmployee
+            // 
+            this.btnReportEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportEmployee.Location = new System.Drawing.Point(49, 813);
+            this.btnReportEmployee.Name = "btnReportEmployee";
+            this.btnReportEmployee.Size = new System.Drawing.Size(216, 60);
+            this.btnReportEmployee.TabIndex = 5;
+            this.btnReportEmployee.Text = "Report Employee";
+            this.btnReportEmployee.UseVisualStyleBackColor = true;
+            this.btnReportEmployee.Visible = false;
+            this.btnReportEmployee.Click += new System.EventHandler(this.btnReportEmployee_Click);
+            // 
+            // btnReportProduct
+            // 
+            this.btnReportProduct.Location = new System.Drawing.Point(49, 813);
+            this.btnReportProduct.Name = "btnReportProduct";
+            this.btnReportProduct.Size = new System.Drawing.Size(216, 60);
+            this.btnReportProduct.TabIndex = 4;
+            this.btnReportProduct.Text = "Report Product";
+            this.btnReportProduct.UseVisualStyleBackColor = true;
+            this.btnReportProduct.Visible = false;
+            this.btnReportProduct.Click += new System.EventHandler(this.btnReportProduct_Click);
+            // 
+            // btnReportOrder
+            // 
+            this.btnReportOrder.Location = new System.Drawing.Point(49, 813);
+            this.btnReportOrder.Name = "btnReportOrder";
+            this.btnReportOrder.Size = new System.Drawing.Size(216, 60);
+            this.btnReportOrder.TabIndex = 2;
+            this.btnReportOrder.Text = "Report Order";
+            this.btnReportOrder.UseVisualStyleBackColor = true;
+            this.btnReportOrder.Click += new System.EventHandler(this.btnReportOrder_Click);
             // 
             // panelMenu
             // 
@@ -202,7 +241,7 @@
             // labelText1
             // 
             this.labelText1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelText1.Location = new System.Drawing.Point(135, 109);
+            this.labelText1.Location = new System.Drawing.Point(189, 124);
             this.labelText1.Name = "labelText1";
             this.labelText1.Size = new System.Drawing.Size(137, 30);
             this.labelText1.TabIndex = 4;
@@ -213,7 +252,7 @@
             // 
             this.labelInputEmployee.BackColor = System.Drawing.SystemColors.Control;
             this.labelInputEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInputEmployee.Location = new System.Drawing.Point(135, 68);
+            this.labelInputEmployee.Location = new System.Drawing.Point(189, 68);
             this.labelInputEmployee.Name = "labelInputEmployee";
             this.labelInputEmployee.Size = new System.Drawing.Size(132, 34);
             this.labelInputEmployee.TabIndex = 4;
@@ -222,7 +261,7 @@
             // labelEmployee
             // 
             this.labelEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmployee.Location = new System.Drawing.Point(130, 12);
+            this.labelEmployee.Location = new System.Drawing.Point(165, 12);
             this.labelEmployee.Name = "labelEmployee";
             this.labelEmployee.Size = new System.Drawing.Size(172, 41);
             this.labelEmployee.TabIndex = 2;
@@ -234,7 +273,7 @@
             this.pictureBoxEmployee.Image = global::FormMainGUI.Properties.Resources.employee;
             this.pictureBoxEmployee.Location = new System.Drawing.Point(13, 12);
             this.pictureBoxEmployee.Name = "pictureBoxEmployee";
-            this.pictureBoxEmployee.Size = new System.Drawing.Size(90, 90);
+            this.pictureBoxEmployee.Size = new System.Drawing.Size(135, 147);
             this.pictureBoxEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxEmployee.TabIndex = 1;
             this.pictureBoxEmployee.TabStop = false;
@@ -263,9 +302,9 @@
             // labelText
             // 
             this.labelText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelText.Location = new System.Drawing.Point(141, 109);
+            this.labelText.Location = new System.Drawing.Point(190, 129);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(132, 30);
+            this.labelText.Size = new System.Drawing.Size(137, 30);
             this.labelText.TabIndex = 3;
             this.labelText.Text = "In the store";
             this.labelText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -274,16 +313,16 @@
             // 
             this.labelInputProduct.BackColor = System.Drawing.SystemColors.Control;
             this.labelInputProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInputProduct.Location = new System.Drawing.Point(151, 68);
+            this.labelInputProduct.Location = new System.Drawing.Point(188, 68);
             this.labelInputProduct.Name = "labelInputProduct";
-            this.labelInputProduct.Size = new System.Drawing.Size(122, 34);
+            this.labelInputProduct.Size = new System.Drawing.Size(134, 34);
             this.labelInputProduct.TabIndex = 2;
             this.labelInputProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelProduct
             // 
             this.labelProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProduct.Location = new System.Drawing.Point(146, 16);
+            this.labelProduct.Location = new System.Drawing.Point(171, 16);
             this.labelProduct.Name = "labelProduct";
             this.labelProduct.Size = new System.Drawing.Size(137, 37);
             this.labelProduct.TabIndex = 1;
@@ -295,7 +334,7 @@
             this.pictureBoxProduct.Image = global::FormMainGUI.Properties.Resources.milk_box_1;
             this.pictureBoxProduct.Location = new System.Drawing.Point(12, 12);
             this.pictureBoxProduct.Name = "pictureBoxProduct";
-            this.pictureBoxProduct.Size = new System.Drawing.Size(93, 90);
+            this.pictureBoxProduct.Size = new System.Drawing.Size(135, 147);
             this.pictureBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxProduct.TabIndex = 0;
             this.pictureBoxProduct.TabStop = false;
@@ -325,7 +364,7 @@
             // labelSold
             // 
             this.labelSold.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSold.Location = new System.Drawing.Point(147, 109);
+            this.labelSold.Location = new System.Drawing.Point(186, 129);
             this.labelSold.Name = "labelSold";
             this.labelSold.Size = new System.Drawing.Size(112, 30);
             this.labelSold.TabIndex = 4;
@@ -336,7 +375,7 @@
             // 
             this.labelInputOrder.BackColor = System.Drawing.SystemColors.Control;
             this.labelInputOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInputOrder.Location = new System.Drawing.Point(139, 68);
+            this.labelInputOrder.Location = new System.Drawing.Point(186, 68);
             this.labelInputOrder.Name = "labelInputOrder";
             this.labelInputOrder.Size = new System.Drawing.Size(133, 34);
             this.labelInputOrder.TabIndex = 3;
@@ -345,7 +384,7 @@
             // labelOrder
             // 
             this.labelOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrder.Location = new System.Drawing.Point(134, 16);
+            this.labelOrder.Location = new System.Drawing.Point(185, 12);
             this.labelOrder.Name = "labelOrder";
             this.labelOrder.Size = new System.Drawing.Size(151, 37);
             this.labelOrder.TabIndex = 3;
@@ -357,7 +396,7 @@
             this.pictureBoxOrder.Image = global::FormMainGUI.Properties.Resources.money_1;
             this.pictureBoxOrder.Location = new System.Drawing.Point(13, 12);
             this.pictureBoxOrder.Name = "pictureBoxOrder";
-            this.pictureBoxOrder.Size = new System.Drawing.Size(88, 90);
+            this.pictureBoxOrder.Size = new System.Drawing.Size(135, 147);
             this.pictureBoxOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxOrder.TabIndex = 2;
             this.pictureBoxOrder.TabStop = false;
@@ -369,7 +408,7 @@
             this.panelChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChart.Location = new System.Drawing.Point(315, 205);
             this.panelChart.Name = "panelChart";
-            this.panelChart.Size = new System.Drawing.Size(1164, 592);
+            this.panelChart.Size = new System.Drawing.Size(1164, 739);
             this.panelChart.TabIndex = 3;
             // 
             // panel7
@@ -385,7 +424,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1479, 797);
+            this.ClientSize = new System.Drawing.Size(1479, 944);
             this.Controls.Add(this.panelChart);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelLeft);
@@ -441,5 +480,8 @@
         private System.Windows.Forms.Label labelInputOrder;
         private System.Windows.Forms.Label labelOrder;
         private System.Windows.Forms.PictureBox pictureBoxOrder;
+        private System.Windows.Forms.Button btnReportEmployee;
+        private System.Windows.Forms.Button btnReportProduct;
+        private System.Windows.Forms.Button btnReportOrder;
     }
 }

@@ -80,6 +80,9 @@ namespace FormMainGUI.Forms
         private void btnTotal_Click(object sender, EventArgs e)
         {
             OpenChildForm(new chartOrder());
+            btnReportEmployee.Visible = false;
+            btnReportOrder.Visible = true;
+            btnReportProduct.Visible = false;
         }
 
         private void OpenChildForm(Form childForm)
@@ -104,11 +107,32 @@ namespace FormMainGUI.Forms
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             OpenChildForm(new chartEmployee());
+            btnReportEmployee.Visible = true;
+            btnReportOrder.Visible = false;
+            btnReportProduct.Visible = false;
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
             OpenChildForm(new chartProduct());
+            btnReportEmployee.Visible = false;
+            btnReportOrder.Visible = false;
+            btnReportProduct.Visible = true;
+        }
+
+        private void btnReportOrder_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new formReportOrder());
+        }
+
+        private void btnReportProduct_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new formReportProduct());
+        }
+
+        private void btnReportEmployee_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new formReportEmployee());
         }
     }
 }
