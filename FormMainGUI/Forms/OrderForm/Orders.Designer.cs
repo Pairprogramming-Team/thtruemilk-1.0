@@ -220,6 +220,6 @@ namespace FormMainGUI.Forms.OrderForm
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvOrdersList;
+        public System.Windows.Forms.DataGridView dgvOrdersList;
     }
 }

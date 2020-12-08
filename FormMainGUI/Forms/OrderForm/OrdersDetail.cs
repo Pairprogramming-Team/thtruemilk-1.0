@@ -18,9 +18,13 @@ namespace FormMainGUI.Forms
     public partial class fOrdersDetail : MaterialForm
     {
         public static bool isUpdate = true;
-        public fOrdersDetail()
+        fOrders fOrders;
+        private ModelDB.Account account1;
+        public fOrdersDetail(fOrders fOrders, Account account)
         {
             InitializeComponent();
+            this.fOrders = fOrders;
+            this.account1 = account;
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -47,7 +51,7 @@ namespace FormMainGUI.Forms
             dgvProductInOrder.DataSource = OrderDAO.Instance.getListProduct();
             dgvProductInOrder.Columns[4].Visible = false;
             dgvProductInOrder.Columns[5].Visible = false;
-            this.Dock = DockStyle.Fill;
+            this.Dock = DockStyle.Fill;            
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
@@ -71,14 +75,29 @@ namespace FormMainGUI.Forms
             }
         }
 
+        private void dgvCart_RowAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (dgvCart.Rows.Count > 0)
+            {
+                btnDone.Enabled = true;
+            }
+        }
+
         private void dgvCart_RowRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             float totalAmount = 0;
             for (int i = 0; i < dgvCart.Rows.Count; i++)
             {
-                totalAmount += float.Parse(dgvCart.Rows[i].Cells[4].Value.ToString());
+                totalAmount += float.Parse(dgvCart.Rows[i].Cells["colTotalMoney"].Value.ToString());
             }
             txtTotalAmount.Text = totalAmount.ToString();
+
+            if (dgvCart.Rows.Count == 0)
+            {
+                btnDone.Enabled = false;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -95,7 +114,7 @@ namespace FormMainGUI.Forms
                     if (dgvCart.CurrentRow.Cells["colID"].Value.ToString().Contains(dgvProductInOrder.Rows[i].Cells[0].Value.ToString()))
                     {
                         dgvProductInOrder.Rows[i].Cells[2].Value = Convert.ToInt32(dgvProductInOrder.Rows[i].Cells[2].Value)
-                                                                 + Convert.ToInt32(dgvCart.CurrentRow.Cells[2].Value);
+                                                                 + Convert.ToInt32(dgvCart.CurrentRow.Cells["colQuantity"].Value);
                     }
                 }
 
@@ -127,13 +146,70 @@ namespace FormMainGUI.Forms
             {
                 btnUpdate.Enabled = true;
                 btnDelete.Enabled = true;
-                btnDone.Enabled = true;
             }
         }
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            if (txtOrderID.Text == "")
+            {
+                MessageBox.Show("Please enter OrderID!!!. This cell can not be empty!!!");
+                txtOrderID.Focus();
+            }
+            else
+            {
+                //Add order to DB
+                Order order = new Order();
+                order.OrderID = txtOrderID.Text;
+                order.DateOfOrder = DateTime.Today;
+                order.TotalMoney = Convert.ToDecimal(txtTotalAmount.Text);
+                order.EmployeeID = account1.EmployeeID;
+                bool isCreateOrder = OrderDAO.Instance.addOrder(order);
 
+                //Add order detail to DB
+                OrdersDetail ordersDetail = new OrdersDetail();
+                bool isCreateOrderDetail = false;
+                for (int i = 0; i < dgvCart.Rows.Count; i++)
+                {
+                    ordersDetail.OrderDetailID = dgvCart.Rows[i].Cells["colIDDetail"].Value.ToString();
+                    ordersDetail.Quantity = Convert.ToInt32(dgvCart.Rows[i].Cells["colQuantity"].Value.ToString());
+                    ordersDetail.TotalAmount = Convert.ToDecimal(dgvCart.Rows[i].Cells["colTotalMoney"].Value.ToString());
+                    ordersDetail.OrderID = txtOrderID.Text;
+                    ordersDetail.ProductID = dgvCart.Rows[i].Cells["colID"].Value.ToString();
+                    isCreateOrderDetail = OrderDAO.Instance.addOrderDetail(ordersDetail);
+                }
+
+                Product product = new Product();
+                bool isUpdateProduct = false;
+                for (int i = 0; i < dgvCart.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvProductInOrder.Rows.Count; j++)
+                    {
+                        if (dgvCart.Rows[i].Cells["colID"].Value.Equals(dgvProductInOrder.Rows[j].Cells[0].Value))
+                        {
+                            product.ProductID = dgvProductInOrder.Rows[j].Cells[0].Value.ToString();
+                            product.Name = dgvProductInOrder.Rows[j].Cells[1].Value.ToString();
+                            product.Quantity = Convert.ToInt32(dgvProductInOrder.Rows[j].Cells[2].Value.ToString());
+                            product.Price = Convert.ToDecimal(dgvProductInOrder.Rows[j].Cells[3].Value.ToString());
+                            isUpdateProduct = OrderDAO.Instance.updateProduct(product);
+                        }
+                    }
+                }
+
+                if (isCreateOrder == true && isCreateOrderDetail == true && isUpdateProduct == true)
+                {
+                    MessageBox.Show("Create order successfully!!!", "Notification");
+                    this.fOrders.dgvOrdersList.DataSource = OrderDAO.Instance.getListOrder();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Create order failed!!!");
+                }
+            }
+            
+
+                     
         }
     }
 }
