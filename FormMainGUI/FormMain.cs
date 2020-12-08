@@ -12,6 +12,7 @@ using FontAwesome.Sharp;
 using FormMainGUI.Forms;
 using FormMainGUI.Forms.AccountForm;
 using FormMainGUI.Forms.EmployeeForm;
+using FormMainGUI.Forms.OrderForm;
 using FormMainGUI.ModelDB;
 using FormMainGUI.Utils;
 using MaterialSkin;

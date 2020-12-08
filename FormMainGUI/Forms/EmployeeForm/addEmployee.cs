@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using FormMainGUI.DAO;
 using MaterialSkin;
-using FormMainGUI.Utils;
 using MaterialSkin.Controls;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using FormMainGUI.ModelDB;
+
+
 
 namespace FormMainGUI.Forms.EmployeeForm
 {
     public partial class addEmployee : MaterialForm
     {
-        public addEmployee()
+        private Employee employee;
+        private bool isUpdate = false;
+        public addEmployee(Employee employee = null)
         {
             InitializeComponent();
             btnAdd.AutoSize = false;
@@ -24,11 +22,28 @@ namespace FormMainGUI.Forms.EmployeeForm
 
             btnCancel.Size = new System.Drawing.Size(87, 36);
             btnAdd.Size = new System.Drawing.Size(87, 36);
+
+            this.employee = employee;
+            if (employee != null)
+            {
+                btnAdd.Text = "Update";
+                isUpdate = true;
+            }
+
         }
 
         private void addEmployee_Load(object sender, EventArgs e)
         {
+            if (employee != null)
+            {
+                txbId.Text = employee.EmployeeID;
+                txbName.Text = employee.Name;
+                txbPhone.Text = employee.Phone;
+                txbAddress.Text = employee.Address;
+                txbBirth.Text = Convert.ToString(employee.YearOfBirth);
 
+                cbmSex.Enabled = false;
+            }
         }
 
         private void lbId_Click(object sender, EventArgs e)
@@ -54,48 +69,53 @@ namespace FormMainGUI.Forms.EmployeeForm
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Employee employee = new Employee();
-            try
-            {
-                employee.EmployeeID = txbId.Text;
-                employee.Name = txbName.Text;
-                employee.Phone = txbPhone.Text;
-                employee.Sex = Convert.ToBoolean(cbmSex.SelectedIndex);
-                employee.YearOfBirth = Convert.ToInt32(txbBirth.Text);
-                employee.Address = txbAddress.Text;
-                using (var db = DataProvider.Ins.DB)
-                {
-                    db.Employees.Add(employee);
-                    db.SaveChanges();
-                }
-                MessageBox.Show("Add successfully");
-            }
-            catch
-            {
-                if (txbId.Text == "")
-                {
-                    MessageBox.Show("Invalid ID");
-                    return;
-                }
-                 else if (txbName.Text == "")
-                {
-                    MessageBox.Show("Invalid Name");
-                    return;
-                }
-                else if (txbPhone.Text == "")
-                {
-                    MessageBox.Show("Invalid Phone");
-                    return;
-                }
-                else if (txbBirth.Text == "" )
-                {
-                    MessageBox.Show("Invalid Year Of Birth");
-                    return;
-                }
-                DialogResult = DialogResult.Cancel;
+            bool isSuccess = false;
 
+            string employeeId= txbId.Text;
+            string name = txbName.Text;
+            string phone = txbPhone.Text;
+            bool sex; 
+            if (cbmSex.SelectedIndex == 1)
+            {
+                sex = true;
+            }
+            else
+            {
+                sex = false;
+            }
+            int birth = Convert.ToInt32(txbBirth.Text);
+            string address= txbAddress.Text;
+
+            ModelDB.Employee employee = new ModelDB.Employee(employeeId, name, phone, sex, birth, address);
+
+            if (isUpdate)
+            {
+                isSuccess = EmployeeDAO.Instance.updateEmployee(employee);
+                if (isSuccess)
+                {
+                    MessageBox.Show("Update Employee Successful!", "");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Update Employee Fail!", "");
+                }
             }
 
+            else
+            {
+                isSuccess = EmployeeDAO.Instance.addEmployee(employee);
+
+                if (isSuccess)
+                {
+                    MessageBox.Show("Add Employee Successful ", "");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Add Employee Fail ", "");
+                }
+            }
         }
     }
 }

@@ -21,6 +21,19 @@ namespace FormMainGUI.DAO
         }
         private OrderDAO() { }
 
+        public object getListOrder()
+        {
+            var db = DataProvider.Ins.DB;
+            var data = (from o in db.Orders select new { 
+                                OrderID = o.OrderID,
+                                Date = o.DateOfOrder,                                
+                                EmployeeID = o.Employee.EmployeeID,
+                                Employee = o.Employee.Name,
+                                Total = o.TotalMoney,
+                        }).ToList();
+            return data;
+        }
+
         public object getListProduct()
         {
             var db = DataProvider.Ins.DB;

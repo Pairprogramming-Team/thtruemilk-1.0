@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 using System.Windows.Forms;
 using FormMainGUI.ModelDB;
 using FormMainGUI.Utils;
+using FormMainGUI.DAO;
+using System.Collections.Generic;
 
 namespace FormMainGUI.Forms.EmployeeForm
 {
     public partial class Employees : Form
     {
-        Product pro = new Product();
         Employee emp = new Employee();
         public Employees()
         {
@@ -29,55 +22,66 @@ namespace FormMainGUI.Forms.EmployeeForm
             btnDelete.Size = new System.Drawing.Size(100, 36);
             btnUpdate.Size = new System.Drawing.Size(100, 36);
             btnAdd.Size = new System.Drawing.Size(100, 36);
-
-
-
         }
 
         private void Employees_Load(object sender, EventArgs e)
         {
-            var db = DataProvider.Ins.DB;
-            var result = from c in db.Employees
-                         select new
-                         {
-                             EmployeeID = c.EmployeeID,
-                             Name = c.Name,
-                             Phone = c.Phone,
-                             Sex = c.Sex,
-                             YearOfBirth = c.YearOfBirth,
-                             Address = c.Address,
-                         };
-            dataGridView1.DataSource = result.ToList();
+            dgvEmployee.DataSource = EmployeeDAO.Instance.loadListEmployee();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             addEmployee add = new addEmployee();
+            add.Text = "Add Employee";
             add.ShowDialog();
+            dgvEmployee.DataSource = EmployeeDAO.Instance.loadListEmployee();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            updateEmployee update = new updateEmployee();
-            update.ShowDialog();
+            addEmployee add = new addEmployee(emp);
+            add.Text = "Update Employee";
+            add.ShowDialog();
+            dgvEmployee.DataSource = EmployeeDAO.Instance.loadListEmployee();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            using (var db = DataProvider.Ins.DB)
+            if (MessageBox.Show("Are you sure remove employee ?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                var em = db.Employees.Where(x => x.EmployeeID == emp.EmployeeID).SingleOrDefault();
-                db.Employees.Remove(em);
-                db.SaveChanges();
+                ModelDB.Employee employee = new ModelDB.Employee(emp.EmployeeID, emp.Name, emp.Phone, Convert.ToBoolean(emp.Sex), Convert.ToInt32(emp.YearOfBirth), emp.Address);
+                bool isRemoved = EmployeeDAO.Instance.removeEmployee(emp.EmployeeID);
+                if (isRemoved == true)
+                {
+                    MessageBox.Show("Remove successful employee !", "");
+                    dgvEmployee.DataSource = EmployeeDAO.Instance.loadListEmployee();
+                }
+                else
+                {
+                    MessageBox.Show("Can not remove employee !", "");
+                }
             }
-            MessageBox.Show("Remove");
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+
+        }
+
+        private void dgvEmployee_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (dgvEmployee.SelectedCells.Count > 0)
             {
-                DataGridViewRow dgvRow = dataGridView1.Rows[e.RowIndex];
+                int selectedrowindex = dgvEmployee.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgvEmployee.Rows[selectedrowindex];
+
+                emp.EmployeeID = selectedRow.Cells[0].Value.ToString();
+                emp.Name = selectedRow.Cells[1].Value.ToString();
+                emp.Phone = selectedRow.Cells[2].Value.ToString();
+                emp.Sex = Convert.ToBoolean(selectedRow.Cells[3].Value.ToString());
+                emp.YearOfBirth = Convert.ToInt32(selectedRow.Cells[4].Value.ToString());
+                emp.Address = selectedRow.Cells[5].Value.ToString();
             }
         }
     }

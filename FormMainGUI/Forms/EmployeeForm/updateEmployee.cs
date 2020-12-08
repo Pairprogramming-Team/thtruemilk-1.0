@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FormMainGUI.DAO;
 using FormMainGUI.Utils;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -43,18 +44,34 @@ namespace FormMainGUI.Forms.EmployeeForm
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            using (var db = DataProvider.Ins.DB)
-            {
-                var emp = db.Employees.Where(x => x.EmployeeID == txbId.Text).SingleOrDefault();
-                emp.Name = txbName.Text;
-                emp.Phone = txbPhone.Text;
-                emp.Sex = Convert.ToBoolean(cbmSex.SelectedIndex);
-                emp.YearOfBirth = Convert.ToInt32(txbBirth.Text);
-                emp.Address = txbAddress.Text;
+            /*bool isSuccess = false;
 
-                db.SaveChanges();
+            string employeeId = txbId.Text;
+            string name = txbName.Text;
+            string phone = txbPhone.Text;
+            bool sex;
+            if (cbmSex.SelectedIndex == 1)
+            {
+                sex = true;
             }
-            DialogResult = DialogResult.Cancel;
+            else
+            {
+                sex = false;
+            }
+            int birth = Convert.ToInt32(txbBirth.Text);
+            string address = txbAddress.Text;
+            ModelDB.Employee employee = new ModelDB.Employee(employeeId, name, phone, sex, birth, address);
+
+            isSuccess = EmployeeDAO.Instance.updateEmployee(employee);
+            if (isSuccess)
+            {
+                MessageBox.Show("Update Employee Successful!", "");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Update Employee Fail!", "");
+            }*/
         }
     }
 }
