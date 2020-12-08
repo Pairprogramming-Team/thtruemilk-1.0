@@ -147,6 +147,47 @@ namespace FormMainGUI.Forms
                         MessageBox.Show("Add Product Fail!", "");
                     }
                 }
+                if (txtID.Text == "")
+                {
+                    MessageBox.Show("Invalid ID value");
+                    return;
+                }
+                else if (txtName.Text == "")
+                {
+                    MessageBox.Show("Invalid name value ");
+                    return;
+                }
+
+                else if (Quantity.Value == 0)
+                {
+                    MessageBox.Show("Invalid quantity value");
+                    return;
+                }
+                else if (txtPrice.Text == "" & Convert.ToInt32(txtPrice.Text) <= 0)
+                {
+                    MessageBox.Show("Invalid Price value");
+                    return;
+                }
+                else if (txtProDetailID.Text == "")
+                {
+                    MessageBox.Show("Invalid Product Detail ID value ");
+                    return;
+                }
+                else if (Convert.ToString(MFG.Value) == "" || MFG.Value >= DateTime.Now)
+                {
+                    MessageBox.Show("Invalid EXP value");
+                    return;
+                }
+                else if (MFG.Value >= ProductEntryDate.Value )
+                {
+                    MessageBox.Show("Please check MFG( MFG must be less than ProductEntryDate) !!! ");
+                    return;
+                }
+                else if (EXP.Value < DateTime.Now)
+                {
+                    MessageBox.Show("Invalid EXP value");
+                    return;
+                }
             }
             catch (Exception)
             {

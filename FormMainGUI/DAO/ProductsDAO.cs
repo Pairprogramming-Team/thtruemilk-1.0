@@ -67,9 +67,11 @@ namespace FormMainGUI.DAO
                 db.Products.Add(product);
                 db.SaveChanges();
                 var r = db.Products.Where(x => x.ProductID == product.ProductID).FirstOrDefault();
-                productsDetail.Product = r;
-                db.ProductsDetails.Add(productsDetail);
-                db.SaveChanges();
+                string detail = "'" + productsDetail.ProductDetailID + "'" + "," +   productsDetail.Status  + "," + "'" + productsDetail.MFG.Value.ToString("yyyy" + "MM" + "dd") + "'" + "," + "'" + productsDetail.EXP.Value.ToString("yyyy" + "MM" + "dd") + "'" + "," + "'" + productsDetail.ProductEntryDate.Value.ToString("yyyy" + "MM" + "dd") + "'" + "," + "'" + productsDetail.ProductID + "'";
+                Console.WriteLine(detail);
+                string sqlquery = "INSERT INTO dbo.ProductsDetail ( ProductDetailID , Status , MFG , EXP , ProductEntryDate , ProductID )" + " Values " + "(" + detail + ")";
+                Console.WriteLine(sqlquery);
+                int noOfRowInserted = db.Database.ExecuteSqlCommand(sqlquery);
                 return true;
             }
             catch
