@@ -39,6 +39,8 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.txtIDProduct = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtOrderDetalID = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numbericQuantity)).BeginInit();
             this.SuspendLayout();
@@ -49,10 +51,10 @@
             this.panel1.Controls.Add(this.btnDone);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 286);
+            this.panel1.Location = new System.Drawing.Point(0, 334);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(557, 135);
+            this.panel1.Size = new System.Drawing.Size(557, 87);
             this.panel1.TabIndex = 0;
             // 
             // btnDone
@@ -68,7 +70,7 @@
             this.btnDone.Name = "btnDone";
             this.btnDone.Primary = true;
             this.btnDone.Size = new System.Drawing.Size(57, 36);
-            this.btnDone.TabIndex = 0;
+            this.btnDone.TabIndex = 2;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
@@ -94,7 +96,7 @@
             // numbericQuantity
             // 
             this.numbericQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numbericQuantity.Location = new System.Drawing.Point(182, 178);
+            this.numbericQuantity.Location = new System.Drawing.Point(182, 236);
             this.numbericQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.numbericQuantity.Maximum = new decimal(new int[] {
             999,
@@ -103,7 +105,7 @@
             0});
             this.numbericQuantity.Name = "numbericQuantity";
             this.numbericQuantity.Size = new System.Drawing.Size(90, 20);
-            this.numbericQuantity.TabIndex = 2;
+            this.numbericQuantity.TabIndex = 1;
             this.numbericQuantity.Value = new decimal(new int[] {
             1,
             0,
@@ -118,7 +120,7 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(60, 242);
+            this.materialLabel4.Location = new System.Drawing.Point(60, 300);
             this.materialLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
@@ -132,7 +134,7 @@
             this.txtPrice.Depth = 0;
             this.txtPrice.Enabled = false;
             this.txtPrice.Hint = "";
-            this.txtPrice.Location = new System.Drawing.Point(180, 239);
+            this.txtPrice.Location = new System.Drawing.Point(180, 297);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.MaxLength = 32767;
             this.txtPrice.MouseState = MaterialSkin.MouseState.HOVER;
@@ -154,7 +156,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(56, 181);
+            this.materialLabel3.Location = new System.Drawing.Point(56, 239);
             this.materialLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
@@ -168,7 +170,7 @@
             this.txtNameProduct.Depth = 0;
             this.txtNameProduct.Enabled = false;
             this.txtNameProduct.Hint = "";
-            this.txtNameProduct.Location = new System.Drawing.Point(180, 121);
+            this.txtNameProduct.Location = new System.Drawing.Point(180, 179);
             this.txtNameProduct.Margin = new System.Windows.Forms.Padding(2);
             this.txtNameProduct.MaxLength = 32767;
             this.txtNameProduct.MouseState = MaterialSkin.MouseState.HOVER;
@@ -190,7 +192,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(56, 124);
+            this.materialLabel2.Location = new System.Drawing.Point(56, 182);
             this.materialLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
@@ -204,7 +206,7 @@
             this.txtIDProduct.Depth = 0;
             this.txtIDProduct.Enabled = false;
             this.txtIDProduct.Hint = "";
-            this.txtIDProduct.Location = new System.Drawing.Point(182, 69);
+            this.txtIDProduct.Location = new System.Drawing.Point(180, 127);
             this.txtIDProduct.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDProduct.MaxLength = 32767;
             this.txtIDProduct.MouseState = MaterialSkin.MouseState.HOVER;
@@ -226,7 +228,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(58, 72);
+            this.materialLabel1.Location = new System.Drawing.Point(56, 130);
             this.materialLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
@@ -234,12 +236,49 @@
             this.materialLabel1.TabIndex = 50;
             this.materialLabel1.Text = "ID product";
             // 
+            // txtOrderDetalID
+            // 
+            this.txtOrderDetalID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtOrderDetalID.Depth = 0;
+            this.txtOrderDetalID.Hint = "";
+            this.txtOrderDetalID.Location = new System.Drawing.Point(180, 77);
+            this.txtOrderDetalID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtOrderDetalID.MaxLength = 32767;
+            this.txtOrderDetalID.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtOrderDetalID.Name = "txtOrderDetalID";
+            this.txtOrderDetalID.PasswordChar = '\0';
+            this.txtOrderDetalID.SelectedText = "";
+            this.txtOrderDetalID.SelectionLength = 0;
+            this.txtOrderDetalID.SelectionStart = 0;
+            this.txtOrderDetalID.Size = new System.Drawing.Size(221, 23);
+            this.txtOrderDetalID.TabIndex = 0;
+            this.txtOrderDetalID.TabStop = false;
+            this.txtOrderDetalID.UseSystemPasswordChar = false;
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.BackColor = System.Drawing.SystemColors.Window;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Location = new System.Drawing.Point(56, 80);
+            this.materialLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(103, 19);
+            this.materialLabel5.TabIndex = 57;
+            this.materialLabel5.Text = "ID order detail";
+            // 
             // fAddToCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(557, 421);
+            this.Controls.Add(this.txtOrderDetalID);
+            this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.numbericQuantity);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.txtPrice);
@@ -277,5 +316,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtIDProduct;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtOrderDetalID;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
     }
 }
