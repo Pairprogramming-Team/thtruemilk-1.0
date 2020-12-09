@@ -122,22 +122,28 @@
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Series">
+                <ChartSeries Name="OrderID">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Fields!OrderID.Value</Y>
+                        <Y>=Count(Fields!OrderID.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <BackgroundGradientType>None</BackgroundGradientType>
+                        <BackgroundHatchType>BackwardDiagonal</BackgroundHatchType>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
+                  <Type>Bar</Type>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -289,7 +295,9 @@
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <IntervalType>Default</IntervalType>
                     <ChartMajorGridLines>
+                      <Enabled>True</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -297,6 +305,7 @@
                       </Style>
                     </ChartMajorGridLines>
                     <ChartMinorGridLines>
+                      <Enabled>False</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -311,6 +320,7 @@
                           <Style>None</Style>
                         </Border>
                       </Style>
+                      <Length>0</Length>
                     </ChartMajorTickMarks>
                     <ChartMinorTickMarks>
                       <Style>
@@ -318,11 +328,11 @@
                           <Color>Gainsboro</Color>
                         </Border>
                       </Style>
-                      <Length>0.5</Length>
                     </ChartMinorTickMarks>
                     <CrossAt>NaN</CrossAt>
-                    <Minimum>NaN</Minimum>
+                    <Minimum>0</Minimum>
                     <Maximum>NaN</Maximum>
+                    <LogBase>2</LogBase>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -389,28 +399,9 @@
                 </Style>
               </ChartArea>
             </ChartAreas>
-            <ChartLegends>
-              <ChartLegend Name="Default">
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <Position>TopLeft</Position>
-                <ChartLegendTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </ChartLegendTitle>
-                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-              </ChartLegend>
-            </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Chart Title</Caption>
+                <Caption>Biểu đồ thể hiện số hóa đơn mà nhân viên đã bán được</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -422,7 +413,7 @@
                 <Position>TopLeft</Position>
               </ChartTitle>
             </ChartTitles>
-            <Palette>Pacific</Palette>
+            <Palette>SemiTransparent</Palette>
             <ChartBorderSkin>
               <Style>
                 <BackgroundColor>Gray</BackgroundColor>
@@ -440,9 +431,9 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSetEmployee</DataSetName>
-            <Top>1.10139in</Top>
-            <Left>3.74528in</Left>
-            <Height>4.5in</Height>
+            <Top>1.20361in</Top>
+            <Left>1.25222in</Left>
+            <Height>4.56in</Height>
             <Width>7.5in</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -454,9 +445,43 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
+          <Textbox Name="Textbox8">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>© Bản quyền được cấp phát dưới sự cho phép của Pairprogaming</Value>
+                    <Style>
+                      <Color>LightGrey</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox8</rd:DefaultName>
+            <Top>5.89653in</Top>
+            <Left>2.29389in</Left>
+            <Height>0.3125in</Height>
+            <Width>6.45833in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>8.3in</Height>
-        <Style />
+        <Style>
+          <BackgroundColor>Azure</BackgroundColor>
+        </Style>
       </Body>
       <Width>16in</Width>
       <Page>

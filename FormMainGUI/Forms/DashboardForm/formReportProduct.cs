@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FormMainGUI.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,11 @@ namespace FormMainGUI.Forms.DashboardForm
         private void formReportProduct_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'DataSetReport.OrdersDetail' table. You can move, or remove it, as needed.
-            this.OrdersDetailTableAdapter.Fill(this.DataSetReport.OrdersDetail);
+            //this.OrdersDetailTableAdapter.Fill(this.DataSetReport.OrdersDetail);
+            var db = DataProvider.Ins.DB;
+            var data = db.OrdersDetails.ToList();
+
+            this.OrdersDetailBindingSource.DataSource = data;
 
             this.reportViewer1.RefreshReport();
         }
