@@ -45,11 +45,30 @@
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -63,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="DAO\ProductsDAO.cs" />
 
@@ -84,6 +104,18 @@
     </Compile>
     <Compile Include="Forms\AccountForm\fAddAccount.Designer.cs">
       <DependentUpon>fAddAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Chart_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Chart_Employee.Designer.cs">
+      <DependentUpon>Chart_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Chart_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Chart_Product.Designer.cs">
+      <DependentUpon>Chart_Product.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DashboardForm\chartEmployee.cs">
       <SubType>Form</SubType>
@@ -109,12 +141,36 @@
     <Compile Include="Forms\DashboardForm\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DashboardForm\DataSetReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\formReportEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\formReportEmployee.Designer.cs">
+      <DependentUpon>formReportEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\formReportOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\formReportOrder.Designer.cs">
+      <DependentUpon>formReportOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\formReportProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DashboardForm\formReportProduct.Designer.cs">
+      <DependentUpon>formReportProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeForm\addEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\EmployeeForm\addEmployee.Designer.cs">
       <DependentUpon>addEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForm\EmployeeInfo.cs" />
     <Compile Include="Forms\EmployeeForm\Employees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +195,12 @@
     <Compile Include="Forms\OrderForm\AddToCart.Designer.cs">
       <DependentUpon>AddToCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OrderForm\Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderForm\Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Product\FormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,10 +208,11 @@
       <DependentUpon>FormAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\OrderForm\Orders.cs">
+    <Compile Include="Forms\OrderForm\OrdersDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OrderForm\Orders.Designer.cs">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <Compile Include="Forms\OrderForm\OrdersDetail.Designer.cs">
+      <DependentUpon>OrdersDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Product\Products.cs">
       <SubType>Form</SubType>
@@ -192,6 +255,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utils\DataProvider.cs" />
     <Content Include="ModelDB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -203,12 +267,36 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Utils\DB_THTrueMilk.sql" />
     <None Include="App.Config" />
     <EntityDeploy Include="ModelDB\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Forms\DashboardForm\DataSetReport.xsc">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DashboardForm\DataSetReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\DashboardForm\DataSetReport.xss">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
     <None Include="ModelDB\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -225,6 +313,12 @@
     <EmbeddedResource Include="Forms\AccountForm\fAddAccount.resx">
       <DependentUpon>fAddAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Chart_Employee.resx">
+      <DependentUpon>Chart_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Chart_Product.resx">
+      <DependentUpon>Chart_Product.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashboardForm\chartEmployee.resx">
       <DependentUpon>chartEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +331,18 @@
     <EmbeddedResource Include="Forms\DashboardForm\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForm\formReportEmployee.resx">
+      <DependentUpon>formReportEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForm\formReportOrder.resx">
+      <DependentUpon>formReportOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForm\formReportProduct.resx">
+      <DependentUpon>formReportProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DashboardForm\ReportEmployee.rdlc" />
+    <EmbeddedResource Include="Forms\DashboardForm\ReportOrder.rdlc" />
+    <EmbeddedResource Include="Forms\DashboardForm\ReportProduct.rdlc" />
     <EmbeddedResource Include="Forms\EmployeeForm\addEmployee.resx">
       <DependentUpon>addEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,11 +358,14 @@
     <EmbeddedResource Include="Forms\OrderForm\AddToCart.resx">
       <DependentUpon>AddToCart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderForm\Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\FormAdd.resx">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OrderForm\Orders.resx">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OrderForm\OrdersDetail.resx">
+     <DependentUpon>OrdersDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
