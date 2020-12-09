@@ -151,7 +151,7 @@ namespace FormMainGUI
         private void btnOrder_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, Color.White);
-            OpenChildForm(new fOrders());
+            OpenChildForm(new fOrders(account));
 
         }
 
