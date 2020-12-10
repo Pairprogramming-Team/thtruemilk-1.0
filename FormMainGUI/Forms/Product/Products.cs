@@ -98,25 +98,9 @@ namespace FormMainGUI.Forms
 
         private void materialSingleLineTextField1_TextChanged(object sender, EventArgs e)
         {
-            var db = DataProvider.Ins.DB;
-            var result = (from c in db.Products
-                          join d in db.ProductsDetails
-                          on c.ProductID equals d.ProductID
-                          where  c.Name.Contains(txtSearch.Text)
-                          select new
-                          {
-                              ID = c.ProductID,
-                              Name = c.Name,
-                              Quantity = c.Quantity,
-                              Price = c.Price,
-                              ProductDetailID = d.ProductDetailID,
-                              Status = (d.Status),
-                              MFG = d.MFG,
-                              EXP = d.EXP,
-                              ProductEntryDate = d.ProductEntryDate
-                          }
-                    ).ToList();
-            dgvProduct.DataSource = result;
+            string id = txtSearch.Text;
+            dgvProduct.DataSource = ProductsDAO.Instance.Search(id);
+            
         }
     }
     
