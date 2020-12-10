@@ -1,5 +1,4 @@
 ﻿using System;
-using FormMainGUI.DAO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +17,6 @@ namespace FormMainGUI.Forms
     public partial class Products : Form
 
     {
-        private List<String> statusList;
         Product pro = new Product();
         ProductsDetail proDetail = new ProductsDetail();
         public Products()
@@ -34,28 +32,51 @@ namespace FormMainGUI.Forms
             btnAdd.AutoSize = false;
             btnUpdate.AutoSize = false;
         }
+        public void loadData()
+        {
+            var db = DataProvider.Ins.DB;
+            var result = from c in db.Products
+                         join d in db.ProductsDetails
+                         on c.ProductID equals d.ProductID
+                         where c.ProductID == d.ProductID
+                         select new
+                         {
+                             ID = c.ProductID,
+                             Name = c.Name,
+                             Quantity = c.Quantity,
+                             Price = c.Price,
+                             ProductDetailID = d.ProductDetailID,
+                             Status = d.Status,
+                             MFG = d.MFG,
+                             EXP = d.EXP,
+                             ProductEntryDate = d.ProductEntryDate
+                         };
+            dgvProduct.DataSource = result.ToList();
+        }
         private void btnAdd1_Click(object sender, EventArgs e)
         {
-            add add = new add(statusList);
-            add.Text = "ADD PRODUCT";
+            add add = new add();
             add.ShowDialog();
-            dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
         }
         private void btnDelete1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure remove this Product?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (pro.ProductID == "")
             {
-                ModelDB.Product b = new ModelDB.Product(pro.ProductID,pro.Name,Convert.ToInt32(pro.Quantity),Convert.ToInt32(pro.Price));
-                bool isRemoved = ProductsDAO.Instance.removeProduct(pro.ProductID);
-                if (isRemoved == true)
-                {
-                    MessageBox.Show("Remove successful Product!", "");
-                    dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
-                }
-                else
-                {
-                    MessageBox.Show("Can not remove Product!", "");
-                }
+                MessageBox.Show("You haven't chosen any product. Please choose one product to update.");
+            }
+            else
+            {
+                var db = DataProvider.Ins.DB;
+
+                var r = db.Products.Where(x => x.ProductID == pro.ProductID).SingleOrDefault();
+                var d = db.ProductsDetails.Where(y => y.ProductDetailID == proDetail.ProductDetailID).SingleOrDefault();
+                db.Products.Remove(r);
+                db.ProductsDetails.Remove(d);
+                db.SaveChanges();
+                dgvProduct.Refresh();
+                dgvProduct.Update();
+                loadData();
+                MessageBox.Show(" Remove Succsesfull !");
             }
         }
        
@@ -63,17 +84,35 @@ namespace FormMainGUI.Forms
      
         private void btnUpdate1_Click(object sender, EventArgs e)
         {
-        
-                add add = new add(statusList,pro, proDetail);
-                add.Text= "UPDATE PRODUCT";
-                add.ShowDialog();
-                dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
+            Update update = new Update(pro,proDetail);
+            if (pro.ProductID == "")
+            {
+                MessageBox.Show("You haven't chosen any product. Please choose one product to update.");
+            }
+            else
+            update.ShowDialog();
         }
         private void Products_Load(object sender, EventArgs e)
         {
-            statusList = ProductsDAO.Instance.getStatusList();
-            dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
-            
+            loadData();
+        }
+
+        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow dgvRow = dgvProduct.Rows[e.RowIndex];
+                pro.ProductID = dgvRow.Cells[0].Value.ToString();
+                pro.Name = dgvRow.Cells[1].Value.ToString();
+                pro.Quantity = Convert.ToInt32(dgvRow.Cells[2].Value.ToString());
+                pro.Price = Convert.ToInt32(dgvRow.Cells[3].Value.ToString());
+                proDetail.ProductDetailID = dgvRow.Cells[4].Value.ToString();
+                proDetail.Status = dgvRow.Cells[5].Value.ToString();
+                proDetail.MFG = Convert.ToDateTime(dgvRow.Cells[6].Value.ToString());
+                proDetail.EXP = Convert.ToDateTime(dgvRow.Cells[7].Value.ToString());
+                proDetail.ProductEntryDate = Convert.ToDateTime(dgvRow.Cells[8].Value.ToString());
+                proDetail.ProductID= dgvRow.Cells[0].Value.ToString();
+            }            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -84,26 +123,6 @@ namespace FormMainGUI.Forms
                 dgvProduct.DataSource = r.ToList();
             
             
-        }
-
-        private void dgvProduct_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvProduct.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dgvProduct.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgvProduct.Rows[selectedrowindex];
-                pro.ProductID = selectedRow.Cells[0].Value.ToString();
-                pro.Name = selectedRow.Cells[1].Value.ToString();
-                pro.Quantity = Convert.ToInt32(selectedRow.Cells[2].Value.ToString());
-                pro.Price = Convert.ToInt32(selectedRow.Cells[3].Value.ToString());
-                proDetail.ProductDetailID = selectedRow.Cells[4].Value.ToString();
-                proDetail.Status = selectedRow.Cells[5].Value.ToString();
-                proDetail.MFG = Convert.ToDateTime(selectedRow.Cells[6].Value.ToString());
-                proDetail.EXP = Convert.ToDateTime(selectedRow.Cells[7].Value.ToString());
-                proDetail.ProductEntryDate = Convert.ToDateTime(selectedRow.Cells[8].Value.ToString());
-                proDetail.ProductID = selectedRow.Cells[0].Value.ToString();
-                Console.WriteLine(pro.ProductID);
-            }
         }
     }
     

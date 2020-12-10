@@ -34,6 +34,7 @@
             this.EXP = new System.Windows.Forms.DateTimePicker();
             this.MFG = new System.Windows.Forms.DateTimePicker();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.Quantity = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,10 +50,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtProDetailID = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.ID = new System.Windows.Forms.Label();
-            this.Quantity = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.Quantity)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Quantity)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancle
@@ -85,14 +85,12 @@
             this.btnSave.TabIndex = 86;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave1_Click);
             // 
             // ProductEntryDate
             // 
-            this.ProductEntryDate.CustomFormat = "yyyy/MM/dd";
             this.ProductEntryDate.Enabled = false;
             this.ProductEntryDate.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.ProductEntryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ProductEntryDate.Location = new System.Drawing.Point(283, 541);
             this.ProductEntryDate.Name = "ProductEntryDate";
             this.ProductEntryDate.Size = new System.Drawing.Size(275, 30);
@@ -100,9 +98,7 @@
             // 
             // EXP
             // 
-            this.EXP.CustomFormat = "yyyy/MM/dd";
             this.EXP.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.EXP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.EXP.Location = new System.Drawing.Point(284, 481);
             this.EXP.Name = "EXP";
             this.EXP.Size = new System.Drawing.Size(275, 30);
@@ -110,9 +106,7 @@
             // 
             // MFG
             // 
-            this.MFG.CustomFormat = "yyyy/MM/dd";
             this.MFG.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.MFG.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.MFG.Location = new System.Drawing.Point(283, 420);
             this.MFG.Name = "MFG";
             this.MFG.Size = new System.Drawing.Size(275, 30);
@@ -123,10 +117,21 @@
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "1",
+            "2"});
             this.cmbStatus.Location = new System.Drawing.Point(284, 360);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(274, 32);
             this.cmbStatus.TabIndex = 6;
+            // 
+            // Quantity
+            // 
+            this.Quantity.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.Quantity.Location = new System.Drawing.Point(285, 198);
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Size = new System.Drawing.Size(275, 30);
+            this.Quantity.TabIndex = 3;
             // 
             // label9
             // 
@@ -323,19 +328,6 @@
             this.ID.TabIndex = 105;
             this.ID.Text = "Product Detail ID :";
             // 
-            // Quantity
-            // 
-            this.Quantity.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.Quantity.Location = new System.Drawing.Point(285, 198);
-            this.Quantity.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Size = new System.Drawing.Size(275, 30);
-            this.Quantity.TabIndex = 3;
-            // 
             // add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -365,10 +357,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product";
             this.Load += new System.EventHandler(this.add_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Quantity)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Quantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,6 +373,7 @@
         private System.Windows.Forms.DateTimePicker EXP;
         private System.Windows.Forms.DateTimePicker MFG;
         protected System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.NumericUpDown Quantity;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -396,6 +389,5 @@
         private System.Windows.Forms.Panel panel2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtProDetailID;
         private System.Windows.Forms.Label ID;
-        private System.Windows.Forms.NumericUpDown Quantity;
     }
 }

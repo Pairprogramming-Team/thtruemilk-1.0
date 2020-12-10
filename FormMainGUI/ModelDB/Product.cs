@@ -14,26 +14,13 @@ namespace FormMainGUI.ModelDB
     
     public partial class Product
     {
-      
-        public Product()
-        {
-        }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product(string text)
+        public Product()
         {
             this.OrdersDetails = new HashSet<OrdersDetail>();
             this.ProductsDetails = new HashSet<ProductsDetail>();
         }
-
-        public Product(string text1, string text2, int v1, int v2)
-        {
-            this.ProductID = text1;
-            this.Name = text2;
-            this.Quantity = v1;
-            this.Price = v2;
-        }
-
+    
         public string ProductID { get; set; }
         public string Name { get; set; }
         public Nullable<int> Quantity { get; set; }
