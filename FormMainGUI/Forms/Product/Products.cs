@@ -33,6 +33,7 @@ namespace FormMainGUI.Forms
             btnDelete.AutoSize = false;
             btnAdd.AutoSize = false;
             btnUpdate.AutoSize = false;
+            txtSearch.Size = new System.Drawing.Size(381, 28);
         }
         private void btnAdd1_Click(object sender, EventArgs e)
         {
@@ -76,16 +77,6 @@ namespace FormMainGUI.Forms
             
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-           
-           
-                var r = DataProvider.Ins.DB.Products.Where(x => x.Name.Contains(textBox1.Text));
-                dgvProduct.DataSource = r.ToList();
-            
-            
-        }
-
         private void dgvProduct_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvProduct.SelectedCells.Count > 0)
@@ -102,8 +93,30 @@ namespace FormMainGUI.Forms
                 proDetail.EXP = Convert.ToDateTime(selectedRow.Cells[7].Value.ToString());
                 proDetail.ProductEntryDate = Convert.ToDateTime(selectedRow.Cells[8].Value.ToString());
                 proDetail.ProductID = selectedRow.Cells[0].Value.ToString();
-                Console.WriteLine(pro.ProductID);
             }
+        }
+
+        private void materialSingleLineTextField1_TextChanged(object sender, EventArgs e)
+        {
+            var db = DataProvider.Ins.DB;
+            var result = (from c in db.Products
+                          join d in db.ProductsDetails
+                          on c.ProductID equals d.ProductID
+                          where  c.Name.Contains(txtSearch.Text)
+                          select new
+                          {
+                              ID = c.ProductID,
+                              Name = c.Name,
+                              Quantity = c.Quantity,
+                              Price = c.Price,
+                              ProductDetailID = d.ProductDetailID,
+                              Status = (d.Status),
+                              MFG = d.MFG,
+                              EXP = d.EXP,
+                              ProductEntryDate = d.ProductEntryDate
+                          }
+                    ).ToList();
+            dgvProduct.DataSource = result;
         }
     }
     

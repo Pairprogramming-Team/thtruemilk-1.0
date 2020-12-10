@@ -26,7 +26,6 @@ namespace FormMainGUI.DAO
             var result = (from c in db.Products
                          join d in db.ProductsDetails
                          on c.ProductID equals d.ProductID
-                         where c.ProductID == d.ProductID
                          select new
                          {
                              ID = c.ProductID,

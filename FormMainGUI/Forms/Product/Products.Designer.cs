@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.Search = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
@@ -48,7 +48,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.Search);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -56,14 +56,23 @@
             this.panel1.Size = new System.Drawing.Size(1008, 102);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 13.8F);
-            this.textBox1.Location = new System.Drawing.Point(154, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(252, 34);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtSearch.Depth = 0;
+            this.txtSearch.Hint = "";
+            this.txtSearch.Location = new System.Drawing.Point(155, 28);
+            this.txtSearch.MaxLength = 32767;
+            this.txtSearch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.Size = new System.Drawing.Size(381, 28);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.TabStop = false;
+            this.txtSearch.UseSystemPasswordChar = false;
+            this.txtSearch.TextChanged += new System.EventHandler(this.materialSingleLineTextField1_TextChanged);
             // 
             // Search
             // 
@@ -199,7 +208,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Search;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Panel panel3;
@@ -207,5 +215,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
     }
 }
