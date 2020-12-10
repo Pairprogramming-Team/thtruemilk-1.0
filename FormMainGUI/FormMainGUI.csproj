@@ -85,7 +85,6 @@
     <Compile Include="DAO\EmployeeDAO.cs" />
     <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="DAO\ProductsDAO.cs" />
-
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,7 +206,6 @@
     <Compile Include="Forms\Product\FormAdd.Designer.cs">
       <DependentUpon>FormAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OrderForm\Orders.cs">
     <Compile Include="Forms\OrderForm\OrdersDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,18 +266,6 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Utils\DB_THTrueMilk.sql" />
     <None Include="App.Config" />
     <EntityDeploy Include="ModelDB\Model1.edmx">
@@ -365,7 +351,7 @@
       <DependentUpon>FormAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm\OrdersDetail.resx">
-     <DependentUpon>OrdersDetail.cs</DependentUpon>
+      <DependentUpon>OrdersDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\Products.resx">
       <DependentUpon>Products.cs</DependentUpon>
