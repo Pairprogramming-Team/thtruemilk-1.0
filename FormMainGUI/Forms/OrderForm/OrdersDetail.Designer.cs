@@ -32,6 +32,12 @@
             this.gbCartInfo = new System.Windows.Forms.GroupBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dgvCart = new System.Windows.Forms.DataGridView();
+            this.colIDDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtOrderID = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -50,12 +56,6 @@
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDone = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.colIDDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.gbCartInfo.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -118,6 +118,7 @@
             this.colTotalMoney});
             this.dgvCart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCart.Location = new System.Drawing.Point(0, 0);
+            this.dgvCart.MultiSelect = false;
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
             this.dgvCart.RowHeadersWidth = 51;
@@ -128,6 +129,47 @@
             this.dgvCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellClick);
             this.dgvCart.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvCart_RowAdded);
             this.dgvCart.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvCart_RowRemoved);
+            // 
+            // colIDDetail
+            // 
+            this.colIDDetail.HeaderText = "ID order detail";
+            this.colIDDetail.Name = "colIDDetail";
+            this.colIDDetail.ReadOnly = true;
+            // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID product";
+            this.colID.MinimumWidth = 6;
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Name product";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.HeaderText = "Quantity";
+            this.colQuantity.MinimumWidth = 6;
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.ReadOnly = true;
+            // 
+            // colPrice
+            // 
+            this.colPrice.HeaderText = "Price";
+            this.colPrice.MinimumWidth = 6;
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            // 
+            // colTotalMoney
+            // 
+            this.colTotalMoney.HeaderText = "Total money";
+            this.colTotalMoney.MinimumWidth = 6;
+            this.colTotalMoney.Name = "colTotalMoney";
+            this.colTotalMoney.ReadOnly = true;
             // 
             // panel5
             // 
@@ -242,6 +284,7 @@
             this.dgvProductInOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductInOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvProductInOrder.Location = new System.Drawing.Point(0, 0);
+            this.dgvProductInOrder.MultiSelect = false;
             this.dgvProductInOrder.Name = "dgvProductInOrder";
             this.dgvProductInOrder.ReadOnly = true;
             this.dgvProductInOrder.RowHeadersWidth = 51;
@@ -395,47 +438,6 @@
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
-            // 
-            // colIDDetail
-            // 
-            this.colIDDetail.HeaderText = "ID order detail";
-            this.colIDDetail.Name = "colIDDetail";
-            this.colIDDetail.ReadOnly = true;
-            // 
-            // colID
-            // 
-            this.colID.HeaderText = "ID product";
-            this.colID.MinimumWidth = 6;
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "Name product";
-            this.colName.MinimumWidth = 6;
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.HeaderText = "Quantity";
-            this.colQuantity.MinimumWidth = 6;
-            this.colQuantity.Name = "colQuantity";
-            this.colQuantity.ReadOnly = true;
-            // 
-            // colPrice
-            // 
-            this.colPrice.HeaderText = "Price";
-            this.colPrice.MinimumWidth = 6;
-            this.colPrice.Name = "colPrice";
-            this.colPrice.ReadOnly = true;
-            // 
-            // colTotalMoney
-            // 
-            this.colTotalMoney.HeaderText = "Total money";
-            this.colTotalMoney.MinimumWidth = 6;
-            this.colTotalMoney.Name = "colTotalMoney";
-            this.colTotalMoney.ReadOnly = true;
             // 
             // fOrdersDetail
             // 

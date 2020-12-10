@@ -57,30 +57,20 @@ namespace FormMainGUI.Forms
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
             isUpdate = false;
-            if (dgvProductInOrder.SelectedRows.Count == 1)
+            if (!dgvProductInOrder.CurrentRow.Cells[2].Value.Equals(0))
             {
-                if (!dgvProductInOrder.CurrentRow.Cells[2].Value.Equals(0))
-                {
-                    fAddToCart fAddToCart = new fAddToCart(this);
-                    fAddToCart.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Sorry, This product is out of stock!!!", "Notification");
-                }
+                fAddToCart fAddToCart = new fAddToCart(this);
+                fAddToCart.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Please choose a product!!!", "Notification");
+                MessageBox.Show("Sorry, This product is out of stock!!!", "Notification");
             }
         }
 
         private void dgvCart_RowAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            if (dgvCart.Rows.Count > 0)
-            {
                 btnDone.Enabled = true;
-            }
         }
 
         private void dgvCart_RowRemoved(object sender, DataGridViewRowsRemovedEventArgs e)

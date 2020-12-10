@@ -41,5 +41,17 @@ namespace FormMainGUI.Forms.OrderForm
             fOrdersDetail fOrdersDetail = new fOrdersDetail(this, account1);
             fOrdersDetail.ShowDialog();
         }
+
+        private void dgvOrderList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            fListOrderDetail fListOrderDetail = new fListOrderDetail(this);
+            fListOrderDetail.ShowDialog();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvOrdersList.DataSource = OrderDAO.Instance.searchOrderByEmployee(txtSearch.Text);
+        }
     }
 }

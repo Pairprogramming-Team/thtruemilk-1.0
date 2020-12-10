@@ -88,6 +88,7 @@ namespace FormMainGUI.Forms.OrderForm
                         else
                         {
                             MessageBox.Show("Sorry, the quantity you enter is incorrect!!!", "Notification");
+                            numbericQuantity.Focus();
                         }
                     }
                 }

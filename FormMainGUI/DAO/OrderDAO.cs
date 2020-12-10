@@ -53,10 +53,27 @@ namespace FormMainGUI.DAO
 
         public object searchProductByName(string name)
         {
-            var listProductSearch = (from l in DataProvider.Ins.DB.Products
+            var db = DataProvider.Ins.DB;
+            var listProductSearch = (from l in db.Products
                                     where l.Name.Trim().Contains(name)
                                     select l).ToList();
             return listProductSearch;
+        }
+
+        public object searchOrderByEmployee(string name)
+        {
+            var db = DataProvider.Ins.DB;
+            var listOrderSearch = (from o in db.Orders
+                                   where o.Employee.Name.Trim().Contains(name)
+                                   select new
+                                   {
+                                       OrderID = o.OrderID,
+                                       Date = o.DateOfOrder,
+                                       EmployeeID = o.Employee.EmployeeID,
+                                       Employee = o.Employee.Name,
+                                       Total = o.TotalMoney,
+                                   }).ToList();
+            return listOrderSearch;
         }
 
         public bool addOrderDetail(OrdersDetail ordersDetail)
@@ -104,6 +121,20 @@ namespace FormMainGUI.DAO
             {
                 return false;
             }
+        }
+
+        public object getListOrderDetailByOrderID(string id)
+        {
+            var db = DataProvider.Ins.DB;
+            var data = (from o in db.OrdersDetails
+                        where o.OrderID == id
+                        select new { 
+                        ID = o.OrderDetailID,
+                        Name = o.Product.Name,
+                        Quantity = o.Quantity,
+                        Price = o.Product.Price
+                        }).ToList();
+            return data;
         }
     }
 }

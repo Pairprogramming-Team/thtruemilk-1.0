@@ -151,6 +151,12 @@
     <Compile Include="Forms\OrderForm\AddToCart.Designer.cs">
       <DependentUpon>AddToCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OrderForm\ListOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderForm\ListOrderDetail.Designer.cs">
+      <DependentUpon>ListOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OrderForm\Orders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Knob-Forward-icon.png" />
     <Content Include="Utils\DB_THTrueMilk.sql" />
     <None Include="App.Config" />
     <EntityDeploy Include="ModelDB\Model1.edmx">
@@ -281,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm\AddToCart.resx">
       <DependentUpon>AddToCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderForm\ListOrderDetail.resx">
+      <DependentUpon>ListOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
