@@ -20,10 +20,12 @@ namespace FormMainGUI.Forms.OrderForm
         {
             InitializeComponent();
             this.orders = orders;
+            txtName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
         }
 
         private void fListOrderDetail_Load(object sender, EventArgs e)
         {
+            txtName.Text = this.orders.dgvOrdersList.CurrentRow.Cells[3].Value.ToString();
             string OrderID = this.orders.dgvOrdersList.CurrentRow.Cells[0].Value.ToString();
             dgvListOrderDetail.DataSource = OrderDAO.Instance.getListOrderDetailByOrderID(OrderID);
         }

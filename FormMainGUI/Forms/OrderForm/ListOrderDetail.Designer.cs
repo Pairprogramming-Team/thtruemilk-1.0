@@ -31,6 +31,8 @@ namespace FormMainGUI.Forms.OrderForm
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListOrderDetail = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListOrderDetail)).BeginInit();
             this.SuspendLayout();
@@ -38,10 +40,10 @@ namespace FormMainGUI.Forms.OrderForm
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvListOrderDetail);
-            this.panel1.Location = new System.Drawing.Point(3, 68);
+            this.panel1.Location = new System.Drawing.Point(3, 107);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(796, 379);
+            this.panel1.Size = new System.Drawing.Size(792, 340);
             this.panel1.TabIndex = 0;
             // 
             // dgvListOrderDetail
@@ -55,14 +57,45 @@ namespace FormMainGUI.Forms.OrderForm
             this.dgvListOrderDetail.Name = "dgvListOrderDetail";
             this.dgvListOrderDetail.ReadOnly = true;
             this.dgvListOrderDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListOrderDetail.Size = new System.Drawing.Size(796, 379);
+            this.dgvListOrderDetail.Size = new System.Drawing.Size(792, 340);
             this.dgvListOrderDetail.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(12, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Employee name";
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtName.Depth = 0;
+            this.txtName.Enabled = false;
+            this.txtName.Hint = "";
+            this.txtName.Location = new System.Drawing.Point(123, 72);
+            this.txtName.MaxLength = 32767;
+            this.txtName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.SelectedText = "";
+            this.txtName.SelectionLength = 0;
+            this.txtName.SelectionStart = 0;
+            this.txtName.Size = new System.Drawing.Size(237, 23);
+            this.txtName.TabIndex = 2;
+            this.txtName.TabStop = false;
+            this.txtName.UseSystemPasswordChar = false;
             // 
             // fListOrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Blue;
@@ -77,6 +110,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListOrderDetail)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -84,5 +118,7 @@ namespace FormMainGUI.Forms.OrderForm
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvListOrderDetail;
+        private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtName;
     }
 }
