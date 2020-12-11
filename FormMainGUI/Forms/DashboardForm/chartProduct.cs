@@ -23,7 +23,7 @@ namespace FormMainGUI.Forms.DashboardForm
         private void ChartProduct()
         {
             var db = DataProvider.Ins.DB;
-            var data = db.Products.ToList();
+            //var data = db.Products.ToList();
             var d = (db.OrdersDetails.GroupBy(x => x.ProductID).ToList());
             var area = new ChartArea();
             var chartProduct = new Chart();
@@ -33,8 +33,17 @@ namespace FormMainGUI.Forms.DashboardForm
             {
                 series.Points.AddXY(i.Key, i.Select(a => a.Quantity).Sum());
             }
+
+            area.AxisY.Title = "Biểu đồ thể hiện số lượng sản phẩm đã bán được";
+            area.AxisY.TitleFont = new Font("Arial", 12.0f, FontStyle.Regular);
+            area.AxisY.LabelStyle.Format = "{#,##} Sản Phẩm";
+
+            chartProduct.BackColor = Color.Azure;
+            series.IsValueShownAsLabel = true;
+            series.IsXValueIndexed = true;
+            series.YValueType = ChartValueType.Int32;
+
             series.ChartType = SeriesChartType.RangeBar;
-            series.Label = "#PERCENT{P2}";
             series.Font = new Font("Arial", 8.0f, FontStyle.Bold);
             series.Palette = ChartColorPalette.Light;
             Title title = new Title("Product selling");
