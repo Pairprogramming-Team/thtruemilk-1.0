@@ -40,8 +40,8 @@
             this.txbId = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txbName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txbPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txbBirth = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txbAddress = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txbBirth = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // lbId
@@ -164,16 +164,17 @@
             // cbmSex
             // 
             this.cbmSex.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbmSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbmSex.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmSex.FormatString = "d";
             this.cbmSex.FormattingEnabled = true;
             this.cbmSex.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cbmSex.Location = new System.Drawing.Point(221, 385);
+            this.cbmSex.Location = new System.Drawing.Point(223, 385);
             this.cbmSex.Name = "cbmSex";
             this.cbmSex.Size = new System.Drawing.Size(114, 27);
             this.cbmSex.TabIndex = 15;
-            this.cbmSex.Text = "Male";
             // 
             // txbId
             // 
@@ -226,23 +227,6 @@
             this.txbPhone.TabStop = false;
             this.txbPhone.UseSystemPasswordChar = false;
             // 
-            // txbBirth
-            // 
-            this.txbBirth.Depth = 0;
-            this.txbBirth.Hint = "";
-            this.txbBirth.Location = new System.Drawing.Point(221, 465);
-            this.txbBirth.MaxLength = 32767;
-            this.txbBirth.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txbBirth.Name = "txbBirth";
-            this.txbBirth.PasswordChar = '\0';
-            this.txbBirth.SelectedText = "";
-            this.txbBirth.SelectionLength = 0;
-            this.txbBirth.SelectionStart = 0;
-            this.txbBirth.Size = new System.Drawing.Size(300, 28);
-            this.txbBirth.TabIndex = 19;
-            this.txbBirth.TabStop = false;
-            this.txbBirth.UseSystemPasswordChar = false;
-            // 
             // txbAddress
             // 
             this.txbAddress.Depth = 0;
@@ -259,6 +243,23 @@
             this.txbAddress.TabIndex = 20;
             this.txbAddress.TabStop = false;
             this.txbAddress.UseSystemPasswordChar = false;
+            // 
+            // txbBirth
+            // 
+            this.txbBirth.Depth = 0;
+            this.txbBirth.Hint = "";
+            this.txbBirth.Location = new System.Drawing.Point(221, 465);
+            this.txbBirth.MaxLength = 32767;
+            this.txbBirth.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txbBirth.Name = "txbBirth";
+            this.txbBirth.PasswordChar = '\0';
+            this.txbBirth.SelectedText = "";
+            this.txbBirth.SelectionLength = 0;
+            this.txbBirth.SelectionStart = 0;
+            this.txbBirth.Size = new System.Drawing.Size(300, 28);
+            this.txbBirth.TabIndex = 19;
+            this.txbBirth.TabStop = false;
+            this.txbBirth.UseSystemPasswordChar = false;
             // 
             // addEmployee
             // 
@@ -297,11 +298,11 @@
         private MaterialSkin.Controls.MaterialLabel lbName;
         private MaterialSkin.Controls.MaterialRaisedButton btnCancel;
         private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
-        private System.Windows.Forms.ComboBox cbmSex;
         private MaterialSkin.Controls.MaterialSingleLineTextField txbId;
         private MaterialSkin.Controls.MaterialSingleLineTextField txbName;
         private MaterialSkin.Controls.MaterialSingleLineTextField txbPhone;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txbBirth;
         private MaterialSkin.Controls.MaterialSingleLineTextField txbAddress;
+        protected System.Windows.Forms.ComboBox cbmSex;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txbBirth;
     }
 }

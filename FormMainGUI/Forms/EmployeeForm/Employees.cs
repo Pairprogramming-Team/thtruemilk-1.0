@@ -63,13 +63,7 @@ namespace FormMainGUI.Forms.EmployeeForm
             }
         }
 
-
-        private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvEmployee_SelectionChanged_1(object sender, EventArgs e)
+        private void dgvEmployee_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvEmployee.SelectedCells.Count > 0)
             {
