@@ -12,6 +12,7 @@ using FontAwesome.Sharp;
 using FormMainGUI.Forms;
 using FormMainGUI.Forms.AccountForm;
 using FormMainGUI.Forms.EmployeeForm;
+using FormMainGUI.Forms.OrderForm;
 using FormMainGUI.ModelDB;
 using FormMainGUI.Utils;
 using MaterialSkin;
@@ -150,7 +151,7 @@ namespace FormMainGUI
         private void btnOrder_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, Color.White);
-            OpenChildForm(new fOrders());
+            OpenChildForm(new fOrders(account));
 
         }
 

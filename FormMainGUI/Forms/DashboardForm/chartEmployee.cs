@@ -32,8 +32,17 @@ namespace FormMainGUI.Forms.DashboardForm
             {
                 series.Points.AddXY(i.Name,i.Orders.Count());
             }
+
+            area.AxisY.Title = "Biểu đồ thể hiện số hóa đơn mà nhân viên đã bán";
+            area.AxisY.TitleFont = new Font("Arial", 12.0f, FontStyle.Regular);
+            area.AxisY.LabelStyle.Format = "{#,##} Hóa Đơn";
+
+            chartEmp.BackColor = Color.Azure;
+            series.IsValueShownAsLabel = true;
+            series.IsXValueIndexed = true;
+            series.YValueType = ChartValueType.Int32;
+            
             series.ChartType = SeriesChartType.RangeBar;
-            series.Label = "#PERCENT{P2}";
             series.Font = new Font("Arial", 8.0f, FontStyle.Bold);
             series.Palette = ChartColorPalette.Light;
             Title title = new Title("Employee sales invoice");
