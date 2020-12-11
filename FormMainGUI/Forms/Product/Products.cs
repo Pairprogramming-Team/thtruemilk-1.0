@@ -139,6 +139,25 @@ namespace FormMainGUI.Forms
             update.ShowDialog();
             dgvDetail.DataSource = ProductsDAO.Instance.loadListDetail(pro.ProductID);
         }
+
+        private void btnDeleteDetail_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Are you sure remove this Product Detail?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                ModelDB.ProductsDetail b = new ModelDB.ProductsDetail(proDetail.ProductDetailID,proDetail.Status,(DateTime)proDetail.MFG, (DateTime)proDetail.EXP, (DateTime)proDetail.ProductEntryDate,proDetail.ProductID);
+                bool isRemoved = ProductsDAO.Instance.removeDetail(proDetail.ProductDetailID);
+                if (isRemoved == true)
+                {
+                    MessageBox.Show("Remove successful Product Detail!", "");
+                    dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
+                }
+                else
+                {
+                    MessageBox.Show("Can not remove Product Detail!", "");
+                }
+            }
+        }
     }
     
 }

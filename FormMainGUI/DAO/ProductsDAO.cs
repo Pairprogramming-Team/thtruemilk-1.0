@@ -175,7 +175,7 @@ namespace FormMainGUI.DAO
             var db = DataProvider.Ins.DB;
             try
             {
-                ProductsDetail b = db.ProductsDetails.Where(x => x.ProductID == id).FirstOrDefault();
+                ProductsDetail b = db.ProductsDetails.Where(x => x.ProductDetailID == id).FirstOrDefault();
                 db.ProductsDetails.Remove(b);
                 db.SaveChanges();
                 return true;
