@@ -200,6 +200,12 @@
     <Compile Include="Forms\OrderForm\ListOrderDetail.Designer.cs">
       <DependentUpon>ListOrderDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OrderForm\ListOrderDetailByID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderForm\ListOrderDetailByID.Designer.cs">
+      <DependentUpon>ListOrderDetailByID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OrderForm\Orders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm\ListOrderDetail.resx">
       <DependentUpon>ListOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderForm\ListOrderDetailByID.resx">
+      <DependentUpon>ListOrderDetailByID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>

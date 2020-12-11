@@ -52,10 +52,10 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtTotalAmount = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblTotalAmount = new MaterialSkin.Controls.MaterialLabel();
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDone = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbCartInfo.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -338,8 +338,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.txtTotalAmount);
-            this.panel3.Controls.Add(this.lblTotalAmount);
             this.panel3.Controls.Add(this.btnDelete);
             this.panel3.Controls.Add(this.btnUpdate);
             this.panel3.Controls.Add(this.btnDone);
@@ -370,20 +370,6 @@
             this.txtTotalAmount.TabIndex = 11;
             this.txtTotalAmount.TabStop = false;
             this.txtTotalAmount.UseSystemPasswordChar = false;
-            // 
-            // lblTotalAmount
-            // 
-            this.lblTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotalAmount.AutoSize = true;
-            this.lblTotalAmount.Depth = 0;
-            this.lblTotalAmount.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTotalAmount.Location = new System.Drawing.Point(946, 8);
-            this.lblTotalAmount.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new System.Drawing.Size(44, 19);
-            this.lblTotalAmount.TabIndex = 10;
-            this.lblTotalAmount.Text = "Total";
             // 
             // btnDelete
             // 
@@ -439,6 +425,17 @@
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(949, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 21);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Total";
+            // 
             // fOrdersDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 11F);
@@ -491,7 +488,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private MaterialSkin.Controls.MaterialRaisedButton btnAddToCart;
-        private MaterialSkin.Controls.MaterialLabel lblTotalAmount;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         public System.Windows.Forms.DataGridView dgvProductInOrder;
@@ -507,5 +503,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalMoney;
+        private System.Windows.Forms.Label label1;
     }
 }

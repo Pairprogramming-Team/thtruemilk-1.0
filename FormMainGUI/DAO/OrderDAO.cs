@@ -47,7 +47,13 @@ namespace FormMainGUI.DAO
         {
             var db = DataProvider.Ins.DB;
             var data = (from o in db.OrdersDetails
-                        select o).ToList();
+                        select new { 
+                            ID = o.OrderDetailID,
+                            Name = o.Product.Name,
+                            Quantity = o.Quantity,
+                            Price = o.Product.Price,
+                            Total = o.TotalAmount
+                        }).ToList();
             return data;
         }
 
@@ -161,7 +167,23 @@ namespace FormMainGUI.DAO
 
                 return false;
             }
-           
+        }
+
+        public bool updateOrderDetail(OrdersDetail ordersDetail)
+        {
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                OrdersDetail ordersDetail1 = db.OrdersDetails.Where(x => x.OrderDetailID == ordersDetail.OrderDetailID).Select(x => x).FirstOrDefault();
+                ordersDetail1.Quantity = ordersDetail.Quantity;
+                ordersDetail1.TotalAmount = ordersDetail.TotalAmount;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

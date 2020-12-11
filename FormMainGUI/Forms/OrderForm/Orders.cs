@@ -22,11 +22,11 @@ namespace FormMainGUI.Forms.OrderForm
 
             btnDelete.AutoSize = false;
             btnAdd.AutoSize = false;
-            btnUpdate.AutoSize = false;
+            btnOrderDetailList.AutoSize = false;
 
             btnDelete.Size = new System.Drawing.Size(100, 36);
             btnAdd.Size = new System.Drawing.Size(100, 36);
-            btnUpdate.Size = new System.Drawing.Size(100, 36);
+            btnOrderDetailList.Size = new System.Drawing.Size(100, 36);
             this.account1 = account;
             
         }
@@ -72,6 +72,12 @@ namespace FormMainGUI.Forms.OrderForm
                     MessageBox.Show("Can not remove this Order!", "Notification");
                 }
             }
+        }
+
+        private void btnOrderDetailList_Click(object sender, EventArgs e)
+        {
+            ListOrderDetail listOrderDetail = new ListOrderDetail();
+            listOrderDetail.ShowDialog();
         }
     }
 }

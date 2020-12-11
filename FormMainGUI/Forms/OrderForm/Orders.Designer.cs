@@ -33,22 +33,22 @@ namespace FormMainGUI.Forms.OrderForm
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvOrdersList = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnOrderDetailList = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdersList)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -60,7 +60,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(764, 463);
+            this.groupBox1.Size = new System.Drawing.Size(764, 387);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orders list";
@@ -71,7 +71,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(4, 75);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(756, 384);
+            this.panel3.Size = new System.Drawing.Size(756, 308);
             this.panel3.TabIndex = 2;
             // 
             // dgvOrdersList
@@ -85,7 +85,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.dgvOrdersList.Name = "dgvOrdersList";
             this.dgvOrdersList.ReadOnly = true;
             this.dgvOrdersList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrdersList.Size = new System.Drawing.Size(756, 384);
+            this.dgvOrdersList.Size = new System.Drawing.Size(756, 308);
             this.dgvOrdersList.TabIndex = 1;
             this.dgvOrdersList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderList_CellDoubleClick);
             // 
@@ -100,15 +100,6 @@ namespace FormMainGUI.Forms.OrderForm
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(756, 52);
             this.panel2.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FormMainGUI.Properties.Resources.Knob_Forward_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 32);
-            this.pictureBox1.TabIndex = 58;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -145,12 +136,12 @@ namespace FormMainGUI.Forms.OrderForm
             this.materialLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(439, 15);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(55, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(55, 18);
             this.materialLabel1.TabIndex = 56;
             this.materialLabel1.Text = "Search";
             // 
@@ -158,15 +149,15 @@ namespace FormMainGUI.Forms.OrderForm
             // 
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 463);
+            this.panel1.Location = new System.Drawing.Point(0, 387);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(764, 315);
+            this.panel1.Size = new System.Drawing.Size(764, 391);
             this.panel1.TabIndex = 1;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnDelete);
-            this.panel4.Controls.Add(this.btnUpdate);
+            this.panel4.Controls.Add(this.btnOrderDetailList);
             this.panel4.Controls.Add(this.btnAdd);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -182,7 +173,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Depth = 0;
             this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(627, 19);
+            this.btnDelete.Location = new System.Drawing.Point(450, 19);
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Primary = true;
@@ -192,22 +183,23 @@ namespace FormMainGUI.Forms.OrderForm
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnUpdate
+            // btnOrderDetailList
             // 
-            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnUpdate.AutoSize = true;
-            this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Depth = 0;
-            this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(462, 19);
-            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Primary = true;
-            this.btnUpdate.Size = new System.Drawing.Size(73, 36);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnOrderDetailList.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnOrderDetailList.AutoSize = true;
+            this.btnOrderDetailList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnOrderDetailList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrderDetailList.Depth = 0;
+            this.btnOrderDetailList.Icon = null;
+            this.btnOrderDetailList.Location = new System.Drawing.Point(604, 19);
+            this.btnOrderDetailList.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnOrderDetailList.Name = "btnOrderDetailList";
+            this.btnOrderDetailList.Primary = true;
+            this.btnOrderDetailList.Size = new System.Drawing.Size(145, 36);
+            this.btnOrderDetailList.TabIndex = 8;
+            this.btnOrderDetailList.Text = "Order detail list";
+            this.btnOrderDetailList.UseVisualStyleBackColor = true;
+            this.btnOrderDetailList.Click += new System.EventHandler(this.btnOrderDetailList_Click);
             // 
             // btnAdd
             // 
@@ -226,6 +218,15 @@ namespace FormMainGUI.Forms.OrderForm
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FormMainGUI.Properties.Resources.Knob_Forward_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 32);
+            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabStop = false;
             // 
             // fOrders
             // 
@@ -246,10 +247,10 @@ namespace FormMainGUI.Forms.OrderForm
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdersList)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,7 +266,7 @@ namespace FormMainGUI.Forms.OrderForm
         public System.Windows.Forms.DataGridView dgvOrdersList;
         private System.Windows.Forms.Panel panel4;
         private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
-        private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
+        private MaterialSkin.Controls.MaterialRaisedButton btnOrderDetailList;
         private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
