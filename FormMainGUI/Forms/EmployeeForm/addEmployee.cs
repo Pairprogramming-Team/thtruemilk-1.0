@@ -39,6 +39,8 @@ namespace FormMainGUI.Forms.EmployeeForm
 
         private void addEmployee_Load(object sender, EventArgs e)
         {
+            List<string> listSex = new List<string> { "Male", "Female" };
+            cbmSex.DataSource = listSex;
             if (employee != null)
             {
                 txbId.Text = employee.EmployeeID;
@@ -81,11 +83,11 @@ namespace FormMainGUI.Forms.EmployeeForm
             bool sex; 
             if (cbmSex.SelectedIndex == 1)
             {
-                sex = true;
+                sex = false;
             }
             else
             {
-                sex = false;
+                sex = true;
             }
             string address= txbAddress.Text;
 

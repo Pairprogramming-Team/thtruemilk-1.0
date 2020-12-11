@@ -135,7 +135,7 @@
             this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancel.Depth = 0;
             this.btnCancel.Icon = null;
-            this.btnCancel.Location = new System.Drawing.Point(221, 621);
+            this.btnCancel.Location = new System.Drawing.Point(434, 621);
             this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Primary = true;
@@ -151,7 +151,7 @@
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(410, 621);
+            this.btnAdd.Location = new System.Drawing.Point(281, 621);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;

@@ -22,6 +22,7 @@ namespace FormMainGUI.Forms.EmployeeForm
             btnDelete.Size = new System.Drawing.Size(100, 36);
             btnUpdate.Size = new System.Drawing.Size(100, 36);
             btnAdd.Size = new System.Drawing.Size(100, 36);
+
         }
 
         private void Employees_Load(object sender, EventArgs e)
