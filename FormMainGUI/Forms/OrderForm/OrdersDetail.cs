@@ -196,10 +196,22 @@ namespace FormMainGUI.Forms
                 {
                     MessageBox.Show("Create order failed!!!");
                 }
-            }
-            
+            } 
+        }
 
-                     
+        private void fOrdersDetail_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            for (int i = 0; i < dgvCart.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvProductInOrder.Rows.Count; j++)
+                {
+                    if (dgvCart.Rows[i].Cells["colID"].Value.ToString().Contains(dgvProductInOrder.Rows[j].Cells[0].Value.ToString()))
+                    {
+                        dgvProductInOrder.Rows[j].Cells[2].Value = Convert.ToInt32(dgvProductInOrder.Rows[j].Cells[2].Value)
+                                                                + Convert.ToInt32(dgvCart.Rows[i].Cells[3].Value);
+                    }
+                }
+            }
         }
     }
 }

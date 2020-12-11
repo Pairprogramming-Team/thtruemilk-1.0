@@ -38,6 +38,7 @@ namespace FormMainGUI.Forms.OrderForm
         {
             if (fOrdersDetail.isUpdate)
             {
+                txtOrderDetalID.Enabled = false;
                 txtOrderDetalID.Text = orders.dgvCart.CurrentRow.Cells["colIDDetail"].Value.ToString();
                 txtIDProduct.Text = orders.dgvCart.CurrentRow.Cells["colID"].Value.ToString();
                 txtNameProduct.Text = orders.dgvCart.CurrentRow.Cells["colName"].Value.ToString(); ;
@@ -46,9 +47,27 @@ namespace FormMainGUI.Forms.OrderForm
             }
             else
             {
-                txtIDProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[0].Value.ToString();
-                txtNameProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[1].Value.ToString();
-                txtPrice.Text = Convert.ToString(orders.dgvProductInOrder.CurrentRow.Cells[3].Value.ToString());
+                if (this.orders.dgvCart.Rows.Count == 0)
+                {
+                    txtIDProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[0].Value.ToString();
+                    txtNameProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[1].Value.ToString();
+                    txtPrice.Text = Convert.ToString(orders.dgvProductInOrder.CurrentRow.Cells[3].Value.ToString());
+                }
+                else
+                {
+                    for (int i = 0; i < this.orders.dgvCart.Rows.Count; i++)
+                    {
+                        txtIDProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[0].Value.ToString();
+                        if (txtIDProduct.Text.Contains(this.orders.dgvCart.Rows[i].Cells["colID"].Value.ToString()))
+                        {
+                            txtOrderDetalID.Enabled = false;
+                            txtOrderDetalID.Text = this.orders.dgvCart.Rows[i].Cells["colIDDetail"].Value.ToString();
+                        }
+                        txtNameProduct.Text = orders.dgvProductInOrder.CurrentRow.Cells[1].Value.ToString();
+                        txtPrice.Text = Convert.ToString(orders.dgvProductInOrder.CurrentRow.Cells[3].Value.ToString());
+                                        
+                    }                    
+                }
             }
         }
 
@@ -76,7 +95,7 @@ namespace FormMainGUI.Forms.OrderForm
                     {
                         int quantityUpdate = Convert.ToInt32(this.orders.dgvProductInOrder.Rows[i].Cells[2].Value) + Convert.ToInt32(this.orders.dgvCart.CurrentRow.Cells["colQuantity"].Value);
                         if (numbericQuantity.Value > 0 && numbericQuantity.Value <= quantityUpdate)
-                        {
+                        {                            
                             this.orders.dgvProductInOrder.Rows[i].Cells[2].Value = Convert.ToInt32(this.orders.dgvProductInOrder.Rows[i].Cells[2].Value)
                                                                                  - quantity + Convert.ToInt32(this.orders.dgvCart.CurrentRow.Cells["colQuantity"].Value);
                             this.orders.dgvCart.CurrentRow.Cells["colIDDetail"].Value = txtOrderDetalID.Text;
@@ -115,23 +134,32 @@ namespace FormMainGUI.Forms.OrderForm
                             int count = 0;
                             for (int i = 0; i < this.orders.dgvCart.Rows.Count; i++)
                             {
-                                //caculate quantity and total money when add new products with the same ID product.
-                                if (txtIDProduct.Text.Contains(this.orders.dgvCart.Rows[i].Cells["colID"].Value.ToString()))
+                                if (txtOrderDetalID.Text == this.orders.dgvCart.Rows[i].Cells[0].Value.ToString())
                                 {
-                                    //caculate quantity remaining in the warehouse
-                                    this.orders.dgvProductInOrder.CurrentRow.Cells[2].Value = quantityRemaining - quantity;
-
-                                    //caculate quantity
-                                    sum = Convert.ToInt32(this.orders.dgvCart.Rows[i].Cells["colQuantity"].Value);
-                                    sum += Convert.ToInt32(numbericQuantity.Value.ToString());
-                                    this.orders.dgvCart.Rows[i].Cells["colQuantity"].Value = sum;
-                                    count++;
-
-                                    //caculate total money.
-                                    price = float.Parse(txtPrice.Text);
-                                    quantity = sum;
-                                    this.orders.dgvCart.Rows[i].Cells["colTotalMoney"].Value = price * (float)quantity;
+                                    MessageBox.Show("Order detail ID must be unique. Please enter another order detail ID!!!");
+                                    txtOrderDetalID.Focus();
+                                    return;
                                 }
+                                else
+                                {
+                                    //caculate quantity and total money when add new products with the same ID product.
+                                    if (txtIDProduct.Text.Contains(this.orders.dgvCart.Rows[i].Cells["colID"].Value.ToString()))
+                                    {
+                                        //caculate quantity remaining in the warehouse
+                                        this.orders.dgvProductInOrder.CurrentRow.Cells[2].Value = quantityRemaining - quantity;
+
+                                        //caculate quantity
+                                        sum = Convert.ToInt32(this.orders.dgvCart.Rows[i].Cells["colQuantity"].Value);
+                                        sum += Convert.ToInt32(numbericQuantity.Value.ToString());
+                                        this.orders.dgvCart.Rows[i].Cells["colQuantity"].Value = sum;
+                                        count++;
+
+                                        //caculate total money.
+                                        price = float.Parse(txtPrice.Text);
+                                        quantity = sum;
+                                        this.orders.dgvCart.Rows[i].Cells["colTotalMoney"].Value = price * (float)quantity;
+                                    }
+                                }                                
                             }
                             if (count != 1)
                             {

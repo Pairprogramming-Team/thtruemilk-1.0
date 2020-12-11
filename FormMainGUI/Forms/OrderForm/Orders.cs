@@ -53,5 +53,25 @@ namespace FormMainGUI.Forms.OrderForm
         {
             dgvOrdersList.DataSource = OrderDAO.Instance.searchOrderByEmployee(txtSearch.Text);
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Order order = new Order();
+            order.OrderID = dgvOrdersList.CurrentRow.Cells[0].Value.ToString();
+
+            if (MessageBox.Show("Are you sure remove this Order?", "Notification", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                bool isRemoved = OrderDAO.Instance.deleteOrder(order.OrderID);
+                if (isRemoved == true)
+                {
+                    MessageBox.Show("Remove Product successfully!", "Notification");
+                    dgvOrdersList.DataSource = OrderDAO.Instance.getListOrder();
+                }
+                else
+                {
+                    MessageBox.Show("Can not remove this Order!", "Notification");
+                }
+            }
+        }
     }
 }

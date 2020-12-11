@@ -455,6 +455,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order Detail";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fOrdersDetail_FormClosed);
             this.Load += new System.EventHandler(this.fOrders_Load);
             this.panel1.ResumeLayout(false);
             this.gbCartInfo.ResumeLayout(false);

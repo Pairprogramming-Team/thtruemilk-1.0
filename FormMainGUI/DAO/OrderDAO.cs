@@ -36,7 +36,7 @@ namespace FormMainGUI.DAO
         }
 
         public object getListProduct()
-        {
+        {            
             var db = DataProvider.Ins.DB;
             var data = (from p in db.Products
                                select p).ToList();
@@ -135,6 +135,33 @@ namespace FormMainGUI.DAO
                         Price = o.Product.Price
                         }).ToList();
             return data;
+        }
+
+        public bool deleteOrder(string id)
+        {
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                var ordersDetail = (from o in DataProvider.Ins.DB.OrdersDetails
+                                    where o.OrderID == id
+                                    select o);
+                foreach (var item in ordersDetail)
+                {
+                    db.OrdersDetails.Remove(item);
+                }
+
+                Order order = db.Orders.Where(x => x.OrderID == id).Select(x => x).FirstOrDefault();
+                db.Orders.Remove(order);
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+           
         }
     }
 }
