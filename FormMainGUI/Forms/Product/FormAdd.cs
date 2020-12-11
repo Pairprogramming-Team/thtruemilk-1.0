@@ -19,12 +19,10 @@ namespace FormMainGUI.Forms
 {
     public partial class add : MaterialForm
     {
-        private List<String> statusList;
         private Product product;
-        private ProductsDetail productsDetail;
         private bool isUpdate = false;
 
-        public add( List<String> statusList, Product product= null, ProductsDetail productsDetail= null)
+        public add(Product product= null)
         {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -38,42 +36,14 @@ namespace FormMainGUI.Forms
             txtID.Size = new System.Drawing.Size(205, 28);
             txtName.Size = new System.Drawing.Size(205, 28);
             txtPrice.Size = new System.Drawing.Size(205, 28);
-            txtProDetailID.Size = new System.Drawing.Size(205, 28);
             this.product = product;
-            this.productsDetail = productsDetail;
-            this.statusList = statusList;
-
             if (product != null)
             {
                 btnSave.Text = "UPDATE";
                 isUpdate = true;
             }
         }
-
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-
-        }
-
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                WindowState = FormWindowState.Normal;
-
-            }
-        }
+ 
         private void btnCancle_Click(object sender, EventArgs e)
         {
 
@@ -94,18 +64,12 @@ namespace FormMainGUI.Forms
         private void add_Load(object sender, EventArgs e)
             
         {
-            cmbStatus.DataSource = statusList;
             if (product != null)
             {
                 txtID.Text = product.ProductID;
                 txtName.Text = product.Name;
                 Quantity.Value = Convert.ToInt32(product.Quantity);
                 txtPrice.Text = Convert.ToString(product.Price);
-                txtProDetailID.Text = productsDetail.ProductDetailID;
-                cmbStatus.SelectedItem = productsDetail.Status;
-                MFG.Value = (DateTime)productsDetail.MFG;
-                EXP.Value = (DateTime)productsDetail.EXP;
-                ProductEntryDate.Value = (DateTime)productsDetail.ProductEntryDate;
             }
         }
 
@@ -120,10 +84,9 @@ namespace FormMainGUI.Forms
 
                 bool isSuccess = false;
                 ModelDB.Product a = new ModelDB.Product(id, name, quantity, price);
-                ModelDB.ProductsDetail b = new ModelDB.ProductsDetail(txtProDetailID.Text, Convert.ToString(cmbStatus.SelectedItem), MFG.Value, EXP.Value, ProductEntryDate.Value, txtID.Text);
                 if (isUpdate)
                 {
-                    isSuccess = ProductsDAO.Instance.updateProduct(a, b);
+                    isSuccess = ProductsDAO.Instance.updateProduct(a);
                     if (isSuccess)
                     {
                         MessageBox.Show("Update Product Successful!", "");
@@ -136,7 +99,7 @@ namespace FormMainGUI.Forms
                 }
                 else
                 {
-                    isSuccess = ProductsDAO.Instance.productAdd(a, b);
+                    isSuccess = ProductsDAO.Instance.productAdd(a);
                     if (isSuccess)
                     {
                         MessageBox.Show("Add Product Successful!", "");
@@ -168,66 +131,12 @@ namespace FormMainGUI.Forms
                     MessageBox.Show("Invalid Price value");
                     return;
                 }
-                else if (txtProDetailID.Text == "")
-                {
-                    MessageBox.Show("Invalid Product Detail ID value ");
-                    return;
-                }
-                else if (Convert.ToString(MFG.Value) == "" || MFG.Value >= DateTime.Now)
-                {
-                    MessageBox.Show("Invalid EXP value");
-                    return;
-                }
-                else if (MFG.Value >= ProductEntryDate.Value )
-                {
-                    MessageBox.Show("Please check MFG( MFG must be less than ProductEntryDate) !!! ");
-                    return;
-                }
-                else if (EXP.Value < DateTime.Now)
-                {
-                    MessageBox.Show("Invalid EXP value");
-                    return;
-                }
+            
             }
             catch (Exception)
             {
 
-                if (txtID.Text == "")
-                {
-                    MessageBox.Show("Invalid ID value");
-                    return;
-                }
-                else if (txtName.Text == "")
-                {
-                    MessageBox.Show("Invalid name value ");
-                    return;
-                }
-
-                else if (Quantity.Value == 0)
-                {
-                    MessageBox.Show("Invalid quantity value");
-                    return;
-                }
-                else if (txtPrice.Text == "" & Convert.ToInt32(txtPrice.Text) <= 0)
-                {
-                    MessageBox.Show("Invalid Price value");
-                    return;
-                }
-                else if (txtProDetailID.Text == "")
-                {
-                    MessageBox.Show("Invalid Product Detail ID value ");
-                    return;
-                }
-                else if (Convert.ToString(MFG.Value) == "" || MFG.Value > DateTime.Now)
-                {
-                    MessageBox.Show("Invalid EXP value");
-                    return;
-                }
-                else if (EXP.Value < DateTime.Now  )
-                {
-                    MessageBox.Show("Invalid EXP value");
-                    return;
-                }
+                throw;
               
             }
                
