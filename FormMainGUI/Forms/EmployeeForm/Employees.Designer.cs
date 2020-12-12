@@ -154,7 +154,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Employees";
-            this.Text = "Employee";
+            this.Text = "Employees";
             this.Load += new System.EventHandler(this.Employees_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

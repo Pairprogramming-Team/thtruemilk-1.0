@@ -167,7 +167,7 @@
             this.Controls.Add(this.panelAction);
             this.Controls.Add(this.pannelTable);
             this.Name = "Account";
-            this.Text = "Account";
+            this.Text = "Accounts";
             this.Load += new System.EventHandler(this.Account_Load);
             this.pannelTable.ResumeLayout(false);
             this.pannelTable.PerformLayout();
