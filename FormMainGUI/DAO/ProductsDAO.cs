@@ -26,7 +26,6 @@ namespace FormMainGUI.DAO
             var result = (from c in db.Products
                          join d in db.ProductsDetails
                          on c.ProductID equals d.ProductID
-                         where c.ProductID == d.ProductID
                          select new
                          {
                              ID = c.ProductID,
@@ -39,6 +38,30 @@ namespace FormMainGUI.DAO
                              EXP = d.EXP,
                              ProductEntryDate = d.ProductEntryDate
                          }
+                    ).ToList();
+            return result;
+
+        }
+        public object Search(string id)
+        {
+
+            var db = DataProvider.Ins.DB;
+            var result = (from c in db.Products
+                          join d in db.ProductsDetails
+                          on c.ProductID equals d.ProductID
+                          where c.Name.Contains(id)
+                          select new
+                          {
+                              ID = c.ProductID,
+                              Name = c.Name,
+                              Quantity = c.Quantity,
+                              Price = c.Price,
+                              ProductDetailID = d.ProductDetailID,
+                              Status = (d.Status),
+                              MFG = d.MFG,
+                              EXP = d.EXP,
+                              ProductEntryDate = d.ProductEntryDate
+                          }
                     ).ToList();
             return result;
 
