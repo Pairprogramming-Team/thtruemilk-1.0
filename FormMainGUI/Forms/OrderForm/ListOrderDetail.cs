@@ -26,6 +26,7 @@ namespace FormMainGUI.Forms.OrderForm
         private void ListOrderDetail_Load(object sender, EventArgs e)
         {
             dgvOrderDetailList.DataSource = OrderDAO.Instance.getListOrderDetail();
+            dgvOrderDetailList.Columns[1].Width = 300;
         }
 
         private void dgvOrderDetailList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -54,7 +55,7 @@ namespace FormMainGUI.Forms.OrderForm
                         bool isRemoved = OrderDAO.Instance.updateOrderDetail(ordersDetail);
                         if (isRemoved == true)
                         {
-                            MessageBox.Show("Remove Product successfully!", "Notification");
+                            MessageBox.Show("Update Product successfully!", "Notification");
                             dgvOrderDetailList.DataSource = OrderDAO.Instance.getListOrderDetail();
                         }
                         else

@@ -69,13 +69,14 @@ namespace FormMainGUI.Forms.OrderForm
             this.dgvOrderDetailList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderDetailList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrderDetailList.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvOrderDetailList.Location = new System.Drawing.Point(4, 23);
+            this.dgvOrderDetailList.Location = new System.Drawing.Point(4, 27);
             this.dgvOrderDetailList.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOrderDetailList.MultiSelect = false;
             this.dgvOrderDetailList.Name = "dgvOrderDetailList";
             this.dgvOrderDetailList.ReadOnly = true;
+            this.dgvOrderDetailList.RowHeadersWidth = 51;
             this.dgvOrderDetailList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrderDetailList.Size = new System.Drawing.Size(905, 340);
+            this.dgvOrderDetailList.Size = new System.Drawing.Size(905, 336);
             this.dgvOrderDetailList.TabIndex = 0;
             this.dgvOrderDetailList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetailList_CellClick);
             // 
@@ -111,7 +112,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Primary = true;
-            this.btnUpdate.Size = new System.Drawing.Size(73, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(87, 36);
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -126,7 +127,7 @@ namespace FormMainGUI.Forms.OrderForm
             0,
             0});
             this.numbericQuantity.Name = "numbericQuantity";
-            this.numbericQuantity.Size = new System.Drawing.Size(145, 26);
+            this.numbericQuantity.Size = new System.Drawing.Size(145, 30);
             this.numbericQuantity.TabIndex = 0;
             this.numbericQuantity.Value = new decimal(new int[] {
             1,
@@ -147,7 +148,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.txtTotal.SelectedText = "";
             this.txtTotal.SelectionLength = 0;
             this.txtTotal.SelectionStart = 0;
-            this.txtTotal.Size = new System.Drawing.Size(145, 23);
+            this.txtTotal.Size = new System.Drawing.Size(145, 28);
             this.txtTotal.TabIndex = 10;
             this.txtTotal.TabStop = false;
             this.txtTotal.UseSystemPasswordChar = false;
@@ -165,7 +166,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.txtPrice.SelectedText = "";
             this.txtPrice.SelectionLength = 0;
             this.txtPrice.SelectionStart = 0;
-            this.txtPrice.Size = new System.Drawing.Size(170, 23);
+            this.txtPrice.Size = new System.Drawing.Size(170, 28);
             this.txtPrice.TabIndex = 9;
             this.txtPrice.TabStop = false;
             this.txtPrice.UseSystemPasswordChar = false;
@@ -183,7 +184,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.txtName.SelectedText = "";
             this.txtName.SelectionLength = 0;
             this.txtName.SelectionStart = 0;
-            this.txtName.Size = new System.Drawing.Size(272, 23);
+            this.txtName.Size = new System.Drawing.Size(272, 28);
             this.txtName.TabIndex = 8;
             this.txtName.TabStop = false;
             this.txtName.UseSystemPasswordChar = false;
@@ -201,7 +202,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.txtID.SelectedText = "";
             this.txtID.SelectionLength = 0;
             this.txtID.SelectionStart = 0;
-            this.txtID.Size = new System.Drawing.Size(145, 23);
+            this.txtID.Size = new System.Drawing.Size(145, 28);
             this.txtID.TabIndex = 7;
             this.txtID.TabStop = false;
             this.txtID.UseSystemPasswordChar = false;
@@ -211,7 +212,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(520, 61);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 19);
+            this.label5.Size = new System.Drawing.Size(51, 22);
             this.label5.TabIndex = 6;
             this.label5.Text = "Total";
             // 
@@ -220,7 +221,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(268, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 19);
+            this.label4.Size = new System.Drawing.Size(52, 22);
             this.label4.TabIndex = 5;
             this.label4.Text = "Price";
             // 
@@ -229,7 +230,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(268, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 19);
+            this.label3.Size = new System.Drawing.Size(56, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Name";
             // 
@@ -238,7 +239,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 19);
+            this.label2.Size = new System.Drawing.Size(76, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Quantity";
             // 
@@ -247,13 +248,13 @@ namespace FormMainGUI.Forms.OrderForm
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 19);
+            this.label1.Size = new System.Drawing.Size(30, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
             // ListOrderDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 531);
             this.Controls.Add(this.groupBox2);
