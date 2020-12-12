@@ -26,7 +26,7 @@ namespace FormMainGUI.Forms.OrderForm
 
             btnDelete.Size = new System.Drawing.Size(100, 36);
             btnAdd.Size = new System.Drawing.Size(100, 36);
-            btnOrderDetailList.Size = new System.Drawing.Size(150, 36);
+            btnOrderDetailList.Size = new System.Drawing.Size(210, 36);
             this.account1 = account;
             
         }
