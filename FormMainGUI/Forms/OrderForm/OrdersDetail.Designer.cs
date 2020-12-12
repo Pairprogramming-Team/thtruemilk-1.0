@@ -32,6 +32,12 @@
             this.gbCartInfo = new System.Windows.Forms.GroupBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dgvCart = new System.Windows.Forms.DataGridView();
+            this.colIDDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtOrderID = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -46,16 +52,10 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtTotalAmount = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblTotalAmount = new MaterialSkin.Controls.MaterialLabel();
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDone = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.colIDDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbCartInfo.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -118,6 +118,7 @@
             this.colTotalMoney});
             this.dgvCart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCart.Location = new System.Drawing.Point(0, 0);
+            this.dgvCart.MultiSelect = false;
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
             this.dgvCart.RowHeadersWidth = 51;
@@ -128,6 +129,47 @@
             this.dgvCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellClick);
             this.dgvCart.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvCart_RowAdded);
             this.dgvCart.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvCart_RowRemoved);
+            // 
+            // colIDDetail
+            // 
+            this.colIDDetail.HeaderText = "ID order detail";
+            this.colIDDetail.Name = "colIDDetail";
+            this.colIDDetail.ReadOnly = true;
+            // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID product";
+            this.colID.MinimumWidth = 6;
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Name product";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.HeaderText = "Quantity";
+            this.colQuantity.MinimumWidth = 6;
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.ReadOnly = true;
+            // 
+            // colPrice
+            // 
+            this.colPrice.HeaderText = "Price";
+            this.colPrice.MinimumWidth = 6;
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            // 
+            // colTotalMoney
+            // 
+            this.colTotalMoney.HeaderText = "Total money";
+            this.colTotalMoney.MinimumWidth = 6;
+            this.colTotalMoney.Name = "colTotalMoney";
+            this.colTotalMoney.ReadOnly = true;
             // 
             // panel5
             // 
@@ -242,6 +284,7 @@
             this.dgvProductInOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductInOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvProductInOrder.Location = new System.Drawing.Point(0, 0);
+            this.dgvProductInOrder.MultiSelect = false;
             this.dgvProductInOrder.Name = "dgvProductInOrder";
             this.dgvProductInOrder.ReadOnly = true;
             this.dgvProductInOrder.RowHeadersWidth = 51;
@@ -295,8 +338,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.txtTotalAmount);
-            this.panel3.Controls.Add(this.lblTotalAmount);
             this.panel3.Controls.Add(this.btnDelete);
             this.panel3.Controls.Add(this.btnUpdate);
             this.panel3.Controls.Add(this.btnDone);
@@ -327,20 +370,6 @@
             this.txtTotalAmount.TabIndex = 11;
             this.txtTotalAmount.TabStop = false;
             this.txtTotalAmount.UseSystemPasswordChar = false;
-            // 
-            // lblTotalAmount
-            // 
-            this.lblTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotalAmount.AutoSize = true;
-            this.lblTotalAmount.Depth = 0;
-            this.lblTotalAmount.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTotalAmount.Location = new System.Drawing.Point(946, 8);
-            this.lblTotalAmount.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new System.Drawing.Size(44, 19);
-            this.lblTotalAmount.TabIndex = 10;
-            this.lblTotalAmount.Text = "Total";
             // 
             // btnDelete
             // 
@@ -396,46 +425,16 @@
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // colIDDetail
+            // label1
             // 
-            this.colIDDetail.HeaderText = "ID order detail";
-            this.colIDDetail.Name = "colIDDetail";
-            this.colIDDetail.ReadOnly = true;
-            // 
-            // colID
-            // 
-            this.colID.HeaderText = "ID product";
-            this.colID.MinimumWidth = 6;
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "Name product";
-            this.colName.MinimumWidth = 6;
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.HeaderText = "Quantity";
-            this.colQuantity.MinimumWidth = 6;
-            this.colQuantity.Name = "colQuantity";
-            this.colQuantity.ReadOnly = true;
-            // 
-            // colPrice
-            // 
-            this.colPrice.HeaderText = "Price";
-            this.colPrice.MinimumWidth = 6;
-            this.colPrice.Name = "colPrice";
-            this.colPrice.ReadOnly = true;
-            // 
-            // colTotalMoney
-            // 
-            this.colTotalMoney.HeaderText = "Total money";
-            this.colTotalMoney.MinimumWidth = 6;
-            this.colTotalMoney.Name = "colTotalMoney";
-            this.colTotalMoney.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(949, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 21);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Total";
             // 
             // fOrdersDetail
             // 
@@ -453,6 +452,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order Detail";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fOrdersDetail_FormClosed);
             this.Load += new System.EventHandler(this.fOrders_Load);
             this.panel1.ResumeLayout(false);
             this.gbCartInfo.ResumeLayout(false);
@@ -488,7 +488,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private MaterialSkin.Controls.MaterialRaisedButton btnAddToCart;
-        private MaterialSkin.Controls.MaterialLabel lblTotalAmount;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         public System.Windows.Forms.DataGridView dgvProductInOrder;
@@ -504,5 +503,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalMoney;
+        private System.Windows.Forms.Label label1;
     }
 }

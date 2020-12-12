@@ -22,11 +22,11 @@ namespace FormMainGUI.Forms.OrderForm
 
             btnDelete.AutoSize = false;
             btnAdd.AutoSize = false;
-            btnUpdate.AutoSize = false;
+            btnOrderDetailList.AutoSize = false;
 
             btnDelete.Size = new System.Drawing.Size(100, 36);
             btnAdd.Size = new System.Drawing.Size(100, 36);
-            btnUpdate.Size = new System.Drawing.Size(100, 36);
+            btnOrderDetailList.Size = new System.Drawing.Size(100, 36);
             this.account1 = account;
             
         }
@@ -40,6 +40,44 @@ namespace FormMainGUI.Forms.OrderForm
         {
             fOrdersDetail fOrdersDetail = new fOrdersDetail(this, account1);
             fOrdersDetail.ShowDialog();
+        }
+
+        private void dgvOrderList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            fListOrderDetail fListOrderDetail = new fListOrderDetail(this);
+            fListOrderDetail.ShowDialog();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvOrdersList.DataSource = OrderDAO.Instance.searchOrderByEmployee(txtSearch.Text);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Order order = new Order();
+            order.OrderID = dgvOrdersList.CurrentRow.Cells[0].Value.ToString();
+
+            if (MessageBox.Show("Are you sure remove this Order?", "Notification", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                bool isRemoved = OrderDAO.Instance.deleteOrder(order.OrderID);
+                if (isRemoved == true)
+                {
+                    MessageBox.Show("Remove Product successfully!", "Notification");
+                    dgvOrdersList.DataSource = OrderDAO.Instance.getListOrder();
+                }
+                else
+                {
+                    MessageBox.Show("Can not remove this Order!", "Notification");
+                }
+            }
+        }
+
+        private void btnOrderDetailList_Click(object sender, EventArgs e)
+        {
+            ListOrderDetail listOrderDetail = new ListOrderDetail();
+            listOrderDetail.ShowDialog();
         }
     }
 }

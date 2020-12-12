@@ -175,6 +175,12 @@
     <Compile Include="Forms\EmployeeForm\Employees.Designer.cs">
       <DependentUpon>Employees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Product\fProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Product\fProductDetail.Designer.cs">
+      <DependentUpon>fProductDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,18 @@
     </Compile>
     <Compile Include="Forms\OrderForm\AddToCart.Designer.cs">
       <DependentUpon>AddToCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderForm\ListOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderForm\ListOrderDetail.Designer.cs">
+      <DependentUpon>ListOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderForm\ListOrderDetailByID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderForm\ListOrderDetailByID.Designer.cs">
+      <DependentUpon>ListOrderDetailByID.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\OrderForm\Orders.cs">
       <SubType>Form</SubType>
@@ -328,11 +346,20 @@
     <EmbeddedResource Include="Forms\EmployeeForm\Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Product\fProductDetail.resx">
+      <DependentUpon>fProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm\AddToCart.resx">
       <DependentUpon>AddToCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderForm\ListOrderDetail.resx">
+      <DependentUpon>ListOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderForm\ListOrderDetailByID.resx">
+      <DependentUpon>ListOrderDetailByID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrderForm\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
