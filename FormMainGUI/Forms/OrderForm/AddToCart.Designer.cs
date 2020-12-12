@@ -105,7 +105,7 @@
             0});
             this.numbericQuantity.Name = "numbericQuantity";
             this.numbericQuantity.Size = new System.Drawing.Size(90, 20);
-            this.numbericQuantity.TabIndex = 1;
+            this.numbericQuantity.TabIndex = 0;
             this.numbericQuantity.Value = new decimal(new int[] {
             1,
             0,

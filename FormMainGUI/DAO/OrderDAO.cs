@@ -36,7 +36,7 @@ namespace FormMainGUI.DAO
         }
 
         public object getListProduct()
-        {
+        {            
             var db = DataProvider.Ins.DB;
             var data = (from p in db.Products
                                select p).ToList();
@@ -47,16 +47,39 @@ namespace FormMainGUI.DAO
         {
             var db = DataProvider.Ins.DB;
             var data = (from o in db.OrdersDetails
-                        select o).ToList();
+                        select new { 
+                            ID = o.OrderDetailID,
+                            Name = o.Product.Name,
+                            Quantity = o.Quantity,
+                            Price = o.Product.Price,
+                            Total = o.TotalAmount
+                        }).ToList();
             return data;
         }
 
         public object searchProductByName(string name)
         {
-            var listProductSearch = (from l in DataProvider.Ins.DB.Products
+            var db = DataProvider.Ins.DB;
+            var listProductSearch = (from l in db.Products
                                     where l.Name.Trim().Contains(name)
                                     select l).ToList();
             return listProductSearch;
+        }
+
+        public object searchOrderByEmployee(string name)
+        {
+            var db = DataProvider.Ins.DB;
+            var listOrderSearch = (from o in db.Orders
+                                   where o.Employee.Name.Trim().Contains(name)
+                                   select new
+                                   {
+                                       OrderID = o.OrderID,
+                                       Date = o.DateOfOrder,
+                                       EmployeeID = o.Employee.EmployeeID,
+                                       Employee = o.Employee.Name,
+                                       Total = o.TotalMoney,
+                                   }).ToList();
+            return listOrderSearch;
         }
 
         public bool addOrderDetail(OrdersDetail ordersDetail)
@@ -97,6 +120,63 @@ namespace FormMainGUI.DAO
             {
                 Product product1 = db.Products.Where(x => x.ProductID == product.ProductID).Select(x => x).FirstOrDefault();
                 product1.Quantity = product.Quantity;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public object getListOrderDetailByOrderID(string id)
+        {
+            var db = DataProvider.Ins.DB;
+            var data = (from o in db.OrdersDetails
+                        where o.OrderID == id
+                        select new { 
+                        ID = o.OrderDetailID,
+                        Name = o.Product.Name,
+                        Quantity = o.Quantity,
+                        Price = o.Product.Price
+                        }).ToList();
+            return data;
+        }
+
+        public bool deleteOrder(string id)
+        {
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                var ordersDetail = (from o in DataProvider.Ins.DB.OrdersDetails
+                                    where o.OrderID == id
+                                    select o);
+                foreach (var item in ordersDetail)
+                {
+                    db.OrdersDetails.Remove(item);
+                }
+
+                Order order = db.Orders.Where(x => x.OrderID == id).Select(x => x).FirstOrDefault();
+                db.Orders.Remove(order);
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+        public bool updateOrderDetail(OrdersDetail ordersDetail)
+        {
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                OrdersDetail ordersDetail1 = db.OrdersDetails.Where(x => x.OrderDetailID == ordersDetail.OrderDetailID).Select(x => x).FirstOrDefault();
+                ordersDetail1.Quantity = ordersDetail.Quantity;
+                ordersDetail1.TotalAmount = ordersDetail.TotalAmount;
                 db.SaveChanges();
                 return true;
             }

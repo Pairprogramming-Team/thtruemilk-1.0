@@ -57,30 +57,20 @@ namespace FormMainGUI.Forms
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
             isUpdate = false;
-            if (dgvProductInOrder.SelectedRows.Count == 1)
+            if (!dgvProductInOrder.CurrentRow.Cells[2].Value.Equals(0))
             {
-                if (!dgvProductInOrder.CurrentRow.Cells[2].Value.Equals(0))
-                {
-                    fAddToCart fAddToCart = new fAddToCart(this);
-                    fAddToCart.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Sorry, This product is out of stock!!!", "Notification");
-                }
+                fAddToCart fAddToCart = new fAddToCart(this);
+                fAddToCart.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Please choose a product!!!", "Notification");
+                MessageBox.Show("Sorry, This product is out of stock!!!", "Notification");
             }
         }
 
         private void dgvCart_RowAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            if (dgvCart.Rows.Count > 0)
-            {
                 btnDone.Enabled = true;
-            }
         }
 
         private void dgvCart_RowRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -206,10 +196,22 @@ namespace FormMainGUI.Forms
                 {
                     MessageBox.Show("Create order failed!!!");
                 }
-            }
-            
+            } 
+        }
 
-                     
+        private void fOrdersDetail_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            for (int i = 0; i < dgvCart.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvProductInOrder.Rows.Count; j++)
+                {
+                    if (dgvCart.Rows[i].Cells["colID"].Value.ToString().Contains(dgvProductInOrder.Rows[j].Cells[0].Value.ToString()))
+                    {
+                        dgvProductInOrder.Rows[j].Cells[2].Value = Convert.ToInt32(dgvProductInOrder.Rows[j].Cells[2].Value)
+                                                                + Convert.ToInt32(dgvCart.Rows[i].Cells[3].Value);
+                    }
+                }
+            }
         }
     }
 }
