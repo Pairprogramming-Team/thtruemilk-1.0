@@ -69,9 +69,9 @@ namespace FormMainGUI.Forms.OrderForm
             // 
             this.panel3.Controls.Add(this.dgvOrdersList);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(4, 79);
+            this.panel3.Location = new System.Drawing.Point(4, 75);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(756, 304);
+            this.panel3.Size = new System.Drawing.Size(756, 308);
             this.panel3.TabIndex = 2;
             // 
             // dgvOrdersList
@@ -86,7 +86,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.dgvOrdersList.ReadOnly = true;
             this.dgvOrdersList.RowHeadersWidth = 51;
             this.dgvOrdersList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrdersList.Size = new System.Drawing.Size(756, 304);
+            this.dgvOrdersList.Size = new System.Drawing.Size(756, 308);
             this.dgvOrdersList.TabIndex = 1;
             this.dgvOrdersList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderList_CellDoubleClick);
             // 
@@ -97,7 +97,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.materialLabel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(4, 27);
+            this.panel2.Location = new System.Drawing.Point(4, 23);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(756, 52);
             this.panel2.TabIndex = 1;
@@ -118,9 +118,9 @@ namespace FormMainGUI.Forms.OrderForm
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(45, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(449, 22);
+            this.label1.Size = new System.Drawing.Size(380, 19);
             this.label1.TabIndex = 57;
-            this.label1.Text = "Double-click a row to get the order details information!";
+            this.label1.Text = "Double-click a row to get the order details information by ID!";
             // 
             // txtSearch
             // 
@@ -135,7 +135,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.txtSearch.SelectedText = "";
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
-            this.txtSearch.Size = new System.Drawing.Size(245, 28);
+            this.txtSearch.Size = new System.Drawing.Size(245, 23);
             this.txtSearch.TabIndex = 55;
             this.txtSearch.TabStop = false;
             this.txtSearch.UseSystemPasswordChar = false;
@@ -151,7 +151,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.materialLabel1.Location = new System.Drawing.Point(433, 15);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(67, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(55, 19);
             this.materialLabel1.TabIndex = 56;
             this.materialLabel1.Text = "Search";
             // 
@@ -187,7 +187,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Primary = true;
-            this.btnDelete.Size = new System.Drawing.Size(82, 36);
+            this.btnDelete.Size = new System.Drawing.Size(69, 36);
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.btnOrderDetailList.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnOrderDetailList.Name = "btnOrderDetailList";
             this.btnOrderDetailList.Primary = true;
-            this.btnOrderDetailList.Size = new System.Drawing.Size(177, 36);
+            this.btnOrderDetailList.Size = new System.Drawing.Size(145, 36);
             this.btnOrderDetailList.TabIndex = 8;
             this.btnOrderDetailList.Text = "Order detail list";
             this.btnOrderDetailList.UseVisualStyleBackColor = true;
@@ -223,7 +223,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
-            this.btnAdd.Size = new System.Drawing.Size(56, 36);
+            this.btnAdd.Size = new System.Drawing.Size(48, 36);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -231,7 +231,7 @@ namespace FormMainGUI.Forms.OrderForm
             // 
             // fOrders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(764, 778);
