@@ -169,18 +169,17 @@
     <Compile Include="Forms\EmployeeForm\addEmployee.Designer.cs">
       <DependentUpon>addEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeForm\EmployeeInfo.cs" />
     <Compile Include="Forms\EmployeeForm\Employees.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\EmployeeForm\Employees.Designer.cs">
       <DependentUpon>Employees.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmployeeForm\updateEmployee.cs">
+    <Compile Include="Forms\Product\fProductDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EmployeeForm\updateEmployee.Designer.cs">
-      <DependentUpon>updateEmployee.cs</DependentUpon>
+    <Compile Include="Forms\Product\fProductDetail.Designer.cs">
+      <DependentUpon>fProductDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm\Login.cs">
       <SubType>Form</SubType>
@@ -347,8 +346,8 @@
     <EmbeddedResource Include="Forms\EmployeeForm\Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmployeeForm\updateEmployee.resx">
-      <DependentUpon>updateEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Product\fProductDetail.resx">
+      <DependentUpon>fProductDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

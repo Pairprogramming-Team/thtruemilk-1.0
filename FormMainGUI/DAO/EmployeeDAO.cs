@@ -54,7 +54,6 @@ namespace FormMainGUI.DAO
             }
         }
 
-
         public bool updateEmployee(Employee employee)
         {
             var db = DataProvider.Ins.DB;
