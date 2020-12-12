@@ -76,7 +76,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.txtName.Depth = 0;
             this.txtName.Enabled = false;
             this.txtName.Hint = "";
-            this.txtName.Location = new System.Drawing.Point(123, 72);
+            this.txtName.Location = new System.Drawing.Point(148, 72);
             this.txtName.MaxLength = 32767;
             this.txtName.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtName.Name = "txtName";

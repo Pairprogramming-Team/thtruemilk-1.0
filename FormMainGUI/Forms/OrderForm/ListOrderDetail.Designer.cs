@@ -32,17 +32,17 @@ namespace FormMainGUI.Forms.OrderForm
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvOrderDetailList = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtID = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtName = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtPrice = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtTotal = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.numbericQuantity = new System.Windows.Forms.NumericUpDown();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.numbericQuantity = new System.Windows.Forms.NumericUpDown();
+            this.txtTotal = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtPrice = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtName = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtID = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetailList)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -100,126 +100,26 @@ namespace FormMainGUI.Forms.OrderForm
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
             // 
-            // label1
+            // btnUpdate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 19);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Quantity";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(237, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(237, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 19);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Price";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(489, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 19);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Total";
-            // 
-            // txtID
-            // 
-            this.txtID.Depth = 0;
-            this.txtID.Enabled = false;
-            this.txtID.Hint = "";
-            this.txtID.Location = new System.Drawing.Point(76, 25);
-            this.txtID.MaxLength = 32767;
-            this.txtID.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtID.Name = "txtID";
-            this.txtID.PasswordChar = '\0';
-            this.txtID.SelectedText = "";
-            this.txtID.SelectionLength = 0;
-            this.txtID.SelectionStart = 0;
-            this.txtID.Size = new System.Drawing.Size(145, 23);
-            this.txtID.TabIndex = 7;
-            this.txtID.TabStop = false;
-            this.txtID.UseSystemPasswordChar = false;
-            // 
-            // txtName
-            // 
-            this.txtName.Depth = 0;
-            this.txtName.Enabled = false;
-            this.txtName.Hint = "";
-            this.txtName.Location = new System.Drawing.Point(289, 25);
-            this.txtName.MaxLength = 32767;
-            this.txtName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = '\0';
-            this.txtName.SelectedText = "";
-            this.txtName.SelectionLength = 0;
-            this.txtName.SelectionStart = 0;
-            this.txtName.Size = new System.Drawing.Size(272, 23);
-            this.txtName.TabIndex = 8;
-            this.txtName.TabStop = false;
-            this.txtName.UseSystemPasswordChar = false;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Depth = 0;
-            this.txtPrice.Enabled = false;
-            this.txtPrice.Hint = "";
-            this.txtPrice.Location = new System.Drawing.Point(283, 59);
-            this.txtPrice.MaxLength = 32767;
-            this.txtPrice.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.PasswordChar = '\0';
-            this.txtPrice.SelectedText = "";
-            this.txtPrice.SelectionLength = 0;
-            this.txtPrice.SelectionStart = 0;
-            this.txtPrice.Size = new System.Drawing.Size(170, 23);
-            this.txtPrice.TabIndex = 9;
-            this.txtPrice.TabStop = false;
-            this.txtPrice.UseSystemPasswordChar = false;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Depth = 0;
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Hint = "";
-            this.txtTotal.Location = new System.Drawing.Point(534, 59);
-            this.txtTotal.MaxLength = 32767;
-            this.txtTotal.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.PasswordChar = '\0';
-            this.txtTotal.SelectedText = "";
-            this.txtTotal.SelectionLength = 0;
-            this.txtTotal.SelectionStart = 0;
-            this.txtTotal.Size = new System.Drawing.Size(145, 23);
-            this.txtTotal.TabIndex = 10;
-            this.txtTotal.TabStop = false;
-            this.txtTotal.UseSystemPasswordChar = false;
+            this.btnUpdate.AutoSize = true;
+            this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.Depth = 0;
+            this.btnUpdate.Icon = null;
+            this.btnUpdate.Location = new System.Drawing.Point(782, 14);
+            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Primary = true;
+            this.btnUpdate.Size = new System.Drawing.Size(73, 36);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // numbericQuantity
             // 
-            this.numbericQuantity.Location = new System.Drawing.Point(76, 59);
+            this.numbericQuantity.Location = new System.Drawing.Point(92, 59);
             this.numbericQuantity.Maximum = new decimal(new int[] {
             500,
             0,
@@ -234,21 +134,122 @@ namespace FormMainGUI.Forms.OrderForm
             0,
             0});
             // 
-            // btnUpdate
+            // txtTotal
             // 
-            this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Depth = 0;
-            this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(782, 14);
-            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Primary = true;
-            this.btnUpdate.Size = new System.Drawing.Size(100, 66);
-            this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.txtTotal.Depth = 0;
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Hint = "";
+            this.txtTotal.Location = new System.Drawing.Point(565, 59);
+            this.txtTotal.MaxLength = 32767;
+            this.txtTotal.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.PasswordChar = '\0';
+            this.txtTotal.SelectedText = "";
+            this.txtTotal.SelectionLength = 0;
+            this.txtTotal.SelectionStart = 0;
+            this.txtTotal.Size = new System.Drawing.Size(145, 23);
+            this.txtTotal.TabIndex = 10;
+            this.txtTotal.TabStop = false;
+            this.txtTotal.UseSystemPasswordChar = false;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Depth = 0;
+            this.txtPrice.Enabled = false;
+            this.txtPrice.Hint = "";
+            this.txtPrice.Location = new System.Drawing.Point(314, 59);
+            this.txtPrice.MaxLength = 32767;
+            this.txtPrice.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.PasswordChar = '\0';
+            this.txtPrice.SelectedText = "";
+            this.txtPrice.SelectionLength = 0;
+            this.txtPrice.SelectionStart = 0;
+            this.txtPrice.Size = new System.Drawing.Size(170, 23);
+            this.txtPrice.TabIndex = 9;
+            this.txtPrice.TabStop = false;
+            this.txtPrice.UseSystemPasswordChar = false;
+            // 
+            // txtName
+            // 
+            this.txtName.Depth = 0;
+            this.txtName.Enabled = false;
+            this.txtName.Hint = "";
+            this.txtName.Location = new System.Drawing.Point(320, 25);
+            this.txtName.MaxLength = 32767;
+            this.txtName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.SelectedText = "";
+            this.txtName.SelectionLength = 0;
+            this.txtName.SelectionStart = 0;
+            this.txtName.Size = new System.Drawing.Size(272, 23);
+            this.txtName.TabIndex = 8;
+            this.txtName.TabStop = false;
+            this.txtName.UseSystemPasswordChar = false;
+            // 
+            // txtID
+            // 
+            this.txtID.Depth = 0;
+            this.txtID.Enabled = false;
+            this.txtID.Hint = "";
+            this.txtID.Location = new System.Drawing.Point(92, 25);
+            this.txtID.MaxLength = 32767;
+            this.txtID.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtID.Name = "txtID";
+            this.txtID.PasswordChar = '\0';
+            this.txtID.SelectedText = "";
+            this.txtID.SelectionLength = 0;
+            this.txtID.SelectionStart = 0;
+            this.txtID.Size = new System.Drawing.Size(145, 23);
+            this.txtID.TabIndex = 7;
+            this.txtID.TabStop = false;
+            this.txtID.UseSystemPasswordChar = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(520, 61);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 19);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Total";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(268, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 19);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Price";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(268, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 19);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 19);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Quantity";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID";
             // 
             // ListOrderDetail
             // 
