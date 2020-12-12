@@ -129,6 +129,22 @@ namespace FormMainGUI.DAO
             }
         }
 
+        public bool updateOrderByTotalMoney(Order order)
+        {
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                Order orders = db.Orders.Where(x => x.OrderID == order.OrderID).Select(x => x).FirstOrDefault();
+                orders.TotalMoney = order.TotalMoney;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public object getListOrderDetailByOrderID(string id)
         {
             var db = DataProvider.Ins.DB;
@@ -138,7 +154,8 @@ namespace FormMainGUI.DAO
                         ID = o.OrderDetailID,
                         Name = o.Product.Name,
                         Quantity = o.Quantity,
-                        Price = o.Product.Price
+                        Price = o.Product.Price,
+                        Total = o.TotalAmount
                         }).ToList();
             return data;
         }
@@ -177,6 +194,22 @@ namespace FormMainGUI.DAO
                 OrdersDetail ordersDetail1 = db.OrdersDetails.Where(x => x.OrderDetailID == ordersDetail.OrderDetailID).Select(x => x).FirstOrDefault();
                 ordersDetail1.Quantity = ordersDetail.Quantity;
                 ordersDetail1.TotalAmount = ordersDetail.TotalAmount;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool updateProductAfterUpdateOD(Product product)
+        {
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                Product product1 = db.Products.Where(x => x.Name.Equals(product.Name)).Select(x => x).FirstOrDefault();
+                product1.Quantity = product.Quantity;
                 db.SaveChanges();
                 return true;
             }

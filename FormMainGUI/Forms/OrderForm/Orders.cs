@@ -45,8 +45,8 @@ namespace FormMainGUI.Forms.OrderForm
         private void dgvOrderList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            fListOrderDetail fListOrderDetail = new fListOrderDetail(this);
-            fListOrderDetail.ShowDialog();
+            ListOrderDetailByID ListOrderDetail = new ListOrderDetailByID(this);
+            ListOrderDetail.ShowDialog();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -76,8 +76,8 @@ namespace FormMainGUI.Forms.OrderForm
 
         private void btnOrderDetailList_Click(object sender, EventArgs e)
         {
-            ListOrderDetail listOrderDetail = new ListOrderDetail();
-            listOrderDetail.ShowDialog();
+            fListOrderDetail flistOrderDetail = new fListOrderDetail();
+            flistOrderDetail.ShowDialog();
         }
     }
 }
