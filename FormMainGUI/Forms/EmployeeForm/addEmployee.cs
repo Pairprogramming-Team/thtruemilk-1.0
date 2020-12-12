@@ -23,17 +23,24 @@ namespace FormMainGUI.Forms.EmployeeForm
             btnCancel.Size = new System.Drawing.Size(87, 36);
             btnAdd.Size = new System.Drawing.Size(87, 36);
 
+            txbId.Size = new System.Drawing.Size(250, 40);
+            txbName.Size = new System.Drawing.Size(250, 40);
+            txbBirth.Size = new System.Drawing.Size(250, 40);
+            txbAddress.Size = new System.Drawing.Size(250, 40);
+            txbPhone.Size = new System.Drawing.Size(250, 40);
+
             this.employee = employee;
             if (employee != null)
             {
                 btnAdd.Text = "Update";
                 isUpdate = true;
             }
-
         }
 
         private void addEmployee_Load(object sender, EventArgs e)
         {
+            List<string> listSex = new List<string> { "Male", "Female" };
+            cbmSex.DataSource = listSex;
             if (employee != null)
             {
                 txbId.Text = employee.EmployeeID;
@@ -41,8 +48,7 @@ namespace FormMainGUI.Forms.EmployeeForm
                 txbPhone.Text = employee.Phone;
                 txbAddress.Text = employee.Address;
                 txbBirth.Text = Convert.ToString(employee.YearOfBirth);
-
-                cbmSex.Enabled = false;
+                txbId.Enabled = false;
             }
         }
 
@@ -77,14 +83,49 @@ namespace FormMainGUI.Forms.EmployeeForm
             bool sex; 
             if (cbmSex.SelectedIndex == 1)
             {
-                sex = true;
+                sex = false;
             }
             else
             {
-                sex = false;
+                sex = true;
+            }
+            string address= txbAddress.Text;
+
+            if (txbId.Text == "")
+            {
+                MessageBox.Show("Please Input ID");
+                return;
+            }
+
+            if (txbName.Text == "" )
+            {
+                MessageBox.Show("Please Input Name");
+                return;
+            }
+            if (txbPhone.Text == "")
+            {
+                MessageBox.Show("Please Input Phone");
+                return;
+            }
+
+            if (txbBirth.Text == "")
+            {
+                MessageBox.Show("Please Input Year of Birth");
+                return;
+            }
+
+            if (Convert.ToInt32(txbBirth.Text) <= 1990 || Convert.ToInt32(txbBirth.Text) >= 2003)
+            {
+                MessageBox.Show("Invalid Year of Birth");
+                return;
+            }
+
+            if (txbAddress.Text == "")
+            {
+                MessageBox.Show("Please Input Address");
+                return;
             }
             int birth = Convert.ToInt32(txbBirth.Text);
-            string address= txbAddress.Text;
 
             ModelDB.Employee employee = new ModelDB.Employee(employeeId, name, phone, sex, birth, address);
 
