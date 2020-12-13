@@ -49,12 +49,12 @@
             this.lbId.AutoSize = true;
             this.lbId.BackColor = System.Drawing.Color.White;
             this.lbId.Depth = 0;
-            this.lbId.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbId.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbId.Location = new System.Drawing.Point(28, 128);
+            this.lbId.Location = new System.Drawing.Point(28, 125);
             this.lbId.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(116, 24);
+            this.lbId.Size = new System.Drawing.Size(140, 27);
             this.lbId.TabIndex = 1;
             this.lbId.Text = "Employee ID";
             this.lbId.Click += new System.EventHandler(this.lbId_Click);
@@ -64,12 +64,12 @@
             this.lbAddress.AutoSize = true;
             this.lbAddress.BackColor = System.Drawing.Color.White;
             this.lbAddress.Depth = 0;
-            this.lbAddress.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbAddress.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbAddress.Location = new System.Drawing.Point(29, 551);
             this.lbAddress.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(80, 24);
+            this.lbAddress.Size = new System.Drawing.Size(90, 27);
             this.lbAddress.TabIndex = 2;
             this.lbAddress.Text = "Address";
             // 
@@ -78,12 +78,12 @@
             this.lbBirth.AutoSize = true;
             this.lbBirth.BackColor = System.Drawing.Color.White;
             this.lbBirth.Depth = 0;
-            this.lbBirth.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbBirth.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBirth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbBirth.Location = new System.Drawing.Point(28, 469);
             this.lbBirth.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbBirth.Name = "lbBirth";
-            this.lbBirth.Size = new System.Drawing.Size(116, 24);
+            this.lbBirth.Size = new System.Drawing.Size(143, 27);
             this.lbBirth.TabIndex = 3;
             this.lbBirth.Text = "Year Of Birth";
             // 
@@ -92,12 +92,12 @@
             this.lbPhone.AutoSize = true;
             this.lbPhone.BackColor = System.Drawing.Color.White;
             this.lbPhone.Depth = 0;
-            this.lbPhone.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbPhone.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbPhone.Location = new System.Drawing.Point(27, 302);
+            this.lbPhone.Location = new System.Drawing.Point(28, 299);
             this.lbPhone.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(63, 24);
+            this.lbPhone.Size = new System.Drawing.Size(73, 27);
             this.lbPhone.TabIndex = 4;
             this.lbPhone.Text = "Phone";
             // 
@@ -106,12 +106,12 @@
             this.lbSex.AutoSize = true;
             this.lbSex.BackColor = System.Drawing.Color.White;
             this.lbSex.Depth = 0;
-            this.lbSex.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbSex.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbSex.Location = new System.Drawing.Point(29, 385);
             this.lbSex.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbSex.Name = "lbSex";
-            this.lbSex.Size = new System.Drawing.Size(40, 24);
+            this.lbSex.Size = new System.Drawing.Size(47, 27);
             this.lbSex.TabIndex = 5;
             this.lbSex.Text = "Sex";
             // 
@@ -120,12 +120,12 @@
             this.lbName.AutoSize = true;
             this.lbName.BackColor = System.Drawing.Color.White;
             this.lbName.Depth = 0;
-            this.lbName.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbName.Location = new System.Drawing.Point(29, 210);
+            this.lbName.Location = new System.Drawing.Point(28, 207);
             this.lbName.MouseState = MaterialSkin.MouseState.HOVER;
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(61, 24);
+            this.lbName.Size = new System.Drawing.Size(69, 27);
             this.lbName.TabIndex = 6;
             this.lbName.Text = "Name";
             // 
