@@ -47,8 +47,26 @@ namespace FormMainGUI.DAO
         {
             var db = DataProvider.Ins.DB;
             var data = (from o in db.OrdersDetails
-                        select new { 
+                        select new {
                             ID = o.OrderDetailID,
+                            OrderID = o.Order.OrderID,
+                            Name = o.Product.Name,
+                            Quantity = o.Quantity,
+                            Price = o.Product.Price,
+                            Total = o.TotalAmount
+                        }).ToList();
+            return data;
+        }
+
+        public object searchOrderDetailByName(string name)
+        {
+            var db = DataProvider.Ins.DB;
+            var data = (from o in db.OrdersDetails
+                        where o.Product.Name.Trim().Contains(name)
+                        select new
+                        {
+                            ID = o.OrderDetailID,
+                            OrderID = o.Order.OrderID,
                             Name = o.Product.Name,
                             Quantity = o.Quantity,
                             Price = o.Product.Price,
