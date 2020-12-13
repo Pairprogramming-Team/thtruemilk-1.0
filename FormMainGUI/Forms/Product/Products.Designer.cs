@@ -79,7 +79,7 @@
             // 
             this.txtSearch.Depth = 0;
             this.txtSearch.Hint = "";
-            this.txtSearch.Location = new System.Drawing.Point(155, 28);
+            this.txtSearch.Location = new System.Drawing.Point(135, 21);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSearch.Name = "txtSearch";
@@ -96,11 +96,11 @@
             // Search
             // 
             this.Search.AutoSize = true;
-            this.Search.Font = new System.Drawing.Font("Arial Narrow", 13.8F);
-            this.Search.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Search.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.Search.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Search.Location = new System.Drawing.Point(21, 27);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(86, 29);
+            this.Search.Size = new System.Drawing.Size(75, 22);
             this.Search.TabIndex = 0;
             this.Search.Text = "Search :";
             // 
@@ -297,7 +297,7 @@
             this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProduct.Location = new System.Drawing.Point(3, 23);
+            this.dgvProduct.Location = new System.Drawing.Point(3, 26);
             this.dgvProduct.MultiSelect = false;
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.RowHeadersWidth = 51;
@@ -305,7 +305,7 @@
             this.dgvProduct.RowTemplate.Height = 24;
             this.dgvProduct.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(990, 245);
+            this.dgvProduct.Size = new System.Drawing.Size(990, 242);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.TabStop = false;
             this.dgvProduct.SelectionChanged += new System.EventHandler(this.dgvProduct_SelectionChanged);
@@ -334,7 +334,7 @@
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.dgvProduct);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.groupBox1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
