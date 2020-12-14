@@ -25,7 +25,7 @@ namespace FormMainGUI.Forms
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-                var db = DataProvider.Ins.DB;
+            var db = DataProvider.Ins.DB;
 
                 var total = (from ta in db.Orders
                              group ta by ta.TotalMoney).Select(a => a.Key).Sum();

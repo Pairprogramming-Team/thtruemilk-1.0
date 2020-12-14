@@ -51,11 +51,11 @@
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtTotalAmount = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDone = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbCartInfo.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -185,7 +185,7 @@
             // 
             this.txtOrderID.Depth = 0;
             this.txtOrderID.Hint = "";
-            this.txtOrderID.Location = new System.Drawing.Point(72, 9);
+            this.txtOrderID.Location = new System.Drawing.Point(93, 9);
             this.txtOrderID.MaxLength = 32767;
             this.txtOrderID.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtOrderID.Name = "txtOrderID";
@@ -351,6 +351,18 @@
             this.panel3.Size = new System.Drawing.Size(1180, 85);
             this.panel3.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(945, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 21);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Total";
+            // 
             // txtTotalAmount
             // 
             this.txtTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -424,17 +436,6 @@
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(949, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 21);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Total";
             // 
             // fOrdersDetail
             // 

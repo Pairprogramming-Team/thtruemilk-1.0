@@ -1,7 +1,7 @@
 ﻿
 namespace FormMainGUI.Forms.OrderForm
 {
-    partial class fListOrderDetail
+    partial class ListOrderDetailByID
     {
         /// <summary>
         /// Required designer variable.
@@ -29,54 +29,156 @@ namespace FormMainGUI.Forms.OrderForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvListOrderDetail = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvOrderDetailList = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.numbericQuantity = new System.Windows.Forms.NumericUpDown();
+            this.txtTotal = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtPrice = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtName = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListOrderDetail)).BeginInit();
+            this.txtID = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNameEmployee = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetailList)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numbericQuantity)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // groupBox1
             // 
-            this.panel1.Controls.Add(this.dgvListOrderDetail);
-            this.panel1.Location = new System.Drawing.Point(3, 107);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(792, 340);
-            this.panel1.TabIndex = 0;
+            this.groupBox1.Controls.Add(this.dgvOrderDetailList);
+            this.groupBox1.ForeColor = System.Drawing.Color.Blue;
+            this.groupBox1.Location = new System.Drawing.Point(11, 112);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(913, 387);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Order detail";
             // 
-            // dgvListOrderDetail
+            // dgvOrderDetailList
             // 
-            this.dgvListOrderDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListOrderDetail.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvListOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListOrderDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvListOrderDetail.Location = new System.Drawing.Point(0, 0);
-            this.dgvListOrderDetail.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvListOrderDetail.Name = "dgvListOrderDetail";
-            this.dgvListOrderDetail.ReadOnly = true;
-            this.dgvListOrderDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListOrderDetail.Size = new System.Drawing.Size(792, 340);
-            this.dgvListOrderDetail.TabIndex = 0;
+            this.dgvOrderDetailList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOrderDetailList.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvOrderDetailList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrderDetailList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrderDetailList.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvOrderDetailList.Location = new System.Drawing.Point(4, 23);
+            this.dgvOrderDetailList.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvOrderDetailList.MultiSelect = false;
+            this.dgvOrderDetailList.Name = "dgvOrderDetailList";
+            this.dgvOrderDetailList.ReadOnly = true;
+            this.dgvOrderDetailList.RowHeadersWidth = 51;
+            this.dgvOrderDetailList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrderDetailList.Size = new System.Drawing.Size(905, 360);
+            this.dgvOrderDetailList.TabIndex = 0;
+            this.dgvOrderDetailList.SelectionChanged += new System.EventHandler(this.dgvOrderDetailList_SelectionChanged);
             // 
-            // label1
+            // groupBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(12, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Employee name";
+            this.groupBox2.Controls.Add(this.btnUpdate);
+            this.groupBox2.Controls.Add(this.numbericQuantity);
+            this.groupBox2.Controls.Add(this.txtTotal);
+            this.groupBox2.Controls.Add(this.txtPrice);
+            this.groupBox2.Controls.Add(this.txtName);
+            this.groupBox2.Controls.Add(this.txtID);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.ForeColor = System.Drawing.Color.Blue;
+            this.groupBox2.Location = new System.Drawing.Point(12, 506);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(913, 88);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Information";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AutoSize = true;
+            this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.Depth = 0;
+            this.btnUpdate.Icon = null;
+            this.btnUpdate.Location = new System.Drawing.Point(782, 14);
+            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Primary = true;
+            this.btnUpdate.Size = new System.Drawing.Size(73, 36);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // numbericQuantity
+            // 
+            this.numbericQuantity.Location = new System.Drawing.Point(92, 59);
+            this.numbericQuantity.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numbericQuantity.Name = "numbericQuantity";
+            this.numbericQuantity.Size = new System.Drawing.Size(145, 26);
+            this.numbericQuantity.TabIndex = 0;
+            this.numbericQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Depth = 0;
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Hint = "";
+            this.txtTotal.Location = new System.Drawing.Point(565, 59);
+            this.txtTotal.MaxLength = 32767;
+            this.txtTotal.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.PasswordChar = '\0';
+            this.txtTotal.SelectedText = "";
+            this.txtTotal.SelectionLength = 0;
+            this.txtTotal.SelectionStart = 0;
+            this.txtTotal.Size = new System.Drawing.Size(145, 23);
+            this.txtTotal.TabIndex = 10;
+            this.txtTotal.TabStop = false;
+            this.txtTotal.UseSystemPasswordChar = false;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Depth = 0;
+            this.txtPrice.Enabled = false;
+            this.txtPrice.Hint = "";
+            this.txtPrice.Location = new System.Drawing.Point(314, 59);
+            this.txtPrice.MaxLength = 32767;
+            this.txtPrice.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.PasswordChar = '\0';
+            this.txtPrice.SelectedText = "";
+            this.txtPrice.SelectionLength = 0;
+            this.txtPrice.SelectionStart = 0;
+            this.txtPrice.Size = new System.Drawing.Size(170, 23);
+            this.txtPrice.TabIndex = 9;
+            this.txtPrice.TabStop = false;
+            this.txtPrice.UseSystemPasswordChar = false;
             // 
             // txtName
             // 
-            this.txtName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtName.Depth = 0;
             this.txtName.Enabled = false;
             this.txtName.Hint = "";
-            this.txtName.Location = new System.Drawing.Point(123, 72);
+            this.txtName.Location = new System.Drawing.Point(320, 25);
             this.txtName.MaxLength = 32767;
             this.txtName.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtName.Name = "txtName";
@@ -84,31 +186,126 @@ namespace FormMainGUI.Forms.OrderForm
             this.txtName.SelectedText = "";
             this.txtName.SelectionLength = 0;
             this.txtName.SelectionStart = 0;
-            this.txtName.Size = new System.Drawing.Size(237, 23);
-            this.txtName.TabIndex = 2;
+            this.txtName.Size = new System.Drawing.Size(272, 23);
+            this.txtName.TabIndex = 8;
             this.txtName.TabStop = false;
             this.txtName.UseSystemPasswordChar = false;
             // 
-            // fListOrderDetail
+            // txtID
+            // 
+            this.txtID.Depth = 0;
+            this.txtID.Enabled = false;
+            this.txtID.Hint = "";
+            this.txtID.Location = new System.Drawing.Point(92, 25);
+            this.txtID.MaxLength = 32767;
+            this.txtID.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtID.Name = "txtID";
+            this.txtID.PasswordChar = '\0';
+            this.txtID.SelectedText = "";
+            this.txtID.SelectionLength = 0;
+            this.txtID.SelectionStart = 0;
+            this.txtID.Size = new System.Drawing.Size(145, 23);
+            this.txtID.TabIndex = 7;
+            this.txtID.TabStop = false;
+            this.txtID.UseSystemPasswordChar = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(520, 61);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 19);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Total";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(268, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 19);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Price";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(268, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 19);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 19);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Quantity";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID";
+            // 
+            // txtNameEmployee
+            // 
+            this.txtNameEmployee.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtNameEmployee.Depth = 0;
+            this.txtNameEmployee.Enabled = false;
+            this.txtNameEmployee.Hint = "";
+            this.txtNameEmployee.Location = new System.Drawing.Point(148, 77);
+            this.txtNameEmployee.MaxLength = 32767;
+            this.txtNameEmployee.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNameEmployee.Name = "txtNameEmployee";
+            this.txtNameEmployee.PasswordChar = '\0';
+            this.txtNameEmployee.SelectedText = "";
+            this.txtNameEmployee.SelectionLength = 0;
+            this.txtNameEmployee.SelectionStart = 0;
+            this.txtNameEmployee.Size = new System.Drawing.Size(237, 23);
+            this.txtNameEmployee.TabIndex = 5;
+            this.txtNameEmployee.TabStop = false;
+            this.txtNameEmployee.UseSystemPasswordChar = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(12, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 19);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Employee name";
+            // 
+            // ListOrderDetailByID
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(935, 603);
+            this.Controls.Add(this.txtNameEmployee);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Blue;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "fListOrderDetail";
+            this.Name = "ListOrderDetailByID";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Order Detail List by Order ID";
-            this.Load += new System.EventHandler(this.fListOrderDetail_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListOrderDetail)).EndInit();
+            this.Text = "Order Detail List By ID";
+            this.Load += new System.EventHandler(this.ListOrderDetail_Load);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetailList)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numbericQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,9 +313,21 @@ namespace FormMainGUI.Forms.OrderForm
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvListOrderDetail;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvOrderDetailList;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numbericQuantity;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtTotal;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtPrice;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtName;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtID;
+        private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNameEmployee;
+        private System.Windows.Forms.Label label6;
     }
 }

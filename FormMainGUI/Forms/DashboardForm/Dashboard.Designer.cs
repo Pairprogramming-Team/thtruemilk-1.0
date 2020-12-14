@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.btnReportEmployee = new System.Windows.Forms.Button();
-            this.btnReportProduct = new System.Windows.Forms.Button();
-            this.btnReportOrder = new System.Windows.Forms.Button();
+            this.btnReportEmployee = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnReportOrder = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnEmployee = new System.Windows.Forms.Button();
-            this.btnProduct = new System.Windows.Forms.Button();
-            this.btnTotal = new System.Windows.Forms.Button();
+            this.btnProduct = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnEmployee = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnTotal = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnReportProduct = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblMenu = new System.Windows.Forms.Label();
             this.pictureDashboard = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -78,11 +78,11 @@
             // 
             // panelLeft
             // 
-            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelLeft.BackColor = System.Drawing.Color.White;
             this.panelLeft.Controls.Add(this.btnReportEmployee);
-            this.panelLeft.Controls.Add(this.btnReportProduct);
             this.panelLeft.Controls.Add(this.btnReportOrder);
             this.panelLeft.Controls.Add(this.panelMenu);
+            this.panelLeft.Controls.Add(this.btnReportProduct);
             this.panelLeft.Controls.Add(this.lblMenu);
             this.panelLeft.Controls.Add(this.pictureDashboard);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
@@ -93,95 +93,133 @@
             // 
             // btnReportEmployee
             // 
-            this.btnReportEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportEmployee.Location = new System.Drawing.Point(49, 813);
+            this.btnReportEmployee.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReportEmployee.AutoSize = false;
+            this.btnReportEmployee.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnReportEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportEmployee.Depth = 0;
+            this.btnReportEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportEmployee.Icon = null;
+            this.btnReportEmployee.Location = new System.Drawing.Point(49, 826);
+            this.btnReportEmployee.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnReportEmployee.Name = "btnReportEmployee";
-            this.btnReportEmployee.Size = new System.Drawing.Size(216, 60);
-            this.btnReportEmployee.TabIndex = 5;
+            this.btnReportEmployee.Primary = true;
+            this.btnReportEmployee.Size = new System.Drawing.Size(216, 70);
+            this.btnReportEmployee.TabIndex = 9;
             this.btnReportEmployee.Text = "Report Employee";
-            this.btnReportEmployee.UseVisualStyleBackColor = true;
+            this.btnReportEmployee.UseVisualStyleBackColor = false;
             this.btnReportEmployee.Visible = false;
             this.btnReportEmployee.Click += new System.EventHandler(this.btnReportEmployee_Click);
             // 
-            // btnReportProduct
-            // 
-            this.btnReportProduct.Location = new System.Drawing.Point(49, 813);
-            this.btnReportProduct.Name = "btnReportProduct";
-            this.btnReportProduct.Size = new System.Drawing.Size(216, 60);
-            this.btnReportProduct.TabIndex = 4;
-            this.btnReportProduct.Text = "Report Product";
-            this.btnReportProduct.UseVisualStyleBackColor = true;
-            this.btnReportProduct.Visible = false;
-            this.btnReportProduct.Click += new System.EventHandler(this.btnReportProduct_Click);
-            // 
             // btnReportOrder
             // 
-            this.btnReportOrder.Location = new System.Drawing.Point(49, 813);
+            this.btnReportOrder.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReportOrder.AutoSize = false;
+            this.btnReportOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnReportOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportOrder.Depth = 0;
+            this.btnReportOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportOrder.Icon = null;
+            this.btnReportOrder.Location = new System.Drawing.Point(49, 826);
+            this.btnReportOrder.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnReportOrder.Name = "btnReportOrder";
-            this.btnReportOrder.Size = new System.Drawing.Size(216, 60);
-            this.btnReportOrder.TabIndex = 2;
+            this.btnReportOrder.Primary = true;
+            this.btnReportOrder.Size = new System.Drawing.Size(216, 70);
+            this.btnReportOrder.TabIndex = 11;
             this.btnReportOrder.Text = "Report Order";
-            this.btnReportOrder.UseVisualStyleBackColor = true;
+            this.btnReportOrder.UseVisualStyleBackColor = false;
             this.btnReportOrder.Click += new System.EventHandler(this.btnReportOrder_Click);
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panelMenu.Controls.Add(this.btnEmployee);
+            this.panelMenu.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panelMenu.Controls.Add(this.btnProduct);
+            this.panelMenu.Controls.Add(this.btnEmployee);
             this.panelMenu.Controls.Add(this.btnTotal);
             this.panelMenu.Location = new System.Drawing.Point(19, 306);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(273, 488);
             this.panelMenu.TabIndex = 3;
             // 
-            // btnEmployee
-            // 
-            this.btnEmployee.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployee.Image")));
-            this.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmployee.Location = new System.Drawing.Point(30, 297);
-            this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Size = new System.Drawing.Size(216, 87);
-            this.btnEmployee.TabIndex = 4;
-            this.btnEmployee.Text = "Employee";
-            this.btnEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEmployee.UseVisualStyleBackColor = false;
-            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
-            // 
             // btnProduct
             // 
-            this.btnProduct.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnProduct.AutoSize = false;
+            this.btnProduct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
-            this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduct.Location = new System.Drawing.Point(30, 162);
+            this.btnProduct.Depth = 0;
+            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.Icon = null;
+            this.btnProduct.Image = global::FormMainGUI.Properties.Resources.milk_box_1;
+            this.btnProduct.Location = new System.Drawing.Point(30, 192);
+            this.btnProduct.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(216, 86);
-            this.btnProduct.TabIndex = 3;
+            this.btnProduct.Primary = true;
+            this.btnProduct.Size = new System.Drawing.Size(216, 87);
+            this.btnProduct.TabIndex = 11;
             this.btnProduct.Text = "Product";
-            this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProduct.UseVisualStyleBackColor = false;
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
+            // btnEmployee
+            // 
+            this.btnEmployee.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEmployee.AutoSize = false;
+            this.btnEmployee.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEmployee.Depth = 0;
+            this.btnEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmployee.Icon = null;
+            this.btnEmployee.Image = global::FormMainGUI.Properties.Resources.employee;
+            this.btnEmployee.Location = new System.Drawing.Point(30, 345);
+            this.btnEmployee.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEmployee.Name = "btnEmployee";
+            this.btnEmployee.Primary = true;
+            this.btnEmployee.Size = new System.Drawing.Size(216, 87);
+            this.btnEmployee.TabIndex = 12;
+            this.btnEmployee.Text = "Employee";
+            this.btnEmployee.UseVisualStyleBackColor = false;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
+            // 
             // btnTotal
             // 
-            this.btnTotal.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTotal.AutoSize = false;
+            this.btnTotal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnTotal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTotal.Image = ((System.Drawing.Image)(resources.GetObject("btnTotal.Image")));
-            this.btnTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTotal.Location = new System.Drawing.Point(30, 29);
+            this.btnTotal.Depth = 0;
+            this.btnTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotal.Icon = null;
+            this.btnTotal.Image = global::FormMainGUI.Properties.Resources.money_1;
+            this.btnTotal.Location = new System.Drawing.Point(30, 40);
+            this.btnTotal.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnTotal.Name = "btnTotal";
-            this.btnTotal.Size = new System.Drawing.Size(216, 88);
-            this.btnTotal.TabIndex = 2;
+            this.btnTotal.Primary = true;
+            this.btnTotal.Size = new System.Drawing.Size(216, 87);
+            this.btnTotal.TabIndex = 10;
             this.btnTotal.Text = "Total Money";
-            this.btnTotal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTotal.UseVisualStyleBackColor = false;
             this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
+            // 
+            // btnReportProduct
+            // 
+            this.btnReportProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReportProduct.AutoSize = false;
+            this.btnReportProduct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnReportProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportProduct.Depth = 0;
+            this.btnReportProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportProduct.Icon = null;
+            this.btnReportProduct.Location = new System.Drawing.Point(49, 826);
+            this.btnReportProduct.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnReportProduct.Name = "btnReportProduct";
+            this.btnReportProduct.Primary = true;
+            this.btnReportProduct.Size = new System.Drawing.Size(216, 70);
+            this.btnReportProduct.TabIndex = 10;
+            this.btnReportProduct.Text = "Report Product";
+            this.btnReportProduct.UseVisualStyleBackColor = true;
+            this.btnReportProduct.Visible = false;
+            this.btnReportProduct.Click += new System.EventHandler(this.btnReportProduct_Click);
             // 
             // lblMenu
             // 
@@ -195,6 +233,7 @@
             // 
             // pictureDashboard
             // 
+            this.pictureDashboard.BackColor = System.Drawing.Color.Silver;
             this.pictureDashboard.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureDashboard.ErrorImage")));
             this.pictureDashboard.Image = ((System.Drawing.Image)(resources.GetObject("pictureDashboard.Image")));
             this.pictureDashboard.Location = new System.Drawing.Point(63, 28);
@@ -456,9 +495,6 @@
         private System.Windows.Forms.Label lblMenu;
         private System.Windows.Forms.PictureBox pictureDashboard;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button btnEmployee;
-        private System.Windows.Forms.Button btnProduct;
-        private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelEmployee;
         private System.Windows.Forms.Panel panelProduct;
@@ -480,8 +516,11 @@
         private System.Windows.Forms.Label labelInputOrder;
         private System.Windows.Forms.Label labelOrder;
         private System.Windows.Forms.PictureBox pictureBoxOrder;
-        private System.Windows.Forms.Button btnReportEmployee;
-        private System.Windows.Forms.Button btnReportProduct;
-        private System.Windows.Forms.Button btnReportOrder;
+        private MaterialSkin.Controls.MaterialRaisedButton btnReportOrder;
+        private MaterialSkin.Controls.MaterialRaisedButton btnReportEmployee;
+        private MaterialSkin.Controls.MaterialRaisedButton btnReportProduct;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEmployee;
+        private MaterialSkin.Controls.MaterialRaisedButton btnProduct;
+        private MaterialSkin.Controls.MaterialRaisedButton btnTotal;
     }
 }
