@@ -156,11 +156,11 @@ namespace FormMainGUI.Forms
                 order.EmployeeID = account1.EmployeeID;
                 bool isCreateOrder = OrderDAO.Instance.addOrder(order);
 
-                //Add order detail to DB
-                OrdersDetail ordersDetail = new OrdersDetail();
+                //Add order detail to DB                
                 bool isCreateOrderDetail = false;
                 for (int i = 0; i < dgvCart.Rows.Count; i++)
                 {
+                    OrdersDetail ordersDetail = new OrdersDetail();
                     ordersDetail.OrderDetailID = dgvCart.Rows[i].Cells["colIDDetail"].Value.ToString();
                     ordersDetail.Quantity = Convert.ToInt32(dgvCart.Rows[i].Cells["colQuantity"].Value.ToString());
                     ordersDetail.TotalAmount = Convert.ToDecimal(dgvCart.Rows[i].Cells["colTotalMoney"].Value.ToString());
@@ -169,7 +169,7 @@ namespace FormMainGUI.Forms
                     isCreateOrderDetail = OrderDAO.Instance.addOrderDetail(ordersDetail);
                 }
 
-                Product product = new Product();
+                //update product to DB
                 bool isUpdateProduct = false;
                 for (int i = 0; i < dgvCart.Rows.Count; i++)
                 {
@@ -177,6 +177,7 @@ namespace FormMainGUI.Forms
                     {
                         if (dgvCart.Rows[i].Cells["colID"].Value.Equals(dgvProductInOrder.Rows[j].Cells[0].Value))
                         {
+                            Product product = new Product();
                             product.ProductID = dgvProductInOrder.Rows[j].Cells[0].Value.ToString();
                             product.Name = dgvProductInOrder.Rows[j].Cells[1].Value.ToString();
                             product.Quantity = Convert.ToInt32(dgvProductInOrder.Rows[j].Cells[2].Value.ToString());

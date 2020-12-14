@@ -452,7 +452,7 @@
             this.RightToLeftLayout = true;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Order Detail";
+            this.Text = "Add Order";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fOrdersDetail_FormClosed);
             this.Load += new System.EventHandler(this.fOrders_Load);
             this.panel1.ResumeLayout(false);

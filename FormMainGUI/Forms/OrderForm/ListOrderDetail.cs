@@ -23,8 +23,14 @@ namespace FormMainGUI.Forms.OrderForm
         private void fListOrderDetail_Load(object sender, EventArgs e)
         {
             dgvListOrderDetail.DataSource = OrderDAO.Instance.getListOrderDetail();
-            dgvListOrderDetail.Columns[0].Width = 100;
-            dgvListOrderDetail.Columns[1].Width = 300;
+            dgvListOrderDetail.Columns[0].Width = 90;
+            dgvListOrderDetail.Columns[1].Width = 90;
+            dgvListOrderDetail.Columns[2].Width = 300;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvListOrderDetail.DataSource = OrderDAO.Instance.searchOrderDetailByName(txtSearch.Text);
         }
     }
 }
