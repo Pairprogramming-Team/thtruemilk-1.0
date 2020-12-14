@@ -66,7 +66,7 @@ namespace FormMainGUI.Forms.OrderForm
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.Size = new System.Drawing.Size(209, 23);
-            this.txtSearch.TabIndex = 59;
+            this.txtSearch.TabIndex = 0;
             this.txtSearch.TabStop = false;
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);

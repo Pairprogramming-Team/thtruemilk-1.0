@@ -46,8 +46,6 @@ namespace FormMainGUI.Forms.OrderForm
                     ordersDetail.Quantity = Convert.ToInt32(numbericQuantity.Value.ToString());
                     ordersDetail.TotalAmount = Convert.ToDecimal(txtPrice.Text) * Convert.ToInt32(numbericQuantity.Value.ToString());
 
-                    
-
                     string OrderID = this.order.dgvOrdersList.CurrentRow.Cells[0].Value.ToString();
                     if (MessageBox.Show("Are you sure update this Order detail?", "Notification", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
@@ -65,8 +63,9 @@ namespace FormMainGUI.Forms.OrderForm
                             order.EmployeeID = this.order.dgvOrdersList.CurrentRow.Cells[2].Value.ToString();
                             for (int i = 0; i < dgvOrderDetailList.Rows.Count; i++)
                             {
-                                order.TotalMoney = sum + Convert.ToDecimal(dgvOrderDetailList.Rows[i].Cells[4].Value);
+                                sum += Convert.ToDecimal(dgvOrderDetailList.Rows[i].Cells[4].Value);
                             }
+                            order.TotalMoney = sum;
                             OrderDAO.Instance.updateOrderByTotalMoney(order);
 
                             this.order.dgvOrdersList.DataSource = OrderDAO.Instance.getListOrder();
@@ -105,5 +104,11 @@ namespace FormMainGUI.Forms.OrderForm
                 txtTotal.Text = dgvOrderDetailList.CurrentRow.Cells[4].Value.ToString();
             }
         }
+
+        //private void numbericQuantity_ValueChanged(object sender, EventArgs e)
+        //{
+        //        txtTotal.Text = Convert.ToString(numbericQuantity.Value * Convert.ToInt32(txtPrice.Text));
+            
+        //}
     }
 }
