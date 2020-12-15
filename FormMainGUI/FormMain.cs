@@ -32,7 +32,6 @@ namespace FormMainGUI
         public FormMain(ModelDB.Account account)
         {           
             InitializeComponent();
-
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -63,6 +62,7 @@ namespace FormMainGUI
             {
                 btnAccount.Visible = false;
             }
+            OpenChildForm(new Dashboard());
 
         }
 
