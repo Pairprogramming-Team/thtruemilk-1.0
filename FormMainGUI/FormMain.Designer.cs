@@ -36,6 +36,7 @@
             this.btnProduct = new FontAwesome.Sharp.IconButton();
             this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.logo = new System.Windows.Forms.Panel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,18 +49,21 @@
             this.lblTitileChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.logo = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.footerLbl = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.panelMenu.Controls.Add(this.panel3);
             this.panelMenu.Controls.Add(this.btnAccount);
             this.panelMenu.Controls.Add(this.btnEmployee);
             this.panelMenu.Controls.Add(this.btnOrder);
@@ -205,6 +209,18 @@
             this.panelLogo.Padding = new System.Windows.Forms.Padding(10);
             this.panelLogo.Size = new System.Drawing.Size(200, 140);
             this.panelLogo.TabIndex = 0;
+            // 
+            // logo
+            // 
+            this.logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logo.BackgroundImage")));
+            this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logo.Location = new System.Drawing.Point(10, 10);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(180, 120);
+            this.logo.TabIndex = 1;
+            this.logo.Click += new System.EventHandler(this.logo_Click);
             // 
             // panelHeader
             // 
@@ -371,17 +387,27 @@
             this.panelContent.Size = new System.Drawing.Size(837, 464);
             this.panelContent.TabIndex = 2;
             // 
-            // logo
+            // panel3
             // 
-            this.logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logo.BackgroundImage")));
-            this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.logo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logo.Location = new System.Drawing.Point(10, 10);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(180, 120);
-            this.logo.TabIndex = 1;
-            this.logo.Click += new System.EventHandler(this.logo_Click);
+            this.panel3.Controls.Add(this.footerLbl);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 504);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.panel3.Size = new System.Drawing.Size(200, 40);
+            this.panel3.TabIndex = 6;
+            // 
+            // footerLbl
+            // 
+            this.footerLbl.AutoSize = true;
+            this.footerLbl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.footerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.footerLbl.ForeColor = System.Drawing.Color.White;
+            this.footerLbl.Location = new System.Drawing.Point(10, 17);
+            this.footerLbl.Name = "footerLbl";
+            this.footerLbl.Size = new System.Drawing.Size(127, 13);
+            this.footerLbl.TabIndex = 0;
+            this.footerLbl.Text = "Pair Programming Team ©";
             // 
             // FormMain
             // 
@@ -405,6 +431,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -431,6 +459,8 @@
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnAccount;
         private System.Windows.Forms.Panel logo;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label footerLbl;
     }
 }
 

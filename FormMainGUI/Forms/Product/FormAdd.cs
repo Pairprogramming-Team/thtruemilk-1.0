@@ -135,14 +135,8 @@ namespace FormMainGUI.Forms
             }
             catch (Exception)
             {
-
-                throw;
-              
-            }
-               
-            
+                throw;              
+            }    
         }
-
-     
     }
 }
