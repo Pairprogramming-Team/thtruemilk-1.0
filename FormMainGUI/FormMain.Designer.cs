@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.footerLbl = new System.Windows.Forms.Label();
             this.btnAccount = new FontAwesome.Sharp.IconButton();
             this.btnEmployee = new FontAwesome.Sharp.IconButton();
             this.btnOrder = new FontAwesome.Sharp.IconButton();
@@ -49,15 +50,13 @@
             this.lblTitileChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.footerLbl = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -77,6 +76,28 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 544);
             this.panelMenu.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.footerLbl);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 504);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.panel3.Size = new System.Drawing.Size(200, 40);
+            this.panel3.TabIndex = 6;
+            // 
+            // footerLbl
+            // 
+            this.footerLbl.AutoSize = true;
+            this.footerLbl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.footerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.footerLbl.ForeColor = System.Drawing.Color.White;
+            this.footerLbl.Location = new System.Drawing.Point(10, 17);
+            this.footerLbl.Name = "footerLbl";
+            this.footerLbl.Size = new System.Drawing.Size(127, 13);
+            this.footerLbl.TabIndex = 0;
+            this.footerLbl.Text = "Pair Programming Team ©";
             // 
             // btnAccount
             // 
@@ -212,7 +233,7 @@
             // 
             // logo
             // 
-            this.logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logo.BackgroundImage")));
+            this.logo.BackgroundImage = global::FormMainGUI.Properties.Resources.thtruemile_logo;
             this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -387,28 +408,6 @@
             this.panelContent.Size = new System.Drawing.Size(837, 464);
             this.panelContent.TabIndex = 2;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.footerLbl);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 504);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.panel3.Size = new System.Drawing.Size(200, 40);
-            this.panel3.TabIndex = 6;
-            // 
-            // footerLbl
-            // 
-            this.footerLbl.AutoSize = true;
-            this.footerLbl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.footerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.footerLbl.ForeColor = System.Drawing.Color.White;
-            this.footerLbl.Location = new System.Drawing.Point(10, 17);
-            this.footerLbl.Name = "footerLbl";
-            this.footerLbl.Size = new System.Drawing.Size(127, 13);
-            this.footerLbl.TabIndex = 0;
-            this.footerLbl.Text = "Pair Programming Team ©";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -423,6 +422,8 @@
             this.Text = "TH TrueMilk";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panelLogo.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
@@ -431,8 +432,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
