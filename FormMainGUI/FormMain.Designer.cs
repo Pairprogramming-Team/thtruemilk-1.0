@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnAccount = new FontAwesome.Sharp.IconButton();
             this.btnEmployee = new FontAwesome.Sharp.IconButton();
@@ -35,7 +36,6 @@
             this.btnProduct = new FontAwesome.Sharp.IconButton();
             this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.lblLogo = new MaterialSkin.Controls.MaterialLabel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,6 +48,7 @@
             this.lblTitileChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.logo = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -196,30 +197,14 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.Transparent;
-            this.panelLogo.Controls.Add(this.lblLogo);
+            this.panelLogo.Controls.Add(this.logo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Padding = new System.Windows.Forms.Padding(10);
             this.panelLogo.Size = new System.Drawing.Size(200, 140);
             this.panelLogo.TabIndex = 0;
-            // 
-            // lblLogo
-            // 
-            this.lblLogo.AutoSize = true;
-            this.lblLogo.BackColor = System.Drawing.Color.White;
-            this.lblLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLogo.Depth = 0;
-            this.lblLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblLogo.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblLogo.Location = new System.Drawing.Point(35, 57);
-            this.lblLogo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(119, 24);
-            this.lblLogo.TabIndex = 0;
-            this.lblLogo.Text = "TH True Milk";
-            this.lblLogo.Click += new System.EventHandler(this.lblLogo_Click);
             // 
             // panelHeader
             // 
@@ -386,6 +371,18 @@
             this.panelContent.Size = new System.Drawing.Size(837, 464);
             this.panelContent.TabIndex = 2;
             // 
+            // logo
+            // 
+            this.logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logo.BackgroundImage")));
+            this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logo.Location = new System.Drawing.Point(10, 10);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(180, 120);
+            this.logo.TabIndex = 1;
+            this.logo.Click += new System.EventHandler(this.logo_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -401,7 +398,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            this.panelLogo.PerformLayout();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelRight.ResumeLayout(false);
@@ -421,7 +417,6 @@
         private FontAwesome.Sharp.IconButton btnEmployee;
         private FontAwesome.Sharp.IconButton btnOrder;
         private FontAwesome.Sharp.IconButton btnProduct;
-        private MaterialSkin.Controls.MaterialLabel lblLogo;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Panel panelContent;
         private FontAwesome.Sharp.IconButton iconCurrentChildForm;
@@ -435,6 +430,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnAccount;
+        private System.Windows.Forms.Panel logo;
     }
 }
 

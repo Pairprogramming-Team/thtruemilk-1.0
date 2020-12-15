@@ -175,11 +175,6 @@ namespace FormMainGUI
             OpenChildForm(new Dashboard());
         }
 
-        private void lblLogo_Click(object sender, EventArgs e)
-        {
-            currentChildForm.Close();
-            Reset(sender);
-        }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -215,6 +210,10 @@ namespace FormMainGUI
             WindowState = FormWindowState.Minimized;
         }
 
-       
+        private void logo_Click(object sender, EventArgs e)
+        {
+            currentChildForm.Close();
+            Reset(sender);
+        }
     }
 }
