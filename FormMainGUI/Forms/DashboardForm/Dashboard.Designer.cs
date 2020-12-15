@@ -78,7 +78,7 @@
             // 
             // panelLeft
             // 
-            this.panelLeft.BackColor = System.Drawing.Color.White;
+            this.panelLeft.BackColor = System.Drawing.Color.LightGray;
             this.panelLeft.Controls.Add(this.btnReportEmployee);
             this.panelLeft.Controls.Add(this.btnReportOrder);
             this.panelLeft.Controls.Add(this.panelMenu);
@@ -245,7 +245,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel8);
@@ -452,6 +452,7 @@
             // 
             // panel7
             // 
+            this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
