@@ -63,7 +63,7 @@ namespace FormMainGUI
                 btnAccount.Visible = false;
             }
             OpenChildForm(new Dashboard());
-
+            ActiveButton(btnDashboard, Color.White);
         }
 
         private struct RGBColors
