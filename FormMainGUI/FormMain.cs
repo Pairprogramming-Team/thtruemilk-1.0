@@ -167,19 +167,18 @@ namespace FormMainGUI
             OpenChildForm(new Forms.AccountForm.Account());
         }
 
-        private void Reset()
+        private void Reset(object sender)
         {
             DisableButton();
             leftBorderBtn.Visible = false;
-            iconCurrentChildForm.IconColor = Color.MediumPurple;
-            iconCurrentChildForm.IconChar = IconChar.Home;
-            lblTitileChildForm.Text = "Home";
+            ActiveButton(btnDashboard, Color.White);
+            OpenChildForm(new Dashboard());
         }
 
         private void lblLogo_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();
-            Reset();
+            Reset(sender);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
