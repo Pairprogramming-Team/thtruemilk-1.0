@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MaterialSkin;
-using FormMainGUI.Utils;
-using FormMainGUI.DAO;
-using MaterialSkin.Controls;
+﻿using FormMainGUI.DAO;
 using FormMainGUI.ModelDB;
-using System.Data.SqlClient;
-using System.Globalization;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
+using System.Windows.Forms;
 
 namespace FormMainGUI.Forms
 {
@@ -22,7 +12,7 @@ namespace FormMainGUI.Forms
         private Product product;
         private bool isUpdate = false;
 
-        public add(Product product= null)
+        public add(Product product = null)
         {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -43,7 +33,7 @@ namespace FormMainGUI.Forms
                 isUpdate = true;
             }
         }
- 
+
         private void btnCancle_Click(object sender, EventArgs e)
         {
 
@@ -62,7 +52,7 @@ namespace FormMainGUI.Forms
         }
 
         private void add_Load(object sender, EventArgs e)
-            
+
         {
             if (product != null)
             {
@@ -70,73 +60,100 @@ namespace FormMainGUI.Forms
                 txtName.Text = product.Name;
                 Quantity.Value = Convert.ToInt32(product.Quantity);
                 txtPrice.Text = Convert.ToString(product.Price);
+                txtID.Enabled = false;
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            bool isSuccess = false;
             try
             {
                 string id = txtID.Text;
                 string name = txtName.Text;
-                int quantity = Convert.ToInt32(Quantity.Value);
-                int price = Convert.ToInt32(txtPrice.Text);
+                int quantity = 0;
+                int price = 0;
 
-                bool isSuccess = false;
+                if (id == "")
+                {
+                    MessageBox.Show("Invalid ID value");
+                    txtID.Focus();
+                    return;
+                }
+
+                if (name == "")
+                {
+                    MessageBox.Show("Invalid name value ");
+                    txtName.Focus();
+                    return;
+                }
+
+                try
+                {
+                    quantity = Convert.ToInt32(Quantity.Value);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid quantity value");
+                    Quantity.Focus();
+                    return;
+                }
+
+                try
+                {
+                    price = Convert.ToInt32(txtPrice.Text);
+                    if (price < 0)
+                    {
+                        MessageBox.Show("Invalid Price value");
+                        txtPrice.Focus();
+                        return;
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid Price value");
+                    txtPrice.Focus();
+                    return;
+                }
+
+
                 ModelDB.Product a = new ModelDB.Product(id, name, quantity, price);
+
                 if (isUpdate)
                 {
-                    isSuccess = ProductsDAO.Instance.updateProduct(a);
-                    if (isSuccess)
+                    try
                     {
+                        isSuccess = ProductsDAO.Instance.updateProduct(a);
                         MessageBox.Show("Update Product Successful!", "");
                         this.Close();
                     }
-                    else
+                    catch (Exception)
                     {
                         MessageBox.Show("Update Product Fail!", "");
+                        return;
                     }
                 }
                 else
                 {
-                    isSuccess = ProductsDAO.Instance.productAdd(a);
-                    if (isSuccess)
+                    try
                     {
+                        isSuccess = ProductsDAO.Instance.productAdd(a);
                         MessageBox.Show("Add Product Successful!", "");
                         this.Close();
                     }
-                    else
+                    catch (Exception)
                     {
                         MessageBox.Show("Add Product Fail!", "");
+                        return;
                     }
                 }
-                if (txtID.Text == "")
-                {
-                    MessageBox.Show("Invalid ID value");
-                    return;
-                }
-                else if (txtName.Text == "")
-                {
-                    MessageBox.Show("Invalid name value ");
-                    return;
-                }
-
-                else if (Quantity.Value == 0)
-                {
-                    MessageBox.Show("Invalid quantity value");
-                    return;
-                }
-                else if (txtPrice.Text == "" & Convert.ToInt32(txtPrice.Text) <= 0)
-                {
-                    MessageBox.Show("Invalid Price value");
-                    return;
-                }
-            
             }
             catch (Exception)
             {
-                throw;              
-            }    
+                MessageBox.Show("Something wrong!!");
+                return;
+            }
         }
     }
 }

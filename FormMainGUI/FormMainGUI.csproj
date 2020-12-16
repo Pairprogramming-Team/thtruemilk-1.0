@@ -276,6 +276,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\thtruemile-logo.png" />
+    <None Include="Resources\thtruemile-logo1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="Utils\DB_THTrueMilk.sql" />
     <None Include="App.Config" />
