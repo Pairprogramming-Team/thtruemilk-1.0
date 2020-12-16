@@ -33,39 +33,39 @@
             this.Search = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnUpdateDetail = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDeleteDetail = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAddDetail = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -131,6 +131,34 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Details";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.dgvDetail);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(10, 30);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(976, 273);
+            this.panel11.TabIndex = 3;
+            // 
+            // dgvDetail
+            // 
+            this.dgvDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDetail.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetail.Location = new System.Drawing.Point(0, 0);
+            this.dgvDetail.MultiSelect = false;
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.RowHeadersWidth = 51;
+            this.dgvDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvDetail.RowTemplate.Height = 24;
+            this.dgvDetail.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDetail.Size = new System.Drawing.Size(976, 273);
+            this.dgvDetail.TabIndex = 1;
+            this.dgvDetail.TabStop = false;
+            this.dgvDetail.SelectionChanged += new System.EventHandler(this.dgvDetail_SelectionChanged);
             // 
             // panel6
             // 
@@ -209,25 +237,6 @@
             this.btnAddDetail.UseVisualStyleBackColor = true;
             this.btnAddDetail.Click += new System.EventHandler(this.btnAddDetail_Click);
             // 
-            // dgvDetail
-            // 
-            this.dgvDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDetail.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetail.Location = new System.Drawing.Point(0, 0);
-            this.dgvDetail.MultiSelect = false;
-            this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.RowHeadersWidth = 51;
-            this.dgvDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvDetail.RowTemplate.Height = 24;
-            this.dgvDetail.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetail.Size = new System.Drawing.Size(976, 273);
-            this.dgvDetail.TabIndex = 1;
-            this.dgvDetail.TabStop = false;
-            this.dgvDetail.SelectionChanged += new System.EventHandler(this.dgvDetail_SelectionChanged);
-            // 
             // dgvProduct
             // 
             this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -283,6 +292,15 @@
             this.groupBox1.Text = "Products";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.dgvProduct);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(10, 33);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(976, 163);
+            this.panel10.TabIndex = 3;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.panel4);
@@ -292,37 +310,16 @@
             this.panel3.Size = new System.Drawing.Size(976, 65);
             this.panel3.TabIndex = 2;
             // 
-            // btnAdd
+            // panel4
             // 
-            this.btnAdd.AutoSize = true;
-            this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAdd.Depth = 0;
-            this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(57, 16);
-            this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Primary = true;
-            this.btnAdd.Size = new System.Drawing.Size(56, 36);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd1_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoSize = true;
-            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDelete.Depth = 0;
-            this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(428, 16);
-            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Primary = true;
-            this.btnDelete.Size = new System.Drawing.Size(82, 36);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete1_Click);
+            this.panel4.Controls.Add(this.btnUpdate);
+            this.panel4.Controls.Add(this.btnDelete);
+            this.panel4.Controls.Add(this.btnAdd);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(418, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(558, 65);
+            this.panel4.TabIndex = 3;
             // 
             // btnUpdate
             // 
@@ -340,34 +337,37 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate1_Click);
             // 
-            // panel4
+            // btnDelete
             // 
-            this.panel4.Controls.Add(this.btnUpdate);
-            this.panel4.Controls.Add(this.btnDelete);
-            this.panel4.Controls.Add(this.btnAdd);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(418, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(558, 65);
-            this.panel4.TabIndex = 3;
+            this.btnDelete.AutoSize = true;
+            this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDelete.Depth = 0;
+            this.btnDelete.Icon = null;
+            this.btnDelete.Location = new System.Drawing.Point(428, 16);
+            this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Primary = true;
+            this.btnDelete.Size = new System.Drawing.Size(82, 36);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete1_Click);
             // 
-            // panel10
+            // btnAdd
             // 
-            this.panel10.Controls.Add(this.dgvProduct);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(10, 33);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(976, 163);
-            this.panel10.TabIndex = 3;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.dgvDetail);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(10, 30);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(976, 273);
-            this.panel11.TabIndex = 3;
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAdd.Depth = 0;
+            this.btnAdd.Icon = null;
+            this.btnAdd.Location = new System.Drawing.Point(57, 16);
+            this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Primary = true;
+            this.btnAdd.Size = new System.Drawing.Size(56, 36);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd1_Click);
             // 
             // Products
             // 
@@ -385,20 +385,20 @@
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

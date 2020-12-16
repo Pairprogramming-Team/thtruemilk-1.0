@@ -119,19 +119,27 @@ namespace FormMainGUI.Forms
 
         private void fProductDetail_Load(object sender, EventArgs e)
         {
-
             cmbStatus.DataSource = statusList;
             if (productsDetail == null)
             { 
                 txtproID.Text = product.ProductID;
             }
-             else   if (productsDetail != null) {
-                txtProDetailID.Text = productsDetail.ProductDetailID;
-                cmbStatus.SelectedItem = productsDetail.Status;
-                MFG.Value = (DateTime)productsDetail.MFG;
-                EXP.Value = (DateTime)productsDetail.EXP;
-                ProductEntryDate.Value = (DateTime)productsDetail.ProductEntryDate;
-                txtproID.Text = productsDetail.ProductID;
+             else {               
+                try
+                {
+                    txtProDetailID.Text = productsDetail.ProductDetailID;
+                    cmbStatus.SelectedItem = productsDetail.Status;
+                    MFG.Value = (DateTime)productsDetail.MFG;
+                    EXP.Value = (DateTime)productsDetail.EXP;
+                    ProductEntryDate.Value = (DateTime)productsDetail.ProductEntryDate;
+                    txtproID.Text = productsDetail.ProductID;
+                    txtProDetailID.Enabled = false;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Can not update!", "");
+                    return;
+                }
             }
         }
     }

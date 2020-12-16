@@ -1,17 +1,9 @@
-﻿using System;
-using FormMainGUI.DAO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using MaterialSkin;
-using FormMainGUI.Utils;
-using MaterialSkin.Controls;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using FormMainGUI.DAO;
 using FormMainGUI.ModelDB;
+using MaterialSkin;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace FormMainGUI.Forms
 {
@@ -52,7 +44,7 @@ namespace FormMainGUI.Forms
         {
             if (MessageBox.Show("Are you sure remove this Product?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                ModelDB.Product b = new ModelDB.Product(pro.ProductID,pro.Name,Convert.ToInt32(pro.Quantity),Convert.ToInt32(pro.Price));
+                ModelDB.Product b = new ModelDB.Product(pro.ProductID, pro.Name, Convert.ToInt32(pro.Quantity), Convert.ToInt32(pro.Price));
                 bool isRemoved = ProductsDAO.Instance.removeProduct(pro.ProductID);
                 if (isRemoved == true)
                 {
@@ -65,16 +57,16 @@ namespace FormMainGUI.Forms
                 }
             }
         }
-       
-       
-     
+
+
+
         private void btnUpdate1_Click(object sender, EventArgs e)
         {
-        
-                add add = new add(pro);
-                add.Text= "UPDATE PRODUCT";
-                add.ShowDialog();dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
-                
+
+            add add = new add(pro);
+            add.Text = "UPDATE PRODUCT";
+            add.ShowDialog(); dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
+
         }
         private void Products_Load(object sender, EventArgs e)
         {
@@ -101,7 +93,7 @@ namespace FormMainGUI.Forms
         {
             string id = txtSearch.Text;
             dgvProduct.DataSource = ProductsDAO.Instance.Search(id);
-            
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -113,7 +105,6 @@ namespace FormMainGUI.Forms
         {
             if (dgvDetail.SelectedCells.Count > 0)
             {
-
                 int selectedrowindex = dgvDetail.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgvDetail.Rows[selectedrowindex];
                 proDetail.ProductDetailID = selectedRow.Cells[0].Value.ToString();
@@ -127,14 +118,14 @@ namespace FormMainGUI.Forms
 
         private void btnAddDetail_Click(object sender, EventArgs e)
         {
-            fProductDetail add = new fProductDetail(statusList,null,pro);
+            fProductDetail add = new fProductDetail(statusList, null, pro);
             add.ShowDialog();
             dgvDetail.DataSource = ProductsDAO.Instance.loadListDetail(pro.ProductID);
         }
 
         private void btnUpdateDetail_Click(object sender, EventArgs e)
         {
-            fProductDetail update = new fProductDetail(statusList,proDetail);
+            fProductDetail update = new fProductDetail(statusList, proDetail);
             update.Text = "UPDATE PRODUCT DETAIL";
             update.ShowDialog();
             dgvDetail.DataSource = ProductsDAO.Instance.loadListDetail(pro.ProductID);
@@ -145,7 +136,7 @@ namespace FormMainGUI.Forms
 
             if (MessageBox.Show("Are you sure remove this Product Detail?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                ModelDB.ProductsDetail b = new ModelDB.ProductsDetail(proDetail.ProductDetailID,proDetail.Status,(DateTime)proDetail.MFG, (DateTime)proDetail.EXP, (DateTime)proDetail.ProductEntryDate,proDetail.ProductID);
+                ModelDB.ProductsDetail b = new ModelDB.ProductsDetail(proDetail.ProductDetailID, proDetail.Status, (DateTime)proDetail.MFG, (DateTime)proDetail.EXP, (DateTime)proDetail.ProductEntryDate, proDetail.ProductID);
                 bool isRemoved = ProductsDAO.Instance.removeDetail(proDetail.ProductDetailID);
                 if (isRemoved == true)
                 {
@@ -159,5 +150,5 @@ namespace FormMainGUI.Forms
             }
         }
     }
-    
+
 }

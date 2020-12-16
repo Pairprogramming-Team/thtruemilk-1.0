@@ -157,6 +157,7 @@ namespace FormMainGUI.DAO
         }
         public bool removeProduct(string id)
         {
+            Console.WriteLine(id);
             var db = DataProvider.Ins.DB;
             try
             {
