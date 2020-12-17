@@ -79,7 +79,7 @@ ALTER TABLE dbo.OrdersDetail ADD FOREIGN KEY (ProductID) REFERENCES dbo.Products
 ALTER TABLE dbo.ProductsDetail ADD FOREIGN KEY (ProductID) REFERENCES dbo.Products
 
 ----------------------------------------------------
---set constraint
+-- Set constraint
 ALTER TABLE dbo.Employees ADD CONSTRAINT check_YearOfBirth CHECK (1900 < YearOfBirth AND YearOfBirth < YEAR(GETDATE()))
 ALTER TABLE dbo.Products ADD CONSTRAINT check_Quantity_Price CHECK (Quantity >= 0 AND Price > 0)
 ALTER TABLE dbo.Orders ADD CONSTRAINT check_DateOfOrder_TotalMoney CHECK (DateOfOrder < GETDATE() AND TotalMoney > 0)
@@ -87,7 +87,7 @@ ALTER TABLE dbo.OrdersDetail ADD CONSTRAINT check_Quantity_TotalAmount CHECK (Qu
 ALTER TABLE dbo.ProductsDetail ADD CONSTRAINT check_MFG_EXP_ProductEntryDate CHECK (MFG < GETDATE() AND ProductEntryDate < GETDATE() AND MFG < EXP AND ProductEntryDate > MFG)
 
 ----------------------------------------------------
---Truy van du lieu
+-- Query data
 SELECT * FROM dbo.Employees
 SELECT * FROM dbo.Orders
 SELECT * FROM dbo.Products
@@ -97,8 +97,8 @@ SELECT * FROM dbo.Accounts
 GO
 
 ----------------------------------------------------
---insert data into table
---Nhan Vien
+-- Insert data into table
+-- Employees
 INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
 VALUES ('NV05', N'Phạm Thành Trung',  '0126888899', 1, 1994 , N'T.P Hồ Chí Minh')
 INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
@@ -111,9 +111,11 @@ INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
 VALUES ('NV04', N'Nguyễn Kim Thiện',  '0977545552', 1, 2000 , N'35/45/9/1 Van Lam, Buon Me Thuoc')
 GO
 
---Tai Khoan
+-- Accounts
 INSERT INTO dbo.Accounts( UserName, PassWord, Role ,EmployeeID )
-VALUES  ( 'Admin', '1234', 'admin' ,'NV01')
+VALUES  ( 'admin', 'admin', 'admin' ,'NV01')
+INSERT INTO dbo.Accounts( UserName, PassWord, Role ,EmployeeID )
+VALUES  ( 'user', 'user', 'member' ,'NV01')
 INSERT INTO dbo.Accounts( UserName, PassWord, Role ,EmployeeID )
 VALUES  ( 'staff1', 'staff1', 'member' ,'NV01')
 INSERT INTO dbo.Accounts( UserName, PassWord, Role , EmployeeID )
@@ -124,22 +126,7 @@ INSERT INTO dbo.Accounts( UserName, PassWord, Role , EmployeeID )
 VALUES  ( 'staff4', 'staff4', 'member', 'NV05')
 GO
 
---Hoa Don
-INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
-VALUES  ( 'HD01', '20200912', null, 'NV01' )
-INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
-VALUES  ( 'HD02', '20200527', null, 'NV04' )
-INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
-VALUES  ( 'HD03', '20200712', null, 'NV02' )
-INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
-VALUES  ( 'HD04', '20200112', null, 'NV03' )
-INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
-VALUES  ( 'HD05', '20200101', null, 'NV04' )
-INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
-VALUES  ( 'HD06', '20200405', null, 'NV03' )
-GO
-
---San Pham
+-- Products
 INSERT INTO dbo.Products ( ProductID, Name, Quantity, Price )
 VALUES  ( 'SP001', N'Sữa chua TH true YOGURT', 99,  15000 )
 INSERT INTO dbo.Products ( ProductID, Name, Quantity, Price )
@@ -192,24 +179,7 @@ INSERT INTO dbo.Products ( ProductID, Name, Quantity, Price )
 VALUES  ( 'SP025', N'Sữa tươi ít đường trong bịch giấy', 500,  7000 )
 GO
 
---Chi tiet hoa don
-INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
-VALUES  ( 'CTHD01', 1, null, 'HD01', 'SP001')
-INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
-VALUES  ( 'CTHD02', 5, null, 'HD04', 'SP001' )
-INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
-VALUES  ( 'CTHD03', 2, null, 'HD02', 'SP004' )
-INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
-VALUES  ( 'CTHD04', 3, null, 'HD03', 'SP002' )
-INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
-VALUES  ( 'CTHD05', 2, null, 'HD05', 'SP003' )
-INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
-VALUES  ( 'CTHD06', 1, null, 'HD06', 'SP002' )
-INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
-VALUES  ( 'CTHD07', 1, null, 'HD04', 'SP003' )
-GO
-
---chi tiet san pham
+-- ProductsDetail
 INSERT INTO dbo.ProductsDetail ( ProductDetailID , Status , MFG , EXP , ProductEntryDate , ProductID )
 VALUES  ( 'CTSP01' ,  1 , '20181024' ,  '20201020' ,  '20190101' ,  'SP001' )
 INSERT INTO dbo.ProductsDetail ( ProductDetailID , Status , MFG , EXP , ProductEntryDate , ProductID )
@@ -262,6 +232,39 @@ INSERT INTO dbo.ProductsDetail ( ProductDetailID , Status , MFG , EXP , ProductE
 VALUES  ( 'CTSP25' ,  1 , '20180909' ,  '20231003' ,  '20181010' ,  'SP025' )
 GO
 
+-- Orders
+INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
+VALUES  ( 'HD01', '20200912', null, 'NV01' )
+INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
+VALUES  ( 'HD02', '20200527', null, 'NV04' )
+INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
+VALUES  ( 'HD03', '20200712', null, 'NV02' )
+INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
+VALUES  ( 'HD04', '20200112', null, 'NV03' )
+INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
+VALUES  ( 'HD05', '20200101', null, 'NV04' )
+INSERT INTO dbo.Orders ( OrderID, DateOfOrder, TotalMoney, EmployeeID )
+VALUES  ( 'HD06', '20200405', null, 'NV03' )
+GO
+
+-- OrdersDetail
+INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
+VALUES  ( 'CTHD01', 1, null, 'HD01', 'SP001')
+INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
+VALUES  ( 'CTHD02', 5, null, 'HD04', 'SP001' )
+INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
+VALUES  ( 'CTHD03', 2, null, 'HD02', 'SP004' )
+INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
+VALUES  ( 'CTHD04', 3, null, 'HD03', 'SP002' )
+INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
+VALUES  ( 'CTHD05', 2, null, 'HD05', 'SP003' )
+INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
+VALUES  ( 'CTHD06', 1, null, 'HD06', 'SP002' )
+INSERT INTO dbo.OrdersDetail ( OrderDetailID, Quantity, TotalAmount, OrderID, ProductID )
+VALUES  ( 'CTHD07', 1, null, 'HD04', 'SP003' )
+GO
+
+----------------------------------------------------
 UPDATE OrdersDetail 
 SET TotalAmount=Quantity* (SELECT PRICE FROM Products 
 WHERE OrdersDetail.ProductID = Products.ProductID)
