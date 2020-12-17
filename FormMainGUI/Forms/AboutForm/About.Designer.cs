@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.topPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.topPanel.SuspendLayout();
@@ -63,70 +63,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(722, 674);
             this.panel1.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(305, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tấn Tài";
-            // 
-            // topPanel
-            // 
-            this.topPanel.BackColor = System.Drawing.Color.Transparent;
-            this.topPanel.Controls.Add(this.panel2);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(0, 0);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1000, 212);
-            this.topPanel.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 167);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Kim Thiện";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(298, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Gia Khải";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(294, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 32);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Mạnh Tài";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(266, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 32);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Made With ❤️";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(272, 205);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(177, 32);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Thành Trung";
             // 
             // panel3
             // 
@@ -185,6 +121,70 @@
             this.iconButton1.Size = new System.Drawing.Size(59, 53);
             this.iconButton1.TabIndex = 6;
             this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(272, 205);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(177, 32);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Thành Trung";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(266, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(189, 32);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Made With ❤️";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(294, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 32);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Mạnh Tài";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(298, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 32);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Gia Khải";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(289, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Kim Thiện";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(305, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tấn Tài";
+            // 
+            // topPanel
+            // 
+            this.topPanel.BackColor = System.Drawing.Color.Transparent;
+            this.topPanel.Controls.Add(this.panel2);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(1000, 212);
+            this.topPanel.TabIndex = 1;
             // 
             // panel2
             // 

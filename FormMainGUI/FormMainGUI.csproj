@@ -7,7 +7,7 @@
     <ProjectGuid>{0D80D172-132C-4BBE-BC84-EC218AD0E821}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>FormMainGUI</RootNamespace>
-    <AssemblyName>FormMainGUI</AssemblyName>
+    <AssemblyName>TH TrueMilk Management</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>P-logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -284,6 +287,7 @@
     </Content>
     <None Include="Resources\PP2_logo.png" />
     <None Include="Resources\qr-code-github.png" />
+    <Content Include="P-logo.ico" />
     <Content Include="Resources\thtruemile-logo.png" />
     <None Include="Resources\thtruemile-logo1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
