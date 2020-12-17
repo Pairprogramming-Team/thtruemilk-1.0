@@ -23,7 +23,7 @@ This is a simple desktop application developed in microsoft platform.
 
 ## Instructions to Use
 1. Download or Clone the source code from Here: https://github.com/Pairprogramming-Team/thtruemilk-1.0.git
-2. Extract the Database and restore from here: FormMainGUI/Utils/DB_THTrueMilk.sql
+2. Extract the Database and restore from here: <a href="FormMainGUI/Utils/DB_THTrueMilk.sql ">Here</a>.
 3. Open the solution file in visual studio (If you can't open, try deleting the folder with '.vs/something')
 4. Now, Use anyway you like.
 
