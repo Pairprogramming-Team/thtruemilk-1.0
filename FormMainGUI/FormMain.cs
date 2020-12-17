@@ -167,6 +167,12 @@ namespace FormMainGUI
             OpenChildForm(new Forms.AccountForm.Account());
         }
 
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, Color.White);
+            OpenChildForm(new Forms.AboutForm.About());
+        }
+
         private void Reset(object sender)
         {
             DisableButton();
@@ -215,5 +221,7 @@ namespace FormMainGUI
             currentChildForm.Close();
             Reset(sender);
         }
+
+        
     }
 }
