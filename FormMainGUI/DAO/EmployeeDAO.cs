@@ -31,7 +31,7 @@ namespace FormMainGUI.DAO
                               EmployeeID = c.EmployeeID,
                               Name = c.Name,
                               Phone = c.Phone,
-                              Sex = c.Sex,
+                              Sex = c.Sex == true ? false: true,
                               YearOfBirth = c.YearOfBirth,
                               Address = c.Address,
                           }).ToList();
@@ -76,19 +76,26 @@ namespace FormMainGUI.DAO
 
         public bool removeEmployee(string employeeId)
         {
-            var db = DataProvider.Ins.DB;
-            try
+           if(employeeId != "")
             {
-                Employee emp = db.Employees.Where(x => x.EmployeeID == employeeId).FirstOrDefault();
-                db.Employees.Remove(emp);
-                db.SaveChanges();
-                return true;
+                var db = DataProvider.Ins.DB;
+                try
+                {
+                    Account account = db.Accounts.Where(x => x.EmployeeID == employeeId).FirstOrDefault();
+                    Employee emp = db.Employees.Where(x => x.EmployeeID == employeeId).FirstOrDefault();
+                    
+                    db.Accounts.Remove(account);
+                    db.Employees.Remove(emp);
+                    
+                    db.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
             }
-            catch
-            {
-                return false;
-            }
+            return false;
         }
-
     }
 }

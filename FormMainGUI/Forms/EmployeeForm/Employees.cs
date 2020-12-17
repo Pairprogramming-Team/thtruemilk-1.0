@@ -1,11 +1,7 @@
-﻿using System;
-using System.Data;
-using System.Linq;
-using System.Windows.Forms;
+﻿using FormMainGUI.DAO;
 using FormMainGUI.ModelDB;
-using FormMainGUI.Utils;
-using FormMainGUI.DAO;
-using System.Collections.Generic;
+using System;
+using System.Windows.Forms;
 
 namespace FormMainGUI.Forms.EmployeeForm
 {
@@ -28,6 +24,10 @@ namespace FormMainGUI.Forms.EmployeeForm
         private void Employees_Load(object sender, EventArgs e)
         {
             dgvEmployee.DataSource = EmployeeDAO.Instance.loadListEmployee();
+            dgvEmployee.Columns[0].Width = 50;
+            dgvEmployee.Columns[2].Width = 80;
+            dgvEmployee.Columns[3].Width = 30;
+            dgvEmployee.Columns[4].Width = 80;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -48,6 +48,7 @@ namespace FormMainGUI.Forms.EmployeeForm
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(emp.EmployeeID);
             if (MessageBox.Show("Are you sure remove employee ?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ModelDB.Employee employee = new ModelDB.Employee(emp.EmployeeID, emp.Name, emp.Phone, Convert.ToBoolean(emp.Sex), Convert.ToInt32(emp.YearOfBirth), emp.Address);
