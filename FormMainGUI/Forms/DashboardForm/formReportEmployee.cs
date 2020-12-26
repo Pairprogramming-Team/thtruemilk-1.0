@@ -26,7 +26,7 @@ namespace FormMainGUI.Forms.DashboardForm
             var data = db.Orders.ToList();
             var d = db.Employees.ToList();
 
-            this.EmployeesBindingSource.DataSource = data;
+            this.EmployeesBindingSource.DataSource = d;
 
             this.reportViewer1.RefreshReport();
         }
