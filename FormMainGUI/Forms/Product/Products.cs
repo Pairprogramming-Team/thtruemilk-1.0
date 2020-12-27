@@ -13,7 +13,8 @@ namespace FormMainGUI.Forms
         private List<String> statusList;
         Product pro = new Product();
         ProductsDetail proDetail = new ProductsDetail();
-        public Products()
+        private string role;
+        public Products(string role)
         {
 
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -32,6 +33,23 @@ namespace FormMainGUI.Forms
             btnAddDetail.AutoSize = false;
             btnUpdateDetail.AutoSize = false;
             txtSearch.Size = new System.Drawing.Size(381, 28);
+
+            //this.role = role;
+            setRolePermission(role);
+        }
+
+        private void setRolePermission(string role)
+        {
+            if (role.Equals("manager") || role.Equals("staff"))
+            {
+                btnAdd.Enabled = false;
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+
+                btnAddDetail.Enabled = false;
+                btnUpdateDetail.Enabled = false;
+                btnDeleteDetail.Enabled = false;
+            }
         }
         private void btnAdd1_Click(object sender, EventArgs e)
         {

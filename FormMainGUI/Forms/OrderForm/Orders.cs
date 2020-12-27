@@ -1,15 +1,8 @@
 ﻿using FormMainGUI.DAO;
+using FormMainGUI.ModelDB;
 using MaterialSkin.Controls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FormMainGUI.ModelDB;
 
 namespace FormMainGUI.Forms.OrderForm
 {
@@ -28,6 +21,16 @@ namespace FormMainGUI.Forms.OrderForm
             btnAdd.Size = new System.Drawing.Size(100, 36);
             btnOrderDetailList.Size = new System.Drawing.Size(210, 36);
             this.account = account;
+            setRolePermission(account.Role);
+        }
+
+        private void setRolePermission(string role)
+        {
+            if (role.Equals("manager"))
+            {
+                btnAdd.Enabled = false;
+                btnDelete.Enabled = false;
+            }
         }
 
         private void fOrders_Load(object sender, EventArgs e)
@@ -44,7 +47,7 @@ namespace FormMainGUI.Forms.OrderForm
         private void dgvOrderList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            ListOrderDetailByID ListOrderDetail = new ListOrderDetailByID(this);
+            ListOrderDetailByID ListOrderDetail = new ListOrderDetailByID(this, account.Role);
             ListOrderDetail.ShowDialog();
         }
 

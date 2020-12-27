@@ -8,9 +8,13 @@ namespace FormMainGUI.Forms.EmployeeForm
     public partial class Employees : Form
     {
         Employee emp = new Employee();
-        public Employees()
+        private string role;
+        public Employees(string role)
         {
             InitializeComponent();
+
+            this.role = role;
+
             btnAdd.AutoSize = false;
             btnDelete.AutoSize = false;
             btnUpdate.AutoSize = false;
@@ -19,6 +23,7 @@ namespace FormMainGUI.Forms.EmployeeForm
             btnUpdate.Size = new System.Drawing.Size(100, 36);
             btnAdd.Size = new System.Drawing.Size(100, 36);
 
+            
         }
 
         private void Employees_Load(object sender, EventArgs e)

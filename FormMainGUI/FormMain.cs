@@ -49,12 +49,43 @@ namespace FormMainGUI
 
             displayName.Text = account.UserName;
 
-            if (!account.Role.Equals("admin"))
+            setRolePermission(account.Role);
+
+            if (account.Role.Equals("stocker") || account.Role.Equals("staff"))
             {
-                btnAccount.Visible = false;
+                OpenChildForm(new Products(account.Role));
             }
-            OpenChildForm(new Dashboard());
+            else
+            {
+                OpenChildForm(new Dashboard());
+            }
+
             ActiveButton(btnDashboard, Color.White);
+        }
+
+        private void setRolePermission(string role)
+        {
+            switch (role)
+            {
+                case "admin":
+                    break;
+                case "manager":
+                    btnAccount.Visible = false;
+                    break;
+                case "staff":
+                    btnDashboard.Visible = false;
+                    btnAccount.Visible = false;
+                    btnEmployee.Visible = false;
+                    break;
+                case "stocker":
+                    btnDashboard.Visible = false;
+                    btnEmployee.Visible = false;
+                    btnOrder.Visible = false;
+                    btnAccount.Visible = false;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private struct RGBColors
@@ -136,7 +167,7 @@ namespace FormMainGUI
         private void btnProduct_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, Color.White);
-            OpenChildForm(new Products());
+            OpenChildForm(new Products(account.Role));
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -149,7 +180,7 @@ namespace FormMainGUI
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, Color.White);
-            OpenChildForm(new Employees());
+            OpenChildForm(new Employees(account.Role));
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
