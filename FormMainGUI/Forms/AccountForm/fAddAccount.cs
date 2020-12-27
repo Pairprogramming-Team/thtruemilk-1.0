@@ -38,6 +38,7 @@ namespace FormMainGUI.Forms.AccountForm
             {
                 btnAdd.Text = "UPDATE";
                 isUpdate = true;
+                txtPassword.UseSystemPasswordChar = false;
             }
 
         }

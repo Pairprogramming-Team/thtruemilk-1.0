@@ -104,7 +104,7 @@
             this.txtPassword.Size = new System.Drawing.Size(276, 28);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.TabStop = false;
-            this.txtPassword.UseSystemPasswordChar = false;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // panel1
             // 
