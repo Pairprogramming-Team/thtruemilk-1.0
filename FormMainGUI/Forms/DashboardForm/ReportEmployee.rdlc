@@ -101,176 +101,6 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox1">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>8pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TẢI</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>8pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                  <LineHeight>17pt</LineHeight>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>8pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                  <LineHeight>12pt</LineHeight>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>PHÂN HIỆU TẠI THÀNH PHỐ HỒ CHÍ MINH</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>8pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                  <LineHeight>17pt</LineHeight>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>6pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                  <LineHeight>17pt</LineHeight>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Giảng viên hướng dẫn: Nguyễn Thị Anh Thư</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>7pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>7pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                  <LineHeight>12pt</LineHeight>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Nhóm : Pair programming</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>7pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                  <LineHeight>17pt</LineHeight>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.15639in</Top>
-            <Left>9.93401in</Left>
-            <Height>1.28472in</Height>
-            <Width>4.02778in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox2">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -280,7 +110,7 @@
                   <TextRun>
                     <Value>Tên đơn vị: Cửa hàng sữa TH True Milk</Value>
                     <Style>
-                      <FontSize>6pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -294,7 +124,7 @@
                   <TextRun>
                     <Value />
                     <Style>
-                      <FontSize>6pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -306,15 +136,46 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Địa chỉ: Số 448/16, đường Lê Văn Việt, Phường Tăng Nhơn Phú A, Quận 9, Thành Phố Hồ Chí Minh</Value>
+                    <Value>Địa chỉ: Số 448/16, đường Lê Văn Việt, Phường Tăng Nhơn Phú A,</Value>
                     <Style>
-                      <FontSize>6pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
                   <TextAlign>Left</TextAlign>
+                  <LineHeight>10pt</LineHeight>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontSize>7pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                  <LineHeight>10pt</LineHeight>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Quận 9, Thành Phố Hồ Chí Minh</Value>
+                    <Style>
+                      <FontSize>7pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                  <LineHeight>10pt</LineHeight>
                 </Style>
               </Paragraph>
               <Paragraph>
@@ -335,9 +196,9 @@
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.15639in</Top>
             <Left>0.65749in</Left>
-            <Height>0.47917in</Height>
-            <Width>4.38888in</Width>
-            <ZIndex>2</ZIndex>
+            <Height>0.67361in</Height>
+            <Width>4.79166in</Width>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -369,7 +230,7 @@
             <Left>5.44789in</Left>
             <Height>0.34028in</Height>
             <Width>1.12501in</Width>
-            <ZIndex>3</ZIndex>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -398,10 +259,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox44</rd:DefaultName>
             <Top>3.04528in</Top>
-            <Left>2.95484in</Left>
+            <Left>2.64928in</Left>
             <Height>0.38889in</Height>
             <Width>0.94444in</Width>
-            <ZIndex>4</ZIndex>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -433,7 +294,7 @@
             <Left>7.06469in</Left>
             <Height>0.34028in</Height>
             <Width>1.42361in</Width>
-            <ZIndex>5</ZIndex>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -468,7 +329,7 @@
             <Left>6.71873in</Left>
             <Height>0.57639in</Height>
             <Width>1.15153in</Width>
-            <ZIndex>6</ZIndex>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -497,10 +358,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox46</rd:DefaultName>
             <Top>3.04528in</Top>
-            <Left>9.93401in</Left>
+            <Left>9.18401in</Left>
             <Height>0.34028in</Height>
             <Width>1.42361in</Width>
-            <ZIndex>7</ZIndex>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -520,7 +381,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.51389in</Height>
+                  <Height>0.34722in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -534,7 +395,9 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>=Fields!Name.Value</Value>
-                                      <Style />
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style />
@@ -561,7 +424,9 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>=Fields!YearOfBirth.Value</Value>
-                                      <Style />
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style />
@@ -590,7 +455,9 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>=Fields!Phone.Value</Value>
-                                      <Style />
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style />
@@ -619,7 +486,9 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>=Fields!Address.Value</Value>
-                                      <Style />
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                      </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style />
@@ -669,9 +538,9 @@
             <DataSetName>DataSetEmployee</DataSetName>
             <Top>3.50361in</Top>
             <Left>2.32984in</Left>
-            <Height>0.51389in</Height>
+            <Height>0.34722in</Height>
             <Width>10.18056in</Width>
-            <ZIndex>8</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -679,12 +548,12 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>8.3in</Height>
+        <Height>6.3in</Height>
         <Style>
           <BackgroundColor>Azure</BackgroundColor>
         </Style>
       </Body>
-      <Width>15in</Width>
+      <Width>14in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
