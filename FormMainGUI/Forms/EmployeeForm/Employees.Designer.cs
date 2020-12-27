@@ -66,6 +66,7 @@
             // 
             // dgvEmployee
             // 
+            this.dgvEmployee.AllowUserToAddRows = false;
             this.dgvEmployee.AllowUserToResizeRows = false;
             this.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployee.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
@@ -77,7 +78,7 @@
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.RowHeadersWidth = 51;
             this.dgvEmployee.RowTemplate.Height = 24;
-            this.dgvEmployee.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvEmployee.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployee.Size = new System.Drawing.Size(1023, 405);
             this.dgvEmployee.TabIndex = 1;
