@@ -46,13 +46,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.displayName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSignOut = new FontAwesome.Sharp.IconButton();
             this.btnMaximize = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.lblTitileChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.btnSignOut = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -341,6 +341,26 @@
             this.panel2.Size = new System.Drawing.Size(87, 80);
             this.panel2.TabIndex = 3;
             // 
+            // btnSignOut
+            // 
+            this.btnSignOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnSignOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSignOut.FlatAppearance.BorderSize = 0;
+            this.btnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignOut.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSignOut.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnSignOut.IconColor = System.Drawing.Color.White;
+            this.btnSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSignOut.IconSize = 24;
+            this.btnSignOut.Location = new System.Drawing.Point(31, 34);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Rotation = 0D;
+            this.btnSignOut.Size = new System.Drawing.Size(44, 36);
+            this.btnSignOut.TabIndex = 8;
+            this.btnSignOut.UseVisualStyleBackColor = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
             // btnMaximize
             // 
             this.btnMaximize.FlatAppearance.BorderSize = 0;
@@ -436,26 +456,6 @@
             this.panelContent.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.panelContent.Size = new System.Drawing.Size(837, 560);
             this.panelContent.TabIndex = 2;
-            // 
-            // btnSignOut
-            // 
-            this.btnSignOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnSignOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSignOut.FlatAppearance.BorderSize = 0;
-            this.btnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignOut.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnSignOut.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.btnSignOut.IconColor = System.Drawing.Color.White;
-            this.btnSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSignOut.IconSize = 24;
-            this.btnSignOut.Location = new System.Drawing.Point(31, 34);
-            this.btnSignOut.Name = "btnSignOut";
-            this.btnSignOut.Rotation = 0D;
-            this.btnSignOut.Size = new System.Drawing.Size(44, 36);
-            this.btnSignOut.TabIndex = 8;
-            this.btnSignOut.UseVisualStyleBackColor = false;
-            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // FormMain
             // 

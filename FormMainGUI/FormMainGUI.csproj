@@ -298,6 +298,7 @@
     <None Include="Resources\PP2_logo.png" />
     <None Include="Resources\qr-code-github.png" />
     <Content Include="P-logo.ico" />
+    <None Include="Resources\pair-programming-team-logo.png" />
     <Content Include="Resources\thtruemile-logo.png" />
     <None Include="Resources\thtruemile-logo1.png" />
     <Content Include="SqlServerTypes\readme.htm" />

@@ -113,6 +113,16 @@ namespace FormMainGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pair_programming_team_logo {
+            get {
+                object obj = ResourceManager.GetObject("pair-programming-team-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PP2_logo {
             get {
                 object obj = ResourceManager.GetObject("PP2_logo", resourceCulture);
