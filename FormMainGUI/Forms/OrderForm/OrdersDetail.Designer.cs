@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbCartInfo = new System.Windows.Forms.GroupBox();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -56,6 +57,14 @@
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDone = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.tHTrueMilkDataSet1 = new FormMainGUI.THTrueMilkDataSet1();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new FormMainGUI.THTrueMilkDataSet1TableAdapters.ProductsTableAdapter();
+            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.gbCartInfo.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -68,6 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductInOrder)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tHTrueMilkDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,9 +110,9 @@
             // 
             this.panel8.Controls.Add(this.dgvCart);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(3, 63);
+            this.panel8.Location = new System.Drawing.Point(3, 67);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1174, 214);
+            this.panel8.Size = new System.Drawing.Size(1174, 210);
             this.panel8.TabIndex = 3;
             // 
             // dgvCart
@@ -124,7 +135,7 @@
             this.dgvCart.RowHeadersWidth = 51;
             this.dgvCart.RowTemplate.Height = 24;
             this.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCart.Size = new System.Drawing.Size(1174, 214);
+            this.dgvCart.Size = new System.Drawing.Size(1174, 210);
             this.dgvCart.TabIndex = 4;
             this.dgvCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellClick);
             this.dgvCart.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvCart_RowAdded);
@@ -133,6 +144,7 @@
             // colIDDetail
             // 
             this.colIDDetail.HeaderText = "ID order detail";
+            this.colIDDetail.MinimumWidth = 6;
             this.colIDDetail.Name = "colIDDetail";
             this.colIDDetail.ReadOnly = true;
             // 
@@ -176,7 +188,7 @@
             this.panel5.Controls.Add(this.txtOrderID);
             this.panel5.Controls.Add(this.materialLabel2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(3, 22);
+            this.panel5.Location = new System.Drawing.Point(3, 26);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1174, 41);
             this.panel5.TabIndex = 2;
@@ -193,7 +205,7 @@
             this.txtOrderID.SelectedText = "";
             this.txtOrderID.SelectionLength = 0;
             this.txtOrderID.SelectionStart = 0;
-            this.txtOrderID.Size = new System.Drawing.Size(186, 23);
+            this.txtOrderID.Size = new System.Drawing.Size(186, 28);
             this.txtOrderID.TabIndex = 13;
             this.txtOrderID.TabStop = false;
             this.txtOrderID.UseSystemPasswordChar = false;
@@ -207,7 +219,7 @@
             this.materialLabel2.Location = new System.Drawing.Point(3, 9);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(63, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(78, 24);
             this.materialLabel2.TabIndex = 12;
             this.materialLabel2.Text = "Order ID";
             // 
@@ -247,7 +259,7 @@
             this.btnAddToCart.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.Primary = true;
-            this.btnAddToCart.Size = new System.Drawing.Size(108, 36);
+            this.btnAddToCart.Size = new System.Drawing.Size(130, 36);
             this.btnAddToCart.TabIndex = 2;
             this.btnAddToCart.Text = "Add to cart";
             this.btnAddToCart.UseVisualStyleBackColor = true;
@@ -271,16 +283,25 @@
             // 
             this.panel7.Controls.Add(this.dgvProductInOrder);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 68);
+            this.panel7.Location = new System.Drawing.Point(3, 72);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1174, 278);
+            this.panel7.Size = new System.Drawing.Size(1174, 274);
             this.panel7.TabIndex = 0;
             // 
             // dgvProductInOrder
             // 
+            this.dgvProductInOrder.AllowUserToAddRows = false;
+            this.dgvProductInOrder.AutoGenerateColumns = false;
             this.dgvProductInOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductInOrder.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvProductInOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductInOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productIDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.imageDataGridViewImageColumn});
+            this.dgvProductInOrder.DataSource = this.productsBindingSource;
             this.dgvProductInOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductInOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvProductInOrder.Location = new System.Drawing.Point(0, 0);
@@ -288,8 +309,9 @@
             this.dgvProductInOrder.Name = "dgvProductInOrder";
             this.dgvProductInOrder.ReadOnly = true;
             this.dgvProductInOrder.RowHeadersWidth = 51;
+            this.dgvProductInOrder.RowTemplate.Height = 100;
             this.dgvProductInOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductInOrder.Size = new System.Drawing.Size(1174, 278);
+            this.dgvProductInOrder.Size = new System.Drawing.Size(1174, 274);
             this.dgvProductInOrder.TabIndex = 1;
             // 
             // panel6
@@ -298,7 +320,7 @@
             this.panel6.Controls.Add(this.materialLabel1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.ForeColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(3, 22);
+            this.panel6.Location = new System.Drawing.Point(3, 26);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1174, 46);
             this.panel6.TabIndex = 3;
@@ -316,7 +338,7 @@
             this.txtSearch.SelectedText = "";
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
-            this.txtSearch.Size = new System.Drawing.Size(245, 23);
+            this.txtSearch.Size = new System.Drawing.Size(245, 28);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TabStop = false;
             this.txtSearch.UseSystemPasswordChar = false;
@@ -332,7 +354,7 @@
             this.materialLabel1.Location = new System.Drawing.Point(859, 13);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(55, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(67, 24);
             this.materialLabel1.TabIndex = 54;
             this.materialLabel1.Text = "Search";
             // 
@@ -359,7 +381,7 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(945, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 21);
+            this.label1.Size = new System.Drawing.Size(60, 27);
             this.label1.TabIndex = 12;
             this.label1.Text = "Total";
             // 
@@ -378,7 +400,7 @@
             this.txtTotalAmount.SelectedText = "";
             this.txtTotalAmount.SelectionLength = 0;
             this.txtTotalAmount.SelectionStart = 0;
-            this.txtTotalAmount.Size = new System.Drawing.Size(139, 23);
+            this.txtTotalAmount.Size = new System.Drawing.Size(139, 28);
             this.txtTotalAmount.TabIndex = 11;
             this.txtTotalAmount.TabStop = false;
             this.txtTotalAmount.UseSystemPasswordChar = false;
@@ -395,7 +417,7 @@
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Primary = true;
-            this.btnDelete.Size = new System.Drawing.Size(69, 36);
+            this.btnDelete.Size = new System.Drawing.Size(82, 36);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -413,7 +435,7 @@
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Primary = true;
-            this.btnUpdate.Size = new System.Drawing.Size(73, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(87, 36);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -431,15 +453,70 @@
             this.btnDone.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDone.Name = "btnDone";
             this.btnDone.Primary = true;
-            this.btnDone.Size = new System.Drawing.Size(57, 36);
+            this.btnDone.Size = new System.Drawing.Size(67, 36);
             this.btnDone.TabIndex = 6;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
+            // tHTrueMilkDataSet1
+            // 
+            this.tHTrueMilkDataSet1.DataSetName = "THTrueMilkDataSet1";
+            this.tHTrueMilkDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.tHTrueMilkDataSet1;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // productIDDataGridViewTextBoxColumn
+            // 
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
+            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imageDataGridViewImageColumn
+            // 
+            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
+            this.imageDataGridViewImageColumn.HeaderText = "Image";
+            this.imageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.imageDataGridViewImageColumn.MinimumWidth = 6;
+            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
+            this.imageDataGridViewImageColumn.ReadOnly = true;
+            // 
             // fOrdersDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 11F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1200, 800);
@@ -471,6 +548,8 @@
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tHTrueMilkDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -505,5 +584,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalMoney;
         private System.Windows.Forms.Label label1;
+        private THTrueMilkDataSet1 tHTrueMilkDataSet1;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private THTrueMilkDataSet1TableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
     }
 }

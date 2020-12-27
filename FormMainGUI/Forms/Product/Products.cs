@@ -44,7 +44,8 @@ namespace FormMainGUI.Forms
         {
             if (MessageBox.Show("Are you sure remove this Product?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                ModelDB.Product b = new ModelDB.Product(pro.ProductID, pro.Name, Convert.ToInt32(pro.Quantity), Convert.ToInt32(pro.Price));
+                byte[] imgByte = null;
+                ModelDB.Product b = new ModelDB.Product(pro.ProductID, pro.Name, Convert.ToInt32(pro.Quantity), Convert.ToInt32(pro.Price), imgByte);
                 bool isRemoved = ProductsDAO.Instance.removeProduct(pro.ProductID);
                 if (isRemoved == true)
                 {
@@ -65,13 +66,18 @@ namespace FormMainGUI.Forms
 
             add add = new add(pro);
             add.Text = "UPDATE PRODUCT";
-            add.ShowDialog(); dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
+            add.ShowDialog();
+            dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
 
         }
         private void Products_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tHTrueMilkDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.tHTrueMilkDataSet.Products);
             statusList = ProductsDAO.Instance.getStatusList();
+
             dgvProduct.DataSource = ProductsDAO.Instance.loadListProducts();
+
             dgvDetail.DataSource = ProductsDAO.Instance.loadListDetail(pro.ProductID);
         }
 
@@ -85,14 +91,15 @@ namespace FormMainGUI.Forms
                 pro.Name = selectedRow.Cells[1].Value.ToString();
                 pro.Quantity = Convert.ToInt32(selectedRow.Cells[2].Value.ToString());
                 pro.Price = Convert.ToInt32(selectedRow.Cells[3].Value.ToString());
+                pro.Image = (byte[])(selectedRow.Cells[4].Value);
                 dgvDetail.DataSource = ProductsDAO.Instance.loadListDetail(pro.ProductID);
             }
         }
 
         private void materialSingleLineTextField1_TextChanged(object sender, EventArgs e)
         {
-            string id = txtSearch.Text;
-            dgvProduct.DataSource = ProductsDAO.Instance.Search(id);
+            string name = txtSearch.Text;
+            dgvProduct.DataSource = ProductsDAO.Instance.Search(name);
 
         }
 

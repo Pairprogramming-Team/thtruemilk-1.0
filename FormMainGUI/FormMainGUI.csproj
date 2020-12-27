@@ -274,6 +274,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="THTrueMilkDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>THTrueMilkDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="THTrueMilkDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>THTrueMilkDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utils\DataProvider.cs" />
     <Content Include="ModelDB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -415,6 +425,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="THTrueMilkDataSet.xsc">
+      <DependentUpon>THTrueMilkDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="THTrueMilkDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>THTrueMilkDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="THTrueMilkDataSet.xss">
+      <DependentUpon>THTrueMilkDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="THTrueMilkDataSet1.xsc">
+      <DependentUpon>THTrueMilkDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="THTrueMilkDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>THTrueMilkDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="THTrueMilkDataSet1.xss">
+      <DependentUpon>THTrueMilkDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\font-awesome.css" />

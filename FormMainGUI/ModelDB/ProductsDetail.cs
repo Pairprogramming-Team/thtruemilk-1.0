@@ -14,23 +14,19 @@ namespace FormMainGUI.ModelDB
     
     public partial class ProductsDetail
     {
-      
-     
         public ProductsDetail()
         {
 
         }
-
         public ProductsDetail(string text1, string v, DateTime value1, DateTime value2, DateTime value3, string text2)
         {
             this.ProductDetailID = text1;
             this.Status = v;
             this.MFG = value1;
-            this.EXP= value2;
+            this.EXP = value2;
             this.ProductEntryDate = value3;
             this.ProductID = text2;
         }
-
         public string ProductDetailID { get; set; }
         public string Status { get; set; }
         public Nullable<System.DateTime> MFG { get; set; }

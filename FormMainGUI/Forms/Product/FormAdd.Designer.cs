@@ -40,9 +40,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Quantity = new System.Windows.Forms.NumericUpDown();
+            this.imageLbl = new System.Windows.Forms.Label();
+            this.picBox = new System.Windows.Forms.PictureBox();
+            this.btnBrowse = new FontAwesome.Sharp.IconButton();
+            this.panelImage = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Quantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
+            this.panelImage.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancle
@@ -180,9 +188,9 @@
             // 
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 458);
+            this.panel1.Location = new System.Drawing.Point(0, 740);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(583, 67);
+            this.panel1.Size = new System.Drawing.Size(586, 67);
             this.panel1.TabIndex = 104;
             // 
             // panel2
@@ -190,8 +198,9 @@
             this.panel2.Controls.Add(this.btnCancle);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(138, 0);
+            this.panel2.Location = new System.Drawing.Point(141, 0);
             this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.panel2.Size = new System.Drawing.Size(445, 67);
             this.panel2.TabIndex = 88;
             // 
@@ -208,12 +217,73 @@
             this.Quantity.Size = new System.Drawing.Size(275, 30);
             this.Quantity.TabIndex = 3;
             // 
+            // imageLbl
+            // 
+            this.imageLbl.AutoSize = true;
+            this.imageLbl.BackColor = System.Drawing.Color.White;
+            this.imageLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.imageLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.imageLbl.Location = new System.Drawing.Point(37, 438);
+            this.imageLbl.Name = "imageLbl";
+            this.imageLbl.Size = new System.Drawing.Size(77, 25);
+            this.imageLbl.TabIndex = 92;
+            this.imageLbl.Text = "Image :";
+            // 
+            // picBox
+            // 
+            this.picBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBox.Location = new System.Drawing.Point(0, 0);
+            this.picBox.Name = "picBox";
+            this.picBox.Size = new System.Drawing.Size(274, 206);
+            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBox.TabIndex = 105;
+            this.picBox.TabStop = false;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBrowse.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBrowse.IconChar = FontAwesome.Sharp.IconChar.BoxTissue;
+            this.btnBrowse.IconColor = System.Drawing.Color.Black;
+            this.btnBrowse.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBrowse.IconSize = 36;
+            this.btnBrowse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBrowse.Location = new System.Drawing.Point(0, 0);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnBrowse.Rotation = 0D;
+            this.btnBrowse.Size = new System.Drawing.Size(124, 42);
+            this.btnBrowse.TabIndex = 106;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // panelImage
+            // 
+            this.panelImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelImage.Controls.Add(this.picBox);
+            this.panelImage.Location = new System.Drawing.Point(268, 429);
+            this.panelImage.Name = "panelImage";
+            this.panelImage.Size = new System.Drawing.Size(276, 208);
+            this.panelImage.TabIndex = 107;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnBrowse);
+            this.panel3.Location = new System.Drawing.Point(419, 652);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(124, 42);
+            this.panel3.TabIndex = 106;
+            // 
             // add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(583, 525);
+            this.ClientSize = new System.Drawing.Size(586, 807);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelImage);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtName);
@@ -221,6 +291,7 @@
             this.Controls.Add(this.Quantity);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.imageLbl);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.MaximizeBox = false;
@@ -234,6 +305,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Quantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
+            this.panelImage.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +326,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.NumericUpDown Quantity;
+        private System.Windows.Forms.Label imageLbl;
+        private System.Windows.Forms.PictureBox picBox;
+        private FontAwesome.Sharp.IconButton btnBrowse;
+        private System.Windows.Forms.Panel panelImage;
+        private System.Windows.Forms.Panel panel3;
     }
 }

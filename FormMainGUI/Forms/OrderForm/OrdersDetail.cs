@@ -1,17 +1,9 @@
 ﻿using FormMainGUI.DAO;
 using FormMainGUI.Forms.OrderForm;
 using FormMainGUI.ModelDB;
-using FormMainGUI.Utils;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace FormMainGUI.Forms
 {
@@ -48,10 +40,11 @@ namespace FormMainGUI.Forms
 
         private void fOrders_Load(object sender, EventArgs e)
         {
-            dgvProductInOrder.DataSource = OrderDAO.Instance.getListProduct();
-            dgvProductInOrder.Columns[4].Visible = false;
-            dgvProductInOrder.Columns[5].Visible = false;
-            this.Dock = DockStyle.Fill;            
+            // TODO: This line of code loads data into the 'tHTrueMilkDataSet1.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.tHTrueMilkDataSet1.Products);
+
+            dgvProductInOrder.DataSource = ProductsDAO.Instance.loadListProducts();
+            this.Dock = DockStyle.Fill;
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
@@ -70,7 +63,7 @@ namespace FormMainGUI.Forms
 
         private void dgvCart_RowAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-                btnDone.Enabled = true;
+            btnDone.Enabled = true;
         }
 
         private void dgvCart_RowRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -92,7 +85,7 @@ namespace FormMainGUI.Forms
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            dgvProductInOrder.DataSource = OrderDAO.Instance.searchProductByName(txtSearch.Text);
+            dgvProductInOrder.DataSource = ProductsDAO.Instance.Search(txtSearch.Text);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -116,7 +109,7 @@ namespace FormMainGUI.Forms
             else
             {
 
-            }            
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -197,7 +190,7 @@ namespace FormMainGUI.Forms
                 {
                     MessageBox.Show("Create order failed!!!");
                 }
-            } 
+            }
         }
 
         private void fOrdersDetail_FormClosed(object sender, FormClosedEventArgs e)

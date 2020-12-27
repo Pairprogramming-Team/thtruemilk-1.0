@@ -19,23 +19,16 @@ namespace FormMainGUI.DAO
             set => instance = value;
         }
         private ProductsDAO() { }
-        public object loadListProducts()
+        public List<Product> loadListProducts()
         {
 
             var db = DataProvider.Ins.DB;
-            var result = (from c in db.Products
-                         select new
-                         {
-                             ID = c.ProductID,
-                             Name = c.Name,
-                             Quantity = c.Quantity,
-                             Price = c.Price
-                         }
-                    ).ToList();
-            return result;
+            var result = from c in db.Products select c;
+
+            return result.ToList<Product>();
 
         }
-        public object loadListDetail( string id)
+        public object loadListDetail(string id)
         {
 
             var db = DataProvider.Ins.DB;
@@ -48,28 +41,20 @@ namespace FormMainGUI.DAO
                               MFG = d.MFG,
                               EXP = d.EXP,
                               ProductEntryDate = d.ProductEntryDate,
-                              ProductID=d.ProductID
+                              ProductID = d.ProductID
                           }
                     ).ToList();
             return result;
 
         }
-        public object Search(string id)
+        public object Search(string name)
         {
 
             var db = DataProvider.Ins.DB;
-            var result = (from c in db.Products
-                          where c.Name.Contains(id)
-                          select new
-                          {
-                              ID = c.ProductID,
-                              Name = c.Name,
-                              Quantity = c.Quantity,
-                              Price = c.Price,
-                            
-                          }
-                    ).ToList();
-            return result;
+            var listProductSearch = (from l in db.Products
+                                     where l.Name.Trim().Contains(name)
+                                     select l).ToList();
+            return listProductSearch;
 
         }
         public List<string> getProductList()
@@ -88,11 +73,11 @@ namespace FormMainGUI.DAO
         }
         public bool productAdd(Product product)
         {
-            
+
             var db = DataProvider.Ins.DB;
             try
             {
-                
+
                 db.Products.Add(product);
                 db.SaveChanges();
                 return true;
@@ -102,7 +87,7 @@ namespace FormMainGUI.DAO
                 return false;
             }
         }
- public bool addDetail(ProductsDetail productsDetail)
+        public bool addDetail(ProductsDetail productsDetail)
         {
             var db = DataProvider.Ins.DB;
             try
@@ -128,6 +113,7 @@ namespace FormMainGUI.DAO
                 r.Name = product.Name;
                 r.Quantity = product.Quantity;
                 r.Price = product.Price;
+                r.Image = product.Image;
                 db.SaveChanges();
                 return true;
             }
@@ -141,7 +127,7 @@ namespace FormMainGUI.DAO
             var db = DataProvider.Ins.DB;
             try
             {
-                 ProductsDetail d = db.ProductsDetails.Where(y => y.ProductDetailID == productsDetail.ProductDetailID).Select(x => x).SingleOrDefault();
+                ProductsDetail d = db.ProductsDetails.Where(y => y.ProductDetailID == productsDetail.ProductDetailID).Select(x => x).SingleOrDefault();
                 d.Status = productsDetail.Status;
                 d.MFG = productsDetail.MFG;
                 d.EXP = productsDetail.EXP;
@@ -171,7 +157,7 @@ namespace FormMainGUI.DAO
                 return false;
             }
         }
-        public bool removeDetail( string id)
+        public bool removeDetail(string id)
         {
             var db = DataProvider.Ins.DB;
             try

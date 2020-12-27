@@ -14,11 +14,12 @@ namespace FormMainGUI.ModelDB
     
     public partial class Employee
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
+            this.Accounts = new HashSet<Account>();
+            this.Orders = new HashSet<Order>();
         }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee(string employeeId)
         {
             this.Accounts = new HashSet<Account>();
@@ -34,7 +35,6 @@ namespace FormMainGUI.ModelDB
             YearOfBirth = birth;
             Address = address;
         }
-
         public string EmployeeID { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
