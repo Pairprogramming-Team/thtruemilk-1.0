@@ -52,6 +52,7 @@
             this.lblTitileChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.btnSignOut = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -290,10 +291,10 @@
             this.panelRight.Controls.Add(this.panel1);
             this.panelRight.Controls.Add(this.panel2);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelRight.Location = new System.Drawing.Point(606, 0);
+            this.panelRight.Location = new System.Drawing.Point(565, 0);
             this.panelRight.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(231, 80);
+            this.panelRight.Size = new System.Drawing.Size(272, 80);
             this.panelRight.TabIndex = 2;
             // 
             // label1
@@ -329,11 +330,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSignOut);
             this.panel2.Controls.Add(this.btnMaximize);
             this.panel2.Controls.Add(this.btnMinimize);
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(144, 0);
+            this.panel2.Location = new System.Drawing.Point(185, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(87, 80);
@@ -435,6 +437,26 @@
             this.panelContent.Size = new System.Drawing.Size(837, 560);
             this.panelContent.TabIndex = 2;
             // 
+            // btnSignOut
+            // 
+            this.btnSignOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnSignOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSignOut.FlatAppearance.BorderSize = 0;
+            this.btnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignOut.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSignOut.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnSignOut.IconColor = System.Drawing.Color.White;
+            this.btnSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSignOut.IconSize = 24;
+            this.btnSignOut.Location = new System.Drawing.Point(31, 34);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Rotation = 0D;
+            this.btnSignOut.Size = new System.Drawing.Size(44, 36);
+            this.btnSignOut.TabIndex = 8;
+            this.btnSignOut.UseVisualStyleBackColor = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -449,6 +471,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TH TrueMilk";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.panelMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -489,6 +512,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label footerLbl;
         private FontAwesome.Sharp.IconButton btnAbout;
+        private FontAwesome.Sharp.IconButton btnSignOut;
     }
 }
 

@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using FontAwesome.Sharp;
+﻿using FontAwesome.Sharp;
 using FormMainGUI.Forms;
-using FormMainGUI.Forms.AccountForm;
 using FormMainGUI.Forms.EmployeeForm;
 using FormMainGUI.Forms.OrderForm;
-using FormMainGUI.ModelDB;
-using FormMainGUI.Utils;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace FormMainGUI
 {
@@ -30,7 +21,7 @@ namespace FormMainGUI
 
         //Constructor
         public FormMain(ModelDB.Account account)
-        {           
+        {
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -195,7 +186,7 @@ namespace FormMainGUI
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
@@ -207,7 +198,6 @@ namespace FormMainGUI
             else
             {
                 WindowState = FormWindowState.Normal;
-
             }
         }
 
@@ -222,6 +212,17 @@ namespace FormMainGUI
             Reset(sender);
         }
 
-        
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Do you want to exit?", "Notification", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

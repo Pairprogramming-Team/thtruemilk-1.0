@@ -1,6 +1,6 @@
 ﻿namespace FormMainGUI.Forms.LoginForm
 {
-    partial class Login
+    partial class fLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -116,7 +116,7 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancle_Click);
             // 
-            // Login
+            // fLogin
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -129,7 +129,7 @@
             this.Controls.Add(this.lblLogin);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Login";
+            this.Name = "fLogin";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

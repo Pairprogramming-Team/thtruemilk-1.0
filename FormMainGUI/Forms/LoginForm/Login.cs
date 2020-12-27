@@ -1,21 +1,17 @@
 ﻿using FormMainGUI.DAO;
 using FormMainGUI.ModelDB;
-using FormMainGUI.Utils;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace FormMainGUI.Forms.LoginForm
 {
-    public partial class Login : MaterialForm
+    public partial class fLogin : MaterialForm
     {
         private FormMain formMain;
-        public Login()
-        {         
+        public fLogin()
+        {
             InitializeComponent();
 
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -61,7 +57,7 @@ namespace FormMainGUI.Forms.LoginForm
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if(username == "")
+            if (username == "")
             {
                 MessageBox.Show("Please input username!", "Login failed");
                 txtUsername.Focus();
@@ -82,6 +78,7 @@ namespace FormMainGUI.Forms.LoginForm
                 formMain = new FormMain(account);
                 this.Hide();
                 formMain.ShowDialog();
+                this.Show();
             }
             else
             {
