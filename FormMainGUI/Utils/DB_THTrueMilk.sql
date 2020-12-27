@@ -22,6 +22,7 @@ CREATE TABLE Products(
 	Name NVARCHAR(50),
 	Quantity INT DEFAULT 0,
 	Price DECIMAL DEFAULT 0,
+	Image IMAGE
 
 	PRIMARY KEY (ProductID)
 )
@@ -102,28 +103,36 @@ GO
 INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
 VALUES ('NV05', N'Phạm Thành Trung',  '0126888899', 1, 1994 , N'T.P Hồ Chí Minh')
 INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
-VALUES ('NV01', N'Nguyễn Đình Gia Khải',  '0366255164', 1, 2000 , N'53/36 Lê Lai, Cam Lâm, Khánh Hoà')
+VALUES ('NV06', N'Nguyễn Văn A',  '0366255164', 1, 2000 , N'53/36 Lê Lai, Cam Lâm, Khánh Hoà')
 INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
-VALUES ('NV02', N'Nguyễn Tứ Tấn Tài',  '0365554561', 0, 1995 , N'KTX Giao Thông Vận Tải')
+VALUES ('NV07', N'Nguyễn Văn B',  '0365554561', 0, 1995 , N'KTX Giao Thông Vận Tải')
 INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
-VALUES ('NV03', N'Lê Mạnh Tài',  '0985362254', 1, 2001 , N'36, Lê Văn Việt, Quận 9, tp.Ho Chi Minh')
+VALUES ('NV08', N'Lê Mạnh Tài',  '0985362254', 1, 2001 , N'36, Lê Văn Việt, Quận 9, tp.Ho Chi Minh')
 INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
-VALUES ('NV04', N'Nguyễn Kim Thiện',  '0977545552', 1, 2000 , N'35/45/9/1 Van Lam, Buon Me Thuoc')
+VALUES ('NV09', N'Nguyễn Văn C',  '0977545552', 1, 2000 , N'35/45/9/1 Van Lam, Buon Me Thuoc')
+INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
+VALUES ('NV10', N'Nguyễn Văn D',  '0977545552', 1, 2000 , N'35/45/9/1 Van Lam, Buon Me Thuoc')
+INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
+VALUES ('NV11', N'Nguyễn Văn E',  '0977545552', 1, 2000 , N'35/45/9/1 Van Lam, Buon Me Thuoc')
+INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
+VALUES ('NV12', N'Nguyễn Văn F',  '0977545552', 1, 2000 , N'35/45/9/1 Van Lam, Buon Me Thuoc')
+INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
+VALUES ('NV13', N'Nguyễn Văn G',  '0977545552', 1, 2000 , N'35/45/9/1 Van Lam, Buon Me Thuoc')
+INSERT INTO dbo.Employees ( EmployeeID, Name, Phone, Sex, YearOfBirth, Address)
+VALUES ('NV14', N'Nguyễn Văn H',  '0977545552', 1, 2000 , N'35/45/9/1 Van Lam, Buon Me Thuoc')
 GO
+
 
 -- Accounts
 INSERT INTO dbo.Accounts( UserName, PassWord, Role ,EmployeeID )
-VALUES  ( 'admin', 'admin', 'admin' ,'NV01')
-INSERT INTO dbo.Accounts( UserName, PassWord, Role ,EmployeeID )
-VALUES  ( 'user', 'user', 'member' ,'NV01')
-INSERT INTO dbo.Accounts( UserName, PassWord, Role ,EmployeeID )
-VALUES  ( 'staff1', 'staff1', 'member' ,'NV01')
-INSERT INTO dbo.Accounts( UserName, PassWord, Role , EmployeeID )
-VALUES  ( 'staff2', 'staff2', 'member', 'NV02')
-INSERT INTO dbo.Accounts( UserName, PassWord, Role , EmployeeID )
-VALUES  ( 'staff3', 'staff3', 'member', 'NV04')
-INSERT INTO dbo.Accounts( UserName, PassWord, Role , EmployeeID )
-VALUES  ( 'staff4', 'staff4', 'member', 'NV05')
+VALUES  ( 'admin', 'admin', 'admin' ,'NV01'),
+		( 'staff1', '123456', 'staff' ,'NV04'),
+		( 'staff2', '123456', 'staff', 'NV05'),
+		( 'staff3', '123456', 'staff', 'NV06'),
+		( 'staff4', '123456', 'staff', 'NV07'),
+		( 'staff5', '123456', 'staff' ,'NV02'),
+		( 'manager', '123456', 'manager', 'NV08'),
+		( 'stocker', '123456', 'stocker', 'NV09')
 GO
 
 -- Products
@@ -278,3 +287,7 @@ select sum(TotalMoney) as HD
 from Orders
 group by Month(DateOfOrder)
 ----------------------------------------------------
+
+
+UPDATE dbo.Products SET Image = ((SELECT BulkColumn 
+FROM Openrowset( Bulk 'D:\CNTT K59\HK V - 2021\LTTQ\thtruemilk-logo.png', Single_Blob) as img)) WHERE ProductID='SP003'
