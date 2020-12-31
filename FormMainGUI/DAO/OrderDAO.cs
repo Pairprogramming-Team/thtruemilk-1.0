@@ -188,6 +188,7 @@ namespace FormMainGUI.DAO
                                     select o);
                 foreach (var item in ordersDetail)
                 {
+                    updateProductAfterRemoveOrder(item);
                     db.OrdersDetails.Remove(item);
                 }
 
@@ -200,6 +201,22 @@ namespace FormMainGUI.DAO
             catch (Exception)
             {
 
+                return false;
+            }
+        }
+
+        public bool updateProductAfterRemoveOrder(OrdersDetail ordersDetail)
+        {
+            var db = DataProvider.Ins.DB;
+            try
+            {
+                Product pro = db.Products.Where(x => x.ProductID.Equals(ordersDetail.ProductID)).Select(x => x).FirstOrDefault();
+                pro.Quantity = pro.Quantity + ordersDetail.Quantity;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
                 return false;
             }
         }

@@ -45,33 +45,31 @@ namespace FormMainGUI.Forms.OrderForm
                     ordersDetail.TotalAmount = Convert.ToDecimal(txtPrice.Text) * Convert.ToInt32(numbericQuantity.Value.ToString());
 
                     string OrderID = this.order.dgvOrdersList.CurrentRow.Cells[0].Value.ToString();
-                    if (MessageBox.Show("Are you sure update this Order detail?", "Notification", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+                    bool isUpdated = OrderDAO.Instance.updateOrderDetail(ordersDetail);
+
+                    if (isUpdated == true)
                     {
-                        bool isUpdated = OrderDAO.Instance.updateOrderDetail(ordersDetail);
+                        MessageBox.Show("Update Product successfully!", "Notification");
+                        dgvOrderDetailList.DataSource = OrderDAO.Instance.getListOrderDetailByOrderID(OrderID);
 
-                        if (isUpdated == true)
+                        Order order = new Order();
+                        decimal sum = 0;
+                        order.OrderID = this.order.dgvOrdersList.CurrentRow.Cells[0].Value.ToString();
+                        order.DateOfOrder = Convert.ToDateTime(this.order.dgvOrdersList.CurrentRow.Cells[1].Value.ToString());
+                        order.EmployeeID = this.order.dgvOrdersList.CurrentRow.Cells[2].Value.ToString();
+                        for (int i = 0; i < dgvOrderDetailList.Rows.Count; i++)
                         {
-                            MessageBox.Show("Update Product successfully!", "Notification");
-                            dgvOrderDetailList.DataSource = OrderDAO.Instance.getListOrderDetailByOrderID(OrderID);
-
-                            Order order = new Order();
-                            decimal sum = 0;
-                            order.OrderID = this.order.dgvOrdersList.CurrentRow.Cells[0].Value.ToString();
-                            order.DateOfOrder = Convert.ToDateTime(this.order.dgvOrdersList.CurrentRow.Cells[1].Value.ToString());
-                            order.EmployeeID = this.order.dgvOrdersList.CurrentRow.Cells[2].Value.ToString();
-                            for (int i = 0; i < dgvOrderDetailList.Rows.Count; i++)
-                            {
-                                sum += Convert.ToDecimal(dgvOrderDetailList.Rows[i].Cells[4].Value);
-                            }
-                            order.TotalMoney = sum;
-                            OrderDAO.Instance.updateOrderByTotalMoney(order);
-
-                            this.order.dgvOrdersList.DataSource = OrderDAO.Instance.getListOrder();
+                            sum += Convert.ToDecimal(dgvOrderDetailList.Rows[i].Cells[4].Value);
                         }
-                        else
-                        {
-                            MessageBox.Show("Can not update this Order detail!", "Notification");
-                        }
+                        order.TotalMoney = sum;
+                        OrderDAO.Instance.updateOrderByTotalMoney(order);
+
+                        this.order.dgvOrdersList.DataSource = OrderDAO.Instance.getListOrder();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Can not update this Order detail!", "Notification");
                     }
                 }
                 else
@@ -102,11 +100,5 @@ namespace FormMainGUI.Forms.OrderForm
                 txtTotal.Text = dgvOrderDetailList.CurrentRow.Cells[4].Value.ToString();
             }
         }
-
-        //private void numbericQuantity_ValueChanged(object sender, EventArgs e)
-        //{
-        //        txtTotal.Text = Convert.ToString(numbericQuantity.Value * Convert.ToInt32(txtPrice.Text));
-
-        //}
     }
 }
