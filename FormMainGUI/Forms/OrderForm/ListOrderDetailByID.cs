@@ -46,6 +46,13 @@ namespace FormMainGUI.Forms.OrderForm
 
                     string OrderID = this.order.dgvOrdersList.CurrentRow.Cells[0].Value.ToString();
 
+                    //update quantity product after update quantity order detail
+                    Product product = new Product();
+                    product.Name = dgvOrderDetailList.CurrentRow.Cells[1].Value.ToString();
+                    product.Quantity = Convert.ToInt32(numbericQuantity.Value) - Convert.ToInt32(dgvOrderDetailList.CurrentRow.Cells[2].Value.ToString());
+                    OrderDAO.Instance.updateProductAfterUpdateOD(product);
+                    Console.WriteLine(product.Quantity);
+
                     bool isUpdated = OrderDAO.Instance.updateOrderDetail(ordersDetail);
 
                     if (isUpdated == true)
@@ -66,6 +73,8 @@ namespace FormMainGUI.Forms.OrderForm
                         OrderDAO.Instance.updateOrderByTotalMoney(order);
 
                         this.order.dgvOrdersList.DataSource = OrderDAO.Instance.getListOrder();
+
+
                     }
                     else
                     {

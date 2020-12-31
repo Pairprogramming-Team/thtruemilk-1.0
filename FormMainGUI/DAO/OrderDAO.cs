@@ -244,7 +244,7 @@ namespace FormMainGUI.DAO
             try
             {
                 Product product1 = db.Products.Where(x => x.Name.Equals(product.Name)).Select(x => x).FirstOrDefault();
-                product1.Quantity = product.Quantity;
+                product1.Quantity = product1.Quantity - product.Quantity;
                 db.SaveChanges();
                 return true;
             }
