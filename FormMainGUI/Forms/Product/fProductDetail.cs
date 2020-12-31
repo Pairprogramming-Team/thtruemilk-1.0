@@ -49,21 +49,25 @@ namespace FormMainGUI.Forms
                 if (txtProDetailID.Text == "")
                 {
                     MessageBox.Show("Invalid Product Detail ID value ");
+                    txtProDetailID.Focus();
                     return;
                 }
-                else if (Convert.ToString(MFG.Value) == "" || MFG.Value >= DateTime.Now)
+                else if (MFG.Value >= DateTime.Now)
                 {
-                    MessageBox.Show("Invalid EXP value");
+                    MessageBox.Show("Invalid MFG value");
+                    MFG.Focus();
                     return;
                 }
                 else if (MFG.Value >= ProductEntryDate.Value)
                 {
                     MessageBox.Show("Please check MFG( MFG must be less than ProductEntryDate) !!! ");
+                    MFG.Focus();
                     return;
                 }
                 else if (EXP.Value < DateTime.Now)
                 {
                     MessageBox.Show("Invalid EXP value");
+                    EXP.Focus();
                     return;
                 }
                 ModelDB.ProductsDetail b = new ModelDB.ProductsDetail(txtProDetailID.Text, Convert.ToString(cmbStatus.SelectedItem), MFG.Value, EXP.Value, ProductEntryDate.Value, txtproID.Text);
