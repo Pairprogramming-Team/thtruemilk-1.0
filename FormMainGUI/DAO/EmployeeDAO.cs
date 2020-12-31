@@ -81,12 +81,8 @@ namespace FormMainGUI.DAO
                 var db = DataProvider.Ins.DB;
                 try
                 {
-                    Account account = db.Accounts.Where(x => x.EmployeeID == employeeId).FirstOrDefault();
                     Employee emp = db.Employees.Where(x => x.EmployeeID == employeeId).FirstOrDefault();
-                    
-                    db.Accounts.Remove(account);
                     db.Employees.Remove(emp);
-                    
                     db.SaveChanges();
                     return true;
                 }
