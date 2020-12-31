@@ -184,7 +184,7 @@ namespace FormMainGUI.Forms
                 {
                     MessageBox.Show("Create order successfully!!!", "Notification");
                     this.fOrders.dgvOrdersList.DataSource = OrderDAO.Instance.getListOrder();
-                    this.Close();
+                    this.Dispose();
                 }
                 else
                 {
