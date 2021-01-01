@@ -24,8 +24,9 @@ namespace FormMainGUI.Forms.DashboardForm
             //this.OrdersDetailTableAdapter.Fill(this.DataSetReport.OrdersDetail);
             var db = DataProvider.Ins.DB;
             var data = db.OrdersDetails.ToList();
+            var d = db.Products.ToList();
 
-            this.OrdersDetailBindingSource.DataSource = data;
+            this.OrdersDetailBindingSource.DataSource = d;
 
             this.reportViewer1.RefreshReport();
         }
