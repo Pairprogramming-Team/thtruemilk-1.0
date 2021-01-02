@@ -134,7 +134,7 @@ namespace FormMainGUI.Forms.OrderForm
                             int count = 0;
                             for (int i = 0; i < this.orders.dgvCart.Rows.Count; i++)
                             {
-                                if (txtOrderDetalID.Text == this.orders.dgvCart.Rows[i].Cells[0].Value.ToString())
+                                if (txtOrderDetalID.Text == this.orders.dgvCart.Rows[i].Cells[0].Value.ToString() && txtIDProduct.Text != this.orders.dgvCart.Rows[i].Cells[1].Value.ToString())
                                 {
                                     MessageBox.Show("Order detail ID must be unique. Please enter another order detail ID!!!");
                                     txtOrderDetalID.Focus();
